@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>Leasing</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-blue text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-blue fw-bold">
+                        LM
+                    </div>
+                    <span class="logo-text fw-semibold fs-3">
+                        Leasing Management
+                    </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-4">
+                                Leasing
+                            </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-layout-grid fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    SubMaster
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Owner Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Operator Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-users-group fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Community Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Tenant Registration
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
+                <button class="btn btn-icon bg-gray-50" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-2 fs-2 text-muted"></i>
+                </button>
+                <div class="ms-auto dropdown">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-blue text-white">
+                            A
+                        </div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">
+                                Admin User
+                            </div>
+                            <div class="text-muted small">
+                                Administrator
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content p-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <img src="./assets/img/apartment-image.jpg" class="img-fluid rounded" alt="Apartment image" />
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                <div class="text-gray-800 fw-medium text-center">
+                    © 2026 Leasing Management System
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+</body>
+
+</html>
