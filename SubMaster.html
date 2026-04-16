@@ -50,7 +50,7 @@
                                     SubMaster
                                 </span>
                             </a>
-                            <a class="nav-link text-white my-3">
+                            <a class="nav-link text-white my-3" href="./OwnerRegistration.html">
                                 <i class="ti ti-user fs-2 me-2"></i>
                                 <span class="menu-text fs-4">
                                     Owner Registration
@@ -370,8 +370,7 @@
                             </div>
                             <div class="col-md-6 col-lg-3">
                                 <div class="mb-3">
-                                    <label class="form-label">Document Near Expiry Days <small class="text-muted">(in
-                                            number)</small></label>
+                                    <label class="form-label">Document Near Expiry Days</label>
                                     <input type="text" class="form-control">
                                 </div>
                             </div>
@@ -474,71 +473,73 @@
                                                 Add</a>
                                         </div>
                                     </div>
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th class="sortable col-ownerType" data-col="ownerType">
+                                                        Owner Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="col-status" data-col="status">
+                                                        Status
+                                                    </th>
+                                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="col-ownerType text-center">Individual</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Emma</td>
+                                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action">
+                                                                <i class="ti ti-edit fs-2"></i>
+                                                            </a>
+                                                            <a class="btn btn-action">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                    <table class="table table-bordered table-main">
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
-                                                <th class="sortable col-ownerType" data-col="ownerType">
-                                                    Owner Type <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="col-status" data-col="status">
-                                                    Status
-                                                </th>
-                                                <th class="sortable col-aeBy" data-col="aeBy">
-                                                    Added / Edited By <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="sortable col-aeDate" data-col="aeDate">
-                                                    Added / Edited Date <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="bg-white">
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-ownerType text-center">Individual</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Emma</td>
-                                                <td class="col-aeDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action">
-                                                            <i class="ti ti-edit fs-2"></i>
-                                                        </a>
-                                                        <a class="btn btn-action">
-                                                            <i class="ti ti-trash fs-2"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="col-ownerType text-center">Company</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Harry</td>
+                                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action">
+                                                                <i class="ti ti-edit fs-2"></i>
+                                                            </a>
+                                                            <a class="btn btn-action">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
 
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-ownerType text-center">Company</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Harry</td>
-                                                <td class="col-aeDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action">
-                                                            <i class="ti ti-edit fs-2"></i>
-                                                        </a>
-                                                        <a class="btn btn-action">
-                                                            <i class="ti ti-trash fs-2"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        </table>
+                                    </div>
 
-                                    </table>
                                 </div>
                                 <div class="tab-pane fade" id="ownerShipType" role="tabpanel">
 
@@ -608,89 +609,95 @@
 
                                         </div>
                                     </div>
+                                    <div class="table-responsive">
+                                        <!-- TABLE -->
+                                        <table class="table table-bordered table-main">
 
-                                    <!-- TABLE -->
-                                    <table class="table table-bordered table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
 
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
+                                                    <th class="sortable col-ownershipType" data-col="ownershipType">
+                                                        Ownership Type <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-ownershipType" data-col="ownershipType">
-                                                    Ownership Type <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="col-status" data-col="status">
+                                                        Status
+                                                    </th>
 
-                                                <th class="col-status" data-col="status">
-                                                    Status
-                                                </th>
+                                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeBy" data-col="aeBy">
-                                                    Added / Edited By <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeDate" data-col="aeDate">
-                                                    Added / Edited Date <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                            <tbody class="bg-white">
 
-                                        <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="col-ownershipType text-center">Own</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Emma</td>
+                                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-ownershipType text-center">Own</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Emma</td>
-                                                <td class="col-aeDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="col-ownershipType text-center">Third Prty</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Harry</td>
+                                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="col-ownershipType text-center">Other</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Jasmine</td>
+                                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-ownershipType text-center">Third Prty</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Harry</td>
-                                                <td class="col-aeDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td class="col-ownershipType text-center">Other</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Jasmine</td>
-                                                <td class="col-aeDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            </tbody>
 
-                                        </tbody>
-
-                                    </table>
-
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="propertyType" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
@@ -751,88 +758,95 @@
 
                                         </div>
                                     </div>
-                                    <table class="table table-bordered table-main">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-main">
 
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
 
-                                                <th class="sortable col-propertyType" data-col="propertyType">
-                                                    Property Type <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-propertyType" data-col="propertyType">
+                                                        Property Type <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="col-status" data-col="status">
-                                                    Status
-                                                </th>
+                                                    <th class="col-status" data-col="status">
+                                                        Status
+                                                    </th>
 
-                                                <th class="sortable col-aeBy" data-col="aeBy">
-                                                    Created By <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                                        Created By <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeDate" data-col="aeDate">
-                                                    Created Date <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                                        Created Date <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                        <tbody class="bg-white">
+                                            <tbody class="bg-white">
 
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-propertyType text-center">Residential Apartment</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Arun Kumar</td>
-                                                <td class="col-aeDate text-center">12-03-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="col-propertyType text-center">Residential Apartment</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Arun Kumar</td>
+                                                    <td class="col-aeDate text-center">12-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-propertyType text-center">Independent House</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Priya S</td>
-                                                <td class="col-aeDate text-center">28-02-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="col-propertyType text-center">Independent House</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Priya S</td>
+                                                    <td class="col-aeDate text-center">28-02-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td class="col-propertyType text-center">Commercial Shop</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">John Doe</td>
-                                                <td class="col-aeDate text-center">05-01-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="col-propertyType text-center">Commercial Shop</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">John Doe</td>
+                                                    <td class="col-aeDate text-center">05-01-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        </tbody>
+                                            </tbody>
 
-                                    </table>
-
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="propertyUsageType" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
@@ -894,90 +908,97 @@
 
                                         </div>
                                     </div>
+                                    <div class="table-responsive">
+                                        <!-- TABLE -->
+                                        <table class="table table-bordered table-main">
 
-                                    <!-- TABLE -->
-                                    <table class="table table-bordered table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
 
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
+                                                    <th class="sortable col-propertyUsageType"
+                                                        data-col="propertyUsageType">
+                                                        Usage Type <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-propertyUsageType" data-col="propertyUsageType">
-                                                    Usage Type <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="col-status" data-col="status">
+                                                        Status
+                                                    </th>
 
-                                                <th class="col-status" data-col="status">
-                                                    Status
-                                                </th>
+                                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                                        Created By <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeBy" data-col="aeBy">
-                                                    Created By <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                                        Created Date <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeDate" data-col="aeDate">
-                                                    Created Date <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                            <tbody class="bg-white">
 
-                                        <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="col-propertyUsageType text-center">Residential Use</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Arun Kumar</td>
+                                                    <td class="col-aeDate text-center">10-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-propertyUsageType text-center">Residential Use</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Arun Kumar</td>
-                                                <td class="col-aeDate text-center">10-03-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="col-propertyUsageType text-center">Commercial Use</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Priya S</td>
+                                                    <td class="col-aeDate text-center">22-02-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-propertyUsageType text-center">Commercial Use</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Priya S</td>
-                                                <td class="col-aeDate text-center">22-02-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="col-propertyUsageType text-center">Industrial Use</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">John Doe</td>
+                                                    <td class="col-aeDate text-center">05-01-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td class="col-propertyUsageType text-center">Industrial Use</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">John Doe</td>
-                                                <td class="col-aeDate text-center">05-01-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                            </tbody>
 
-                                        </tbody>
-
-                                    </table>
-
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="commonAmenities" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
@@ -1037,88 +1058,95 @@
 
                                         </div>
                                     </div>
-                                    <table class="table table-bordered table-main">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-main">
 
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
 
-                                                <th class="sortable col-amenityName" data-col="amenityName">
-                                                    Amenity Name <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-amenityName" data-col="amenityName">
+                                                        Amenity Name <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="col-status" data-col="status">
-                                                    Status
-                                                </th>
+                                                    <th class="col-status" data-col="status">
+                                                        Status
+                                                    </th>
 
-                                                <th class="sortable col-aeBy" data-col="aeBy">
-                                                    Created By <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                                        Created By <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="sortable col-aeDate" data-col="aeDate">
-                                                    Created Date <span class="sort-indicator">⇅</span>
-                                                </th>
+                                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                                        Created Date <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                        <tbody class="bg-white">
+                                            <tbody class="bg-white">
 
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-amenityName text-center">Swimming Pool</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Arun Kumar</td>
-                                                <td class="col-aeDate text-center">14-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="col-amenityName text-center">Swimming Pool</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Arun Kumar</td>
+                                                    <td class="col-aeDate text-center">14-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-amenityName text-center">Gymnasium</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-green-lt">Active</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">Priya S</td>
-                                                <td class="col-aeDate text-center">02-03-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="col-amenityName text-center">Gymnasium</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-green-lt">Active</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">Priya S</td>
+                                                    <td class="col-aeDate text-center">02-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td class="col-amenityName text-center">Security System</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Inactive</span>
-                                                </td>
-                                                <td class="col-aeBy text-center">John Doe</td>
-                                                <td class="col-aeDate text-center">18-01-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="btn-actions justify-content-center">
-                                                        <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                                        <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="col-amenityName text-center">Security System</td>
+                                                    <td class="col-status text-center">
+                                                        <span class="badge bg-red-lt">Inactive</span>
+                                                    </td>
+                                                    <td class="col-aeBy text-center">John Doe</td>
+                                                    <td class="col-aeDate text-center">18-01-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="btn-actions justify-content-center">
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-edit fs-2"></i></a>
+                                                            <a class="btn btn-action"><i
+                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        </tbody>
+                                            </tbody>
 
-                                    </table>
-
+                                        </table>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="unitAmenities" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
@@ -1681,6 +1709,166 @@
                                             </span>
                                         </span>
                                     </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Unit Amenities Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-unitAmenities" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Unit of Amenities</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Location</label>
+                                        <input type="text" class="form-control" name="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Unit View</label>
+                                        <input type="text" class="form-control" name="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bedrooms count</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bathrooms count</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bathrooms type</label>
+                                        <select id="bathroomType" class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="attached">Attached</option>
+                                            <option value="independent">Independent</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Kitchen type</label>
+                                        <select id="kitchenType" class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="open">Open</option>
+                                            <option value="closed">Closed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Balcony</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Maid Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Laundry Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Furnished</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="fully">Fully</option>
+                                            <option value="partially">Partially</option>
+                                            <option value="notFurnished">Not Furnished</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Store Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Appliances</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="form-label">Active Status</label>
+                                <div class="form-selectgroup-boxes row mb-3">
+                                    <div class="col-lg-6">
+                                        <label class="form-selectgroup-item">
+                                            <input type="radio" name="report-type" value="1"
+                                                class="form-selectgroup-input" checked="">
+                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                                <span class="me-3">
+                                                    <span class="form-selectgroup-check"></span>
+                                                </span>
+                                                <span class="form-selectgroup-label-content">
+                                                    <span class="form-selectgroup-title strong mb-1">Active</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-selectgroup-item">
+                                            <input type="radio" name="report-type" value="1"
+                                                class="form-selectgroup-input">
+                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                                <span class="me-3">
+                                                    <span class="form-selectgroup-check"></span>
+                                                </span>
+                                                <span class="form-selectgroup-label-content">
+                                                    <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>

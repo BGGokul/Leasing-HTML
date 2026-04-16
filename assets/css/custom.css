@@ -21,11 +21,6 @@ th.sortable {
     opacity: 0.5;
 }
 
-.table-main {
-    width: max-content !important;
-    min-width: 100%;
-}
-
 .table-main thead th {
     background-color: #B2DFDB;
     color: #004D40;
@@ -37,6 +32,7 @@ th.sortable {
 
 .table-main tbody td {
     vertical-align: middle;
+    padding: 0px;
 }
 
 
@@ -53,6 +49,7 @@ th.sortable {
     width: 260px;
     transition: all 0.3s ease;
     overflow-y: auto;
+    flex-shrink: 0;
 }
 
 .sidebar .nav-link {
@@ -154,6 +151,7 @@ th.sortable {
     flex: 1;
     display: flex;
     flex-direction: column;
+    min-width: 0;
 }
 
 .content {
@@ -191,7 +189,11 @@ th.sortable {
     transition: all 0.25s ease-in-out;
 }
 
-/* Elegant hover */
+.nav-tabs .nav-link {
+    border: 1px solid rgba(18, 53, 91, 0.06);
+    border-radius: 6px;
+}
+
 .nav-tabs .nav-link:hover {
     color: #0c2440;
     background-color: rgba(18, 53, 91, 0.06);
@@ -221,4 +223,33 @@ th.sortable {
 /* Soft spacing */
 .nav-tabs .nav-item {
     margin-right: 6px;
+}
+
+/* Table horizontal scrollbar modern style */
+.table-responsive::-webkit-scrollbar {
+    height: 2px;
+}
+
+.table-responsive::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.table-responsive::-webkit-scrollbar-thumb {
+    background-color: #c1c1c1;
+    border-radius: 10px;
+}
+
+/* Firefox */
+.table-responsive {
+    scrollbar-width: thin;
+}
+
+
+/* Show scrollbar on hover */
+.table-responsive:hover {
+    scrollbar-color: #c1c1c1 transparent;
+}
+
+.table-responsive:hover::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
 }

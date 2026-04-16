@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>Leasing</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-blue text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-blue fw-bold">
+                        LM
+                    </div>
+                    <span class="logo-text fw-semibold fs-3">
+                        Leasing Management
+                    </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-4">
+                                Leasing
+                            </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link  text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-layout-grid fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    SubMaster
+                                </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./OwnerRegistration.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Owner Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Operator Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-users-group fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Community Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Tenant Registration
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
+                <button class="btn btn-icon bg-gray-50" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-2 fs-2 text-muted"></i>
+                </button>
+                <div class="ms-auto dropdown">
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-blue text-white">
+                            A
+                        </div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">
+                                Admin User
+                            </div>
+                            <div class="text-muted small">
+                                Administrator
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content p-4">
+                <!-- Breadcrumbs -->
+                <nav class="p-2 rounded-3">
+                    <ol class="breadcrumb d-flex align-items-center">
+                        <li class="breadcrumb-item">
+                            <a href="index.html" class="text-muted fs-2 text-decoration-none">
+                                <i class="ti ti-home me-1"></i>
+                            </a>
+                        </li>
+
+                        <li class="breadcrumb-item">
+                            Leasing
+                        </li>
+
+                        <li class="breadcrumb-item active text-muted" aria-current="page">
+                            Owner Registration
+                        </li>
+
+                    </ol>
+                </nav>
+                <div class="row row-cards justify-content-center">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="bg-green text-white avatar">
+                                            <i class="ti ti-user-check fs-1"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="fw-bold">132</div>
+                                        <div class="text-secondary">Active Owners</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="bg-info text-white avatar">
+                                            <i class="ti ti-user-cancel fs-1"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="fw-bold">78</div>
+                                        <div class="text-secondary">Inactive Owners</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card card-sm">
+                            <div class="card-body">
+                                <div class="row align-items-center">
+                                    <div class="col-auto">
+                                        <span class="bg-danger text-white avatar">
+                                            <i class="ti ti-certificate-off fs-1"></i>
+                                        </span>
+                                    </div>
+                                    <div class="col">
+                                        <div class="fw-bold">60</div>
+                                        <div class="text-secondary">Documents Expired</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smart-table">
+                    <div class="row align-items-center justify-content-end mb-3 mt-5">
+                        <div class="col-md-6 col-lg-4 col-xl-3">
+                            <div class="input-icon">
+                                <input type="text" class="form-control table-search" placeholder="Search…">
+                                <span class="input-icon-addon">
+                                    <i class="ti ti-search"></i>
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- ACTIONS -->
+                        <div class="col-auto ms-auto d-flex">
+
+                            <!-- COLUMN DROPDOWN -->
+                            <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="dropdown">
+                                <i class="ti ti-printer fs-1"></i>
+                            </button>
+                            <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="collapse"
+                                data-bs-target="#filter">
+                                <i class="ti ti-filter fs-1"></i>
+                            </button>
+                            <div class="dropdown">
+                                <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="dropdown">
+                                    <i class="ti ti-columns-3 fs-1"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2">
+
+                                    <div class="dropdown-header fw-bold text-muted px-2 mb-1">
+                                        Show / Hide Columns
+                                    </div>
+
+                                    <div class="dropdown-divider"></div>
+
+                                    <label class="form-check d-flex align-items-center py-1 ms-2">
+                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                            data-col="ownershipType" checked>
+                                        <span>Ownership Type</span>
+                                    </label>
+
+                                    <label class="form-check d-flex align-items-center py-1 ms-2">
+                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                            data-col="status" checked>
+                                        <span>Status</span>
+                                    </label>
+
+                                    <label class="form-check d-flex align-items-center py-1 ms-2">
+                                        <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="aeBy"
+                                            checked>
+                                        <span>Added / Edited By</span>
+                                    </label>
+
+                                    <label class="form-check d-flex align-items-center py-1 ms-2">
+                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                            data-col="aeDate" checked>
+                                        <span>Added / Edited Date</span>
+                                    </label>
+
+                                </div>
+                            </div>
+
+                            <!-- ADD BUTTON -->
+                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                data-bs-target="#modal-ownerShipType">
+                                <i class="ti ti-plus fs-2"></i> Add
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="collapse" id="filter">
+                        <div class="card">
+                            <div class="card-header px-3 p-2">
+                                <h3 class="card-title">Filter</h3>
+                                <div class="card-actions">
+                                    <a href="#" class="btn border-0" data-bs-toggle="collapse" data-bs-target="#filter">
+                                        <i class="ti ti-x fs-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="mb-3">
+                                            <label class="form-label">Owner Type</label>
+                                            <select class="form-select">
+                                                <option value="-1">Select</option>
+                                                <option value=" individual">Individual</option>
+                                                <option value="company">Company</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer py-2">
+                                <div class="row">
+                                    <div class="btn-list justify-content-end">
+                                        <a class="btn btn-sm btn-success">Search</a>
+                                        <a class="btn btn-sm btn-outline btn-danger">
+                                            Clear</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-responsive mt-3">
+                        <!-- TABLE -->
+                        <table class="table table-bordered table-main">
+
+                            <thead>
+                                <tr>
+                                    <th>S.No</th>
+
+                                    <th class="sortable col-ownershipType" data-col="ownershipType">
+                                        Ownership Type <span class="sort-indicator">⇅</span>
+                                    </th>
+
+                                    <th class="col-status" data-col="status">
+                                        Status
+                                    </th>
+
+                                    <th class="sortable col-aeBy" data-col="aeBy">
+                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                    </th>
+
+                                    <th class="sortable col-aeDate" data-col="aeDate">
+                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                    </th>
+
+                                    <th class="col-action" data-col="action">
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="bg-white">
+
+                                <tr>
+                                    <td class="text-center">1</td>
+                                    <td class="col-ownershipType text-center">Own</td>
+                                    <td class="col-status text-center">
+                                        <span class="badge bg-red-lt">Inactive</span>
+                                    </td>
+                                    <td class="col-aeBy text-center">Emma</td>
+                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                    <td class="text-center col-action">
+                                        <div class="btn-actions justify-content-center">
+                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
+                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td class="text-center">2</td>
+                                    <td class="col-ownershipType text-center">Third Prty</td>
+                                    <td class="col-status text-center">
+                                        <span class="badge bg-green-lt">Active</span>
+                                    </td>
+                                    <td class="col-aeBy text-center">Harry</td>
+                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                    <td class="text-center col-action">
+                                        <div class="btn-actions justify-content-center">
+                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
+                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">3</td>
+                                    <td class="col-ownershipType text-center">Other</td>
+                                    <td class="col-status text-center">
+                                        <span class="badge bg-green-lt">Active</span>
+                                    </td>
+                                    <td class="col-aeBy text-center">Jasmine</td>
+                                    <td class="col-aeDate text-center">16-04-2026</td>
+                                    <td class="text-center col-action">
+                                        <div class="btn-actions justify-content-center">
+                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
+                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                </div>
+            </main>
+            <!-- Footer -->
+            <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                <div class="text-dark fw-medium text-center">
+                    © 2026 Leasing Management System
+                </div>
+            </footer>
+
+
+            <!-- Owner Type Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-ownerType" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Owner Type</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Owner Type</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                            <label class="form-label">Active Status</label>
+                            <div class="form-selectgroup-boxes row mb-3">
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            checked="">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Owner Ship Type Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-ownerShipType" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Owner Ship Type</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Owner Ship Type</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                            <label class="form-label">Active Status</label>
+                            <div class="form-selectgroup-boxes row mb-3">
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            checked="">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Property Type Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-propertyType" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Property Type</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Property Type</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                            <label class="form-label">Active Status</label>
+                            <div class="form-selectgroup-boxes row mb-3">
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            checked="">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Property Usage Type Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-propertyUsageType" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Property Usage Type</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Property Usage Type</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                            <label class="form-label">Active Status</label>
+                            <div class="form-selectgroup-boxes row mb-3">
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            checked="">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Common Amenities Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-commonAmenities" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Common Amenities</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">Amenity</label>
+                                <input type="text" class="form-control" name="example-text-input">
+                            </div>
+                            <label class="form-label">Active Status</label>
+                            <div class="form-selectgroup-boxes row mb-3">
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            checked="">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Unit Amenities Modal -->
+            <div class="modal modal-blur fade rounded" id="modal-unitAmenities" tabindex="-1" role="dialog"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Unit of Amenities</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Location</label>
+                                        <input type="text" class="form-control" name="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Unit View</label>
+                                        <input type="text" class="form-control" name="example-text-input">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bedrooms count</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bathrooms count</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Bathrooms type</label>
+                                        <select id="bathroomType" class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="attached">Attached</option>
+                                            <option value="independent">Independent</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Kitchen type</label>
+                                        <select id="kitchenType" class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="open">Open</option>
+                                            <option value="closed">Closed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Balcony</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Maid Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Laundry Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Furnished</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="fully">Fully</option>
+                                            <option value="partially">Partially</option>
+                                            <option value="notFurnished">Not Furnished</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Store Room</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Appliances</label>
+                                        <select class="form-select">
+                                            <option value="-1">Select</option>
+                                            <option value="yes">Yes</option>
+                                            <option value="no">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <label class="form-label">Active Status</label>
+                                <div class="form-selectgroup-boxes row mb-3">
+                                    <div class="col-lg-6">
+                                        <label class="form-selectgroup-item">
+                                            <input type="radio" name="report-type" value="1"
+                                                class="form-selectgroup-input" checked="">
+                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                                <span class="me-3">
+                                                    <span class="form-selectgroup-check"></span>
+                                                </span>
+                                                <span class="form-selectgroup-label-content">
+                                                    <span class="form-selectgroup-title strong mb-1">Active</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="form-selectgroup-item">
+                                            <input type="radio" name="report-type" value="1"
+                                                class="form-selectgroup-input">
+                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
+                                                <span class="me-3">
+                                                    <span class="form-selectgroup-check"></span>
+                                                </span>
+                                                <span class="form-selectgroup-label-content">
+                                                    <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                                </span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i>
+                                Submit
+                            </a>
+                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
+                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+
+    <!-- Tom Select CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
+
+    <!-- Tom Select JS -->
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            class SmartTable {
+
+                constructor(wrapper) {
+                    this.wrapper = wrapper;
+                    this.sortDirection = {};
+                    this.initSearch();
+                    this.initColumnToggle();
+                    this.initSorting();
+                }
+
+                // Get table inside this smart-table
+                getTable() {
+                    return this.wrapper.querySelector(".table-main");
+                }
+
+                /* ================= SEARCH ================= */
+
+                initSearch() {
+                    const searchInput = this.wrapper.querySelector(".table-search");
+
+                    if (!searchInput) return;
+
+                    searchInput.addEventListener("keyup", () => {
+
+                        const value = searchInput.value.toLowerCase();
+                        const table = this.getTable();
+
+                        if (!table) return;
+
+                        const rows = table.querySelectorAll("tbody tr");
+
+                        rows.forEach(row => {
+
+                            const text = row.innerText.toLowerCase();
+
+                            row.style.display =
+                                text.includes(value) ? "" : "none";
+
+                        });
+
+                    });
+                }
+
+                /* ================= COLUMN TOGGLE ================= */
+
+                initColumnToggle() {
+
+                    const checkboxes =
+                        this.wrapper.querySelectorAll(".col-toggle");
+
+                    checkboxes.forEach(cb => {
+
+                        cb.addEventListener("change", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = cb.dataset.col;
+
+                            table
+                                .querySelectorAll(".col-" + col)
+                                .forEach(cell => {
+
+                                    cell.style.display =
+                                        cb.checked ? "" : "none";
+
+                                });
+
+                        });
+
+                    });
+
+                }
+
+                /* ================= SORTING ================= */
+
+                initSorting() {
+
+                    const headers =
+                        this.wrapper.querySelectorAll(".sortable");
+
+                    headers.forEach(th => {
+
+                        th.addEventListener("click", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = th.dataset.col;
+
+                            this.sortDirection[col] =
+                                !this.sortDirection[col];
+
+                            const direction =
+                                this.sortDirection[col] ? 1 : -1;
+
+                            const tbody = table.tBodies[0];
+
+                            const rows =
+                                Array.from(tbody.rows);
+
+                            rows.sort((a, b) => {
+
+                                let A =
+                                    a.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                let B =
+                                    b.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                // Number sort
+                                if (!isNaN(A) && !isNaN(B)) {
+                                    return (A - B) * direction;
+                                }
+
+                                // Date sort (dd-mm-yyyy)
+                                if (A.match(/\\d{2}-\\d{2}-\\d{4}/)) {
+
+                                    const dateA =
+                                        new Date(
+                                            A.split("-").reverse().join("-")
+                                        );
+
+                                    const dateB =
+                                        new Date(
+                                            B.split("-").reverse().join("-")
+                                        );
+
+                                    return (dateA - dateB) * direction;
+
+                                }
+
+                                // Text sort
+                                return A.localeCompare(B) * direction;
+
+                            });
+
+                            tbody.append(...rows);
+
+                        });
+
+                    });
+
+                }
+
+            }
+
+            /* Initialize all smart tables */
+
+            document
+                .querySelectorAll(".smart-table")
+                .forEach(wrapper => {
+
+                    new SmartTable(wrapper);
+
+                });
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            new TomSelect("#dateFormat", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            new TomSelect("#currency", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            new TomSelect("#nationality", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            new TomSelect("#gender", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+        });
+    </script>
+</body>
+
+</html>
