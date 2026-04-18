@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>New Owner Registration</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Tom Select CSS -->
+    <link href="./assets/css/tom-select.css" rel="stylesheet">
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-blue text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-blue fw-bold">
+                        LM
+                    </div>
+                    <span class="logo-text fw-semibold fs-3">
+                        Leasing Management
+                    </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-4">
+                                Leasing
+                            </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Sub Master
+                                </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./OwnerRegistration.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Owner Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Operator Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-users-group fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Community Registration
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Tenant Registration
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-blue text-white">
+                            A
+                        </div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">
+                                Admin User
+                            </div>
+                            <div class="text-muted small">
+                                Administrator
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content">
+                <div class="p-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md">
+                                    <div class="d-flex align-items-center">
+                                        <span class="avatar bg-primary text-white me-3">
+                                            <i class="ti ti-user-plus fs-2"></i>
+                                        </span>
+                                        <div>
+                                            <h3 class="page-title mb-0 fw-bold">
+                                                New Owner Registration
+                                            </h3>
+                                            <div class="text-muted fs-5">
+                                                Add new owner registration data
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-0 mt-3 d-md-none" />
+                                <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0">
+                                            <li class="breadcrumb-item">
+                                                <i class="ti ti-home"></i>
+                                            </li>
+                                            <li class="breadcrumb-item">
+                                                Leasing
+                                            </li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                New Owner Registration
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div
+                            class="card-header  bg-gradient bg-gradient-from-primary bg-gradient-to-blue text-white py-3">
+                            <h3 class="card-title fs-3 fw-bold">
+                                Owner Information
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Owner Type</label>
+                                        <input type="text" class="form-control" value="Individual" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Gender</label>
+                                        <select class="form-select">
+                                            <option>Select</option>
+                                            <option>Male</option>
+                                            <option>Female</option>
+                                            <option>Prefer not to say</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Date of Birth</label>
+                                        <input type="text" id="dob" class="form-control" placeholder="Select Date" />
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Age</label>
+                                        <input type="text" id="age" class="form-control" disabled readonly>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Nationality</label>
+                                        <select class="form-select" id="nationality">
+                                            <option>Select</option>
+                                            <option>Indian</option>
+                                            <option>UAE</option>
+                                            <option>USA</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Country of Residence</label>
+                                        <select class="form-select">
+                                            <option>Select Country</option>
+                                            <option>India</option>
+                                            <option>UAE</option>
+                                            <option>America</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">State / Emirate / Region</label>
+                                        <select class="form-select">
+                                            <option>Select State</option>
+                                            <option>Tamil Nadu</option>
+                                            <option>kerala</option>
+                                            <option>Dubai</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">City</label>
+                                        <select class="form-select">
+                                            <option>Select City</option>
+                                            <option>Madurai</option>
+                                            <option>Cochi</option>
+                                            <option>Chennai</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6 col-lg-3">
+                                    <div class="mb-3">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 col-lg-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Address</label>
+                                        <textarea name="" id="" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 col-lg-6">
+                                    <div class="mb-3">
+                                        <label class="form-label">Photo</label>
+                                        <input type="file" class="form-control">
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="btn-list justify-content-end">
+                                    <a class="btn btn-primary"> Submit</a>
+                                    <a class="btn btn-outline btn-secondary"> Cancel</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                    <div class="text-dark fw-medium text-center">
+                        © 2026 Leasing Management System
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+    <!-- Tom Select JS -->
+    <script src="./assets/scripts/tom-select.complete.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js">
+    </script>
+    <script>
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const dobPicker = new Litepicker({
+                element: document.getElementById("dob"),
+                singleMode: true,
+                format: "DD-MM-YYYY",
+                onSelect: function (date) {
+                    if (!date) return;
+                    let dob = new Date(date);
+                    let today = new Date();
+                    let age = today.getFullYear() - dob.getFullYear();
+                    let m = today.getMonth() - dob.getMonth();
+                    if (m < 0 || (m === 0 && today.getDate() < dob.getDate())
+                    ) { age--; }
+                    document.getElementById("age").value = age;
+                }
+            });
+
+            // new TomSelect("#dateFormat", {
+            //     placeholder: "Search...",
+            //     create: false,
+            //     maxOptions: 100,
+            //     allowEmptyOption: true
+            // });
+            // new TomSelect("#currency", {
+            //     placeholder: "Search...",
+            //     create: false,
+            //     maxOptions: 100,
+            //     allowEmptyOption: true
+            // });
+            new TomSelect("#nationality", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            // new TomSelect("#gender", {
+            //     placeholder: "Search...",
+            //     create: false,
+            //     maxOptions: 100,
+            //     allowEmptyOption: true
+            // });
+
+        });
+
+    </script>
+</body>
+
+</html>

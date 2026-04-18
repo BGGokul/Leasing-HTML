@@ -223,7 +223,8 @@
                             <h2 class="card-title text-light fw-bold mb-0">
                                 Owner List
                             </h2>
-                            <button class="btn btn-light ms-auto"><i class="ti ti-plus me-1 fw-bold fs-3"></i>Add
+                            <button class="btn btn-light ms-auto" data-bs-toggle="modal"
+                                data-bs-target="#modal-addNewOwner"><i class="ti ti-plus me-1 fw-bold fs-3"></i>Add
                                 New</button>
                         </div>
                         <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
@@ -551,7 +552,7 @@
 
 
             <!-- Owner Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-ownerType" tabindex="-1" role="dialog"
+            <div class="modal modal-blur fade rounded" id="modal-addNewOwner" tabindex="-1" role="dialog"
                 aria-hidden="true">
                 <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -560,48 +561,37 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Owner Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                            <label class="form-label">Active Status</label>
+                            <label class="form-label">Owner Type</label>
                             <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 mt-2">
                                     <label class="form-selectgroup-item">
                                         <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="">
+                                            checked="" onclick="location.href='./AddNewIndividualOwner.html'">
                                         <span class="form-selectgroup-label d-flex align-items-center p-2">
                                             <span class="me-3">
                                                 <span class="form-selectgroup-check"></span>
                                             </span>
                                             <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Active</span>
+                                                <span class="form-selectgroup-title strong mb-1">Individual</span>
                                             </span>
                                         </span>
                                     </label>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-6 mt-2">
                                     <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
+                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
+                                            onclick="location.href='./AddNewCompanyOwner.html'">
                                         <span class="form-selectgroup-label d-flex align-items-center p-2">
                                             <span class="me-3">
                                                 <span class="form-selectgroup-check"></span>
                                             </span>
                                             <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
+                                                <span class="form-selectgroup-title strong mb-1">Company</span>
                                             </span>
                                         </span>
                                     </label>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
                         </div>
                     </div>
                 </div>
