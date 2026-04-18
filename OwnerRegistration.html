@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Tom Select CSS -->
+    <link href="./assets/css/tom-select.css" rel="stylesheet">
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
@@ -228,7 +230,7 @@
                             <div class="smart-table">
                                 <div class="row align-items-center justify-content-end mb-3">
                                     <div class="col-md-6 col-lg-4 col-xl-5">
-                                        <div class="input-icon">
+                                        <div class="input-icon mt-1">
                                             <input type="text" class="form-control table-search" placeholder="Search…">
                                             <span class="input-icon-addon">
                                                 <i class="ti ti-search"></i>
@@ -236,12 +238,12 @@
                                         </div>
                                     </div>
                                     <div class="col-auto ms-auto d-flex gap-1">
-                                        <button class="btn btn-md px-2 btn-blue" data-bs-toggle="collapse"
+                                        <button class="btn btn-md px-2 btn-blue mt-1" data-bs-toggle="collapse"
                                             data-bs-target="#filter">
                                             <i class="ti ti-filter fs-2"></i>
                                         </button>
                                         <div class="dropdown">
-                                            <button class="btn btn-md btn-secondary px-2 py-1"
+                                            <button class="btn btn-md btn-secondary px-2 py-1 mt-1"
                                                 data-bs-toggle="dropdown">
                                                 <i class="ti ti-columns-3 fs-2"></i>
                                             </button>
@@ -278,7 +280,7 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-md btn-rss px-2 py-1 rounded-2">
+                                        <button class="btn btn-md btn-rss px-2 py-1  mt-1 rounded-2">
                                             <i class="ti ti-printer fs-2 me-1"></i>Print
                                         </button>
                                     </div>
@@ -498,7 +500,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <div class="mt-2 d-flex justify-content-between align-items-center">
+                            <div class="mt-2 d-flex flex-wrap justify-content-between align-items-center">
                                 <div>
                                     <p class="m-0 text-muted">
                                         Showing
@@ -610,12 +612,8 @@
     <script src="./assets/scripts/script.min.js"></script>
     <!-- Custom JS -->
     <script src="./assets/scripts/custom.js"></script>
-
-    <!-- Tom Select CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.css" rel="stylesheet">
-
     <!-- Tom Select JS -->
-    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    <script src="./assets/scripts/tom-select.complete.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 

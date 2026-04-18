@@ -5,6 +5,7 @@
     --tblr-primary-rgb: 51, 65, 85;
 }
 
+
 html {
     margin: 0 !important;
 }
@@ -12,6 +13,7 @@ html {
 body {
     font-family: 'Lato', system-ui, -apple-system, sans-serif !important;
     background: #f1f5f9 !important;
+    overflow: hidden;
 }
 
 .hidden-col {
@@ -127,10 +129,11 @@ th.sortable {
 
     .sidebar {
         position: fixed;
-        left: -260px;
+        left: -300px;
         top: 0;
         height: 100%;
         z-index: 1050;
+        width: 300px;
     }
 
     .layout.mobile-open .sidebar {
@@ -160,6 +163,8 @@ th.sortable {
     display: flex;
     flex-direction: column;
     min-width: 0;
+    max-height: 100dvh;
+    overflow-y: auto;
 }
 
 .content {
