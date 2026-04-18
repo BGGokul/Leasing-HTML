@@ -170,9 +170,6 @@ th.sortable {
 .content {
     flex: 1;
     background-color: rgb(240, 244, 248) !important;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
 }
 
 /* Multiselect Modification */
