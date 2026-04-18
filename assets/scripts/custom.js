@@ -8,6 +8,14 @@ function handleSidebarToggle() {
   }
 }
 
+function toggleFullScreen() {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+}
+
 function closeMobileSidebar() {
   document.getElementById("layout").classList.remove("mobile-open");
 }

@@ -13,7 +13,7 @@
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,9 +45,9 @@
                         </a>
                         <div id="submenu" class="m-2 d-none">
                             <a class="nav-link text-white my-3" href="./SubMaster.html">
-                                <i class="ti ti-layout-grid fs-2 me-2"></i>
+                                <i class="ti ti-category fs-2 me-2"></i>
                                 <span class="menu-text fs-4">
-                                    SubMaster
+                                    Sub Master
                                 </span>
                             </a>
                             <a class="nav-link text-white my-3" href="./OwnerRegistration.html">
@@ -83,10 +83,17 @@
         <div class="main">
             <!-- Header -->
             <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
-                <button class="btn btn-icon bg-gray-50" onclick="handleSidebarToggle()">
-                    <i class="ti ti-menu-2 fs-2 text-muted"></i>
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
                 </button>
-                <div class="ms-auto dropdown">
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
                     <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
                         data-bs-toggle="dropdown">
                         <div class="avatar bg-blue text-white">

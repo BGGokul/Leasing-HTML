@@ -13,7 +13,7 @@
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,9 +45,9 @@
                         </a>
                         <div id="submenu" class="m-2 d-none">
                             <a class="nav-link active my-3" href="./SubMaster.html">
-                                <i class="ti ti-layout-grid fs-2 me-2"></i>
+                                <i class="ti ti-category fs-2 me-2"></i>
                                 <span class="menu-text fs-4">
-                                    SubMaster
+                                    Sub Master
                                 </span>
                             </a>
                             <a class="nav-link text-white my-3" href="./OwnerRegistration.html">
@@ -83,10 +83,17 @@
         <div class="main">
             <!-- Header -->
             <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
-                <button class="btn btn-icon bg-gray-50" onclick="handleSidebarToggle()">
-                    <i class="ti ti-menu-2 fs-2 text-muted"></i>
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
                 </button>
-                <div class="ms-auto dropdown">
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
                     <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
                         data-bs-toggle="dropdown">
                         <div class="avatar bg-blue text-white">
@@ -115,28 +122,46 @@
             </header>
             <!-- Content -->
             <main class="content p-4">
-                <!-- Breadcrumbs -->
-                <nav class="p-2 rounded-3">
-                    <ol class="breadcrumb d-flex align-items-center">
-                        <li class="breadcrumb-item">
-                            <a href="index.html" class="text-muted fs-2 text-decoration-none">
-                                <i class="ti ti-home me-1"></i>
-                            </a>
-                        </li>
-
-                        <li class="breadcrumb-item">
-                            Leasing
-                        </li>
-
-                        <li class="breadcrumb-item active text-muted" aria-current="page">
-                            SubMaster
-                        </li>
-
-                    </ol>
-                </nav>
-                <div class="card">
-                    <div class="card-header bg-gray-300 text-gray-900 py-3">
-                        <h3 class="card-title fs-3">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md">
+                                <div class="d-flex align-items-center">
+                                    <span class="avatar bg-primary text-white me-3">
+                                        <i class="ti ti-category fs-2"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="page-title mb-0 fw-bold">
+                                            Sub Master
+                                        </h3>
+                                        <div class="text-muted fs-5">
+                                            Manage your master data
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-0 mt-3 d-md-none" />
+                            <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item">
+                                            <i class="ti ti-home"></i>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Leasing
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Sub Master
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-3">
+                    <div class="card-header bg-cyan text-white py-3">
+                        <h3 class="card-title fs-3 fw-bold">
                             Basic Information
                         </h3>
                     </div>
@@ -180,7 +205,6 @@
                                     <label class="form-label">Nationality</label>
                                     <select id="nationality" class="form-select">
                                         <option value="-1">Select</option>
-                                        <option value="-1">Select Nationality</option>
                                         <option value="Afghan">Afghan</option>
                                         <option value="Albanian">Albanian</option>
                                         <option value="Algerian">Algerian</option>
@@ -375,11 +399,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card-footer">
+
                         <div class="row">
                             <div class="btn-list justify-content-end">
-                                <a class="btn btn-primary"> Submit</a>
+                                <a class="btn btn-cyan"> Submit</a>
                                 <a class="btn btn-outline btn-secondary"> Cancel</a>
                             </div>
                         </div>
@@ -387,36 +410,47 @@
                 </div>
                 <div class="mt-5">
                     <div class="card smart-table">
-                        <div class="card-header">
-                            <!-- Tab Navigation (Tabs on top) -->
-                            <ul class="nav nav-tabs border-bottom-0" role="tablist">
+                        <div class="card-header border-0 p-3 pb-0">
+                            <ul class="nav nav-tabs border-bottom-0 flex-nowrap overflow-x-auto overflow-y-hidden"
+                                role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#ownerType">Owner Type</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#ownerShipType">Ownership Type</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#propertyType">Property Type</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#propertyUsageType">Property Usage
+                                    <a class="nav-link active rounded-bottom-0" data-bs-toggle="tab"
+                                        href="#ownerType">Owner
                                         Type</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#commonAmenities">Common
+                                    <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
+                                        href="#ownerShipType">Ownership
+                                        Type</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
+                                        href="#propertyType">Property
+                                        Type</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
+                                        href="#propertyUsageType">Property
+                                        Usage
+                                        Type</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
+                                        href="#commonAmenities">Common
                                         Amenities</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#unitAmenities">Unit of Amenities
+                                    <a class="nav-link rounded-bottom-0" data-bs-toggle="tab" href="#unitAmenities">Unit
+                                        of Amenities
                                     </a>
                                 </li>
                             </ul>
+
                         </div>
 
-                        <div class="card-body" style="background-color:  rgba(6, 110, 208, 0.11)">
-                            <div class="tab-content">
-                                <div class="tab-pane fade show active" id="ownerType" role="tabpanel">
+                        <div class="card-body p-0">
+                            <div class="tab-content mx-3">
+                                <div class="tab-pane fade show active p-3" id="ownerType" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="input-icon">
@@ -430,8 +464,8 @@
 
                                         <div class="col-auto ms-auto d-flex">
                                             <div class="dropdown">
-                                                <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="dropdown">
-                                                    <i class="ti ti-columns-3 fs-1"></i>
+                                                <button class="btn  px-2 py-1" data-bs-toggle="dropdown">
+                                                    <i class="ti ti-columns-3 fs-2"></i>
                                                 </button>
 
                                                 <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2">
@@ -467,10 +501,9 @@
                                                     </label>
                                                 </div>
                                             </div>
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-ownerType">
-                                                <i class="ti ti-plus fs-2"></i>
-                                                Add</a>
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add</a>
                                         </div>
                                     </div>
                                     <div class="table-responsive">
@@ -505,11 +538,11 @@
                                                     <td class="col-aeBy text-center">Emma</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action">
-                                                                <i class="ti ti-edit fs-2"></i>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
                                                             </a>
-                                                            <a class="btn btn-action">
+                                                            <a class="text-red">
                                                                 <i class="ti ti-trash fs-2"></i>
                                                             </a>
                                                         </div>
@@ -525,11 +558,11 @@
                                                     <td class="col-aeBy text-center">Harry</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action">
-                                                                <i class="ti ti-edit fs-2"></i>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
                                                             </a>
-                                                            <a class="btn btn-action">
+                                                            <a class="text-red">
                                                                 <i class="ti ti-trash fs-2"></i>
                                                             </a>
                                                         </div>
@@ -541,7 +574,7 @@
                                     </div>
 
                                 </div>
-                                <div class="tab-pane fade" id="ownerShipType" role="tabpanel">
+                                <div class="tab-pane fade p-3" id="ownerShipType" role="tabpanel">
 
                                     <!-- TOP BAR -->
                                     <div class="row align-items-center justify-content-end mb-3">
@@ -602,9 +635,9 @@
                                             </div>
 
                                             <!-- ADD BUTTON -->
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-ownerShipType">
-                                                <i class="ti ti-plus fs-2"></i> Add
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add
                                             </a>
 
                                         </div>
@@ -650,11 +683,13 @@
                                                     <td class="col-aeBy text-center">Emma</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -668,11 +703,13 @@
                                                     <td class="col-aeBy text-center">Harry</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -685,11 +722,13 @@
                                                     <td class="col-aeBy text-center">Jasmine</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -699,7 +738,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="propertyType" role="tabpanel">
+                                <div class="tab-pane fade  p-3" id="propertyType" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="input-icon">
@@ -751,9 +790,9 @@
 
                                                 </div>
                                             </div>
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-propertyType">
-                                                <i class="ti ti-plus fs-2"></i> Add
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add
                                             </a>
 
                                         </div>
@@ -798,11 +837,13 @@
                                                     <td class="col-aeBy text-center">Arun Kumar</td>
                                                     <td class="col-aeDate text-center">12-03-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -816,11 +857,13 @@
                                                     <td class="col-aeBy text-center">Priya S</td>
                                                     <td class="col-aeDate text-center">28-02-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -834,11 +877,13 @@
                                                     <td class="col-aeBy text-center">John Doe</td>
                                                     <td class="col-aeDate text-center">05-01-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -848,7 +893,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="propertyUsageType" role="tabpanel">
+                                <div class="tab-pane fade p-3" id="propertyUsageType" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="input-icon">
@@ -901,9 +946,9 @@
                                             </div>
 
                                             <!-- ADD BUTTON -->
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-propertyUsageType">
-                                                <i class="ti ti-plus fs-2"></i> Add
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add
                                             </a>
 
                                         </div>
@@ -950,11 +995,13 @@
                                                     <td class="col-aeBy text-center">Arun Kumar</td>
                                                     <td class="col-aeDate text-center">10-03-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -968,11 +1015,13 @@
                                                     <td class="col-aeBy text-center">Priya S</td>
                                                     <td class="col-aeDate text-center">22-02-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -986,11 +1035,13 @@
                                                     <td class="col-aeBy text-center">John Doe</td>
                                                     <td class="col-aeDate text-center">05-01-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1000,7 +1051,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="commonAmenities" role="tabpanel">
+                                <div class="tab-pane fade p-3" id="commonAmenities" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="input-icon">
@@ -1051,9 +1102,9 @@
 
                                                 </div>
                                             </div>
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-commonAmenities">
-                                                <i class="ti ti-plus fs-2"></i> Add
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add
                                             </a>
 
                                         </div>
@@ -1098,11 +1149,13 @@
                                                     <td class="col-aeBy text-center">Arun Kumar</td>
                                                     <td class="col-aeDate text-center">14-04-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1116,11 +1169,13 @@
                                                     <td class="col-aeBy text-center">Priya S</td>
                                                     <td class="col-aeDate text-center">02-03-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1134,11 +1189,13 @@
                                                     <td class="col-aeBy text-center">John Doe</td>
                                                     <td class="col-aeDate text-center">18-01-2026</td>
                                                     <td class="text-center col-action">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1148,7 +1205,7 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="unitAmenities" role="tabpanel">
+                                <div class="tab-pane fade p-3" id="unitAmenities" role="tabpanel">
                                     <div class="row align-items-center justify-content-end mb-3">
                                         <div class="col-md-6 col-lg-4 col-xl-3">
                                             <div class="input-icon">
@@ -1265,9 +1322,9 @@
 
                                                 </div>
                                             </div>
-                                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
+                                            <a class="btn btn-blue ms-2" data-bs-toggle="modal"
                                                 data-bs-target="#modal-unitAmenities">
-                                                <i class="ti ti-plus fs-2"></i> Add
+                                                <i class="ti ti-plus fw-bold me-1"></i> Add
                                             </a>
 
                                         </div>
@@ -1381,12 +1438,14 @@
                                                     <td class="col-aeBy text-center">Arun Kumar</td>
                                                     <td class="col-aeDate text-center">16-04-2026</td>
 
-                                                    <td class="text-center">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                    <td class="text-center col-action">
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1413,13 +1472,14 @@
 
                                                     <td class="col-aeBy text-center">Priya S</td>
                                                     <td class="col-aeDate text-center">12-04-2026</td>
-
-                                                    <td class="text-center">
-                                                        <div class="btn-actions justify-content-center">
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-edit fs-2"></i></a>
-                                                            <a class="btn btn-action"><i
-                                                                    class="ti ti-trash fs-2"></i></a>
+                                                    <td class="text-center col-action">
+                                                        <div class="justify-content-center">
+                                                            <a class="text-teal">
+                                                                <i class="ti ti-pencil fs-2"></i>
+                                                            </a>
+                                                            <a class="text-red">
+                                                                <i class="ti ti-trash fs-2"></i>
+                                                            </a>
                                                         </div>
                                                     </td>
                                                 </tr>
@@ -1489,7 +1549,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>
@@ -1545,7 +1605,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>
@@ -1601,7 +1661,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>
@@ -1657,7 +1717,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>
@@ -1713,7 +1773,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>
@@ -1873,7 +1933,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-primary">
+                            <a class="btn btn-blue">
                                 <i class="ti ti-send fs-3 me-1"></i>
                                 Submit
                             </a>

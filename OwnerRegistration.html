@@ -13,7 +13,7 @@
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -45,9 +45,9 @@
                         </a>
                         <div id="submenu" class="m-2 d-none">
                             <a class="nav-link  text-white my-3" href="./SubMaster.html">
-                                <i class="ti ti-layout-grid fs-2 me-2"></i>
+                                <i class="ti ti-category fs-2 me-2"></i>
                                 <span class="menu-text fs-4">
-                                    SubMaster
+                                    Sub Master
                                 </span>
                             </a>
                             <a class="nav-link active my-3" href="./OwnerRegistration.html">
@@ -83,10 +83,17 @@
         <div class="main">
             <!-- Header -->
             <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
-                <button class="btn btn-icon bg-gray-50" onclick="handleSidebarToggle()">
-                    <i class="ti ti-menu-2 fs-2 text-muted"></i>
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
                 </button>
-                <div class="ms-auto dropdown">
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
                     <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
                         data-bs-toggle="dropdown">
                         <div class="avatar bg-blue text-white">
@@ -115,266 +122,423 @@
             </header>
             <!-- Content -->
             <main class="content p-4">
-                <!-- Breadcrumbs -->
-                <nav class="p-2 rounded-3">
-                    <ol class="breadcrumb d-flex align-items-center">
-                        <li class="breadcrumb-item">
-                            <a href="index.html" class="text-muted fs-2 text-decoration-none">
-                                <i class="ti ti-home me-1"></i>
-                            </a>
-                        </li>
-
-                        <li class="breadcrumb-item">
-                            Leasing
-                        </li>
-
-                        <li class="breadcrumb-item active text-muted" aria-current="page">
-                            Owner Registration
-                        </li>
-
-                    </ol>
-                </nav>
-                <div class="row row-cards justify-content-center">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <span class="bg-green text-white avatar">
-                                            <i class="ti ti-user-check fs-1"></i>
-                                        </span>
-                                    </div>
-                                    <div class="col">
-                                        <div class="fw-bold">132</div>
-                                        <div class="text-secondary">Active Owners</div>
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md">
+                                <div class="d-flex align-items-center">
+                                    <span class="avatar bg-primary text-white me-3">
+                                        <i class="ti ti-user fs-2"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="page-title mb-0 fw-bold">
+                                            Owner Registration
+                                        </h3>
+                                        <div class="text-muted fs-5">
+                                            Manage owner registration and records
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <span class="bg-info text-white avatar">
-                                            <i class="ti ti-user-cancel fs-1"></i>
-                                        </span>
-                                    </div>
-                                    <div class="col">
-                                        <div class="fw-bold">78</div>
-                                        <div class="text-secondary">Inactive Owners</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card card-sm">
-                            <div class="card-body">
-                                <div class="row align-items-center">
-                                    <div class="col-auto">
-                                        <span class="bg-danger text-white avatar">
-                                            <i class="ti ti-certificate-off fs-1"></i>
-                                        </span>
-                                    </div>
-                                    <div class="col">
-                                        <div class="fw-bold">60</div>
-                                        <div class="text-secondary">Documents Expired</div>
-                                    </div>
-                                </div>
+                            <hr class="mb-0 mt-3 d-md-none" />
+                            <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item">
+                                            <i class="ti ti-home"></i>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Leasing
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Owner Registration
+                                        </li>
+                                    </ol>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="smart-table">
-                    <div class="row align-items-center justify-content-end mb-3 mt-5">
-                        <div class="col-md-6 col-lg-4 col-xl-3">
-                            <div class="input-icon">
-                                <input type="text" class="form-control table-search" placeholder="Search…">
-                                <span class="input-icon-addon">
-                                    <i class="ti ti-search"></i>
+                <div class="row g-3">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-blue text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-blue me-3">
+                                    <i class="ti ti-users fs-1"></i>
                                 </span>
-                            </div>
-                        </div>
-
-                        <!-- ACTIONS -->
-                        <div class="col-auto ms-auto d-flex">
-
-                            <!-- COLUMN DROPDOWN -->
-                            <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="dropdown">
-                                <i class="ti ti-printer fs-1"></i>
-                            </button>
-                            <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="collapse"
-                                data-bs-target="#filter">
-                                <i class="ti ti-filter fs-1"></i>
-                            </button>
-                            <div class="dropdown">
-                                <button class="btn btn-md btn-icon px-2 py-1" data-bs-toggle="dropdown">
-                                    <i class="ti ti-columns-3 fs-1"></i>
-                                </button>
-                                <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2">
-
-                                    <div class="dropdown-header fw-bold text-muted px-2 mb-1">
-                                        Show / Hide Columns
-                                    </div>
-
-                                    <div class="dropdown-divider"></div>
-
-                                    <label class="form-check d-flex align-items-center py-1 ms-2">
-                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                            data-col="ownershipType" checked>
-                                        <span>Ownership Type</span>
-                                    </label>
-
-                                    <label class="form-check d-flex align-items-center py-1 ms-2">
-                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                            data-col="status" checked>
-                                        <span>Status</span>
-                                    </label>
-
-                                    <label class="form-check d-flex align-items-center py-1 ms-2">
-                                        <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="aeBy"
-                                            checked>
-                                        <span>Added / Edited By</span>
-                                    </label>
-
-                                    <label class="form-check d-flex align-items-center py-1 ms-2">
-                                        <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                            data-col="aeDate" checked>
-                                        <span>Added / Edited Date</span>
-                                    </label>
-
+                                <div>
+                                    <div class="h1 mb-0">117</div>
+                                    <div>Total Owners</div>
                                 </div>
                             </div>
-
-                            <!-- ADD BUTTON -->
-                            <a class="btn btn-animate-icon ms-2" data-bs-toggle="modal"
-                                data-bs-target="#modal-ownerShipType">
-                                <i class="ti ti-plus fs-2"></i> Add
-                            </a>
-
+                            <i class="ti ti-users bg-icon"></i>
                         </div>
                     </div>
-                    <div class="collapse" id="filter">
-                        <div class="card">
-                            <div class="card-header px-3 p-2">
-                                <h3 class="card-title">Filter</h3>
-                                <div class="card-actions">
-                                    <a href="#" class="btn border-0" data-bs-toggle="collapse" data-bs-target="#filter">
-                                        <i class="ti ti-x fs-2"></i>
-                                    </a>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-teal text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-green me-3">
+                                    <i class="ti ti-user-check fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">96</div>
+                                    <div>Active Owners</div>
                                 </div>
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6 col-lg-3">
-                                        <div class="mb-3">
-                                            <label class="form-label">Owner Type</label>
-                                            <select class="form-select">
-                                                <option value="-1">Select</option>
-                                                <option value=" individual">Individual</option>
-                                                <option value="company">Company</option>
-                                            </select>
+                            <i class="ti ti-user-check bg-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-orange text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-orange me-2">
+                                    <i class="ti ti-user-cancel fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">21</div>
+                                    <div>Inactive Owners</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-user-cancel bg-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-secondary text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-secondary me-2">
+                                    <i class="ti ti-file-alert fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">11</div>
+                                    <div>Document Expired</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-file-alert bg-icon"></i>
+                        </div>
+                    </div>
+                    <div class="card p-0">
+                        <div class="card-header bg-gradient bg-gradient-from-blue bg-gradient-to-cyan py-2">
+                            <h2 class="card-title text-light fw-bold mb-0">
+                                Owner List
+                            </h2>
+                            <button class="btn btn-light ms-auto"><i class="ti ti-plus me-1 fw-bold fs-3"></i>Add
+                                New</button>
+                        </div>
+                        <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
+                            <div class="smart-table">
+                                <div class="row align-items-center justify-content-end mb-3">
+                                    <div class="col-md-6 col-lg-4 col-xl-5">
+                                        <div class="input-icon">
+                                            <input type="text" class="form-control table-search" placeholder="Search…">
+                                            <span class="input-icon-addon">
+                                                <i class="ti ti-search"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="col-auto ms-auto d-flex gap-1">
+                                        <button class="btn btn-md px-2 btn-blue" data-bs-toggle="collapse"
+                                            data-bs-target="#filter">
+                                            <i class="ti ti-filter fs-2"></i>
+                                        </button>
+                                        <div class="dropdown">
+                                            <button class="btn btn-md btn-secondary px-2 py-1"
+                                                data-bs-toggle="dropdown">
+                                                <i class="ti ti-columns-3 fs-2"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2">
+
+                                                <div class="dropdown-header fw-bold text-muted px-2 mb-1">
+                                                    Show / Hide Columns
+                                                </div>
+
+                                                <div class="dropdown-divider"></div>
+
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="ownershipType" checked>
+                                                    <span>Ownership Type</span>
+                                                </label>
+
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="status" checked>
+                                                    <span>Status</span>
+                                                </label>
+
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="ceBy" checked>
+                                                    <span>Added / Edited By</span>
+                                                </label>
+
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="ceDate" checked>
+                                                    <span>Added / Edited Date</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-md btn-rss px-2 py-1 rounded-2">
+                                            <i class="ti ti-printer fs-2 me-1"></i>Print
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="collapse" id="filter">
+                                    <div class="card bg-gray-50">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Owner Type</label>
+                                                        <select class="form-select">
+                                                            <option value="-1">Select</option>
+                                                            <option value=" individual">Individual</option>
+                                                            <option value="company">Company</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Owner Name</label>
+                                                        <select class="form-select" id="ownerName">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Henry">Henry</option>
+                                                            <option value="Roshan">Roshan</option>
+                                                            <option value="Nila">Nila</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Company Name</label>
+                                                        <select class="form-select" id="companyName">
+                                                            <option value="-1">Select</option>
+                                                            <option value="a">ABC Companys</option>
+                                                            <option value="b">Nilo Private Limited</option>
+                                                            <option value="c">Sky falls Technologies</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Gender</label>
+                                                        <select id="gender" class="form-select">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Male">Male</option>
+                                                            <option value="Female">Female</option>
+                                                            <option value="Transgender">Transgender</option>
+                                                            <option value="Other">Other</option>
+                                                            <option value="PreferNotToSay">Prefer Not to Say</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Nationality</label>
+                                                        <select id="nationality" class="form-select">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Albanian">Albanian</option>
+                                                            <option value="Australian">Australian</option>
+                                                            <option value="Indian">Indian</option>
+                                                            <option value="Malagasy">Malagasy</option>
+                                                            <option value="Nigerian">Nigerian</option>
+                                                            <option value="Saudi">Saudi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Country</label>
+                                                        <select id="country" class="form-select">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Albania">Albania</option>
+                                                            <option value="Australia">Australia</option>
+                                                            <option value="India">India</option>
+                                                            <option value="Malagas">Malagasy</option>
+                                                            <option value="Nigeria">Nigeria</option>
+                                                            <option value="Saudi">Saudi</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">State / Emirate</label>
+                                                        <select id="state" class="form-select">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Albania">Tamil Nadu</option>
+                                                            <option value="Australia">Kerala</option>
+                                                            <option value="India">Sharjah</option>
+                                                            <option value="Malagas">Fujairah</option>
+                                                            <option value="Saudi">Dubai</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="btn-list justify-content-end">
+                                                    <a class="btn btn-green">Search</a>
+                                                    <a class="btn btn-outline btn-secondary">
+                                                        Clear</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="card-footer py-2">
-                                <div class="row">
-                                    <div class="btn-list justify-content-end">
-                                        <a class="btn btn-sm btn-success">Search</a>
-                                        <a class="btn btn-sm btn-outline btn-danger">
-                                            Clear</a>
-                                    </div>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-bordered table-main">
+
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+                                                <th class="sortable col-ownershipType" data-col="ownershipType">
+                                                    Owner Type <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="sortable col-ownershipType" data-col="ownershipType">
+                                                    Owner Name <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="col-status" data-col="status">
+                                                    Documents Status
+                                                </th>
+                                                <th class="sortable col-ceBy" data-col="ceBy">
+                                                    Created / Edited By <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="sortable col-ceDate" data-col="ceDate">
+                                                    Created / Edited Date <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="col-action" data-col="action">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class="bg-white">
+
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td class="col-ceBy text-center">Company</td>
+                                                <td class="text-center">Henry</td>
+                                                <td class="col-status text-center">
+                                                    <span class="badge bg-red-lt">Expired</span>
+                                                </td>
+                                                <td class="col-ceBy text-center">Olivia</td>
+                                                <td class="col-ceDate text-center">16-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
+                                                            <i class="ti ti-eye"></i>
+                                                        </a>
+                                                        <a class="text-teal btn tbn-icon btn-sm">
+                                                            <i class="ti ti-pencil fs-1"></i>
+                                                        </a>
+                                                        <a class="text-warning btn tbn-icon btn-sm">
+                                                            <i class="ti ti-circle-x fs-1"></i>
+                                                        </a>
+                                                        <a class="text-danger btn tbn-icon btn-sm">
+                                                            <i class="ti ti-trash fs-1"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td class="col-ceBy text-center">Individual</td>
+                                                <td class="text-center">Mateo</td>
+                                                <td class="col-status text-center">
+                                                    <span class="badge bg-teal-lt">Active</span>
+                                                </td>
+                                                <td class="col-ceBy text-center">Olivia</td>
+                                                <td class="col-ceDate text-center">16-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
+                                                            <i class="ti ti-eye"></i>
+                                                        </a>
+                                                        <a class="text-teal btn tbn-icon btn-sm">
+                                                            <i class="ti ti-pencil fs-1"></i>
+                                                        </a>
+                                                        <a class="text-warning btn tbn-icon btn-sm">
+                                                            <i class="ti ti-circle-x fs-1"></i>
+                                                        </a>
+                                                        <a class="text-danger btn tbn-icon btn-sm">
+                                                            <i class="ti ti-trash fs-1"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td class="col-ceBy text-center">Company</td>
+                                                <td class="text-center">Julieta</td>
+                                                <td class="col-status text-center">
+                                                    <span class="badge bg-teal-lt">Active</span>
+                                                </td>
+                                                <td class="col-ceBy text-center">Olivia</td>
+                                                <td class="col-ceDate text-center">16-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
+                                                            <i class="ti ti-eye"></i>
+                                                        </a>
+                                                        <a class="text-teal btn tbn-icon btn-sm">
+                                                            <i class="ti ti-pencil fs-1"></i>
+                                                        </a>
+                                                        <a class="text-warning btn tbn-icon btn-sm">
+                                                            <i class="ti ti-circle-x fs-1"></i>
+                                                        </a>
+                                                        <a class="text-danger btn tbn-icon btn-sm">
+                                                            <i class="ti ti-trash fs-1"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
                                 </div>
+                            </div>
+                            <div class="mt-2 d-flex justify-content-between align-items-center">
+                                <div>
+                                    <p class="m-0 text-muted">
+                                        Showing
+                                        <span class="fw-bold">1 to 3</span>
+                                        of
+                                        <span class="fw-bold">3</span>
+                                        entries
+                                    </p>
+                                </div>
+                                <ul class="pagination">
+                                    <li class="page-item disabled">
+                                        <a class="page-link" href="#">
+                                            <i class="ti ti-chevron-left"></i>
+                                        </a>
+                                    </li>
+                                    <li class="page-item active">
+                                        <a class="page-link" href="#">1</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">2</a>
+                                    </li>
+                                    <li class="page-item ">
+                                        <a class="page-link" href="#">3</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">4</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">5</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#">
+                                            <i class="ti ti-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                    <div class="table-responsive mt-3">
-                        <!-- TABLE -->
-                        <table class="table table-bordered table-main">
 
-                            <thead>
-                                <tr>
-                                    <th>S.No</th>
-
-                                    <th class="sortable col-ownershipType" data-col="ownershipType">
-                                        Ownership Type <span class="sort-indicator">⇅</span>
-                                    </th>
-
-                                    <th class="col-status" data-col="status">
-                                        Status
-                                    </th>
-
-                                    <th class="sortable col-aeBy" data-col="aeBy">
-                                        Added / Edited By <span class="sort-indicator">⇅</span>
-                                    </th>
-
-                                    <th class="sortable col-aeDate" data-col="aeDate">
-                                        Added / Edited Date <span class="sort-indicator">⇅</span>
-                                    </th>
-
-                                    <th class="col-action" data-col="action">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="bg-white">
-
-                                <tr>
-                                    <td class="text-center">1</td>
-                                    <td class="col-ownershipType text-center">Own</td>
-                                    <td class="col-status text-center">
-                                        <span class="badge bg-red-lt">Inactive</span>
-                                    </td>
-                                    <td class="col-aeBy text-center">Emma</td>
-                                    <td class="col-aeDate text-center">16-04-2026</td>
-                                    <td class="text-center col-action">
-                                        <div class="btn-actions justify-content-center">
-                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center">2</td>
-                                    <td class="col-ownershipType text-center">Third Prty</td>
-                                    <td class="col-status text-center">
-                                        <span class="badge bg-green-lt">Active</span>
-                                    </td>
-                                    <td class="col-aeBy text-center">Harry</td>
-                                    <td class="col-aeDate text-center">16-04-2026</td>
-                                    <td class="text-center col-action">
-                                        <div class="btn-actions justify-content-center">
-                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center">3</td>
-                                    <td class="col-ownershipType text-center">Other</td>
-                                    <td class="col-status text-center">
-                                        <span class="badge bg-green-lt">Active</span>
-                                    </td>
-                                    <td class="col-aeBy text-center">Jasmine</td>
-                                    <td class="col-aeDate text-center">16-04-2026</td>
-                                    <td class="text-center col-action">
-                                        <div class="btn-actions justify-content-center">
-                                            <a class="btn btn-action"><i class="ti ti-edit fs-2"></i></a>
-                                            <a class="btn btn-action"><i class="ti ti-trash fs-2"></i></a>
-                                        </div>
-                                    </td>
-                                </tr>
-
-                            </tbody>
-
-                        </table>
-                    </div>
-                </div>
             </main>
             <!-- Footer -->
             <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
@@ -426,390 +590,6 @@
                                             </span>
                                         </span>
                                     </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Owner Ship Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-ownerShipType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Owner Ship Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Owner Ship Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                            <label class="form-label">Active Status</label>
-                            <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Active</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Property Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-propertyType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Property Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Property Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                            <label class="form-label">Active Status</label>
-                            <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Active</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Property Usage Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-propertyUsageType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Property Usage Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Property Usage Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                            <label class="form-label">Active Status</label>
-                            <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Active</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Common Amenities Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-commonAmenities" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Common Amenities</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Amenity</label>
-                                <input type="text" class="form-control" name="example-text-input">
-                            </div>
-                            <label class="form-label">Active Status</label>
-                            <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Active</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Inactive</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-primary">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Unit Amenities Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-unitAmenities" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Unit of Amenities</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Location</label>
-                                        <input type="text" class="form-control" name="example-text-input">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Unit View</label>
-                                        <input type="text" class="form-control" name="example-text-input">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bedrooms count</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bathrooms count</label>
-                                        <input type="text" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bathrooms type</label>
-                                        <select id="bathroomType" class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="attached">Attached</option>
-                                            <option value="independent">Independent</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Kitchen type</label>
-                                        <select id="kitchenType" class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="open">Open</option>
-                                            <option value="closed">Closed</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Balcony</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Maid Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Laundry Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Furnished</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="fully">Fully</option>
-                                            <option value="partially">Partially</option>
-                                            <option value="notFurnished">Not Furnished</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Store Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Appliances</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <label class="form-label">Active Status</label>
-                                <div class="form-selectgroup-boxes row mb-3">
-                                    <div class="col-lg-6">
-                                        <label class="form-selectgroup-item">
-                                            <input type="radio" name="report-type" value="1"
-                                                class="form-selectgroup-input" checked="">
-                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                                <span class="me-3">
-                                                    <span class="form-selectgroup-check"></span>
-                                                </span>
-                                                <span class="form-selectgroup-label-content">
-                                                    <span class="form-selectgroup-title strong mb-1">Active</span>
-                                                </span>
-                                            </span>
-                                        </label>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="form-selectgroup-item">
-                                            <input type="radio" name="report-type" value="1"
-                                                class="form-selectgroup-input">
-                                            <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                                <span class="me-3">
-                                                    <span class="form-selectgroup-check"></span>
-                                                </span>
-                                                <span class="form-selectgroup-label-content">
-                                                    <span class="form-selectgroup-title strong mb-1">Inactive</span>
-                                                </span>
-                                            </span>
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1002,13 +782,19 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            new TomSelect("#dateFormat", {
+            new TomSelect("#ownerName", {
                 placeholder: "Search...",
                 create: false,
                 maxOptions: 100,
                 allowEmptyOption: true
             });
-            new TomSelect("#currency", {
+            new TomSelect("#companyName", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            new TomSelect("#gender", {
                 placeholder: "Search...",
                 create: false,
                 maxOptions: 100,
@@ -1020,7 +806,13 @@
                 maxOptions: 100,
                 allowEmptyOption: true
             });
-            new TomSelect("#gender", {
+            new TomSelect("#country", {
+                placeholder: "Search...",
+                create: false,
+                maxOptions: 100,
+                allowEmptyOption: true
+            });
+            new TomSelect("#state", {
                 placeholder: "Search...",
                 create: false,
                 maxOptions: 100,
