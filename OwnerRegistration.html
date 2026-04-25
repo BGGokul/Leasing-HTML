@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/custom.css">
-    <!-- Tom Select CSS -->
-    <link href="./assets/css/tom-select.css" rel="stylesheet">
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
@@ -23,10 +23,10 @@
         <!-- Overlay -->
         <div class="overlay" onclick="closeMobileSidebar()"></div>
         <!-- Sidebar -->
-        <aside class="sidebar bg-blue text-white">
+        <aside class="sidebar bg-primary text-white">
             <div class="p-2 px-3 border-bottom border-white">
                 <div class="d-flex align-items-center gap-3">
-                    <div class="avatar bg-white text-blue fw-bold">
+                    <div class="avatar bg-white text-primary fw-bold">
                         LM
                     </div>
                     <span class="logo-text fw-semibold fs-3">
@@ -98,7 +98,7 @@
                     </a>
                     <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
                         data-bs-toggle="dropdown">
-                        <div class="avatar bg-blue text-white">
+                        <div class="avatar bg-primary text-white">
                             A
                         </div>
                         <div class="d-none d-md-block">
@@ -219,7 +219,7 @@
                         </div>
                     </div>
                     <div class="card p-0">
-                        <div class="card-header bg-gradient bg-gradient-from-blue bg-gradient-to-cyan py-2">
+                        <div class="card-header bg-gradient bg-gradient-from-primary bg-gradient-to-cyan py-2">
                             <h2 class="card-title text-light fw-bold mb-0">
                                 Owner List
                             </h2>
@@ -293,7 +293,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Owner Type</label>
-                                                        <select class="form-select">
+                                                        <select id="ownerType">
                                                             <option value="-1">Select</option>
                                                             <option value=" individual">Individual</option>
                                                             <option value="company">Company</option>
@@ -303,7 +303,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Owner Name</label>
-                                                        <select class="form-select" id="ownerName">
+                                                        <select id="ownerName">
                                                             <option value="-1">Select</option>
                                                             <option value="Henry">Henry</option>
                                                             <option value="Roshan">Roshan</option>
@@ -314,7 +314,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Company Name</label>
-                                                        <select class="form-select" id="companyName">
+                                                        <select id="companyName">
                                                             <option value="-1">Select</option>
                                                             <option value="a">ABC Companys</option>
                                                             <option value="b">Nilo Private Limited</option>
@@ -325,7 +325,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Gender</label>
-                                                        <select id="gender" class="form-select">
+                                                        <select id="gender">
                                                             <option value="-1">Select</option>
                                                             <option value="Male">Male</option>
                                                             <option value="Female">Female</option>
@@ -338,7 +338,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Nationality</label>
-                                                        <select id="nationality" class="form-select">
+                                                        <select id="nationality">
                                                             <option value="-1">Select</option>
                                                             <option value="Albanian">Albanian</option>
                                                             <option value="Australian">Australian</option>
@@ -352,7 +352,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">Country</label>
-                                                        <select id="country" class="form-select">
+                                                        <select id="country">
                                                             <option value="-1">Select</option>
                                                             <option value="Albania">Albania</option>
                                                             <option value="Australia">Australia</option>
@@ -366,7 +366,7 @@
                                                 <div class="col-md-6 col-lg-3">
                                                     <div class="mb-3">
                                                         <label class="form-label">State / Emirate</label>
-                                                        <select id="state" class="form-select">
+                                                        <select id="state">
                                                             <option value="-1">Select</option>
                                                             <option value="Albania">Tamil Nadu</option>
                                                             <option value="Australia">Kerala</option>
@@ -552,47 +552,61 @@
 
 
             <!-- Owner Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-addNewOwner" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-addNewOwner" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Owner Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <label class="form-label">Owner Type</label>
-                            <div class="form-selectgroup-boxes row mb-3">
-                                <div class="col-lg-6 mt-2">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            checked="" onclick="location.href='./AddNewIndividualOwner.html'">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Individual</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-                                <div class="col-lg-6 mt-2">
-                                    <label class="form-selectgroup-item">
-                                        <input type="radio" name="report-type" value="1" class="form-selectgroup-input"
-                                            onclick="location.href='./AddNewCompanyOwner.html'">
-                                        <span class="form-selectgroup-label d-flex align-items-center p-2">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong mb-1">Company</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Owner Type</h5>
+                                <div class="text-white opacity-75 small">Select owner type to continue</div>
                             </div>
+                            <button type="button" class="btn-close btn-close-white opacity-85"
+                                data-bs-dismiss="modal"></button>
                         </div>
+
+                        <div class="modal-body">
+
+                            <label class="form-label fw-semibold mb-3">Owner Type</label>
+
+                            <div class="row g-3">
+
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item w-100">
+                                        <input type="radio" name="owner-type" class="form-selectgroup-input" checked
+                                            onclick="location.href='./AddNewIndividualOwner.html'">
+
+                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong">Individual</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item w-100">
+                                        <input type="radio" name="owner-type" class="form-selectgroup-input"
+                                            onclick="location.href='./AddNewCompanyOwner.html'">
+
+                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong">Company</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -602,8 +616,8 @@
     <script src="./assets/scripts/script.min.js"></script>
     <!-- Custom JS -->
     <script src="./assets/scripts/custom.js"></script>
-    <!-- Tom Select JS -->
-    <script src="./assets/scripts/tom-select.complete.min.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -770,42 +784,14 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            new TomSelect("#ownerName", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
-            new TomSelect("#companyName", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
-            new TomSelect("#gender", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
-            new TomSelect("#nationality", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
-            new TomSelect("#country", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
-            new TomSelect("#state", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
-            });
+            new SlimSelect({ select: '#ownerType' });
+            new SlimSelect({ select: '#ownerName' });
+            new SlimSelect({ select: '#companyName', });
+            new SlimSelect({ select: '#gender', });
+            new SlimSelect({ select: '#nationality', });
+            new SlimSelect({ select: '#country', });
+            new SlimSelect({ select: '#state', });
+            new SlimSelect({ select: '#currency', });
         });
     </script>
 </body>

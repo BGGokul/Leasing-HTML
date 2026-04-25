@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/custom.css">
-    <!-- Tom Select CSS -->
-    <link href="./assets/css/tom-select.css" rel="stylesheet">
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
@@ -23,10 +23,10 @@
         <!-- Overlay -->
         <div class="overlay" onclick="closeMobileSidebar()"></div>
         <!-- Sidebar -->
-        <aside class="sidebar bg-blue text-white">
+        <aside class="sidebar bg-primary text-white">
             <div class="p-2 px-3 border-bottom border-white">
                 <div class="d-flex align-items-center gap-3">
-                    <div class="avatar bg-white text-blue fw-bold">
+                    <div class="avatar bg-white text-primary fw-bold">
                         LM
                     </div>
                     <span class="logo-text fw-semibold fs-3">
@@ -99,7 +99,7 @@
                     </a>
                     <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
                         data-bs-toggle="dropdown">
-                        <div class="avatar bg-blue text-white">
+                        <div class="avatar bg-primary text-white">
                             A
                         </div>
                         <div class="d-none d-md-block">
@@ -174,7 +174,7 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="mb-3">
                                         <label class="form-label">Date Format</label>
-                                        <select id="dateFormat" class="form-select">
+                                        <select id="dateFormat">
                                             <option value="-1">Select</option>
                                             <option value="dd-MM-yyyy">DD-MM-YYYY</option>
                                             <option value="MM-dd-yyyy">MM-DD-YYYY</option>
@@ -187,7 +187,7 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="mb-3">
                                         <label class="form-label">Currency</label>
-                                        <select id="currency" class="form-select">
+                                        <select id="currency">
                                             <option value="-1">Select</option>
                                             <option value="USD">USD - US Dollar</option>
                                             <option value="EUR">EUR - Euro</option>
@@ -207,7 +207,7 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="mb-3">
                                         <label class="form-label">Nationality</label>
-                                        <select id="nationality" class="form-select">
+                                        <select id="nationality">
                                             <option value="-1">Select</option>
                                             <option value="Afghan">Afghan</option>
                                             <option value="Albanian">Albanian</option>
@@ -386,7 +386,7 @@
                                 <div class="col-md-6 col-lg-3">
                                     <div class="mb-3">
                                         <label class="form-label">Gender</label>
-                                        <select id="gender" class="form-select">
+                                        <select id="gender">
                                             <option value="-1">Select</option>
                                             <option value="Male">Male</option>
                                             <option value="Female">Female</option>
@@ -510,7 +510,7 @@
                                                         </label>
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-ownerType">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add</a>
                                             </div>
@@ -548,10 +548,10 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -568,10 +568,10 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -649,7 +649,7 @@
                                                 </div>
 
                                                 <!-- ADD BUTTON -->
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-ownerShipType">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add
                                                 </a>
@@ -698,10 +698,10 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -718,10 +718,10 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -737,10 +737,10 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -809,7 +809,7 @@
 
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-propertyType">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add
                                                 </a>
@@ -858,10 +858,10 @@
                                                         <td class="col-aeDate text-center">12-03-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -878,10 +878,10 @@
                                                         <td class="col-aeDate text-center">28-02-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -898,10 +898,10 @@
                                                         <td class="col-aeDate text-center">05-01-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -971,7 +971,7 @@
                                                 </div>
 
                                                 <!-- ADD BUTTON -->
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-propertyUsageType">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add
                                                 </a>
@@ -1022,10 +1022,10 @@
                                                         <td class="col-aeDate text-center">10-03-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1043,10 +1043,10 @@
                                                         <td class="col-aeDate text-center">22-02-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1064,10 +1064,10 @@
                                                         <td class="col-aeDate text-center">05-01-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1135,7 +1135,7 @@
 
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-commonAmenities">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add
                                                 </a>
@@ -1183,10 +1183,10 @@
                                                         <td class="col-aeDate text-center">14-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1203,10 +1203,10 @@
                                                         <td class="col-aeDate text-center">02-03-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1223,10 +1223,10 @@
                                                         <td class="col-aeDate text-center">18-01-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1371,7 +1371,7 @@
 
                                                     </div>
                                                 </div>
-                                                <a class="btn btn-blue ms-2 mt-1" data-bs-toggle="modal"
+                                                <a class="btn btn-primary ms-2 mt-1" data-bs-toggle="modal"
                                                     data-bs-target="#modal-unitAmenities">
                                                     <i class="ti ti-plus fw-bold me-1"></i> Add
                                                 </a>
@@ -1489,10 +1489,10 @@
 
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1523,10 +1523,10 @@
                                                         <td class="col-aeDate text-center">12-04-2026</td>
                                                         <td class="text-center col-action">
                                                             <div class="justify-content-center">
-                                                                <a class="text-teal">
+                                                                <a class="text-primary text-decoration-none">
                                                                     <i class="ti ti-pencil fs-2"></i>
                                                                 </a>
-                                                                <a class="text-red">
+                                                                <a class="text-red text-decoration-none">
                                                                     <i class="ti ti-trash fs-2"></i>
                                                                 </a>
                                                             </div>
@@ -1553,321 +1553,344 @@
 
 
             <!-- Owner Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-ownerType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-ownerType" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Owner Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title">Owner Type</h5>
+                                <div class="text-white opacity-75 small">Create or edit owner category</div>
+                            </div>
+                            <button type="button" class="btn-close opacity-85" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Owner Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
+                            <div class="mb-4">
+                                <label class="form-label">Owner Type <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control">
                             </div>
-                            <div class="mb-3">
-                                <label class="row">
-                                    <span class="col-3">Active Status</span>
-                                    <span class="col-auto">
-                                        <label class="form-check form-check-single form-switch ps-0">
-                                            <input class="form-check-input" type="checkbox" checked>
-                                        </label>
-                                    </span>
+                            <div>
+                                <label class="form-label d-block mb-2">Status</label>
+                                <label class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <span class="form-check-label">Active</span>
                                 </label>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x me-1 fs-3"></i> Cancel
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send me-1 fs-3"></i> Submit
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Owner Ship Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-ownerShipType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-ownerShipType" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Owner Ship Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title">Ownership Type</h5>
+                                <div class="text-white opacity-75 small">Create or edit ownership Type</div>
+                            </div>
+                            <button type="button" class="btn-close opacity-85" data-bs-dismiss="modal"></button>
                         </div>
                         <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Owner Ship Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Ownership Type</label>
+                                <input type="text" class="form-control form-control-md">
                             </div>
-                            <div class="mb-3">
-                                <label class="row">
-                                    <span class="col-3">Active Status</span>
-                                    <span class="col-auto">
-                                        <label class="form-check form-check-single form-switch ps-0">
-                                            <input class="form-check-input" type="checkbox" checked>
-                                        </label>
-                                    </span>
+                            <div>
+                                <label class="form-label d-block mb-2">Status</label>
+                                <label class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <span class="form-check-label">Active</span>
                                 </label>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x me-1 fs-3"></i> Cancel
+                            </button>
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send me-1 fs-3"></i> Submit
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Property Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-propertyType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-propertyType" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Property Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Property Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Property Type</h5>
+                                <div class="text-white opacity-75 small">Create or edit property type</div>
                             </div>
-                            <div class="mb-3">
-                                <label class="row">
-                                    <span class="col-3">Active Status</span>
-                                    <span class="col-auto">
-                                        <label class="form-check form-check-single form-switch ps-0">
-                                            <input class="form-check-input" type="checkbox" checked>
-                                        </label>
-                                    </span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Property Type</label>
+                                <input type="text" class="form-control form-control-md">
+                            </div>
+
+                            <div>
+                                <label class="form-label fw-semibold d-block mb-2">Status</label>
+                                <label class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <span class="form-check-label fw-medium">Active</span>
                                 </label>
                             </div>
+
                         </div>
+
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x fs-2 me-1"></i> Cancel
+                            </button>
+
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i> Submit
+                            </button>
+
                         </div>
+
                     </div>
                 </div>
             </div>
             <!-- Property Usage Type Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-propertyUsageType" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-propertyUsageType" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Property Usage Type</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Property Usage Type</label>
-                                <input type="text" class="form-control" name="example-text-input">
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Property Usage Type</h5>
+                                <div class="text-white opacity-75 small">Create or edit property usage type</div>
                             </div>
-                            <div class="mb-3">
-                                <label class="row">
-                                    <span class="col-3">Active Status</span>
-                                    <span class="col-auto">
-                                        <label class="form-check form-check-single form-switch ps-0">
-                                            <input class="form-check-input" type="checkbox" checked>
-                                        </label>
-                                    </span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Property Usage Type</label>
+                                <input type="text" class="form-control form-control-md">
+                            </div>
+
+                            <div>
+                                <label class="form-label fw-semibold d-block mb-2">Status</label>
+                                <label class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <span class="form-check-label fw-medium">Active</span>
                                 </label>
                             </div>
+
                         </div>
+
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x fs-2 me-1"></i> Cancel
+                            </button>
+
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i> Submit
+                            </button>
+
                         </div>
+
                     </div>
                 </div>
             </div>
             <!-- Common Amenities Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-commonAmenities" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-commonAmenities" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Common Amenities</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label class="form-label">Amenity</label>
-                                <input type="text" class="form-control" name="example-text-input">
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Common Amenities</h5>
+                                <div class="text-white opacity-75 small">Create or edit common amenities</div>
                             </div>
-                            <div class="mb-3">
-                                <label class="row">
-                                    <span class="col-3">Active Status</span>
-                                    <span class="col-auto">
-                                        <label class="form-check form-check-single form-switch ps-0">
-                                            <input class="form-check-input" type="checkbox" checked>
-                                        </label>
-                                    </span>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Amenity</label>
+                                <input type="text" class="form-control form-control-md">
+                            </div>
+
+                            <div>
+                                <label class="form-label fw-semibold d-block mb-2">Status</label>
+                                <label class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" checked>
+                                    <span class="form-check-label fw-medium">Active</span>
                                 </label>
                             </div>
+
                         </div>
+
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x fs-2 me-1"></i> Cancel
+                            </button>
+
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i> Submit
+                            </button>
+
                         </div>
+
                     </div>
                 </div>
             </div>
             <!-- Unit Amenities Modal -->
-            <div class="modal modal-blur fade rounded" id="modal-unitAmenities" tabindex="-1" role="dialog"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal modal-blur fade" id="modal-unitAmenities" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Unit of Amenities</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Unit of Amenities</h5>
+                                <div class="text-white opacity-75 small">Create or edit unit amenities</div>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                         </div>
+
                         <div class="modal-body">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Location</label>
-                                        <input type="text" class="form-control" name="example-text-input">
-                                    </div>
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Location</label>
+                                    <input type="text" class="form-control form-control-md">
                                 </div>
-                                <div class="col-md-6 col-lg-6">
-                                    <div class="mb-3">
-                                        <label class="form-label">Unit View</label>
-                                        <input type="text" class="form-control" name="example-text-input">
-                                    </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">Unit View</label>
+                                    <input type="text" class="form-control form-control-md">
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bedrooms count</label>
-                                        <input type="text" class="form-control">
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Bedrooms Count</label>
+                                    <input type="number" class="form-control form-control-md">
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bathrooms count</label>
-                                        <input type="text" class="form-control">
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Bathrooms Count</label>
+                                    <input type="number" class="form-control form-control-md">
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Bathrooms type</label>
-                                        <select id="bathroomType" class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="attached">Attached</option>
-                                            <option value="independent">Independent</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Bathroom Type</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="attached">Attached</option>
+                                        <option value="independent">Independent</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Kitchen type</label>
-                                        <select id="kitchenType" class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="open">Open</option>
-                                            <option value="closed">Closed</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Kitchen Type</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="open">Open</option>
+                                        <option value="closed">Closed</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Balcony</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Balcony</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Maid Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Maid Room</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Laundry Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Laundry Room</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Furnished</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="fully">Fully</option>
-                                            <option value="partially">Partially</option>
-                                            <option value="notFurnished">Not Furnished</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Furnished</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="fully">Fully</option>
+                                        <option value="partially">Partially</option>
+                                        <option value="not_furnished">Not Furnished</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Store Room</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Store Room</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
-                                <div class="col-md-6 col-lg-3">
-                                    <div class="mb-3">
-                                        <label class="form-label">Appliances</label>
-                                        <select class="form-select">
-                                            <option value="-1">Select</option>
-                                            <option value="yes">Yes</option>
-                                            <option value="no">No</option>
-                                        </select>
-                                    </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label fw-semibold">Appliances</label>
+                                    <select class="form-select form-select-md">
+                                        <option value="-1">Select</option>
+                                        <option value="yes">Yes</option>
+                                        <option value="no">No</option>
+                                    </select>
                                 </div>
-                                <div class="mb-3">
-                                    <label class="row">
-                                        <span class="col-3">Active Status</span>
-                                        <span class="col-auto">
-                                            <label class="form-check form-check-single form-switch ps-0">
-                                                <input class="form-check-input" type="checkbox" checked>
-                                            </label>
-                                        </span>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold d-block mb-2">Status</label>
+                                    <label class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" checked>
+                                        <span class="form-check-label fw-medium">Active</span>
                                     </label>
                                 </div>
+
                             </div>
+
                         </div>
+
                         <div class="modal-footer">
-                            <a class="btn btn-blue">
-                                <i class="ti ti-send fs-3 me-1"></i>
-                                Submit
-                            </a>
-                            <a class="btn btn-outline btn-secondary" data-bs-dismiss="modal"> <i
-                                    class="ti ti-x-mark fs-2 me-1"></i>Cancel</a>
+
+                            <button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                <i class="ti ti-x fs-2 me-1"></i> Cancel
+                            </button>
+
+                            <button class="btn btn-primary">
+                                <i class="ti ti-send fs-3 me-1"></i> Submit
+                            </button>
+
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -1877,34 +1900,27 @@
     <script src="./assets/scripts/script.min.js"></script>
     <!-- Custom JS -->
     <script src="./assets/scripts/custom.js"></script>
-    <!-- Tom Select JS -->
-    <script src="./assets/scripts/tom-select.complete.min.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            new TomSelect("#dateFormat", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
+
+            new SlimSelect({
+                select: '#currency'
             });
-            new TomSelect("#currency", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
+
+            new SlimSelect({
+                select: '#nationality'
             });
-            new TomSelect("#nationality", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
+
+            new SlimSelect({
+                select: '#gender'
             });
-            new TomSelect("#gender", {
-                placeholder: "Search...",
-                create: false,
-                maxOptions: 100,
-                allowEmptyOption: true
+
+            new SlimSelect({
+                select: '#dateFormat'
             });
+
         });
     </script>
 </body>
