@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./assets/css/custom.css">
     <!-- Slim Select CSS -->
     <link rel="stylesheet" href="./assets/css/slimselect.min.css">
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
@@ -84,7 +86,7 @@
         <!-- Main -->
         <div class="main">
             <!-- Header -->
-            <header class="bg-white border-bottom d-flex align-items-center px-3 p-2">
+            <header class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3
                 <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
                     <i class="ti ti-menu-4 fs-1"></i>
                 </button>
@@ -248,7 +250,7 @@
                                                 data-bs-toggle="dropdown">
                                                 <i class="ti ti-columns-3 fs-2"></i>
                                             </button>
-                                            <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2">
+                                            <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2 columnDropdown">
 
                                                 <div class="dropdown-header fw-bold text-muted px-2 mb-1">
                                                     Show / Hide Columns
@@ -258,22 +260,57 @@
 
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
                                                     <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                        data-col="ownershipType" checked>
+                                                        data-col="ownerType" checked>
                                                     <span>Ownership Type</span>
                                                 </label>
 
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                        data-col="status" checked>
-                                                    <span>Status</span>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="companyName" checked>
+                                                    <span>Company Name</span>
                                                 </label>
 
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="gender" checked>
+                                                    <span>Gender</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="nationality" checked>
+                                                    <span>Nationality</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="country" checked>
+                                                    <span>Country</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="state" checked>
+                                                    <span>State / Emirates</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="city" checked>
+                                                    <span>City</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="email" checked>
+                                                    <span>Email</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="contactNumber" checked>
+                                                    <span>Contact Number</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="tradeLicenseNumber" checked>
+                                                    <span>Trade License Number</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="tradeLicenseExpiryDate" checked>
+                                                    <span>Trade License Expiry Date</span>
+                                                </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
                                                     <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                         data-col="ceBy" checked>
                                                     <span>Added / Edited By</span>
                                                 </label>
-
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
                                                     <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                         data-col="ceDate" checked>
@@ -376,6 +413,36 @@
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">City</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Email</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Contact Number</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Trade License Number</label>
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Trade License Expiry Date</label>
+                                                        <input type="text" class="form-control" id="tlExpiryDate">
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="btn-list justify-content-end">
@@ -388,117 +455,141 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive mt-3">
-                                    <table class="table table-bordered table-main">
-
-                                        <thead>
-                                            <tr>
-                                                <th>S.No</th>
-                                                <th class="sortable col-ownershipType" data-col="ownershipType">
-                                                    Owner Type <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="sortable col-ownershipType" data-col="ownershipType">
-                                                    Owner Name <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="col-status" data-col="status">
-                                                    Documents Status
-                                                </th>
-                                                <th class="sortable col-ceBy" data-col="ceBy">
-                                                    Created / Edited By <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="sortable col-ceDate" data-col="ceDate">
-                                                    Created / Edited Date <span class="sort-indicator">⇅</span>
-                                                </th>
-                                                <th class="col-action" data-col="action">
-                                                    Action
-                                                </th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody class="bg-white">
-
-                                            <tr>
-                                                <td class="text-center">1</td>
-                                                <td class="col-ceBy text-center">Company</td>
-                                                <td class="text-center">Henry</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-red-lt">Expired</span>
-                                                </td>
-                                                <td class="col-ceBy text-center">Olivia</td>
-                                                <td class="col-ceDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="d-flex justify-content-center gap-2">
-                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
-                                                            <i class="ti ti-eye"></i>
-                                                        </a>
-                                                        <a class="text-teal btn tbn-icon btn-sm">
-                                                            <i class="ti ti-pencil fs-1"></i>
-                                                        </a>
-                                                        <a class="text-warning btn tbn-icon btn-sm">
-                                                            <i class="ti ti-circle-x fs-1"></i>
-                                                        </a>
-                                                        <a class="text-danger btn tbn-icon btn-sm">
-                                                            <i class="ti ti-trash fs-1"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="text-center">2</td>
-                                                <td class="col-ceBy text-center">Individual</td>
-                                                <td class="text-center">Mateo</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-teal-lt">Active</span>
-                                                </td>
-                                                <td class="col-ceBy text-center">Olivia</td>
-                                                <td class="col-ceDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="d-flex justify-content-center gap-2">
-                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
-                                                            <i class="ti ti-eye"></i>
-                                                        </a>
-                                                        <a class="text-teal btn tbn-icon btn-sm">
-                                                            <i class="ti ti-pencil fs-1"></i>
-                                                        </a>
-                                                        <a class="text-warning btn tbn-icon btn-sm">
-                                                            <i class="ti ti-circle-x fs-1"></i>
-                                                        </a>
-                                                        <a class="text-danger btn tbn-icon btn-sm">
-                                                            <i class="ti ti-trash fs-1"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td class="text-center">3</td>
-                                                <td class="col-ceBy text-center">Company</td>
-                                                <td class="text-center">Julieta</td>
-                                                <td class="col-status text-center">
-                                                    <span class="badge bg-teal-lt">Active</span>
-                                                </td>
-                                                <td class="col-ceBy text-center">Olivia</td>
-                                                <td class="col-ceDate text-center">16-04-2026</td>
-                                                <td class="text-center col-action">
-                                                    <div class="d-flex justify-content-center gap-2">
-                                                        <a class="text-blue btn tbn-icon fs-1 btn-sm">
-                                                            <i class="ti ti-eye"></i>
-                                                        </a>
-                                                        <a class="text-teal btn tbn-icon btn-sm">
-                                                            <i class="ti ti-pencil fs-1"></i>
-                                                        </a>
-                                                        <a class="text-warning btn tbn-icon btn-sm">
-                                                            <i class="ti ti-circle-x fs-1"></i>
-                                                        </a>
-                                                        <a class="text-danger btn tbn-icon btn-sm">
-                                                            <i class="ti ti-trash fs-1"></i>
-                                                        </a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-
-                                    </table>
+                                <table class="table table-bordered table-main">
+                                
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+                                
+                                            <th class="sortable col-ownerType" data-col="ownerType">
+                                                Owner Type <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-companyName" data-col="companyName">
+                                                Company Name <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-gender" data-col="gender">
+                                                Gender <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-nationality" data-col="nationality">
+                                                Nationality <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-country" data-col="country">
+                                                Country <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-state" data-col="state">
+                                                State / Emirates <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-city" data-col="city">
+                                                City <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-email" data-col="email">
+                                                Email <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-contactNumber" data-col="contactNumber">
+                                                Contact Number <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-tradeLicenseNumber" data-col="tradeLicenseNumber">
+                                                Trade License Number <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="sortable col-tradeLicenseExpiryDate" data-col="tradeLicenseExpiryDate">
+                                                Trade License Expiry Date <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-ceBy" data-col="ceBy">
+                                                Added / Edited By <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-ceDate" data-col="ceDate">
+                                                Added / Edited Date <span class="sort-indicator">⇅</span>
+                                            </th>
+                                
+                                            <th class="col-action" data-col="action">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                
+                                    <tbody class="bg-white">
+                                
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center col-ownerType">Company</td>
+                                            <td class="text-center col-companyName">ABC Trading LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Dubai City</td>
+                                            <td class="text-center col-email">abc@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9876543210</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-45896</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">16-04-2027</td>
+                                            <td class="text-center col-ceBy">Henry</td>
+                                            <td class="text-center col-ceDate">12-04-2026</td>
+                                
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="text-blue btn tbn-icon fs-1 btn-sm">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a class="text-teal btn tbn-icon btn-sm">
+                                                        <i class="ti ti-pencil fs-1"></i>
+                                                    </a>
+                                                    <a class="text-warning btn tbn-icon btn-sm">
+                                                        <i class="ti ti-circle-x fs-1"></i>
+                                                    </a>
+                                                    <a class="text-danger btn tbn-icon btn-sm">
+                                                        <i class="ti ti-trash fs-1"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center col-ownerType">Individual</td>
+                                            <td class="text-center col-companyName">Mateo Services</td>
+                                            <td class="text-center col-gender">Female</td>
+                                            <td class="text-center col-nationality">Filipino</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Abu Dhabi</td>
+                                            <td class="text-center col-city">Abu Dhabi City</td>
+                                            <td class="text-center col-email">mateo@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9123456780</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-78541</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">01-01-2026</td>
+                                            <td class="text-center col-ceBy">Henry</td>
+                                            <td class="text-center col-ceDate">12-04-2026</td>
+                                
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="text-blue btn tbn-icon fs-1 btn-sm">
+                                                        <i class="ti ti-eye"></i>
+                                                    </a>
+                                                    <a class="text-teal btn tbn-icon btn-sm">
+                                                        <i class="ti ti-pencil fs-1"></i>
+                                                    </a>
+                                                    <a class="text-warning btn tbn-icon btn-sm">
+                                                        <i class="ti ti-circle-x fs-1"></i>
+                                                    </a>
+                                                    <a class="text-danger btn tbn-icon btn-sm">
+                                                        <i class="ti ti-trash fs-1"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                
+                                    </tbody>
+                                
+                                </table>
                                 </div>
                             </div>
                             <div class="mt-2 d-flex flex-wrap justify-content-between align-items-center">
@@ -618,6 +709,8 @@
     <script src="./assets/scripts/custom.js"></script>
     <!-- Slim Select JS -->
     <script src="./assets/scripts/slimselect.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
@@ -792,6 +885,12 @@
             new SlimSelect({ select: '#country', });
             new SlimSelect({ select: '#state', });
             new SlimSelect({ select: '#currency', });
+
+            new Litepicker({
+                element: document.getElementById('tlExpiryDate'),
+                singleMode: false,
+                format: 'YYYY-MM-DD'
+            });
         });
     </script>
 </body>
