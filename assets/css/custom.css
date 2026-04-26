@@ -187,7 +187,7 @@ th.sortable {
 /* Form elements */
 .form-label {
     font-weight: bold;
-    color: #334155;
+    color: #444444;
 }
 
 /* Nav tab buttons */
@@ -293,4 +293,9 @@ th.sortable {
 .ss-option:hover {
     border: none !important;
     background: var(--tblr-primary) !important;
+}
+
+.columnDropdown{
+    max-height: 250px;
+    overflow-y: scroll;
 }
