@@ -86,8 +86,9 @@
         <!-- Main -->
         <div class="main">
             <!-- Header -->
-            <header class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3
-                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class=" btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
                     <i class="ti ti-menu-4 fs-1"></i>
                 </button>
                 <div class="ms-auto dropdown d-flex gap-2">
@@ -149,7 +150,8 @@
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb mb-0">
                                         <li class="breadcrumb-item">
-                                            <i class="ti ti-home"></i>
+                                            <a href="./index.html" class="text-decoration-none text-secondary">
+                                                <i class="ti ti-home"></i></a>
                                         </li>
                                         <li class="breadcrumb-item">
                                             Leasing
@@ -250,7 +252,8 @@
                                                 data-bs-toggle="dropdown">
                                                 <i class="ti ti-columns-3 fs-2"></i>
                                             </button>
-                                            <div class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2 columnDropdown">
+                                            <div
+                                                class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2 columnDropdown">
 
                                                 <div class="dropdown-header fw-bold text-muted px-2 mb-1">
                                                     Show / Hide Columns
@@ -265,12 +268,14 @@
                                                 </label>
 
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="companyName" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="companyName" checked>
                                                     <span>Company Name</span>
                                                 </label>
 
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="gender" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="gender" checked>
                                                     <span>Gender</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
@@ -279,31 +284,38 @@
                                                     <span>Nationality</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="country" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="country" checked>
                                                     <span>Country</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="state" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="state" checked>
                                                     <span>State / Emirates</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="city" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="city" checked>
                                                     <span>City</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="email" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="email" checked>
                                                     <span>Email</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="contactNumber" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="contactNumber" checked>
                                                     <span>Contact Number</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="tradeLicenseNumber" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="tradeLicenseNumber" checked>
                                                     <span>Trade License Number</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                    <input type="checkbox" class="form-check-input me-2 col-toggle" data-col="tradeLicenseExpiryDate" checked>
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="tradeLicenseExpiryDate" checked>
                                                     <span>Trade License Expiry Date</span>
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
@@ -455,141 +467,144 @@
                                     </div>
                                 </div>
                                 <div class="table-responsive mt-3">
-                                <table class="table table-bordered table-main">
-                                
-                                    <thead>
-                                        <tr>
-                                            <th>S.No</th>
-                                
-                                            <th class="sortable col-ownerType" data-col="ownerType">
-                                                Owner Type <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-companyName" data-col="companyName">
-                                                Company Name <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-gender" data-col="gender">
-                                                Gender <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-nationality" data-col="nationality">
-                                                Nationality <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-country" data-col="country">
-                                                Country <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-state" data-col="state">
-                                                State / Emirates <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-city" data-col="city">
-                                                City <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-email" data-col="email">
-                                                Email <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-contactNumber" data-col="contactNumber">
-                                                Contact Number <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-tradeLicenseNumber" data-col="tradeLicenseNumber">
-                                                Trade License Number <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="sortable col-tradeLicenseExpiryDate" data-col="tradeLicenseExpiryDate">
-                                                Trade License Expiry Date <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-ceBy" data-col="ceBy">
-                                                Added / Edited By <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-ceDate" data-col="ceDate">
-                                                Added / Edited Date <span class="sort-indicator">⇅</span>
-                                            </th>
-                                
-                                            <th class="col-action" data-col="action">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                
-                                    <tbody class="bg-white">
-                                
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center col-ownerType">Company</td>
-                                            <td class="text-center col-companyName">ABC Trading LLC</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Indian</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Dubai</td>
-                                            <td class="text-center col-city">Dubai City</td>
-                                            <td class="text-center col-email">abc@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9876543210</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-45896</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">16-04-2027</td>
-                                            <td class="text-center col-ceBy">Henry</td>
-                                            <td class="text-center col-ceDate">12-04-2026</td>
-                                
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="text-blue btn tbn-icon fs-1 btn-sm">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="text-teal btn tbn-icon btn-sm">
-                                                        <i class="ti ti-pencil fs-1"></i>
-                                                    </a>
-                                                    <a class="text-warning btn tbn-icon btn-sm">
-                                                        <i class="ti ti-circle-x fs-1"></i>
-                                                    </a>
-                                                    <a class="text-danger btn tbn-icon btn-sm">
-                                                        <i class="ti ti-trash fs-1"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center col-ownerType">Individual</td>
-                                            <td class="text-center col-companyName">Mateo Services</td>
-                                            <td class="text-center col-gender">Female</td>
-                                            <td class="text-center col-nationality">Filipino</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Abu Dhabi</td>
-                                            <td class="text-center col-city">Abu Dhabi City</td>
-                                            <td class="text-center col-email">mateo@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9123456780</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-78541</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">01-01-2026</td>
-                                            <td class="text-center col-ceBy">Henry</td>
-                                            <td class="text-center col-ceDate">12-04-2026</td>
-                                
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="text-blue btn tbn-icon fs-1 btn-sm">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="text-teal btn tbn-icon btn-sm">
-                                                        <i class="ti ti-pencil fs-1"></i>
-                                                    </a>
-                                                    <a class="text-warning btn tbn-icon btn-sm">
-                                                        <i class="ti ti-circle-x fs-1"></i>
-                                                    </a>
-                                                    <a class="text-danger btn tbn-icon btn-sm">
-                                                        <i class="ti ti-trash fs-1"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                
-                                    </tbody>
-                                
-                                </table>
+                                    <table class="table table-bordered table-main">
+
+                                        <thead>
+                                            <tr>
+                                                <th>S.No</th>
+
+                                                <th class="sortable col-ownerType" data-col="ownerType">
+                                                    Owner Type <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-companyName" data-col="companyName">
+                                                    Company Name <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-gender" data-col="gender">
+                                                    Gender <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-nationality" data-col="nationality">
+                                                    Nationality <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-country" data-col="country">
+                                                    Country <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-state" data-col="state">
+                                                    State / Emirates <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-city" data-col="city">
+                                                    City <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-email" data-col="email">
+                                                    Email <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-contactNumber" data-col="contactNumber">
+                                                    Contact Number <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-tradeLicenseNumber"
+                                                    data-col="tradeLicenseNumber">
+                                                    Trade License Number <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="sortable col-tradeLicenseExpiryDate"
+                                                    data-col="tradeLicenseExpiryDate">
+                                                    Trade License Expiry Date <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="sortable col-ceBy" data-col="ceBy">
+                                                    Added / Edited By <span class="sort-indicator">⇅</span>
+                                                </th>
+                                                <th class="sortable col-ceDate" data-col="ceDate">
+                                                    Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                </th>
+
+                                                <th class="col-action" data-col="action">
+                                                    Action
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody class="bg-white">
+
+                                            <tr>
+                                                <td class="text-center">1</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-companyName">ABC Trading LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Dubai</td>
+                                                <td class="text-center col-city">Dubai City</td>
+                                                <td class="text-center col-email">abc@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9876543210</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-45896</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">16-04-2027</td>
+                                                <td class="text-center col-ceBy">Henry</td>
+                                                <td class="text-center col-ceDate">12-04-2026</td>
+
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="text-primary btn tbn-icon fs-1 btn-sm"
+                                                            href="./ViewCompanyOwnerType.html">
+                                                            <i class="ti ti-eye"></i>
+                                                        </a>
+                                                        <a class="text-teal btn tbn-icon btn-sm">
+                                                            <i class="ti ti-pencil fs-1"></i>
+                                                        </a>
+                                                        <a class="text-warning btn tbn-icon btn-sm">
+                                                            <i class="ti ti-circle-x fs-1"></i>
+                                                        </a>
+                                                        <a class="text-danger btn tbn-icon btn-sm">
+                                                            <i class="ti ti-trash fs-1"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">2</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-companyName">Mateo Services</td>
+                                                <td class="text-center col-gender">Female</td>
+                                                <td class="text-center col-nationality">Filipino</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Abu Dhabi</td>
+                                                <td class="text-center col-city">Abu Dhabi City</td>
+                                                <td class="text-center col-email">mateo@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9123456780</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-78541</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">01-01-2026</td>
+                                                <td class="text-center col-ceBy">Henry</td>
+                                                <td class="text-center col-ceDate">12-04-2026</td>
+
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="text-primary btn tbn-icon fs-1 btn-sm">
+                                                            <i class="ti ti-eye"></i>
+                                                        </a>
+                                                        <a class="text-teal btn tbn-icon btn-sm">
+                                                            <i class="ti ti-pencil fs-1"></i>
+                                                        </a>
+                                                        <a class="text-warning btn tbn-icon btn-sm">
+                                                            <i class="ti ti-circle-x fs-1"></i>
+                                                        </a>
+                                                        <a class="text-danger btn tbn-icon btn-sm">
+                                                            <i class="ti ti-trash fs-1"></i>
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+
+                                    </table>
                                 </div>
                             </div>
                             <div class="mt-2 d-flex flex-wrap justify-content-between align-items-center">
