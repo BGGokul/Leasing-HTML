@@ -299,3 +299,43 @@ th.sortable {
     max-height: 250px;
     overflow-y: scroll;
 }
+
+ .upload-box {
+     border: 1px dashed #cbd5e1;
+     border-radius: 8px;
+     padding: 6px 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background: #fff;
+ }
+
+ .attachments-panel {
+     position: sticky;
+     top: 20px
+ }
+
+ .file-box {
+     border: 1px dashed #d1d5db;
+     border-radius: 6px;
+     padding: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     gap: 3px;
+     background: white;
+     height: 38px;
+ }
+
+ .file-name {
+     font-size: 13px;
+     color: #374151;
+     flex: 1;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     white-space: nowrap;
+ }
+
+ .file-actions button {
+     margin-left: 4px;
+ }
