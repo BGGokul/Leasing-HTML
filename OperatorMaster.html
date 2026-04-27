@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>Leasing</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-primary text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-primary fw-bold">
+                        LM
+                    </div>
+                    <span class="logo-text fw-semibold fs-3">
+                        Leasing Management
+                    </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-4">
+                                Leasing
+                            </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link  text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Sub Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OwnerMaster.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Owner Master
+                                </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./OperatorMaster.html">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Operator Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-users-group fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Community Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-4">
+                                    Tenant Master
+                                </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class=" btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-primary text-white">
+                            A
+                        </div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">
+                                Admin User
+                            </div>
+                            <div class="text-muted small">
+                                Administrator
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content p-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md">
+                                <div class="d-flex align-items-center">
+                                    <span class="avatar bg-primary text-white me-3">
+                                        <i class="ti ti-user-cog fs-2"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="page-title mb-0 fw-bold">
+                                            Operator Registration
+                                        </h3>
+                                        <div class="text-muted fs-5">
+                                            Manage operator registration and records
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-0 mt-3 d-md-none" />
+                            <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="./index.html" class="text-decoration-none text-secondary">
+                                                <i class="ti ti-home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Leasing
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Operator Registration
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row g-3 align-items-stretch">
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-blue text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-blue me-3">
+                                    <i class="ti ti-users fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">117</div>
+                                    <div>Total community</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-users bg-icon"></i>
+                        </div>
+                    </div>
+                    <!-- Total Units -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-primary text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-primary me-3">
+                                    <i class="ti ti-building fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">250</div>
+                                    <div>Total Units</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-building bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Units Vacant -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-warning text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-warning me-3">
+                                    <i class="ti ti-home-off fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">45</div>
+                                    <div>Units Vacant</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-home-off bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Units Occupied -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-success text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-success me-3">
+                                    <i class="ti ti-home-check fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">205</div>
+                                    <div>Units Occupied</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-home-check bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- % Occupied -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-info text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-info me-3">
+                                    <i class="ti ti-percentage fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">82%</div>
+                                    <div>Units Occupied</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-percentage bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Lease in Progress -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-secondary text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-secondary me-3">
+                                    <i class="ti ti-file-time fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">12</div>
+                                    <div>Lease in Progress</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-file-time bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Owners Documents Expired -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-danger text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-danger me-3">
+                                    <i class="ti ti-alert-circle fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">88</div>
+                                    <div>Owners Documents Expired</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-alert-circle bg-icon"></i>
+                        </div>
+                    </div>
+
+                    <!-- Tenant Documents Expired -->
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="card bg-dark text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-dark me-3">
+                                    <i class="ti ti-file-x fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">58</div>
+                                    <div>Tenant Documents Expired</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-file-x bg-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-0 mt-3">
+                    <div class="card-header bg-gradient bg-gradient-from-primary bg-gradient-to-cyan py-2">
+                        <h2 class="card-title text-light fw-bold mb-0">
+                            Operator List
+                        </h2>
+                    </div>
+                    <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
+                        <div class="smart-table">
+                            <div class="row align-items-center justify-content-end mb-3">
+                                <div class="col-md-6 col-lg-4 col-xl-5">
+                                    <div class="input-icon mt-1">
+                                        <input type="text" class="form-control table-search" placeholder="Search…">
+                                        <span class="input-icon-addon">
+                                            <i class="ti ti-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-auto ms-auto d-flex gap-1">
+                                    <button class="btn btn-action border px-2 text-dark mt-1" data-bs-toggle="collapse"
+                                        data-bs-target="#filter">
+                                        <i class="ti ti-filter fs-2"></i>
+                                    </button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-action border px-2 text-dark mt-1"
+                                            data-bs-toggle="dropdown">
+                                            <i class="ti ti-columns-3 fs-2"></i>
+                                        </button>
+                                        <div
+                                            class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2 columnDropdown">
+
+                                            <div class="dropdown-header fw-bold text-muted px-2 mb-1">
+                                                Show / Hide Columns
+                                            </div>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="operatorType" checked>
+                                                <span>Operator Type</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="operatorName" checked>
+                                                <span>Operator Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="companyName" checked>
+                                                <span>Company Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="tenantName" checked>
+                                                <span>Tenant Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="gender" checked>
+                                                <span>Gender</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="nationality" checked>
+                                                <span>Nationality</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="country" checked>
+                                                <span>Country</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="state" checked>
+                                                <span>State / Emirates</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="city" checked>
+                                                <span>City</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="buildingName" checked>
+                                                <span>Buliding Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="unitName" checked>
+                                                <span>Unit Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="email" checked>
+                                                <span>Email</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="contactNumber" checked>
+                                                <span>Contact Number</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="tradeLicenseNumber" checked>
+                                                <span>Trade License Number</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="tradeLicenseExpiryDate" checked>
+                                                <span>Trade License Expiry Date</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="documentStatus" checked>
+                                                <span>Document Status</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="ceBy" checked>
+                                                <span>Added / Edited By</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="ceDate" checked>
+                                                <span>Added / Edited Date</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-md btn-yellow px-2 py-1  mt-1 rounded-2">
+                                        <i class="ti ti-printer fs-2"></i>
+                                    </button>
+                                    <button class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1" data-bs-toggle="modal"
+                                        data-bs-target="#modal-addNewOwner"><i
+                                            class="ti ti-plus me-1 fw-bold fs-3"></i>Add
+                                        New</button>
+                                </div>
+                            </div>
+                            <div class="collapse" id="filter">
+                                <div class="card bg-gray-50">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Operator Type</label>
+                                                    <select id="operatorType">
+                                                        <option value="-1">Select</option>
+                                                        <option value=" individual">Individual</option>
+                                                        <option value="company">Company</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Operator Name</label>
+                                                    <select id="operatorName">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Henry">Henry</option>
+                                                        <option value="Roshan">Roshan</option>
+                                                        <option value="Nila">Nila</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Tenant Name</label>
+                                                    <select id="tenantName">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Henry">Henry</option>
+                                                        <option value="Roshan">Roshan</option>
+                                                        <option value="Nila">Nila</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Company Name</label>
+                                                    <select id="companyName">
+                                                        <option value="-1">Select</option>
+                                                        <option value="a">ABC Companys</option>
+                                                        <option value="b">Nilo Private Limited</option>
+                                                        <option value="c">Sky falls Technologies</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Gender</label>
+                                                    <select id="gender">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Transgender">Transgender</option>
+                                                        <option value="Other">Other</option>
+                                                        <option value="PreferNotToSay">Prefer Not to Say</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Nationality</label>
+                                                    <select id="nationality">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Albanian">Albanian</option>
+                                                        <option value="Australian">Australian</option>
+                                                        <option value="Indian">Indian</option>
+                                                        <option value="Malagasy">Malagasy</option>
+                                                        <option value="Nigerian">Nigerian</option>
+                                                        <option value="Saudi">Saudi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Country</label>
+                                                    <select id="country">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Albania">Albania</option>
+                                                        <option value="Australia">Australia</option>
+                                                        <option value="India">India</option>
+                                                        <option value="Malagas">Malagasy</option>
+                                                        <option value="Nigeria">Nigeria</option>
+                                                        <option value="Saudi">Saudi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">State / Emirate</label>
+                                                    <select id="state">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Albania">Tamil Nadu</option>
+                                                        <option value="Australia">Kerala</option>
+                                                        <option value="India">Sharjah</option>
+                                                        <option value="Malagas">Fujairah</option>
+                                                        <option value="Saudi">Dubai</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">City</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Buliding Name</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Unit Name</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Email</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Contact Number</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Trade License Number</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Trade License Expiry Date</label>
+                                                    <input type="text" class="form-control" id="tlExpiryDate">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Document Status</label>
+                                                    <select id="status">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Albania">Valid</option>
+                                                        <option value="Australia">Expired</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="btn-list justify-content-end">
+                                                <a class="btn btn-outline btn-secondary">
+                                                    Clear</a>
+                                                <a class="btn btn-bitbucket">Search</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-main">
+
+                                    <thead>
+                                        <tr>
+                                            <th>S.No</th>
+
+                                            <th class="sortable col-operatorType" data-col="operatorType">
+                                                Operator Type <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-operatorName" data-col="operatorName">
+                                                Operator Name <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-tenantName" data-col="tenantName">
+                                                Tenant Name <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-companyName" data-col="companyName">
+                                                Company Name <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-gender" data-col="gender">
+                                                Gender <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-nationality" data-col="nationality">
+                                                Nationality <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-country" data-col="country">
+                                                Country <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-state" data-col="state">
+                                                State / Emirates <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-city" data-col="city">
+                                                City <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-buildingName" data-col="buildingName">
+                                                Buliding Name <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-unitName" data-col="unitName">
+                                                Unit Name <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-email" data-col="email">
+                                                Email <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-contactNumber" data-col="contactNumber">
+                                                Contact Number <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-tradeLicenseNumber" data-col="tradeLicenseNumber">
+                                                Trade License Number <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="sortable col-tradeLicenseExpiryDate"
+                                                data-col="tradeLicenseExpiryDate">
+                                                Trade License Expiry Date <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-documentStatus" data-col="documentStatus">
+                                                Document Status <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-ceBy" data-col="ceBy">
+                                                Added / Edited By <span class="sort-indicator">⇅</span>
+                                            </th>
+                                            <th class="sortable col-ceDate" data-col="ceDate">
+                                                Added / Edited Date <span class="sort-indicator">⇅</span>
+                                            </th>
+
+                                            <th class="col-action" data-col="action">
+                                                Action
+                                            </th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody class="bg-white">
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Al Noor Tenant</td>
+                                            <td class="text-center col-companyName">Al Noor Trading LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Dubai City</td>
+                                            <td class="text-center col-buildingName">Al Noor Tower</td>
+                                            <td class="text-center col-unitName">Unit 101</td>
+                                            <td class="text-center col-email">alnoor@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000001</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30001</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">12-09-2027</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">David</td>
+                                            <td class="text-center col-ceDate">01-03-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">2</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Ahmed Khan</td>
+                                            <td class="text-center col-tenantName">Ahmed Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Pakistani</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Al Barsha</td>
+                                            <td class="text-center col-buildingName">Sunrise Tower</td>
+                                            <td class="text-center col-unitName">Unit 202</td>
+                                            <td class="text-center col-email">ahmedkhan@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000040</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30040</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">11-07-2026</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">02-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">3</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Global Tech Tenant</td>
+                                            <td class="text-center col-companyName">Global Tech Solutions LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Abu Dhabi</td>
+                                            <td class="text-center col-city">Madinat Zayed</td>
+                                            <td class="text-center col-buildingName">Tech Plaza</td>
+                                            <td class="text-center col-unitName">Office 305</td>
+                                            <td class="text-center col-email">globaltech@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000041</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30041</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">03-02-2025</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-red text-red-fg">Expired</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Manager</td>
+                                            <td class="text-center col-ceDate">18-02-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">4</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Fatima Ali</td>
+                                            <td class="text-center col-tenantName">Fatima Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Female</td>
+                                            <td class="text-center col-nationality">Emirati</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Sharjah</td>
+                                            <td class="text-center col-city">Al Khan</td>
+                                            <td class="text-center col-buildingName">Pearl Residency</td>
+                                            <td class="text-center col-unitName">Flat 110</td>
+                                            <td class="text-center col-email">fatima@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000042</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30042</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">29-09-2027</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Supervisor</td>
+                                            <td class="text-center col-ceDate">09-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">5</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Metro Services Tenant</td>
+                                            <td class="text-center col-companyName">Metro Cleaning Services LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Bangladeshi</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Ajman</td>
+                                            <td class="text-center col-city">Ajman Industrial Area</td>
+                                            <td class="text-center col-buildingName">Metro Building</td>
+                                            <td class="text-center col-unitName">Warehouse 12</td>
+                                            <td class="text-center col-email">metro@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000043</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30043</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">06-06-2026</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-red text-red-fg">Expired</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">15-03-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">6</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Suresh Patel</td>
+                                            <td class="text-center col-tenantName">Suresh Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Karama</td>
+                                            <td class="text-center col-buildingName">Green View Apartments</td>
+                                            <td class="text-center col-unitName">Flat 302</td>
+                                            <td class="text-center col-email">suresh@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000044</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30044</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">19-01-2028</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">22-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">7</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Oceanic Tenant</td>
+                                            <td class="text-center col-companyName">Oceanic Shipping LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Filipino</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Jebel Ali</td>
+                                            <td class="text-center col-buildingName">Harbour Tower</td>
+                                            <td class="text-center col-unitName">Office 410</td>
+                                            <td class="text-center col-email">oceanic@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000045</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30045</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">12-12-2027</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">01-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">8</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Khaled Mahmoud</td>
+                                            <td class="text-center col-tenantName">Khaled Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Egyptian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Sharjah</td>
+                                            <td class="text-center col-city">Al Qasimia</td>
+                                            <td class="text-center col-buildingName">Al Qasimia Residence</td>
+                                            <td class="text-center col-unitName">Flat 204</td>
+                                            <td class="text-center col-email">khaled@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000046</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30046</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">09-05-2025</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-red text-red-fg">Expired</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Manager</td>
+                                            <td class="text-center col-ceDate">12-03-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">9</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Skyline Tenant</td>
+                                            <td class="text-center col-companyName">Skyline Real Estate LLC</td>
+                                            <td class="text-center col-gender">Female</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Business Bay</td>
+                                            <td class="text-center col-buildingName">Skyline Tower</td>
+                                            <td class="text-center col-unitName">Suite 1201</td>
+                                            <td class="text-center col-email">skyline@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000047</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30047</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">30-10-2028</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">05-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">10</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Anita Sharma</td>
+                                            <td class="text-center col-tenantName">Anita Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Female</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Al Nahda</td>
+                                            <td class="text-center col-buildingName">Rose Garden Apartments</td>
+                                            <td class="text-center col-unitName">Flat 512</td>
+                                            <td class="text-center col-email">anita@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000048</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30048</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">18-01-2027</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Supervisor</td>
+                                            <td class="text-center col-ceDate">20-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">11</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Prime Logistics Tenant</td>
+                                            <td class="text-center col-companyName">Prime Logistics LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Jordanian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Abu Dhabi</td>
+                                            <td class="text-center col-city">ICAD</td>
+                                            <td class="text-center col-buildingName">Prime Warehouse</td>
+                                            <td class="text-center col-unitName">Warehouse 8</td>
+                                            <td class="text-center col-email">prime@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000049</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30049</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">07-07-2025</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-red text-red-fg">Expired</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">15-03-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">12</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Rahul Verma</td>
+                                            <td class="text-center col-tenantName">Rahul Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Satwa</td>
+                                            <td class="text-center col-buildingName">City View Apartments</td>
+                                            <td class="text-center col-unitName">Flat 603</td>
+                                            <td class="text-center col-email">rahul@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000050</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30050</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">14-04-2028</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Manager</td>
+                                            <td class="text-center col-ceDate">10-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">13</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Al Safeer Tenant</td>
+                                            <td class="text-center col-companyName">Al Safeer Supermarket LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Pakistani</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Sharjah</td>
+                                            <td class="text-center col-city">Al Taawun</td>
+                                            <td class="text-center col-buildingName">Safeer Mall</td>
+                                            <td class="text-center col-unitName">Shop 15</td>
+                                            <td class="text-center col-email">safeer@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000051</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30051</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">25-11-2026</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">06-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">14</td>
+                                            <td class="text-center col-operatorType">Individual</td>
+                                            <td class="text-center col-operatorName">Meera Iyer</td>
+                                            <td class="text-center col-tenantName">Meera Tenant</td>
+                                            <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Female</td>
+                                            <td class="text-center col-nationality">Indian</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Mirdif</td>
+                                            <td class="text-center col-buildingName">Palm Residency</td>
+                                            <td class="text-center col-unitName">Villa 7</td>
+                                            <td class="text-center col-email">meera@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000052</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30052</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">03-03-2025</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-red text-red-fg">Expired</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Supervisor</td>
+                                            <td class="text-center col-ceDate">28-02-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">15</td>
+                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">Galaxy Tenant</td>
+                                            <td class="text-center col-companyName">Galaxy Electronics LLC</td>
+                                            <td class="text-center col-gender">Male</td>
+                                            <td class="text-center col-nationality">Sri Lankan</td>
+                                            <td class="text-center col-country">UAE</td>
+                                            <td class="text-center col-state">Dubai</td>
+                                            <td class="text-center col-city">Deira</td>
+                                            <td class="text-center col-buildingName">Galaxy Plaza</td>
+                                            <td class="text-center col-unitName">Shop 22</td>
+                                            <td class="text-center col-email">galaxy@gmail.com</td>
+                                            <td class="text-center col-contactNumber">9000000053</td>
+                                            <td class="text-center col-tradeLicenseNumber">TL-30053</td>
+                                            <td class="text-center col-tradeLicenseExpiryDate">21-09-2027</td>
+                                            <td class="text-center col-documentStatus">
+                                                <span class="badge bg-teal text-teal-fg">Valid</span>
+                                            </td>
+                                            <td class="text-center col-ceBy">Admin</td>
+                                            <td class="text-center col-ceDate">17-04-2026</td>
+                                            <td class="text-center col-action">
+                                                <div class="d-flex justify-content-center gap-2">
+                                                    <a class="btn btn-primary btn-icon fs-2"><i
+                                                            class="ti ti-eye"></i></a>
+                                                    <a class="btn btn-teal btn-icon fs-2"><i
+                                                            class="ti ti-pencil"></i></a>
+                                                    <a class="btn btn-warning btn-icon fs-2"><i
+                                                            class="ti ti-circle-x"></i></a>
+                                                    <a class="btn btn-danger btn-icon fs-2"><i
+                                                            class="ti ti-trash"></i></a>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+                            </div>
+                        </div>
+                        <div class=" mt-2 d-flex flex-wrap justify-content-between align-items-center">
+                            <div>
+                                <p class="m-0 text-muted">
+                                    Showing
+                                    <span class="fw-bold">1 to 15</span>
+                                    of
+                                    <span class="fw-bold">15</span>
+                                    entries
+                                </p>
+                            </div>
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <i class="ti ti-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="ti ti-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <!-- Footer -->
+            <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                <div class="text-dark fw-medium text-center">
+                    © 2026 Leasing Management System
+                </div>
+            </footer>
+
+
+            <!-- Owner Type Modal -->
+            <div class="modal modal-blur fade" id="modal-addNewOwner" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                    <div class="modal-content">
+
+                        <div class="modal-header bg-primary text-white">
+                            <div>
+                                <h5 class="modal-title fw-bold mb-0">Owner Type</h5>
+                                <div class="text-white opacity-75 small">Select owner type to continue</div>
+                            </div>
+                            <button type="button" class="btn-close btn-close-white opacity-85"
+                                data-bs-dismiss="modal"></button>
+                        </div>
+
+                        <div class="modal-body">
+
+                            <label class="form-label fw-semibold mb-3">Owner Type</label>
+
+                            <div class="row g-3">
+
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item w-100">
+                                        <input type="radio" name="owner-type" class="form-selectgroup-input" checked
+                                            onclick="location.href='./AddNewIndividualOwner.html'">
+
+                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong">Individual</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <label class="form-selectgroup-item w-100">
+                                        <input type="radio" name="owner-type" class="form-selectgroup-input"
+                                            onclick="location.href='./AddNewCompanyOwner.html'">
+
+                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
+                                            <span class="me-3">
+                                                <span class="form-selectgroup-check"></span>
+                                            </span>
+                                            <span class="form-selectgroup-label-content">
+                                                <span class="form-selectgroup-title strong">Company</span>
+                                            </span>
+                                        </span>
+                                    </label>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            class SmartTable {
+
+                constructor(wrapper) {
+                    this.wrapper = wrapper;
+                    this.sortDirection = {};
+                    this.initSearch();
+                    this.initColumnToggle();
+                    this.initSorting();
+                }
+
+                // Get table inside this smart-table
+                getTable() {
+                    return this.wrapper.querySelector(".table-main");
+                }
+
+                /* ================= SEARCH ================= */
+
+                initSearch() {
+                    const searchInput = this.wrapper.querySelector(".table-search");
+
+                    if (!searchInput) return;
+
+                    searchInput.addEventListener("keyup", () => {
+
+                        const value = searchInput.value.toLowerCase();
+                        const table = this.getTable();
+
+                        if (!table) return;
+
+                        const rows = table.querySelectorAll("tbody tr");
+
+                        rows.forEach(row => {
+
+                            const text = row.innerText.toLowerCase();
+
+                            row.style.display =
+                                text.includes(value) ? "" : "none";
+
+                        });
+
+                    });
+                }
+
+                /* ================= COLUMN TOGGLE ================= */
+
+                initColumnToggle() {
+
+                    const checkboxes =
+                        this.wrapper.querySelectorAll(".col-toggle");
+
+                    checkboxes.forEach(cb => {
+
+                        cb.addEventListener("change", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = cb.dataset.col;
+
+                            table
+                                .querySelectorAll(".col-" + col)
+                                .forEach(cell => {
+
+                                    cell.style.display =
+                                        cb.checked ? "" : "none";
+
+                                });
+
+                        });
+
+                    });
+
+                }
+
+                /* ================= SORTING ================= */
+
+                initSorting() {
+
+                    const headers =
+                        this.wrapper.querySelectorAll(".sortable");
+
+                    headers.forEach(th => {
+
+                        th.addEventListener("click", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = th.dataset.col;
+
+                            this.sortDirection[col] =
+                                !this.sortDirection[col];
+
+                            const direction =
+                                this.sortDirection[col] ? 1 : -1;
+
+                            const tbody = table.tBodies[0];
+
+                            const rows =
+                                Array.from(tbody.rows);
+
+                            rows.sort((a, b) => {
+
+                                let A =
+                                    a.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                let B =
+                                    b.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                // Number sort
+                                if (!isNaN(A) && !isNaN(B)) {
+                                    return (A - B) * direction;
+                                }
+
+                                // Date sort (dd-mm-yyyy)
+                                if (A.match(/\\d{2}-\\d{2}-\\d{4}/)) {
+
+                                    const dateA =
+                                        new Date(
+                                            A.split("-").reverse().join("-")
+                                        );
+
+                                    const dateB =
+                                        new Date(
+                                            B.split("-").reverse().join("-")
+                                        );
+
+                                    return (dateA - dateB) * direction;
+
+                                }
+
+                                // Text sort
+                                return A.localeCompare(B) * direction;
+
+                            });
+
+                            tbody.append(...rows);
+
+                        });
+
+                    });
+
+                }
+
+            }
+
+            /* Initialize all smart tables */
+
+            document
+                .querySelectorAll(".smart-table")
+                .forEach(wrapper => {
+
+                    new SmartTable(wrapper);
+
+                });
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            new SlimSelect({ select: '#operatorType' });
+            new SlimSelect({ select: '#operatorName' });
+            new SlimSelect({ select: '#tenantName' });
+            new SlimSelect({ select: '#companyName', });
+            new SlimSelect({ select: '#gender', });
+            new SlimSelect({ select: '#nationality', });
+            new SlimSelect({ select: '#country', });
+            new SlimSelect({ select: '#state', });
+            new SlimSelect({ select: '#currency', });
+            new SlimSelect({ select: '#status', });
+
+            new Litepicker({
+                element: document.getElementById('tlExpiryDate'),
+                singleMode: false,
+                format: 'YYYY-MM-DD'
+            });
+        });
+    </script>
+</body>
+
+</html>
