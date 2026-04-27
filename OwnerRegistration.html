@@ -227,9 +227,6 @@
                             <h2 class="card-title text-light fw-bold mb-0">
                                 Owner List
                             </h2>
-                            <button class="btn btn-light ms-auto" data-bs-toggle="modal"
-                                data-bs-target="#modal-addNewOwner"><i class="ti ti-plus me-1 fw-bold fs-3"></i>Add
-                                New</button>
                         </div>
                         <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
                             <div class="smart-table">
@@ -243,12 +240,12 @@
                                         </div>
                                     </div>
                                     <div class="col-auto ms-auto d-flex gap-1">
-                                        <button class="btn btn-md px-2 btn-blue mt-1" data-bs-toggle="collapse"
-                                            data-bs-target="#filter">
+                                        <button class="btn btn-action border px-2 text-dark mt-1"
+                                            data-bs-toggle="collapse" data-bs-target="#filter">
                                             <i class="ti ti-filter fs-2"></i>
                                         </button>
                                         <div class="dropdown">
-                                            <button class="btn btn-md btn-secondary px-2 py-1 mt-1"
+                                            <button class="btn btn-action border px-2 text-dark mt-1"
                                                 data-bs-toggle="dropdown">
                                                 <i class="ti ti-columns-3 fs-2"></i>
                                             </button>
@@ -266,7 +263,11 @@
                                                         data-col="ownerType" checked>
                                                     <span>Ownership Type</span>
                                                 </label>
-
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="ownerName" checked>
+                                                    <span>Owner Name</span>
+                                                </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
                                                     <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                         data-col="companyName" checked>
@@ -320,6 +321,11 @@
                                                 </label>
                                                 <label class="form-check d-flex align-items-center py-1 ms-2">
                                                     <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                        data-col="documentStatus" checked>
+                                                    <span>Document Status</span>
+                                                </label>
+                                                <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                    <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                         data-col="ceBy" checked>
                                                     <span>Added / Edited By</span>
                                                 </label>
@@ -330,9 +336,13 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-md btn-rss px-2 py-1  mt-1 rounded-2">
-                                            <i class="ti ti-printer fs-2 me-1"></i>Print
+                                        <button class="btn btn-md btn-yellow px-2 py-1  mt-1 rounded-2">
+                                            <i class="ti ti-printer fs-2"></i>
                                         </button>
+                                        <button class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1"
+                                            data-bs-toggle="modal" data-bs-target="#modal-addNewOwner"><i
+                                                class="ti ti-plus me-1 fw-bold fs-3"></i>Add
+                                            New</button>
                                     </div>
                                 </div>
                                 <div class="collapse" id="filter">
@@ -455,12 +465,22 @@
                                                         <input type="text" class="form-control" id="tlExpiryDate">
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6 col-lg-3">
+                                                    <div class="mb-3">
+                                                        <label class="form-label">Document Status</label>
+                                                        <select id="status">
+                                                            <option value="-1">Select</option>
+                                                            <option value="Albania">Valid</option>
+                                                            <option value="Australia">Expired</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="btn-list justify-content-end">
-                                                    <a class="btn btn-green">Search</a>
                                                     <a class="btn btn-outline btn-secondary">
                                                         Clear</a>
+                                                    <a class="btn btn-bitbucket">Search</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -476,7 +496,9 @@
                                                 <th class="sortable col-ownerType" data-col="ownerType">
                                                     Owner Type <span class="sort-indicator">⇅</span>
                                                 </th>
-
+                                                <th class="sortable col-ownerName" data-col="ownerName">
+                                                    Owner Name <span class="sort-indicator">⇅</span>
+                                                </th>
                                                 <th class="sortable col-companyName" data-col="companyName">
                                                     Company Name <span class="sort-indicator">⇅</span>
                                                 </th>
@@ -518,6 +540,9 @@
                                                     data-col="tradeLicenseExpiryDate">
                                                     Trade License Expiry Date <span class="sort-indicator">⇅</span>
                                                 </th>
+                                                <th class="sortable col-documentStatus" data-col="documentStatus">
+                                                    Document Status <span class="sort-indicator">⇅</span>
+                                                </th>
                                                 <th class="sortable col-ceBy" data-col="ceBy">
                                                     Added / Edited By <span class="sort-indicator">⇅</span>
                                                 </th>
@@ -536,34 +561,34 @@
                                             <tr>
                                                 <td class="text-center">1</td>
                                                 <td class="text-center col-ownerType">Company</td>
-                                                <td class="text-center col-companyName">ABC Trading LLC</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Al Noor Trading LLC</td>
                                                 <td class="text-center col-gender">Male</td>
                                                 <td class="text-center col-nationality">Indian</td>
                                                 <td class="text-center col-country">UAE</td>
                                                 <td class="text-center col-state">Dubai</td>
                                                 <td class="text-center col-city">Dubai City</td>
-                                                <td class="text-center col-email">abc@gmail.com</td>
-                                                <td class="text-center col-contactNumber">9876543210</td>
-                                                <td class="text-center col-tradeLicenseNumber">TL-45896</td>
-                                                <td class="text-center col-tradeLicenseExpiryDate">16-04-2027</td>
-                                                <td class="text-center col-ceBy">Henry</td>
-                                                <td class="text-center col-ceDate">12-04-2026</td>
-
+                                                <td class="text-center col-email">alnoor@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000001</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30001</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">12-09-2027</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">David</td>
+                                                <td class="text-center col-ceDate">01-03-2026</td>
                                                 <td class="text-center col-action">
                                                     <div class="d-flex justify-content-center gap-2">
-                                                        <a class="text-primary btn tbn-icon fs-1 btn-sm"
-                                                            href="./ViewCompanyOwnerType.html">
-                                                            <i class="ti ti-eye"></i>
-                                                        </a>
-                                                        <a class="text-teal btn tbn-icon btn-sm">
-                                                            <i class="ti ti-pencil fs-1"></i>
-                                                        </a>
-                                                        <a class="text-warning btn tbn-icon btn-sm">
-                                                            <i class="ti ti-circle-x fs-1"></i>
-                                                        </a>
-                                                        <a class="text-danger btn tbn-icon btn-sm">
-                                                            <i class="ti ti-trash fs-1"></i>
-                                                        </a>
+                                                        <a class="btn btn-primary btn-icon fs-2"
+                                                            href="./ViewCompanyOwnerType.html"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"
+                                                            href="./AddNewCompanyOwner.html"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
@@ -571,49 +596,475 @@
                                             <tr>
                                                 <td class="text-center">2</td>
                                                 <td class="text-center col-ownerType">Individual</td>
-                                                <td class="text-center col-companyName">Mateo Services</td>
-                                                <td class="text-center col-gender">Female</td>
-                                                <td class="text-center col-nationality">Filipino</td>
+                                                <td class="text-center col-ownerName">John Smith</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">British</td>
                                                 <td class="text-center col-country">UAE</td>
                                                 <td class="text-center col-state">Abu Dhabi</td>
                                                 <td class="text-center col-city">Abu Dhabi City</td>
-                                                <td class="text-center col-email">mateo@gmail.com</td>
-                                                <td class="text-center col-contactNumber">9123456780</td>
-                                                <td class="text-center col-tradeLicenseNumber">TL-78541</td>
-                                                <td class="text-center col-tradeLicenseExpiryDate">01-01-2026</td>
-                                                <td class="text-center col-ceBy">Henry</td>
-                                                <td class="text-center col-ceDate">12-04-2026</td>
-
+                                                <td class="text-center col-email">johnsmith@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000002</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30002</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">05-01-2026</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Ahmed</td>
+                                                <td class="text-center col-ceDate">14-02-2026</td>
                                                 <td class="text-center col-action">
                                                     <div class="d-flex justify-content-center gap-2">
-                                                        <a class="text-primary btn tbn-icon fs-1 btn-sm">
-                                                            <i class="ti ti-eye"></i>
-                                                        </a>
-                                                        <a class="text-teal btn tbn-icon btn-sm">
-                                                            <i class="ti ti-pencil fs-1"></i>
-                                                        </a>
-                                                        <a class="text-warning btn tbn-icon btn-sm">
-                                                            <i class="ti ti-circle-x fs-1"></i>
-                                                        </a>
-                                                        <a class="text-danger btn tbn-icon btn-sm">
-                                                            <i class="ti ti-trash fs-1"></i>
-                                                        </a>
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
                                                     </div>
                                                 </td>
                                             </tr>
 
+                                            <tr>
+                                                <td class="text-center">3</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Desert Star Logistics LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Pakistani</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Sharjah</td>
+                                                <td class="text-center col-city">Sharjah City</td>
+                                                <td class="text-center col-email">desertstar@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000003</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30003</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">21-11-2028</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Michael</td>
+                                                <td class="text-center col-ceDate">10-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">4</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Maria Garcia</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Female</td>
+                                                <td class="text-center col-nationality">Spanish</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Ajman</td>
+                                                <td class="text-center col-city">Ajman City</td>
+                                                <td class="text-center col-email">maria@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000004</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30004</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">18-03-2025</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Sophia</td>
+                                                <td class="text-center col-ceDate">21-01-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">5</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Golden Pearl Trading LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Dubai</td>
+                                                <td class="text-center col-city">Deira</td>
+                                                <td class="text-center col-email">goldenpearl@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000016</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30016</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">11-10-2027</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Daniel</td>
+                                                <td class="text-center col-ceDate">05-03-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">6</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Ali Hassan</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Emirati</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Abu Dhabi</td>
+                                                <td class="text-center col-city">Mussafah</td>
+                                                <td class="text-center col-email">alihassan@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000017</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30017</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">02-01-2026</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Fatima</td>
+                                                <td class="text-center col-ceDate">12-02-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">7</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Silver Line Contracting LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Pakistani</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Sharjah</td>
+                                                <td class="text-center col-city">Al Nahda</td>
+                                                <td class="text-center col-email">silverline@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000018</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30017</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">02-01-2026</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Fatima</td>
+                                                <td class="text-center col-ceDate">12-02-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">8</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Ravi Kumar</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Dubai</td>
+                                                <td class="text-center col-city">Bur Dubai</td>
+                                                <td class="text-center col-email">ravikumar@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000031</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30031</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">14-02-2026</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Imran</td>
+                                                <td class="text-center col-ceDate">10-01-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">9</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Royal Falcon Transport LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Emirati</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Abu Dhabi</td>
+                                                <td class="text-center col-city">Khalifa City</td>
+                                                <td class="text-center col-email">royalfalcon@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000032</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30032</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">09-09-2028</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Noah</td>
+                                                <td class="text-center col-ceDate">18-03-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">10</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Mohammed Salim</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Bangladeshi</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Sharjah</td>
+                                                <td class="text-center col-city">Rolla</td>
+                                                <td class="text-center col-email">salim@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000033</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30033</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">01-12-2025</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Aisha</td>
+                                                <td class="text-center col-ceDate">07-02-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">11</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Blue Wave Marine Services LLC
+                                                </td>
+                                                <td class="text-center col-gender">Female</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Fujairah</td>
+                                                <td class="text-center col-city">Fujairah City</td>
+                                                <td class="text-center col-email">bluewave@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000034</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30034</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">22-05-2027</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Lucas</td>
+                                                <td class="text-center col-ceDate">11-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">12</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Sarah Johnson</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Female</td>
+                                                <td class="text-center col-nationality">American</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Dubai</td>
+                                                <td class="text-center col-city">Jumeirah</td>
+                                                <td class="text-center col-email">sarahjohnson@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000035</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30035</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">17-08-2026</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Omar</td>
+                                                <td class="text-center col-ceDate">03-03-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">13</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Starline Foodstuff Trading LLC
+                                                </td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Dubai</td>
+                                                <td class="text-center col-city">Al Quoz</td>
+                                                <td class="text-center col-email">starline@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000036</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30036</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">28-12-2027</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Hassan</td>
+                                                <td class="text-center col-ceDate">06-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">14</td>
+                                                <td class="text-center col-ownerType">Individual</td>
+                                                <td class="text-center col-ownerName">Priya Nair</td>
+                                                <td class="text-center col-companyName">-</td>
+                                                <td class="text-center col-gender">Female</td>
+                                                <td class="text-center col-nationality">Indian</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Sharjah</td>
+                                                <td class="text-center col-city">Al Majaz</td>
+                                                <td class="text-center col-email">priyanair@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000037</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30037</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">09-03-2025</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-red text-red-fg">Expired</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Khalid</td>
+                                                <td class="text-center col-ceDate">19-02-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td class="text-center">15</td>
+                                                <td class="text-center col-ownerType">Company</td>
+                                                <td class="text-center col-ownerName">-</td>
+                                                <td class="text-center col-companyName">Elite Security Services LLC</td>
+                                                <td class="text-center col-gender">Male</td>
+                                                <td class="text-center col-nationality">Pakistani</td>
+                                                <td class="text-center col-country">UAE</td>
+                                                <td class="text-center col-state">Abu Dhabi</td>
+                                                <td class="text-center col-city">Al Zahiyah</td>
+                                                <td class="text-center col-email">elite.security@gmail.com</td>
+                                                <td class="text-center col-contactNumber">9000000038</td>
+                                                <td class="text-center col-tradeLicenseNumber">TL-30038</td>
+                                                <td class="text-center col-tradeLicenseExpiryDate">15-06-2028</td>
+                                                <td class="text-center col-documentStatus">
+                                                    <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                </td>
+                                                <td class="text-center col-ceBy">Omar</td>
+                                                <td class="text-center col-ceDate">08-04-2026</td>
+                                                <td class="text-center col-action">
+                                                    <div class="d-flex justify-content-center gap-2">
+                                                        <a class="btn btn-primary btn-icon fs-2"><i
+                                                                class="ti ti-eye"></i></a>
+                                                        <a class="btn btn-teal btn-icon fs-2"><i
+                                                                class="ti ti-pencil"></i></a>
+                                                        <a class="btn btn-warning btn-icon fs-2"><i
+                                                                class="ti ti-circle-x"></i></a>
+                                                        <a class="btn btn-danger btn-icon fs-2"><i
+                                                                class="ti ti-trash"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                         </tbody>
 
                                     </table>
                                 </div>
                             </div>
-                            <div class="mt-2 d-flex flex-wrap justify-content-between align-items-center">
+                            <div class=" mt-2 d-flex flex-wrap justify-content-between align-items-center">
                                 <div>
                                     <p class="m-0 text-muted">
                                         Showing
-                                        <span class="fw-bold">1 to 3</span>
+                                        <span class="fw-bold">1 to 15</span>
                                         of
-                                        <span class="fw-bold">3</span>
+                                        <span class="fw-bold">15</span>
                                         entries
                                     </p>
                                 </div>
@@ -900,6 +1351,7 @@
             new SlimSelect({ select: '#country', });
             new SlimSelect({ select: '#state', });
             new SlimSelect({ select: '#currency', });
+            new SlimSelect({ select: '#status', });
 
             new Litepicker({
                 element: document.getElementById('tlExpiryDate'),

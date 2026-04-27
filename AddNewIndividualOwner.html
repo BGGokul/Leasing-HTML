@@ -157,15 +157,15 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row g-3">
-                                                <div class="col-12">
+                                                <div class="col-md-3">
                                                     <label class="form-label">Owner Type</label>
                                                     <input type="text" class="form-control" value="Individual" disabled>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-5">
                                                     <label class="form-label">Full Name</label>
                                                     <input type="text" class="form-control">
                                                 </div>
-                                                <div class="col-md-3">
+                                                <div class="col-md-4">
                                                     <label class="form-label">Gender</label>
                                                     <select id="gender">
                                                         <option value="-1">Select</option>
@@ -180,11 +180,11 @@
                                                     <label class="form-label">Date of Birth</label>
                                                     <input id="dob" type="text" class="form-control">
                                                 </div>
-                                                <div class="col-md-2">
+                                                <div class="col-md-1">
                                                     <label class="form-label">Age</label>
                                                     <input id="age" class="form-control" disabled>
                                                 </div>
-                                                <div class="col-md-6">
+                                                <div class="col-md-4">
                                                     <label class="form-label">Email ID</label>
                                                     <input type="text" class="form-control">
                                                 </div>
@@ -406,7 +406,7 @@
 
                                                 <div class="col-12">
                                                     <label class="form-label">Address</label>
-                                                    <textarea name="" id="" rows="3" class="form-control"></textarea>
+                                                    <textarea name="" id="" rows="2" class="form-control"></textarea>
 
                                                 </div>
                                             </div>
@@ -450,30 +450,36 @@
                         </div>
                     </div>
                     <div class="card mb-3">
-                        <div class="card-header bg-cyan-lt">
+                        <div class="card-header bg-cyan-lt d-flex justify-content-between">
                             <h3 class="card-title mb-0 fw-bold">Contact Numbers</h3>
+                            <button class="btn btn-sm btn-primary float-end" type="button" onclick="addContactRow()">
+                                <i class="ti ti-plus me-1"></i>
+                                Add Number
+                            </button>
                         </div>
                         <div class="card-body">
-                            <div class="mb-3">
-                                <label class="form-label">Primary Number</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <label class="form-label fw-bold mb-0">Secondary Numbers</label>
-                                <button class="btn btn-sm btn-primary" onclick="addContactRow()">
-                                    <i class="ti ti-plus me-1"></i>Add Number
-                                </button>
-                            </div>
-                            <div id="list" class="vstack gap-2 col-md-6">
-                                <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter number">
-                                    <button class="btn btn-outline-danger" type="button"
-                                        onclick="this.closest('.input-group').remove()">
-                                        <i class="ti ti-trash"></i>
-                                    </button>
+                            <div class="row g-3" id="contactRow">
+
+                                <!-- Primary Number -->
+                                <div class="col-md-4">
+                                    <label class="form-label mb-1">Primary Number</label>
+                                    <input type="text" class="form-control">
                                 </div>
+
+                                <!-- Secondary Numbers Header -->
+                                <div class="col-md-4">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <label class="form-label fw-bold mb-0">
+                                            Secondary Number
+                                        </label>
+                                    </div>
+
+                                    <input type="text" class="form-control">
+                                </div>
+
                             </div>
                         </div>
+
                     </div>
                     <div class="card mb-3">
                         <div class="card-header bg-green-lt">
@@ -483,7 +489,7 @@
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="form-label">National ID Number</label>
                                     <input class="form-control">
                                 </div>
@@ -491,15 +497,15 @@
                                     <label class="form-label">National ID Expiry Date</label>
                                     <input class="form-control" id="passportExpiryDate">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <label class="form-label">Upload File</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-                                        <label class="btn btn-primary btn-sm">
-                                            <i class="ti ti-upload me-1"></i>Upload
-                                            <input type="file" hidden onchange="handleFile(this)">
-                                        </label>
-                                        <div class="file-actions">
+
+                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFile(this)">
+                                            </label>
                                             <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
                                                     class="ti ti-eye"></i></button>
                                             <button type="button" class="btn btn-outline-danger btn-sm"
@@ -511,7 +517,7 @@
                                 </div>
                             </div>
                             <div class="row g-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="form-label">Passport Number</label>
                                     <input class="form-control">
                                 </div>
@@ -519,15 +525,16 @@
                                     <label class="form-label">Passport Expiry Date</label>
                                     <input class="form-control" id="nIDExpiryDate">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <label class="form-label">Upload File</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-                                        <label class="btn btn-primary btn-sm">
-                                            <i class="ti ti-upload me-1"></i>Upload
-                                            <input type="file" hidden onchange="handleFile(this)">
-                                        </label>
-                                        <div class="file-actions">
+
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm">
+                                                <i class="ti ti-upload me-1"></i>
+                                                <input type="file" hidden onchange="handleFile(this)">
+                                            </label>
                                             <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
                                                     class="ti ti-eye"></i></button>
                                             <button type="button" class="btn btn-outline-danger btn-sm"
@@ -548,7 +555,7 @@
                         </div>
                         <div class="card-body">
                             <div class="row g-3 mb-3">
-                                <div class="col-md-5">
+                                <div class="col-md-4">
                                     <label class="form-label">Trade License Number</label>
                                     <input class="form-control">
                                 </div>
@@ -556,15 +563,15 @@
                                     <label class="form-label">Trade License Expiry Date</label>
                                     <input class="form-control" id="tlExpiryDate">
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-5">
                                     <label class="form-label">Upload File</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-                                        <label class="btn btn-primary btn-sm">
-                                            <i class="ti ti-upload me-1"></i>Upload
-                                            <input type="file" hidden onchange="handleFile(this)">
-                                        </label>
-                                        <div class="file-actions">
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFile(this)">
+                                            </label>
                                             <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
                                                     class="ti ti-eye"></i></button>
                                             <button type="button" class="btn btn-outline-danger btn-sm"
@@ -603,13 +610,11 @@
                                     <label class="form-label">IBAN Document Upload</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-
-                                        <label class="btn btn-primary btn-sm">
-                                            <i class="ti ti-upload me-1"></i>Upload
-                                            <input type="file" hidden onchange="handleFile(this)">
-                                        </label>
-
-                                        <div class="file-actions">
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFile(this)">
+                                            </label>
                                             <button type="button" class="btn btn-outline-secondary btn-sm"
                                                 onclick="viewFile(this)">
                                                 <i class="ti ti-eye"></i>
@@ -633,12 +638,12 @@
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
 
-                                        <label class="btn btn-primary btn-sm">
-                                            <i class="ti ti-upload me-1"></i>Upload
-                                            <input type="file" hidden onchange="handleFile(this)">
-                                        </label>
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFile(this)">
+                                            </label>
 
-                                        <div class="file-actions">
                                             <button type="button" class="btn btn-outline-secondary btn-sm"
                                                 onclick="viewFile(this)">
                                                 <i class="ti ti-eye"></i>
@@ -665,32 +670,39 @@
                             <div class="row g-3 mb-4">
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">MoA (Memorandum of Association)</label>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <label class="btn btn-outline-primary btn-sm upload-btn">
-                                            Upload
-                                            <input type="file" hidden onchange="handleFixedUpload(this)">
-                                        </label>
+                                    <div class="d-flex align-items-center gap-2 file-box">
                                         <span class="file-name text-muted">No file selected</span>
-                                        <button class="btn btn-outline-danger btn-sm" onclick="resetFixedUpload(this)">
-                                            ✕
-                                        </button>
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm upload-btn">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <button class="btn btn-outline-danger btn-sm"
+                                                onclick="resetFixedUpload(this)">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">PoU (Power of Undertaking)</label>
-                                    <div class="d-flex align-items-center gap-2">
-                                        <label class="btn btn-outline-primary btn-sm upload-btn">
-                                            Upload
-                                            <input type="file" hidden onchange="handleFixedUpload(this)">
-                                        </label>
-                                        <span class="file-name text-muted">No file selected</span>
-                                        <button class="btn btn-outline-danger btn-sm" onclick="resetFixedUpload(this)">
-                                            ✕
-                                        </button>
+                                    <div class="d-flex align-items-center gap-2 file-box">
+                                        <span class="file-name text-muted">No file
+                                            selected</span>
+                                        <div class="btn-group">
+                                            <label class="btn btn-primary btn-sm upload-btn">
+                                                <i class="ti ti-upload"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <button class="btn btn-outline-danger btn-sm"
+                                                onclick="resetFixedUpload(this)">
+                                                <i class="ti ti-trash"></i>
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <hr>
+                            <hr class="mt-2 mb-3">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="mb-0 fw-bold">Additional Attachments</h5>
                                 <button class="btn btn-primary btn-sm" onclick="addAttachmentRow()">
@@ -698,15 +710,16 @@
                                 </button>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered align-middle">
-                                    <thead class="table-light">
-                                        <tr>
+                                <table class="table table-bordered table-striped align-middle table-main">
+                                    <thead class="table-primary">
+                                        <tr class="bg-primary">
                                             <th>Document Type</th>
-                                            <th>Name</th>
+                                            <th>Document Name</th>
                                             <th>Expiry Date</th>
                                             <th>Remarks</th>
-                                            <th>Upload</th>
-                                            <th></th>
+                                            <th>Attachment</th>
+                                            <th>Document Validity</th>
+                                            <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody id="attachmentBody">
@@ -734,9 +747,15 @@
                                                     <input type="file" hidden onchange="handleRowUpload(this)">
                                                 </label>
                                             </td>
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
                                             <td class="text-center">
                                                 <button class="btn btn-outline-danger btn-sm"
-                                                    onclick="this.closest('tr').remove()">✕</button>
+                                                    onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -921,22 +940,37 @@
         /* ================= CONTACT ROW ================= */
         function addContactRow() {
 
-            const div = document.createElement("div");
-            div.className = "input-group";
+            const container = document.getElementById("contactRow");
 
-            div.innerHTML = `
-        <input type="text" class="form-control" placeholder="Enter number">
+            const col = document.createElement("div");
+            col.className = "col-md-4";
 
-        <button class="btn btn-outline-danger" type="button"
-            onclick="this.closest('.input-group').remove()">
-            <i class="ti ti-trash"></i>
-        </button>
+            col.innerHTML = `
+        <label class="form-label mb-1">
+            Secondary Number
+        </label>
+
+        <div class="input-group mb-2">
+
+            <input type="text"
+                   class="form-control">
+
+            <button class="btn text-danger"
+                    type="button"
+                    onclick="removeNumber(this)">
+                <i class="ti ti-trash fs-3"></i>
+            </button>
+
+        </div>
     `;
 
-            document.getElementById("list").appendChild(div);
+            container.appendChild(col);
         }
 
 
+        function removeNumber(button) {
+            button.closest(".col-md-4").remove();
+        }
         // ================= ADD ROW =================
         function addAttachmentRow() {
 
@@ -965,10 +999,17 @@
                 <input type="file" hidden onchange="handleRowUpload(this)">
             </label>
         </td>
+        
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
 
         <td class="text-center">
             <button class="btn btn-outline-danger btn-sm"
-                onclick="this.closest('tr').remove()">✕</button>
+                onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
         </td>
     `;
 

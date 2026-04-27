@@ -16,6 +16,103 @@
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Wrapper */
+        .tab-scroll-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow: hidden;
+            background: #ffffff;
+            border-radius: 12px;
+        }
+
+        /* Scroll container */
+        .nav-scroll {
+            flex: 1 1 auto;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            background: #f1f5f9;
+            padding: 8px;
+            border-radius: 999px;
+        }
+
+        /* Hide scrollbar */
+        .nav-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .nav-scroll {
+            scrollbar-width: none;
+        }
+
+        /* Pill button model */
+        .nav-tabs {
+            border-bottom: none;
+            gap: 8px;
+        }
+
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 999px;
+            padding: 8px 18px;
+            font-weight: 500;
+            color: #5b6472;
+            background: transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+            font-weight: 600;
+        }
+
+        .nav-tabs .nav-link:hover {
+            background: #e6edf5;
+            color: #1d273b;
+            border-radius: 999px;
+        }
+
+        .nav-tabs .nav-link.active {
+            background: #206bc4;
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(32, 107, 196, 0.35);
+        }
+
+        /* Buttons */
+        .scroll-btn {
+            position: static;
+            flex: 0 0 auto;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #e6e8eb;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .scroll-left {
+            order: 0;
+        }
+
+        .scroll-right {
+            order: 2;
+        }
+
+        .tab-scroll-wrapper::before {
+            left: 0;
+            background: linear-gradient(to right, #ffffff, transparent);
+        }
+
+        .tab-scroll-wrapper::after {
+            right: 0;
+            background: linear-gradient(to left, #ffffff, transparent);
+        }
+
+        .tab-content {
+            background: rgb(32 107 196 / 15%) !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -164,7 +261,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mt-3">
+                    <!-- <div class="card mt-3">
                         <div class="card-header bg-cyan text-white py-3">
                             <h3 class="card-title fs-3 fw-bold">
                                 Basic Information
@@ -412,51 +509,300 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mt-5">
+                    </div> -->
+                    <div>
                         <div class="card smart-table">
-                            <div class="card-header border-0 p-3 pb-0">
-                                <ul class="nav nav-tabs border-bottom-0 flex-nowrap overflow-x-auto overflow-y-hidden"
-                                    role="tablist">
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link active rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#ownerType">Owner
-                                            Type</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#ownerShipType">Ownership
-                                            Type</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#propertyType">Property
-                                            Type</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#propertyUsageType">Property
-                                            Usage
-                                            Type</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#commonAmenities">Common
-                                            Amenities</a>
-                                    </li>
-                                    <li class="nav-item" role="presentation">
-                                        <a class="nav-link rounded-bottom-0" data-bs-toggle="tab"
-                                            href="#unitAmenities">Unit
-                                            of Amenities
-                                        </a>
-                                    </li>
-                                </ul>
+                            <div class="card-header py-2 px-2">
+                                <div class="tab-scroll-wrapper">
+
+                                    <!-- Left Button -->
+                                    <button id="scrollLeftBtn"
+                                        class="btn btn-icon btn-sm btn-primary border-0 scroll-btn scroll-left">
+                                        <i class="ti ti-chevron-left fw-bold fs-3"></i>
+                                    </button>
+
+                                    <!-- Tabs -->
+                                    <div id="tabScrollContainer" class="nav-scroll">
+                                        <ul class="nav nav-tabs flex-nowrap">
+                                            <li class="nav-item">
+                                                <a class="nav-link active" data-bs-toggle="tab"
+                                                    href="#basicInformation">Basic Information
+                                                </a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#ownerType">Owner Type</a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#ownerShipType">Ownership Type</a></li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#propertyType">Property Type</a></li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#propertyUsageType">Property Usage Type</a>
+                                            </li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#commonAmenities">Common Amenities</a></li>
+                                            <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
+                                                    href="#unitAmenities">Unit
+                                                    Amenities</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Right Button -->
+                                    <button id="scrollRightBtn"
+                                        class="btn btn-icon btn-sm btn-primary border-0 scroll-btn scroll-right">
+                                        <i class="ti ti-chevron-right fw-bold fs-3"></i>
+                                    </button>
+
+                                </div>
 
                             </div>
 
-                            <div class="card-body p-0 pb-3">
-                                <div class="tab-content mx-3">
-                                    <div class="tab-pane fade show active p-3" id="ownerType" role="tabpanel">
+
+                            <div class="card-body p-0">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active p-3" id="basicInformation" role="tabpanel">
+                                        <div class="row">
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Date Format</label>
+                                                    <select id="dateFormat">
+                                                        <option value="-1">Select</option>
+                                                        <option value="dd-MM-yyyy">DD-MM-YYYY</option>
+                                                        <option value="MM-dd-yyyy">MM-DD-YYYY</option>
+                                                        <option value="yyyy-MM-dd">YYYY-MM-DD</option>
+                                                        <option value="dd-MMM-yyyy">DD-MMM-YYYY</option>
+                                                        <option value="dd-MM-yy">DD-MM-YY</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Currency</label>
+                                                    <select id="currency">
+                                                        <option value="-1">Select</option>
+                                                        <option value="USD">USD - US Dollar</option>
+                                                        <option value="EUR">EUR - Euro</option>
+                                                        <option value="INR">INR - Indian Rupee</option>
+                                                        <option value="GBP">GBP - British Pound</option>
+                                                        <option value="JPY">JPY - Japanese Yen</option>
+                                                        <option value="AUD">AUD - Australian Dollar</option>
+                                                        <option value="CAD">CAD - Canadian Dollar</option>
+                                                        <option value="CHF">CHF - Swiss Franc</option>
+                                                        <option value="CNY">CNY - Chinese Yuan</option>
+                                                        <option value="SGD">SGD - Singapore Dollar</option>
+                                                        <option value="AED">AED - UAE Dirham</option>
+                                                        <option value="ZAR">ZAR - South African Rand</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Nationality</label>
+                                                    <select id="nationality">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Afghan">Afghan</option>
+                                                        <option value="Albanian">Albanian</option>
+                                                        <option value="Algerian">Algerian</option>
+                                                        <option value="American">American</option>
+                                                        <option value="Andorran">Andorran</option>
+                                                        <option value="Angolan">Angolan</option>
+                                                        <option value="Argentinian">Argentinian</option>
+                                                        <option value="Armenian">Armenian</option>
+                                                        <option value="Australian">Australian</option>
+                                                        <option value="Austrian">Austrian</option>
+                                                        <option value="Azerbaijani">Azerbaijani</option>
+                                                        <option value="Bahamian">Bahamian</option>
+                                                        <option value="Bahraini">Bahraini</option>
+                                                        <option value="Bangladeshi">Bangladeshi</option>
+                                                        <option value="Barbadian">Barbadian</option>
+                                                        <option value="Belarusian">Belarusian</option>
+                                                        <option value="Belgian">Belgian</option>
+                                                        <option value="Belizean">Belizean</option>
+                                                        <option value="Beninese">Beninese</option>
+                                                        <option value="Bhutanese">Bhutanese</option>
+                                                        <option value="Bolivian">Bolivian</option>
+                                                        <option value="Bosnian">Bosnian</option>
+                                                        <option value="Botswanan">Botswanan</option>
+                                                        <option value="Brazilian">Brazilian</option>
+                                                        <option value="British">British</option>
+                                                        <option value="Bruneian">Bruneian</option>
+                                                        <option value="Bulgarian">Bulgarian</option>
+                                                        <option value="Burkinabe">Burkinabe</option>
+                                                        <option value="Burmese">Burmese</option>
+                                                        <option value="Burundian">Burundian</option>
+                                                        <option value="Cambodian">Cambodian</option>
+                                                        <option value="Cameroonian">Cameroonian</option>
+                                                        <option value="Canadian">Canadian</option>
+                                                        <option value="Cape Verdean">Cape Verdean</option>
+                                                        <option value="Central African">Central African</option>
+                                                        <option value="Chadian">Chadian</option>
+                                                        <option value="Chilean">Chilean</option>
+                                                        <option value="Chinese">Chinese</option>
+                                                        <option value="Colombian">Colombian</option>
+                                                        <option value="Comoran">Comoran</option>
+                                                        <option value="Congolese">Congolese</option>
+                                                        <option value="Costa Rican">Costa Rican</option>
+                                                        <option value="Croatian">Croatian</option>
+                                                        <option value="Cuban">Cuban</option>
+                                                        <option value="Cypriot">Cypriot</option>
+                                                        <option value="Czech">Czech</option>
+                                                        <option value="Danish">Danish</option>
+                                                        <option value="Djiboutian">Djiboutian</option>
+                                                        <option value="Dominican">Dominican</option>
+                                                        <option value="Dutch">Dutch</option>
+                                                        <option value="East Timorese">East Timorese</option>
+                                                        <option value="Ecuadorian">Ecuadorian</option>
+                                                        <option value="Egyptian">Egyptian</option>
+                                                        <option value="Emirati">Emirati</option>
+                                                        <option value="English">English</option>
+                                                        <option value="Eritrean">Eritrean</option>
+                                                        <option value="Estonian">Estonian</option>
+                                                        <option value="Ethiopian">Ethiopian</option>
+                                                        <option value="Fijian">Fijian</option>
+                                                        <option value="Filipino">Filipino</option>
+                                                        <option value="Finnish">Finnish</option>
+                                                        <option value="French">French</option>
+                                                        <option value="Gabonese">Gabonese</option>
+                                                        <option value="Gambian">Gambian</option>
+                                                        <option value="Georgian">Georgian</option>
+                                                        <option value="German">German</option>
+                                                        <option value="Ghanaian">Ghanaian</option>
+                                                        <option value="Greek">Greek</option>
+                                                        <option value="Grenadian">Grenadian</option>
+                                                        <option value="Guatemalan">Guatemalan</option>
+                                                        <option value="Guinean">Guinean</option>
+                                                        <option value="Guyanaese">Guyanaese</option>
+                                                        <option value="Haitian">Haitian</option>
+                                                        <option value="Honduran">Honduran</option>
+                                                        <option value="Hungarian">Hungarian</option>
+                                                        <option value="Icelandic">Icelandic</option>
+                                                        <option value="Indian">Indian</option>
+                                                        <option value="Indonesian">Indonesian</option>
+                                                        <option value="Iranian">Iranian</option>
+                                                        <option value="Iraqi">Iraqi</option>
+                                                        <option value="Irish">Irish</option>
+                                                        <option value="Israeli">Israeli</option>
+                                                        <option value="Italian">Italian</option>
+                                                        <option value="Jamaican">Jamaican</option>
+                                                        <option value="Japanese">Japanese</option>
+                                                        <option value="Jordanian">Jordanian</option>
+                                                        <option value="Kazakhstani">Kazakhstani</option>
+                                                        <option value="Kenyan">Kenyan</option>
+                                                        <option value="Kuwaiti">Kuwaiti</option>
+                                                        <option value="Kyrgyz">Kyrgyz</option>
+                                                        <option value="Laotian">Laotian</option>
+                                                        <option value="Latvian">Latvian</option>
+                                                        <option value="Lebanese">Lebanese</option>
+                                                        <option value="Liberian">Liberian</option>
+                                                        <option value="Libyan">Libyan</option>
+                                                        <option value="Lithuanian">Lithuanian</option>
+                                                        <option value="Luxembourgish">Luxembourgish</option>
+                                                        <option value="Macedonian">Macedonian</option>
+                                                        <option value="Malagasy">Malagasy</option>
+                                                        <option value="Malawian">Malawian</option>
+                                                        <option value="Malaysian">Malaysian</option>
+                                                        <option value="Maldivian">Maldivian</option>
+                                                        <option value="Malian">Malian</option>
+                                                        <option value="Maltese">Maltese</option>
+                                                        <option value="Mauritanian">Mauritanian</option>
+                                                        <option value="Mauritian">Mauritian</option>
+                                                        <option value="Mexican">Mexican</option>
+                                                        <option value="Moldovan">Moldovan</option>
+                                                        <option value="Mongolian">Mongolian</option>
+                                                        <option value="Montenegrin">Montenegrin</option>
+                                                        <option value="Moroccan">Moroccan</option>
+                                                        <option value="Mozambican">Mozambican</option>
+                                                        <option value="Namibian">Namibian</option>
+                                                        <option value="Nepalese">Nepalese</option>
+                                                        <option value="New Zealander">New Zealander</option>
+                                                        <option value="Nicaraguan">Nicaraguan</option>
+                                                        <option value="Nigerian">Nigerian</option>
+                                                        <option value="North Korean">North Korean</option>
+                                                        <option value="Norwegian">Norwegian</option>
+                                                        <option value="Omani">Omani</option>
+                                                        <option value="Pakistani">Pakistani</option>
+                                                        <option value="Panamanian">Panamanian</option>
+                                                        <option value="Papua New Guinean">Papua New Guinean</option>
+                                                        <option value="Paraguayan">Paraguayan</option>
+                                                        <option value="Peruvian">Peruvian</option>
+                                                        <option value="Polish">Polish</option>
+                                                        <option value="Portuguese">Portuguese</option>
+                                                        <option value="Qatari">Qatari</option>
+                                                        <option value="Romanian">Romanian</option>
+                                                        <option value="Russian">Russian</option>
+                                                        <option value="Rwandan">Rwandan</option>
+                                                        <option value="Saudi">Saudi</option>
+                                                        <option value="Scottish">Scottish</option>
+                                                        <option value="Senegalese">Senegalese</option>
+                                                        <option value="Serbian">Serbian</option>
+                                                        <option value="Seychellois">Seychellois</option>
+                                                        <option value="Sierra Leonean">Sierra Leonean</option>
+                                                        <option value="Singaporean">Singaporean</option>
+                                                        <option value="Slovak">Slovak</option>
+                                                        <option value="Slovenian">Slovenian</option>
+                                                        <option value="Somali">Somali</option>
+                                                        <option value="South African">South African</option>
+                                                        <option value="South Korean">South Korean</option>
+                                                        <option value="Spanish">Spanish</option>
+                                                        <option value="Sri Lankan">Sri Lankan</option>
+                                                        <option value="Sudanese">Sudanese</option>
+                                                        <option value="Swedish">Swedish</option>
+                                                        <option value="Swiss">Swiss</option>
+                                                        <option value="Syrian">Syrian</option>
+                                                        <option value="Taiwanese">Taiwanese</option>
+                                                        <option value="Tajik">Tajik</option>
+                                                        <option value="Tanzanian">Tanzanian</option>
+                                                        <option value="Thai">Thai</option>
+                                                        <option value="Tunisian">Tunisian</option>
+                                                        <option value="Turkish">Turkish</option>
+                                                        <option value="Ugandan">Ugandan</option>
+                                                        <option value="Ukrainian">Ukrainian</option>
+                                                        <option value="Uruguayan">Uruguayan</option>
+                                                        <option value="Uzbek">Uzbek</option>
+                                                        <option value="Venezuelan">Venezuelan</option>
+                                                        <option value="Vietnamese">Vietnamese</option>
+                                                        <option value="Welsh">Welsh</option>
+                                                        <option value="Yemeni">Yemeni</option>
+                                                        <option value="Zambian">Zambian</option>
+                                                        <option value="Zimbabwean">Zimbabwean</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">State / Emirates</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Gender</label>
+                                                    <select id="gender">
+                                                        <option value="-1">Select</option>
+                                                        <option value="Male">Male</option>
+                                                        <option value="Female">Female</option>
+                                                        <option value="Transgender">Transgender</option>
+                                                        <option value="Other">Other</option>
+                                                        <option value="PreferNotToSay">Prefer Not to Say</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-3">
+                                                    <label class="form-label">Document Near Expiry Days</label>
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="btn-list justify-content-end">
+                                                <a class="btn btn-outline btn-secondary"> Cancel</a>
+                                                <a class="btn btn-cyan"> Submit</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade p-3" id="ownerType" role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -1903,8 +2249,45 @@
     <script src="./assets/scripts/custom.js"></script>
     <!-- Slim Select JS -->
     <script src="./assets/scripts/slimselect.min.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+
+            const container = document.getElementById("tabScrollContainer");
+            const leftBtn = document.getElementById("scrollLeftBtn");
+            const rightBtn = document.getElementById("scrollRightBtn");
+
+            const scrollAmount = 200;
+
+            function updateButtons() {
+                const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+                if (container.scrollWidth <= container.clientWidth) {
+                    leftBtn.style.display = "none";
+                    rightBtn.style.display = "none";
+                    return;
+                }
+
+                leftBtn.style.display = "block";
+                rightBtn.style.display = "block";
+
+                leftBtn.disabled = container.scrollLeft <= 0;
+                rightBtn.disabled = container.scrollLeft >= maxScrollLeft - 1;
+            }
+
+            leftBtn.addEventListener("click", () => {
+                container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+            });
+
+            rightBtn.addEventListener("click", () => {
+                container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+            });
+
+            container.addEventListener("scroll", updateButtons);
+            window.addEventListener("resize", updateButtons);
+
+            updateButtons();
+
 
             new SlimSelect({
                 select: '#currency'
@@ -1921,6 +2304,7 @@
             new SlimSelect({
                 select: '#dateFormat'
             });
+
 
         });
     </script>
