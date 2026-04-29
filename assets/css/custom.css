@@ -39,12 +39,19 @@ th.sortable {
     padding: 10px;
     text-align: center;
     border-color: #f1f5f9;
+    font-size: 12px;
+    text-transform: capitalize;
 }
 
 .table-main tbody td {
     vertical-align: middle;
+    font-size: 12px;
+    text-align: center;
 }
 
+div {
+    font-size: 12px;
+}
 
 /* Layout */
 
@@ -186,8 +193,16 @@ th.sortable {
 
 /* Form elements */
 .form-label {
-    font-weight:600;
+    font-weight: 600;
     color: #555555;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+
+.form-control {
+    font-size: 12px;
+    padding-block: 8px;
+    padding-inline: 10px;
 }
 
 /* Nav tab buttons */
@@ -296,47 +311,88 @@ th.sortable {
     background: var(--tblr-primary) !important;
 }
 
-.columnDropdown{
+.columnDropdown {
     max-height: 250px;
     overflow-y: scroll;
 }
 
- .upload-box {
-     border: 1px dashed #cbd5e1;
-     border-radius: 8px;
-     padding: 6px 10px;
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
-     background: #fff;
- }
+.upload-box {
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 6px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
 
- .attachments-panel {
-     position: sticky;
-     top: 20px
- }
+.attachments-panel {
+    position: sticky;
+    top: 20px
+}
 
- .file-box {
-     border: 1px dashed #d1d5db;
-     border-radius: 6px;
-     padding: 8px;
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     gap: 3px;
-     background: white;
-     height: 38px;
- }
+.file-box {
+    border: 1px dashed #d1d5db;
+    border-radius: 6px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3px;
+    background: white;
+    height: 38px;
+}
 
- .file-name {
-     font-size: 13px;
-     color: #374151;
-     flex: 1;
-     overflow: hidden;
-     text-overflow: ellipsis;
-     white-space: nowrap;
- }
+.file-name {
+    font-size: 12px;
+    color: #374151;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
- .file-actions button {
-     margin-left: 4px;
- }
+.file-actions button {
+    margin-left: 4px;
+}
+
+.card-primary {
+    background: linear-gradient(135deg, #0284c7, #4da3ff);
+    color: white;
+}
+
+.card-cyan {
+    background: linear-gradient(135deg, #009688, #4db6ac);
+    color: white;
+}
+
+.card-orange {
+    background: linear-gradient(135deg, #ff9800, #ffb74d);
+    color: white;
+}
+
+.card-indigo {
+    background: linear-gradient(135deg, #6610f2, #8a5cf6);
+    color: white;
+}
+
+.card-purple {
+    background: linear-gradient(135deg, #6f42c1, #a074f7);
+    color: white;
+}
+
+.card-blue {
+    background: linear-gradient(135deg, #1e90ff, #5ab0ff);
+    color: white;
+}
+
+.card-pink {
+    background: linear-gradient(135deg, #f44336, #e57373);
+    color: #fff;
+
+}
+
+.v-divider {
+    width: 1.5px;
+    height: 14px;
+}
