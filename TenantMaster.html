@@ -60,13 +60,13 @@
                                     Owner Master
                                 </span>
                             </a>
-                            <a class="nav-link active my-3" href="./OperatorMaster.html">
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
                                 <i class="ti ti-user-cog fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold">
                                     Operator Master
                                 </span>
                             </a>
-                            <a class="nav-link text-white my-3" href="./TenantMaster.html">
+                            <a class="nav-link active my-3" href="./TenantMaster.html">
                                 <i class="ti ti-user-key fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
                             </a>
@@ -129,10 +129,10 @@
                                     </span>
                                     <div>
                                         <h3 class="page-title mb-0 fw-bold">
-                                            Operator Registration
+                                            Tenant Registration
                                         </h3>
                                         <div class="text-muted fs-5">
-                                            Manage operator registration and records
+                                            Manage tenant registration and records
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                             Leasing
                                         </li>
                                         <li class="breadcrumb-item active" aria-current="page">
-                                            Operator Registration
+                                            Tenant Registration
                                         </li>
                                     </ol>
                                 </nav>
@@ -157,137 +157,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="row g-3 align-items-stretch">
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-blue text-white stat-card">
+                <div class="row d-flex justify-content-center g-3 align-items-stretch">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card bg-teal text-white stat-card">
                             <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-blue me-3">
-                                    <i class="ti ti-users fs-1"></i>
+                                <span class="avatar bg-white text-green me-3">
+                                    <i class="ti ti-user-check fs-1"></i>
                                 </span>
                                 <div>
-                                    <div class="h1 mb-0">117</div>
-                                    <div>Total community</div>
+                                    <div class="h1 mb-0">96</div>
+                                    <div>Active Tenants</div>
                                 </div>
                             </div>
-                            <i class="ti ti-users bg-icon"></i>
+                            <i class="ti ti-user-check bg-icon"></i>
                         </div>
                     </div>
-                    <!-- Total Units -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-primary text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-primary me-3">
-                                    <i class="ti ti-building fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">250</div>
-                                    <div>Total Units</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-building bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Units Vacant -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-warning text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-warning me-3">
-                                    <i class="ti ti-home-off fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">45</div>
-                                    <div>Units Vacant</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-home-off bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Units Occupied -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-success text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-success me-3">
-                                    <i class="ti ti-home-check fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">205</div>
-                                    <div>Units Occupied</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-home-check bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- % Occupied -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-info text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-info me-3">
-                                    <i class="ti ti-percentage fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">82%</div>
-                                    <div>Units Occupancy Rate</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-percentage bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Lease in Progress -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-secondary text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-secondary me-3">
-                                    <i class="ti ti-file-time fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">12</div>
-                                    <div>Lease in Progress</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-file-time bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Owners Documents Expired -->
-                    <div class="col-sm-6 col-lg-3">
+                    <div class="col-sm-6 col-lg-4">
                         <div class="card bg-danger text-white stat-card">
                             <div class="card-body d-flex align-items-center">
                                 <span class="avatar bg-white text-danger me-3">
-                                    <i class="ti ti-alert-circle fs-1"></i>
+                                    <i class="ti ti-file-alert fs-1"></i>
                                 </span>
                                 <div>
                                     <div class="h1 mb-0">88</div>
-                                    <div>Owners Documents Expired</div>
+                                    <div>Tenant Document Expired</div>
                                 </div>
                             </div>
                             <i class="ti ti-alert-circle bg-icon"></i>
-                        </div>
-                    </div>
-
-                    <!-- Tenant Documents Expired -->
-                    <div class="col-sm-6 col-lg-3">
-                        <div class="card bg-dark text-white stat-card">
-                            <div class="card-body d-flex align-items-center">
-                                <span class="avatar bg-white text-dark me-3">
-                                    <i class="ti ti-file-x fs-1"></i>
-                                </span>
-                                <div>
-                                    <div class="h1 mb-0">58</div>
-                                    <div>Tenant Documents Expired</div>
-                                </div>
-                            </div>
-                            <i class="ti ti-file-x bg-icon"></i>
                         </div>
                     </div>
                 </div>
                 <div class="card p-0 mt-3">
                     <div class="card-header bg-gradient bg-gradient-from-primary bg-gradient-to-cyan">
                         <h2 class="card-title text-light fw-bold mb-0">
-                            Operator List
+                            Tenant List
                         </h2>
                     </div>
                     <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
@@ -322,18 +225,23 @@
 
                                             <label class="form-check d-flex align-items-center py-1 ms-2">
                                                 <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                    data-col="operatorType" checked>
-                                                <span>Operator Type</span>
+                                                    data-col="tenantType" checked>
+                                                <span>Tenant Type</span>
                                             </label>
                                             <label class="form-check d-flex align-items-center py-1 ms-2">
                                                 <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                    data-col="operatorName" checked>
-                                                <span>Operator Name</span>
+                                                    data-col="tenantName" checked>
+                                                <span>Tenant Name</span>
                                             </label>
                                             <label class="form-check d-flex align-items-center py-1 ms-2">
                                                 <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                     data-col="companyName" checked>
                                                 <span>Company Name</span>
+                                            </label>
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="propertyType" checked>
+                                                <span>Property Type</span>
                                             </label>
                                             <label class="form-check d-flex align-items-center py-1 ms-2">
                                                 <input type="checkbox" class="form-check-input me-2 col-toggle"
@@ -372,16 +280,6 @@
                                             </label>
                                             <label class="form-check d-flex align-items-center py-1 ms-2">
                                                 <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                    data-col="tradeLicenseNumber" checked>
-                                                <span>Trade License Number</span>
-                                            </label>
-                                            <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
-                                                    data-col="tradeLicenseExpiryDate" checked>
-                                                <span>Trade License Expiry Date</span>
-                                            </label>
-                                            <label class="form-check d-flex align-items-center py-1 ms-2">
-                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
                                                     data-col="documentStatus" checked>
                                                 <span>Document Status</span>
                                             </label>
@@ -401,7 +299,7 @@
                                         <i class="ti ti-printer fs-2"></i>
                                     </button>
                                     <button class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1" data-bs-toggle="modal"
-                                        data-bs-target="#modal-addNewOperator"><i
+                                        data-bs-target="#modal-addNewTenant"><i
                                             class="ti ti-plus me-1 fw-bold fs-3"></i>Add
                                         New</button>
                                 </div>
@@ -412,8 +310,8 @@
                                         <div class="row">
                                             <div class="col-md-6 col-lg-3">
                                                 <div class="mb-2">
-                                                    <label class="form-label">Operator Type</label>
-                                                    <select id="operatorType">
+                                                    <label class="form-label">Tenant Type</label>
+                                                    <select id="tenantType">
                                                         <option value="-1">Select</option>
                                                         <option value=" individual">Individual</option>
                                                         <option value="company">Company</option>
@@ -422,8 +320,8 @@
                                             </div>
                                             <div class="col-md-6 col-lg-3">
                                                 <div class="mb-2">
-                                                    <label class="form-label">Operator Name</label>
-                                                    <select id="operatorName">
+                                                    <label class="form-label">Tenant Name</label>
+                                                    <select id="tenantName">
                                                         <option value="-1">Select</option>
                                                         <option value="Henry">Henry</option>
                                                         <option value="Roshan">Roshan</option>
@@ -439,6 +337,16 @@
                                                         <option value="a">ABC Companys</option>
                                                         <option value="b">Nilo Private Limited</option>
                                                         <option value="c">Sky falls Technologies</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Property Type</label>
+                                                    <select id="propertyType">
+                                                        <option value="-1">Select</option>
+                                                        <option value="a">Buildings</option>
+                                                        <option value="b">Units</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -553,20 +461,21 @@
                                     <thead>
                                         <tr>
                                             <th>S.No</th>
-                                            <th class="sortable col-operatorType" data-col="operatorType">
-                                                Operator Type <span class="sort-indicator">⇅</span>
+                                            <th class="sortable col-tenantType" data-col="tenantType">
+                                                Tenant Type <span class="sort-indicator">⇅</span>
                                             </th>
-                                            <th class="sortable col-operatorName" data-col="operatorName">
-                                                Operator Name <span class="sort-indicator">⇅</span>
+                                            <th class="sortable col-tenantName" data-col="tenantName">
+                                                Tenant Name <span class="sort-indicator">⇅</span>
                                             </th>
                                             <th class="sortable col-companyName" data-col="companyName">
                                                 Company Name <span class="sort-indicator">⇅</span>
                                             </th>
-
+                                            <th class="sortable col-propertyType" data-col="propertyType">
+                                                Property Type <span class="sort-indicator">⇅</span>
+                                            </th>
                                             <th class="sortable col-gender" data-col="gender">
                                                 Gender <span class="sort-indicator">⇅</span>
                                             </th>
-
                                             <th class="sortable col-nationality" data-col="nationality">
                                                 Nationality <span class="sort-indicator">⇅</span>
                                             </th>
@@ -607,7 +516,6 @@
                                             <th class="sortable col-ceDate" data-col="ceDate">
                                                 Added / Edited Date <span class="sort-indicator">⇅</span>
                                             </th>
-
                                             <th class="col-action" data-col="action">
                                                 Action
                                             </th>
@@ -618,14 +526,15 @@
                                         <tr>
                                             <td class="text-center">1</td>
 
-                                            <td class="text-center col-operatorType">Company</td>
+                                            <td class="text-center col-TenantType">Company</td>
 
-                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-tenantName">-</td>
 
                                             <td class="text-center col-companyName">
                                                 Al Noor Trading LLC
                                             </td>
 
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Male</td>
 
                                             <td class="text-center col-nationality">Indian</td>
@@ -683,9 +592,10 @@
 
                                         <tr>
                                             <td class="text-center">2</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Ahmed Khan</td>
+                                            <td class="text-center col-TenantType">Individual</td>
+                                            <td class="text-center col-tenantName">Ahmed Khan</td>
                                             <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Unit</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Pakistani</td>
                                             <td class="text-center col-country">UAE</td>
@@ -710,9 +620,10 @@
 
                                         <tr>
                                             <td class="text-center">3</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-TenantType">Company</td>
+                                            <td class="text-center col-tenantName">-</td>
                                             <td class="text-center col-companyName">Global Tech Solutions LLC</td>
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Indian</td>
                                             <td class="text-center col-country">UAE</td>
@@ -737,9 +648,10 @@
 
                                         <tr>
                                             <td class="text-center">4</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Fatima Ali</td>
+                                            <td class="text-center col-TenantType">Individual</td>
+                                            <td class="text-center col-tenantName">Fatima Ali</td>
                                             <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Female</td>
                                             <td class="text-center col-nationality">Emirati</td>
                                             <td class="text-center col-country">UAE</td>
@@ -764,9 +676,10 @@
 
                                         <tr>
                                             <td class="text-center">5</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-TenantType">Company</td>
+                                            <td class="text-center col-tenantName">-</td>
                                             <td class="text-center col-companyName">Metro Cleaning Services LLC</td>
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Bangladeshi</td>
                                             <td class="text-center col-country">UAE</td>
@@ -790,9 +703,10 @@
                                         </tr>
                                         <tr>
                                             <td class="text-center">6</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Mohammed Hassan</td>
+                                            <td class="text-center col-TenantType">Individual</td>
+                                            <td class="text-center col-tenantName">Mohammed Hassan</td>
                                             <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Unit</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Sudanese</td>
                                             <td class="text-center col-country">UAE</td>
@@ -821,9 +735,10 @@
 
                                         <tr>
                                             <td class="text-center">7</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-TenantType">Company</td>
+                                            <td class="text-center col-tenantName">-</td>
                                             <td class="text-center col-companyName">Desert Star Contracting LLC</td>
+                                            <td class="text-center col-gender">Unit</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Nepalese</td>
                                             <td class="text-center col-country">UAE</td>
@@ -852,9 +767,10 @@
 
                                         <tr>
                                             <td class="text-center">8</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Joseph Mathew</td>
+                                            <td class="text-center col-TenantType">Individual</td>
+                                            <td class="text-center col-tenantName">Joseph Mathew</td>
                                             <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Indian</td>
                                             <td class="text-center col-country">UAE</td>
@@ -883,9 +799,10 @@
 
                                         <tr>
                                             <td class="text-center">9</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
+                                            <td class="text-center col-TenantType">Company</td>
+                                            <td class="text-center col-tenantName">-</td>
                                             <td class="text-center col-companyName">Blue Wave Marine Services LLC</td>
+                                            <td class="text-center col-gender">Building</td>
                                             <td class="text-center col-gender">Male</td>
                                             <td class="text-center col-nationality">Filipino</td>
                                             <td class="text-center col-country">UAE</td>
@@ -914,9 +831,10 @@
 
                                         <tr>
                                             <td class="text-center">10</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Lina George</td>
+                                            <td class="text-center col-TenantType">Individual</td>
+                                            <td class="text-center col-tenantName">Lina George</td>
                                             <td class="text-center col-companyName">-</td>
+                                            <td class="text-center col-gender">Unit</td>
                                             <td class="text-center col-gender">Female</td>
                                             <td class="text-center col-nationality">Lebanese</td>
                                             <td class="text-center col-country">UAE</td>
@@ -999,15 +917,14 @@
 
 
             <!-- Owner Type Modal -->
-            <div class="modal modal-blur fade" id="modal-addNewOperator" tabindex="-1" aria-hidden="true">
+            <div class="modal modal-blur fade" id="modal-addNewTenant" tabindex="-1" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
 
                         <div class="modal-header bg-primary text-white">
                             <div>
-                                <h5 class="modal-title fw-bold mb-0">Operator Type</h5>
-                                <div class="text-white opacity-75 small">Select <output></output>perator type to
-                                    continue</div>
+                                <h5 class="modal-title fw-bold mb-0">Tenant Type</h5>
+                                <div class="text-white opacity-75 small">Select tenant type to continue</div>
                             </div>
                             <button type="button" class="btn-close btn-close-white opacity-85"
                                 data-bs-dismiss="modal"></button>
@@ -1015,7 +932,7 @@
 
                         <div class="modal-body">
 
-                            <label class="form-label fw-semibold mb-3">Operator Type</label>
+                            <label class="form-label fw-semibold mb-3">Tenant Type</label>
 
                             <div class="row g-3">
 
@@ -1234,10 +1151,10 @@
         });
 
         document.addEventListener("DOMContentLoaded", function () {
-            new SlimSelect({ select: '#operatorType' });
-            new SlimSelect({ select: '#operatorName' });
+            new SlimSelect({ select: '#tenantType' });
             new SlimSelect({ select: '#tenantName' });
             new SlimSelect({ select: '#companyName', });
+            new SlimSelect({ select: '#propertyType', });
             new SlimSelect({ select: '#gender', });
             new SlimSelect({ select: '#nationality', });
             new SlimSelect({ select: '#country', });

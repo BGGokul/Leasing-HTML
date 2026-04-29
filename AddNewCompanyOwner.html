@@ -40,29 +40,26 @@
                         <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
                             onclick="toggleSubmenu()">
                             <i class="ti ti-home fs-1"></i>
-                            <span class="menu-text fs-4"> Leasing </span>
+                            <span class="menu-text fs-5 fw-semibold"> Leasing </span>
                             <i class="ti ti-chevron-down ms-auto fs-3"></i>
                         </a>
                         <div id="submenu" class="m-2 d-none">
                             <a class="nav-link text-white my-3" href="./SubMaster.html">
                                 <i class="ti ti-category fs-2 me-2"></i>
-                                <span class="menu-text fs-4"> Sub Master </span>
+                                <span class="menu-text fs-5 fw-semibold"> Sub Master </span>
                             </a>
                             <a class="nav-link active my-3" href="./OwnerMaster.html">
                                 <i class="ti ti-user fs-2 me-2"></i>
-                                <span class="menu-text fs-4"> Owner Master </span>
+                                <span class="menu-text fs-5 fw-semibold"> Owner Master </span>
                             </a>
                             <a class="nav-link text-white my-3">
                                 <i class="ti ti-user-cog fs-2 me-2"></i>
-                                <span class="menu-text fs-4" href="./OperatorMaster.html"> Operator Master </span>
+                                <span class="menu-text fs-5 fw-semibold" href="./OperatorMaster.html"> Operator Master
+                                </span>
                             </a>
-                            <a class="nav-link text-white my-3">
-                                <i class="ti ti-users-group fs-2 me-2"></i>
-                                <span class="menu-text fs-4"> Community Master </span>
-                            </a>
-                            <a class="nav-link text-white my-3">
+                            <a class="nav-link text-white my-3" href="./TenantMaster.html">
                                 <i class="ti ti-user-key fs-2 me-2"></i>
-                                <span class="menu-text fs-4"> Tenant Master </span>
+                                <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
                             </a>
                         </div>
                     </li>
@@ -146,7 +143,7 @@
                     </div>
 
                     <div class="card mb-3">
-                        <div class="card-header card-primary d-flex align-items-center">
+                        <div class="card-header card-primary d-flex align-items-center py-2">
                             <i class="ti ti-building fs-2 me-2"></i>
                             <h3 class="card-title fs-3 fw-bold">
                                 Company Details
@@ -155,95 +152,91 @@
                         <div class="card-body">
                             <div class="row d-flex flex-wrap align-items-lg-stretch">
                                 <div class="col-lg-9 col-md-12">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row gy-2">
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Owner Type</label>
-                                                    <input type="text" class="form-control" value="Company" disabled>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Company Registration Number</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Company Registration Date</label>
-                                                    <input id="crd" type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Registration End Date</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Incorporation Date</label>
-                                                    <input class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Country</label>
-                                                    <select id="country" name="country">
-                                                        <option value="">Select</option>
-                                                        <option value="India">India</option>
-                                                        <option value="United States">United States</option>
-                                                        <option value="United Kingdom">United Kingdom</option>
-                                                        <option value="Canada">Canada</option>
-                                                        <option value="Australia">Australia</option>
-                                                        <option value="Germany">Germany</option>
-                                                        <option value="France">France</option>
-                                                        <option value="Japan">Japan</option>
-                                                        <option value="Brazil">Brazil</option>
-                                                        <option value="South Africa">South Africa</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">State / Emirate / Region</label>
-                                                    <select id="state" name="state">
-                                                        <option value="">Select</option>
-                                                        <option value="Tamil Nadu">Tamil Nadu</option>
-                                                        <option value="Kerala">Kerala</option>
-                                                        <option value="Karnataka">Karnataka</option>
-                                                        <option value="Andhra Pradesh">Andhra Pradesh</option>
-                                                        <option value="Telangana">Telangana</option>
-                                                        <option value="Maharashtra">Maharashtra</option>
-                                                        <option value="Delhi">Delhi</option>
-                                                        <option value="Gujarat">Gujarat</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">City</label>
-                                                    <select id="city" name="city">
-                                                        <option value="">Select</option>
-                                                        <option value="Chennai">Chennai</option>
-                                                        <option value="Madurai">Madurai</option>
-                                                        <option value="Coimbatore">Coimbatore</option>
-                                                        <option value="Salem">Salem</option>
-                                                        <option value="Tiruchirappalli">Tiruchirappalli</option>
-                                                        <option value="Tirunelveli">Tirunelveli</option>
-                                                        <option value="Erode">Erode</option>
-                                                        <option value="Vellore">Vellore</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Email</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Primary Contact Number</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <label class="form-label">Secondary Contact Number</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                                <div class="col-12">
-                                                    <label class="form-label">Address</label>
-                                                    <textarea name="" id="" rows="3" class="form-control"></textarea>
+                                    <div class="row gy-2">
+                                        <div class="col-md-4">
+                                            <label class="form-label">Owner Type</label>
+                                            <input type="text" class="form-control" value="Company" disabled>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Company Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Company Registration Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Company Registration Date</label>
+                                            <input id="crd" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Registration End Date</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Incorporation Date</label>
+                                            <input class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Country</label>
+                                            <select id="country" name="country">
+                                                <option value="">Select</option>
+                                                <option value="India">India</option>
+                                                <option value="United States">United States</option>
+                                                <option value="United Kingdom">United Kingdom</option>
+                                                <option value="Canada">Canada</option>
+                                                <option value="Australia">Australia</option>
+                                                <option value="Germany">Germany</option>
+                                                <option value="France">France</option>
+                                                <option value="Japan">Japan</option>
+                                                <option value="Brazil">Brazil</option>
+                                                <option value="South Africa">South Africa</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">State / Emirate / Region</label>
+                                            <select id="state" name="state">
+                                                <option value="">Select</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">City</label>
+                                            <select id="city" name="city">
+                                                <option value="">Select</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Madurai">Madurai</option>
+                                                <option value="Coimbatore">Coimbatore</option>
+                                                <option value="Salem">Salem</option>
+                                                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                                                <option value="Tirunelveli">Tirunelveli</option>
+                                                <option value="Erode">Erode</option>
+                                                <option value="Vellore">Vellore</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Email</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Primary Contact Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Secondary Contact Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Address</label>
+                                            <textarea name="" id="" rows="3" class="form-control"></textarea>
 
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -251,19 +244,20 @@
                                     <div class="card text-center h-100">
                                         <div class="card-body">
                                             <img id="photoPreview" src="./assets/img/upload-image.jpg"
-                                                class="rounded border img-fluid" style="max-width: 300px;">
+                                                class="rounded img-fluid">
 
                                         </div>
-                                        <div class="card-footer bg-transparent">
+                                        <div class="card-footer bg-transparent py-1">
                                             <div class="row d-flex flex-nowrap justify-content-between">
-                                                <label class="btn btn-primary w-auto">
+                                                <label class="btn btn-primary btn-sm w-auto">
                                                     <i class="ti ti-photo me-2"></i>
                                                     Upload Logo
                                                     <input type="file" id="photoInput" hidden accept="image/*"
                                                         onchange="previewPhoto(event)">
                                                 </label>
-                                                <button type="button" id="deleteBtn" class="btn btn-danger w-auto"
-                                                    onclick="removePhoto()"> <i class="ti ti-trash me-2"></i>Delete
+                                                <button type="button" id="deleteBtn"
+                                                    class="btn btn-danger btn-sm w-auto" onclick="removePhoto()"> <i
+                                                        class="ti ti-trash"></i>
                                                 </button>
                                             </div>
                                         </div>
