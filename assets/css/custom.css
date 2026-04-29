@@ -39,18 +39,18 @@ th.sortable {
     padding: 10px;
     text-align: center;
     border-color: #f1f5f9;
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
     text-transform: capitalize;
 }
 
 .table-main tbody td {
     vertical-align: middle;
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
     text-align: center;
 }
 
 div {
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
 }
 
 /* Layout */
@@ -196,11 +196,11 @@ div {
     font-weight: 600;
     color: #555555;
     margin-bottom: 5px;
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
 }
 
 .form-control {
-    font-size: 12px;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
     padding-block: 8px;
     padding-inline: 10px;
 }
