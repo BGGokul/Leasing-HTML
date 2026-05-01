@@ -302,10 +302,9 @@
                                     <button class="btn btn-md btn-yellow px-2 py-1  mt-1 rounded-2">
                                         <i class="ti ti-printer fs-2"></i>
                                     </button>
-                                    <button class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1" data-bs-toggle="modal"
-                                        data-bs-target="#modal-addNewTenant"><i
+                                    <a class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1" href="./AddNewTenant.html"><i
                                             class="ti ti-plus me-1 fw-bold fs-3"></i>Add
-                                        New</button>
+                                        New</a>
                                 </div>
                             </div>
                             <div class="collapse" id="filter">
@@ -1368,67 +1367,6 @@
                     © 2026 Leasing Management System
                 </div>
             </footer>
-
-
-            <!-- Owner Type Modal -->
-            <div class="modal modal-blur fade" id="modal-addNewTenant" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-
-                        <div class="modal-header bg-primary text-white">
-                            <div>
-                                <h5 class="modal-title fw-bold mb-0">Tenant Type</h5>
-                                <div class="text-white opacity-75 small">Select tenant type to continue</div>
-                            </div>
-                            <button type="button" class="btn-close btn-close-white opacity-85"
-                                data-bs-dismiss="modal"></button>
-                        </div>
-
-                        <div class="modal-body">
-
-                            <label class="form-label fw-semibold mb-3">Tenant Type</label>
-
-                            <div class="row g-3">
-
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item w-100">
-                                        <input type="radio" name="owner-type" class="form-selectgroup-input" checked
-                                            onclick="location.href='./AddNewIndividualOwner.html'">
-
-                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong">Individual</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-
-                                <div class="col-lg-6">
-                                    <label class="form-selectgroup-item w-100">
-                                        <input type="radio" name="owner-type" class="form-selectgroup-input"
-                                            onclick="location.href='./AddNewCompanyOwner.html'">
-
-                                        <span class="form-selectgroup-label d-flex align-items-center p-3">
-                                            <span class="me-3">
-                                                <span class="form-selectgroup-check"></span>
-                                            </span>
-                                            <span class="form-selectgroup-label-content">
-                                                <span class="form-selectgroup-title strong">Company</span>
-                                            </span>
-                                        </span>
-                                    </label>
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
     <!-- Script  -->

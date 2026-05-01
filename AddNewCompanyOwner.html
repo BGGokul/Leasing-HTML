@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
-    <title>New Company Registration</title>
+    <title>New Owner Registration</title>
     <!-- Style CSS -->
     <link rel="stylesheet" href="./assets/css/style.min.css" />
     <!-- Custom CSS -->
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -52,10 +53,9 @@
                                 <i class="ti ti-user fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold"> Owner Master </span>
                             </a>
-                            <a class="nav-link text-white my-3">
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
                                 <i class="ti ti-user-cog fs-2 me-2"></i>
-                                <span class="menu-text fs-5 fw-semibold" href="./OperatorMaster.html"> Operator Master
-                                </span>
+                                <span class="menu-text fs-5 fw-semibold"> Operator Master </span>
                             </a>
                             <a class="nav-link text-white my-3" href="./TenantMaster.html">
                                 <i class="ti ti-user-key fs-2 me-2"></i>
@@ -115,14 +115,14 @@
                                 <div class="col-12 col-md">
                                     <div class="d-flex align-items-center">
                                         <span class="avatar bg-primary text-white me-3">
-                                            <i class="ti ti-building-plus fs-2"></i>
+                                            <i class="ti ti-user-plus fs-2"></i>
                                         </span>
                                         <div>
                                             <h3 class="page-title mb-0 fw-bold">
-                                                New Company Registration
+                                                New Owner Registration
                                             </h3>
                                             <div class="text-muted fs-5">
-                                                Add new company registration data
+                                                Add new owner registration data
                                             </div>
                                         </div>
                                     </div>
@@ -147,42 +147,218 @@
                     </div>
 
                     <div class="card mb-3">
-                        <div class="card-header card-primary d-flex align-items-center py-2">
-                            <i class="ti ti-building fs-2 me-2"></i>
-                            <h3 class="card-title fs-3 fw-bold">
-                                Company Details
-                            </h3>
+                        <div class="card-header card-primary d-flex align-items-center">
+                            <i class="ti ti-user fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Personal Details</h3>
                         </div>
                         <div class="card-body">
-                            <div class="row d-flex flex-wrap align-items-lg-stretch">
+                            <div class="row d-flex flex-wrap align-items-stretch">
                                 <div class="col-lg-9 col-md-12">
                                     <div class="row gy-2">
-                                        <div class="col-md-4">
+                                        <div class="col-md-3">
                                             <label class="form-label">Owner Type</label>
-                                            <input type="text" class="form-control" value="Company" disabled>
+                                            <input type="text" class="form-control" value="Individual" disabled>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Company Name</label>
+                                        <div class="col-md-5">
+                                            <label class="form-label">Full Name</label>
                                             <input type="text" class="form-control">
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="form-label">Company Registration Number</label>
+                                            <label class="form-label">Gender</label>
+                                            <select id="gender">
+                                                <option value="-1">Select</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Transgender</option>
+                                                <option>Other</option>
+                                                <option>Prefer Not to Say</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Date of Birth</label>
+                                            <input id="dob" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label class="form-label">Age</label>
+                                            <input id="age" class="form-control" disabled>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Email ID</label>
                                             <input type="text" class="form-control">
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="form-label">Company Registration Date</label>
-                                            <input id="crd" type="text" class="form-control">
+                                            <label class="form-label">Nationality</label>
+                                            <select id="nationality">
+                                                <option value="-1">Select</option>
+                                                <option value="Afghan">Afghan</option>
+                                                <option value="Albanian">Albanian</option>
+                                                <option value="Algerian">Algerian</option>
+                                                <option value="American">American</option>
+                                                <option value="Andorran">Andorran</option>
+                                                <option value="Angolan">Angolan</option>
+                                                <option value="Argentinian">Argentinian</option>
+                                                <option value="Armenian">Armenian</option>
+                                                <option value="Australian">Australian</option>
+                                                <option value="Austrian">Austrian</option>
+                                                <option value="Azerbaijani">Azerbaijani</option>
+                                                <option value="Bahamian">Bahamian</option>
+                                                <option value="Bahraini">Bahraini</option>
+                                                <option value="Bangladeshi">Bangladeshi</option>
+                                                <option value="Barbadian">Barbadian</option>
+                                                <option value="Belarusian">Belarusian</option>
+                                                <option value="Belgian">Belgian</option>
+                                                <option value="Belizean">Belizean</option>
+                                                <option value="Beninese">Beninese</option>
+                                                <option value="Bhutanese">Bhutanese</option>
+                                                <option value="Bolivian">Bolivian</option>
+                                                <option value="Bosnian">Bosnian</option>
+                                                <option value="Botswanan">Botswanan</option>
+                                                <option value="Brazilian">Brazilian</option>
+                                                <option value="British">British</option>
+                                                <option value="Bruneian">Bruneian</option>
+                                                <option value="Bulgarian">Bulgarian</option>
+                                                <option value="Burkinabe">Burkinabe</option>
+                                                <option value="Burmese">Burmese</option>
+                                                <option value="Burundian">Burundian</option>
+                                                <option value="Cambodian">Cambodian</option>
+                                                <option value="Cameroonian">Cameroonian</option>
+                                                <option value="Canadian">Canadian</option>
+                                                <option value="Cape Verdean">Cape Verdean</option>
+                                                <option value="Central African">Central African</option>
+                                                <option value="Chadian">Chadian</option>
+                                                <option value="Chilean">Chilean</option>
+                                                <option value="Chinese">Chinese</option>
+                                                <option value="Colombian">Colombian</option>
+                                                <option value="Comoran">Comoran</option>
+                                                <option value="Congolese">Congolese</option>
+                                                <option value="Costa Rican">Costa Rican</option>
+                                                <option value="Croatian">Croatian</option>
+                                                <option value="Cuban">Cuban</option>
+                                                <option value="Cypriot">Cypriot</option>
+                                                <option value="Czech">Czech</option>
+                                                <option value="Danish">Danish</option>
+                                                <option value="Djiboutian">Djiboutian</option>
+                                                <option value="Dominican">Dominican</option>
+                                                <option value="Dutch">Dutch</option>
+                                                <option value="East Timorese">East Timorese</option>
+                                                <option value="Ecuadorian">Ecuadorian</option>
+                                                <option value="Egyptian">Egyptian</option>
+                                                <option value="Emirati">Emirati</option>
+                                                <option value="English">English</option>
+                                                <option value="Eritrean">Eritrean</option>
+                                                <option value="Estonian">Estonian</option>
+                                                <option value="Ethiopian">Ethiopian</option>
+                                                <option value="Fijian">Fijian</option>
+                                                <option value="Filipino">Filipino</option>
+                                                <option value="Finnish">Finnish</option>
+                                                <option value="French">French</option>
+                                                <option value="Gabonese">Gabonese</option>
+                                                <option value="Gambian">Gambian</option>
+                                                <option value="Georgian">Georgian</option>
+                                                <option value="German">German</option>
+                                                <option value="Ghanaian">Ghanaian</option>
+                                                <option value="Greek">Greek</option>
+                                                <option value="Grenadian">Grenadian</option>
+                                                <option value="Guatemalan">Guatemalan</option>
+                                                <option value="Guinean">Guinean</option>
+                                                <option value="Guyanaese">Guyanaese</option>
+                                                <option value="Haitian">Haitian</option>
+                                                <option value="Honduran">Honduran</option>
+                                                <option value="Hungarian">Hungarian</option>
+                                                <option value="Icelandic">Icelandic</option>
+                                                <option value="Indian">Indian</option>
+                                                <option value="Indonesian">Indonesian</option>
+                                                <option value="Iranian">Iranian</option>
+                                                <option value="Iraqi">Iraqi</option>
+                                                <option value="Irish">Irish</option>
+                                                <option value="Israeli">Israeli</option>
+                                                <option value="Italian">Italian</option>
+                                                <option value="Jamaican">Jamaican</option>
+                                                <option value="Japanese">Japanese</option>
+                                                <option value="Jordanian">Jordanian</option>
+                                                <option value="Kazakhstani">Kazakhstani</option>
+                                                <option value="Kenyan">Kenyan</option>
+                                                <option value="Kuwaiti">Kuwaiti</option>
+                                                <option value="Kyrgyz">Kyrgyz</option>
+                                                <option value="Laotian">Laotian</option>
+                                                <option value="Latvian">Latvian</option>
+                                                <option value="Lebanese">Lebanese</option>
+                                                <option value="Liberian">Liberian</option>
+                                                <option value="Libyan">Libyan</option>
+                                                <option value="Lithuanian">Lithuanian</option>
+                                                <option value="Luxembourgish">Luxembourgish</option>
+                                                <option value="Macedonian">Macedonian</option>
+                                                <option value="Malagasy">Malagasy</option>
+                                                <option value="Malawian">Malawian</option>
+                                                <option value="Malaysian">Malaysian</option>
+                                                <option value="Maldivian">Maldivian</option>
+                                                <option value="Malian">Malian</option>
+                                                <option value="Maltese">Maltese</option>
+                                                <option value="Mauritanian">Mauritanian</option>
+                                                <option value="Mauritian">Mauritian</option>
+                                                <option value="Mexican">Mexican</option>
+                                                <option value="Moldovan">Moldovan</option>
+                                                <option value="Mongolian">Mongolian</option>
+                                                <option value="Montenegrin">Montenegrin</option>
+                                                <option value="Moroccan">Moroccan</option>
+                                                <option value="Mozambican">Mozambican</option>
+                                                <option value="Namibian">Namibian</option>
+                                                <option value="Nepalese">Nepalese</option>
+                                                <option value="New Zealander">New Zealander</option>
+                                                <option value="Nicaraguan">Nicaraguan</option>
+                                                <option value="Nigerian">Nigerian</option>
+                                                <option value="North Korean">North Korean</option>
+                                                <option value="Norwegian">Norwegian</option>
+                                                <option value="Omani">Omani</option>
+                                                <option value="Pakistani">Pakistani</option>
+                                                <option value="Panamanian">Panamanian</option>
+                                                <option value="Papua New Guinean">Papua New Guinean</option>
+                                                <option value="Paraguayan">Paraguayan</option>
+                                                <option value="Peruvian">Peruvian</option>
+                                                <option value="Polish">Polish</option>
+                                                <option value="Portuguese">Portuguese</option>
+                                                <option value="Qatari">Qatari</option>
+                                                <option value="Romanian">Romanian</option>
+                                                <option value="Russian">Russian</option>
+                                                <option value="Rwandan">Rwandan</option>
+                                                <option value="Saudi">Saudi</option>
+                                                <option value="Scottish">Scottish</option>
+                                                <option value="Senegalese">Senegalese</option>
+                                                <option value="Serbian">Serbian</option>
+                                                <option value="Seychellois">Seychellois</option>
+                                                <option value="Sierra Leonean">Sierra Leonean</option>
+                                                <option value="Singaporean">Singaporean</option>
+                                                <option value="Slovak">Slovak</option>
+                                                <option value="Slovenian">Slovenian</option>
+                                                <option value="Somali">Somali</option>
+                                                <option value="South African">South African</option>
+                                                <option value="South Korean">South Korean</option>
+                                                <option value="Spanish">Spanish</option>
+                                                <option value="Sri Lankan">Sri Lankan</option>
+                                                <option value="Sudanese">Sudanese</option>
+                                                <option value="Swedish">Swedish</option>
+                                                <option value="Swiss">Swiss</option>
+                                                <option value="Syrian">Syrian</option>
+                                                <option value="Taiwanese">Taiwanese</option>
+                                                <option value="Tajik">Tajik</option>
+                                                <option value="Tanzanian">Tanzanian</option>
+                                                <option value="Thai">Thai</option>
+                                                <option value="Tunisian">Tunisian</option>
+                                                <option value="Turkish">Turkish</option>
+                                                <option value="Ugandan">Ugandan</option>
+                                                <option value="Ukrainian">Ukrainian</option>
+                                                <option value="Uruguayan">Uruguayan</option>
+                                                <option value="Uzbek">Uzbek</option>
+                                                <option value="Venezuelan">Venezuelan</option>
+                                                <option value="Vietnamese">Vietnamese</option>
+                                                <option value="Welsh">Welsh</option>
+                                                <option value="Yemeni">Yemeni</option>
+                                                <option value="Zambian">Zambian</option>
+                                                <option value="Zimbabwean">Zimbabwean</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-4">
-                                            <label class="form-label">Registration End Date</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Incorporation Date</label>
-                                            <input class="form-control">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Country</label>
+                                            <label class="form-label">Country of Residence</label>
                                             <select id="country" name="country">
                                                 <option value="">Select</option>
                                                 <option value="India">India</option>
@@ -225,21 +401,10 @@
                                                 <option value="Vellore">Vellore</option>
                                             </select>
                                         </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Email</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Primary Contact Number</label>
-                                            <input type="text" class="form-control">
-                                        </div>
-                                        <div class="col-md-4">
-                                            <label class="form-label">Secondary Contact Number</label>
-                                            <input type="text" class="form-control">
-                                        </div>
+
                                         <div class="col-12">
                                             <label class="form-label">Address</label>
-                                            <textarea name="" id="" rows="3" class="form-control"></textarea>
+                                            <textarea name="" id="" rows="2" class="form-control"></textarea>
 
                                         </div>
                                     </div>
@@ -271,71 +436,100 @@
                         </div>
                     </div>
                     <div class="card mb-3">
-                        <div class="card-header card-cyan d-flex align-items-center">
-                            <i class="ti ti-user fs-2 me-2"></i>
-                            <h3 class="card-title fs-3 fw-bold">
-                                Owner Details
+                        <div class="card-header card-cyan d-flex justify-content-between align-items-center">
+
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-phone fs-2 me-2"></i>
+                                <h3 class="card-title mb-0f fw-semibold">Contact Numbers</h3>
+                            </div>
+
+                            <button class="btn btn-light btn-sm" onclick="addContactRow()">
+                                <i class="ti ti-plus"></i>
+                                Add Number
+                            </button>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row gy-2" id="contactRow">
+
+                                <!-- Primary Number -->
+                                <div class="col-md-4">
+                                    <label class="form-label">Primary Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <!-- Secondary Numbers Header -->
+                                <div class="col-md-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label class="form-label">
+                                            Secondary Number
+                                        </label>
+                                    </div>
+
+                                    <input type="text" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-orange d-flex align-items-center">
+                            <i class="ti ti-id fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-semibold">
+                                Identity Details
                             </h3>
                         </div>
                         <div class="card-body">
-                            <div class="row gy-2 mb-3">
-                                <div class="col-md-6">
-                                    <lable class="form-label">Owner Name</lable>
-                                    <input type="text" class="form-control">
+                            <div class="row gy-2">
+                                <div class="col-md-4">
+                                    <label class="form-label">National ID Number</label>
+                                    <input class="form-control">
                                 </div>
-                                <div class="col-md-6">
-                                    <lable class="form-label">Owner Contact Number</lable>
-                                    <input type="text" class="form-control">
+                                <div class="col-md-3">
+                                    <label class="form-label">National ID Expiry Date</label>
+                                    <input class="form-control" id="passportExpiryDate">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Upload File</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Passport Number</label>
                                     <input class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <label class="form-label">Expiry Date</label>
-                                    <input class="form-control" id="tlExpiryDate">
+                                    <label class="form-label">Passport Expiry Date</label>
+                                    <input class="form-control" id="nIDExpiryDate">
                                 </div>
                                 <div class="col-md-5">
                                     <label class="form-label">Upload File</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
 
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Owner Emirates ID Number</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label">Expiry Date</label>
-                                    <input class="form-control" id="crExpiryDate">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="form-label">Upload File</label>
-                                    <div class="file-box">
-                                        <span class="file-name">No file selected</span>
-
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
-                                            </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
@@ -350,56 +544,28 @@
                             </h3>
                         </div>
                         <div class="card-body">
-                            <div class="row gy-2 mb-3">
+                            <div class="row gy-2">
                                 <div class="col-md-4">
                                     <label class="form-label">Trade License Number</label>
                                     <input class="form-control">
                                 </div>
                                 <div class="col-md-3">
-                                    <label class="form-label">Expiry Date</label>
+                                    <label class="form-label">Trade License Expiry Date</label>
                                     <input class="form-control" id="tlExpiryDate">
                                 </div>
                                 <div class="col-md-5">
                                     <label class="form-label">Upload File</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Commercial Registration Number</label>
-                                    <input class="form-control">
-                                </div>
-                                <div class="col-md-3">
-                                    <label class="form-label">Expiry Date</label>
-                                    <input class="form-control" id="crExpiryDate">
-                                </div>
-                                <div class="col-md-5">
-                                    <label class="form-label">Upload File</label>
-                                    <div class="file-box">
-                                        <span class="file-name">No file selected</span>
-
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
-                                            </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
@@ -407,14 +573,14 @@
                         </div>
                     </div>
                     <div class="card mb-3">
-                        <div class="card-header card-pink d-flex align-items-center">
+                        <div class="card-header card-blue d-flex align-items-center">
                             <i class="ti ti-building-bank fs-2 me-2"></i>
                             <h3 class="card-title fs-3 fw-bold">
                                 Financial Details
                             </h3>
                         </div>
                         <div class="card-body">
-                            <div class="row g-3 mb-4">
+                            <div class="row gy-2">
                                 <div class="col-md-6">
                                     <label class="form-label">Bank Name</label>
                                     <input type="text" class="form-control" placeholder="Enter Bank Name">
@@ -423,52 +589,45 @@
                                     <label class="form-label">Bank Account Number</label>
                                     <input type="text" class="form-control" placeholder="Enter Account Number">
                                 </div>
-                            </div>
-                            <div class="row g-3 mb-4">
                                 <div class="col-md-4">
                                     <label class="form-label">Bank IBAN</label>
                                     <input type="text" class="form-control" placeholder="Enter IBAN">
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="form-label">Upload File</label>
+                                    <label class="form-label">IBAN Document Upload</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
-
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
 
-                            </div>
-                            <div class="row g-3">
                                 <div class="col-md-4">
                                     <label class="form-label">VAT Registration Number</label>
                                     <input type="text" class="form-control" placeholder="Enter VAT Number">
                                 </div>
                                 <div class="col-md-8">
-                                    <label class="form-label">Upload File</label>
+                                    <label class="form-label">VAT Certificate Upload</label>
                                     <div class="file-box">
                                         <span class="file-name">No file selected</span>
 
-                                        <div class="btn-group"><label class="btn btn-primary btn-sm">
-                                                <i class="ti ti-upload"></i>
-                                                <input type="file" hidden onchange="handleFile(this)">
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-secondary btn-sm" onclick="viewFile(this)"><i
-                                                    class="ti ti-eye"></i></button>
-                                            <button type="button" class="btn btn-outline-danger btn-sm"
-                                                onclick="removeFile(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
@@ -478,45 +637,49 @@
                         </div>
                     </div>
                     <div class="card mb-3">
-                        <div class="card-header card-blue d-flex align-items-center">
+                        <div class="card-header card-pink d-flex align-items-center">
                             <i class="ti ti-file fs-2 me-2"></i>
                             <h3 class="card-title fw-bold mb-0">
                                 Legal & Additional Attachments
                             </h3>
                         </div>
                         <div class="card-body">
-                            <div class="row gy-2 mb-4">
+                            <div class="row gy-2 mb-3">
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">MoA (Memorandum of Association)</label>
                                     <div class="d-flex align-items-center gap-2 file-box">
                                         <span class="file-name text-muted">No file selected</span>
-                                        <div class="btn-group">
-                                            <label class="btn btn-primary btn-sm upload-btn">
-                                                <i class="ti ti-upload"></i>
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
                                                 <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-danger btn-sm"
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
                                                 onclick="resetFixedUpload(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            </i>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label fw-bold">PoU (Power of Undertaking)</label>
                                     <div class="d-flex align-items-center gap-2 file-box">
-                                        <span class="file-name text-muted">No file
-                                            selected</span>
-                                        <div class="btn-group">
-                                            <label class="btn btn-primary btn-sm upload-btn">
-                                                <i class="ti ti-upload"></i>
+
+                                        <span class="file-name text-muted">
+                                            No file selected
+                                        </span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
                                                 <input type="file" hidden onchange="handleFixedUpload(this)">
                                             </label>
-                                            <button class="btn btn-outline-danger btn-sm"
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
                                                 onclick="resetFixedUpload(this)">
-                                                <i class="ti ti-trash"></i>
-                                            </button>
+                                            </i>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -528,7 +691,7 @@
                                 </button>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-striped align-middle table-main">
+                                <table class="table table-bordered table-striped align-middle">
                                     <thead class="table-primary">
                                         <tr class="bg-primary">
                                             <th>Document Type</th>
@@ -626,6 +789,7 @@
                     new Litepicker({
                         element: el,
                         format: "DD-MM-YYYY",
+                        singleMode: true,
                         setup: (picker) => {
                             picker.on("selected", (date) => {
                                 if (onSelectCallback) {
@@ -637,13 +801,33 @@
                 });
             }
 
+            /* =========================
+               DOB -> AGE CALCULATION
+            ========================== */
+            initDatePicker("#dob", function (date) {
 
+                const parts = date.format("DD-MM-YYYY").split("-");
+
+                const birth = new Date(parts[2], parts[1] - 1, parts[0]);
+                const today = new Date();
+
+                let age = today.getFullYear() - birth.getFullYear();
+                const monthDiff = today.getMonth() - birth.getMonth();
+
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                    age--;
+                }
+
+                const ageInput = document.getElementById("age");
+                if (ageInput) ageInput.value = age;
+            });
 
             /* =========================
                OTHER DATE PICKERS
             ========================== */
-            initDatePicker("#crd");
-            initDatePicker("#clExpiryDate");
+            initDatePicker("#dob");
+            initDatePicker("#nIDExpiryDate");
+            initDatePicker("#passportExpiryDate");
             initDatePicker("#tlExpiryDate");
 
 
@@ -734,8 +918,41 @@
 
         });
 
+        /* ================= CONTACT ROW ================= */
+        function addContactRow() {
 
-        /* ================= ADD ROW (same structure) ================= */
+            const container = document.getElementById("contactRow");
+
+            const col = document.createElement("div");
+            col.className = "col-md-4";
+
+            col.innerHTML = `
+        <label class="form-label">
+            Secondary Number
+        </label>
+
+        <div class="input-group mb-0">
+
+            <input type="text"
+                   class="form-control">
+
+            <button class="btn text-danger border-start-0"
+                    type="button"
+                    onclick="removeNumber(this)">
+                <i class="ti ti-trash-x fs-3"></i>
+            </button>
+
+        </div>
+    `;
+
+            container.appendChild(col);
+        }
+
+
+        function removeNumber(button) {
+            button.closest(".col-md-4").remove();
+        }
+        // ================= ADD ROW =================
         function addAttachmentRow() {
 
             const tr = document.createElement("tr");
@@ -781,19 +998,106 @@
         }
 
 
-        /* ================= ONLY ADD COLOR CHANGE ================= */
-        function handleUpload(input) {
+        // ================= FIXED UPLOAD (MoA / PoU) =================
 
-            const label = input.closest("label");
+        function handleFixedUpload(input) {
 
-            if (input.files && input.files.length > 0) {
+            const fileBox =
+                input.closest(".file-box");
+
+            const fileName =
+                fileBox.querySelector(".file-name");
+
+            const icon =
+                fileBox.querySelector(".action-icon");
+
+            if (input.files.length > 0) {
+
+                const file =
+                    input.files[0];
+
+                fileName.textContent =
+                    file.name;
+
+                fileName.classList.remove("text-muted");
+
+                const fileURL =
+                    URL.createObjectURL(file);
+
+                input.dataset.fileUrl =
+                    fileURL;
+
+                // Change icon to eye
+                icon.classList.remove("ti-upload", "text-primary");
+
+                icon.classList.add(
+                    "ti-eye-check",
+                    "text-teal"
+                );
+
+                // View file on click
+                icon.onclick = function () {
+
+                    window.open(
+                        input.dataset.fileUrl,
+                        "_blank"
+                    );
+
+                };
+
+            }
+
+        }
+
+        // ================= RESET FIXED =================
+        function resetFixedUpload(icon) {
+
+            const fileBox =
+                icon.closest(".file-box");
+
+            const fileName =
+                fileBox.querySelector(".file-name");
+
+            const input =
+                fileBox.querySelector("input[type='file']");
+
+            const actionIcon =
+                fileBox.querySelector(".action-icon");
+
+            input.value = "";
+
+            fileName.textContent =
+                "No file selected";
+
+            fileName.classList.add("text-muted");
+
+            // Back to upload icon
+            actionIcon.classList.remove(
+                "ti-eye",
+                "text-teal"
+            );
+
+            actionIcon.classList.add(
+                "ti-upload",
+                "text-primary"
+            );
+
+            actionIcon.onclick = null;
+
+        }
+        // ================= TABLE ROW UPLOAD =================
+        function handleRowUpload(input) {
+
+            const label = input.closest("label.upload-btn");
+
+            if (input.files.length > 0) {
 
                 label.classList.remove("btn-outline-primary");
                 label.classList.add("btn-success");
 
                 label.innerHTML = `
             ✓ Uploaded
-            <input type="file" hidden onchange="handleUpload(this)">
+            <input type="file" hidden onchange="handleRowUpload(this)">
         `;
             }
         }

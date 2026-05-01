@@ -1,0 +1,1417 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <title>New Owner Registration</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <!-- Tom Select CSS -->
+    <link href="./assets/css/tom-select.css" rel="stylesheet" />
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-primary text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-primary fw-bold">LM</div>
+                    <span class="logo-text fw-semibold fs-3"> Leasing Management </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-5 fw-semibold"> Leasing </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Sub Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OwnerMaster.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Owner Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Operator Master </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./TenantMaster.html">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./UnitMaster.html">
+                                <i class="ti ti-building-community fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-primary text-white">A</div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">Admin User</div>
+                            <div class="text-muted small">Administrator</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content">
+                <div class="p-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md">
+                                    <div class="d-flex align-items-center">
+                                        <span class="avatar bg-primary text-white me-3">
+                                            <i class="ti ti-user-key fs-2"></i>
+                                        </span>
+                                        <div>
+                                            <h3 class="page-title mb-0 fw-bold">
+                                                New Tenant Registration
+                                            </h3>
+                                            <div class="text-muted fs-5">
+                                                Add new tenant registration data
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-0 mt-3 d-md-none" />
+                                <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="./index.html" class="text-decoration-none text-secondary">
+                                                    <i class="ti ti-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item">Leasing</li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                New Tenant Registration
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header card-primary d-flex align-items-center">
+                            <i class="ti ti-user fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Personal Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row d-flex flex-wrap align-items-stretch">
+                                <div class="col-lg-9 col-md-12">
+                                    <div class="row gy-2">
+                                        <div class="col-md-3">
+                                            <label class="form-label">Owner Type</label>
+                                            <select class="form-select">
+                                                <option value="-1">Select</option>
+                                                <option>Company</option>
+                                                <option>Individual</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <label class="form-label">Name</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Gender</label>
+                                            <select id="gender">
+                                                <option value="-1">Select</option>
+                                                <option>Male</option>
+                                                <option>Female</option>
+                                                <option>Transgender</option>
+                                                <option>Other</option>
+                                                <option>Prefer Not to Say</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="form-label">Date of Birth</label>
+                                            <input id="dob" type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <label class="form-label">Age</label>
+                                            <input id="age" class="form-control" disabled>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Nationality</label>
+                                            <select id="nationality">
+                                                <option value="-1">Select</option>
+                                                <option value="Afghan">Afghan</option>
+                                                <option value="Albanian">Albanian</option>
+                                                <option value="Algerian">Algerian</option>
+                                                <option value="American">American</option>
+                                                <option value="Andorran">Andorran</option>
+                                                <option value="Angolan">Angolan</option>
+                                                <option value="Argentinian">Argentinian</option>
+                                                <option value="Armenian">Armenian</option>
+                                                <option value="Australian">Australian</option>
+                                                <option value="Austrian">Austrian</option>
+                                                <option value="Azerbaijani">Azerbaijani</option>
+                                                <option value="Bahamian">Bahamian</option>
+                                                <option value="Bahraini">Bahraini</option>
+                                                <option value="Bangladeshi">Bangladeshi</option>
+                                                <option value="Barbadian">Barbadian</option>
+                                                <option value="Belarusian">Belarusian</option>
+                                                <option value="Belgian">Belgian</option>
+                                                <option value="Belizean">Belizean</option>
+                                                <option value="Beninese">Beninese</option>
+                                                <option value="Bhutanese">Bhutanese</option>
+                                                <option value="Bolivian">Bolivian</option>
+                                                <option value="Bosnian">Bosnian</option>
+                                                <option value="Botswanan">Botswanan</option>
+                                                <option value="Brazilian">Brazilian</option>
+                                                <option value="British">British</option>
+                                                <option value="Bruneian">Bruneian</option>
+                                                <option value="Bulgarian">Bulgarian</option>
+                                                <option value="Burkinabe">Burkinabe</option>
+                                                <option value="Burmese">Burmese</option>
+                                                <option value="Burundian">Burundian</option>
+                                                <option value="Cambodian">Cambodian</option>
+                                                <option value="Cameroonian">Cameroonian</option>
+                                                <option value="Canadian">Canadian</option>
+                                                <option value="Cape Verdean">Cape Verdean</option>
+                                                <option value="Central African">Central African</option>
+                                                <option value="Chadian">Chadian</option>
+                                                <option value="Chilean">Chilean</option>
+                                                <option value="Chinese">Chinese</option>
+                                                <option value="Colombian">Colombian</option>
+                                                <option value="Comoran">Comoran</option>
+                                                <option value="Congolese">Congolese</option>
+                                                <option value="Costa Rican">Costa Rican</option>
+                                                <option value="Croatian">Croatian</option>
+                                                <option value="Cuban">Cuban</option>
+                                                <option value="Cypriot">Cypriot</option>
+                                                <option value="Czech">Czech</option>
+                                                <option value="Danish">Danish</option>
+                                                <option value="Djiboutian">Djiboutian</option>
+                                                <option value="Dominican">Dominican</option>
+                                                <option value="Dutch">Dutch</option>
+                                                <option value="East Timorese">East Timorese</option>
+                                                <option value="Ecuadorian">Ecuadorian</option>
+                                                <option value="Egyptian">Egyptian</option>
+                                                <option value="Emirati">Emirati</option>
+                                                <option value="English">English</option>
+                                                <option value="Eritrean">Eritrean</option>
+                                                <option value="Estonian">Estonian</option>
+                                                <option value="Ethiopian">Ethiopian</option>
+                                                <option value="Fijian">Fijian</option>
+                                                <option value="Filipino">Filipino</option>
+                                                <option value="Finnish">Finnish</option>
+                                                <option value="French">French</option>
+                                                <option value="Gabonese">Gabonese</option>
+                                                <option value="Gambian">Gambian</option>
+                                                <option value="Georgian">Georgian</option>
+                                                <option value="German">German</option>
+                                                <option value="Ghanaian">Ghanaian</option>
+                                                <option value="Greek">Greek</option>
+                                                <option value="Grenadian">Grenadian</option>
+                                                <option value="Guatemalan">Guatemalan</option>
+                                                <option value="Guinean">Guinean</option>
+                                                <option value="Guyanaese">Guyanaese</option>
+                                                <option value="Haitian">Haitian</option>
+                                                <option value="Honduran">Honduran</option>
+                                                <option value="Hungarian">Hungarian</option>
+                                                <option value="Icelandic">Icelandic</option>
+                                                <option value="Indian">Indian</option>
+                                                <option value="Indonesian">Indonesian</option>
+                                                <option value="Iranian">Iranian</option>
+                                                <option value="Iraqi">Iraqi</option>
+                                                <option value="Irish">Irish</option>
+                                                <option value="Israeli">Israeli</option>
+                                                <option value="Italian">Italian</option>
+                                                <option value="Jamaican">Jamaican</option>
+                                                <option value="Japanese">Japanese</option>
+                                                <option value="Jordanian">Jordanian</option>
+                                                <option value="Kazakhstani">Kazakhstani</option>
+                                                <option value="Kenyan">Kenyan</option>
+                                                <option value="Kuwaiti">Kuwaiti</option>
+                                                <option value="Kyrgyz">Kyrgyz</option>
+                                                <option value="Laotian">Laotian</option>
+                                                <option value="Latvian">Latvian</option>
+                                                <option value="Lebanese">Lebanese</option>
+                                                <option value="Liberian">Liberian</option>
+                                                <option value="Libyan">Libyan</option>
+                                                <option value="Lithuanian">Lithuanian</option>
+                                                <option value="Luxembourgish">Luxembourgish</option>
+                                                <option value="Macedonian">Macedonian</option>
+                                                <option value="Malagasy">Malagasy</option>
+                                                <option value="Malawian">Malawian</option>
+                                                <option value="Malaysian">Malaysian</option>
+                                                <option value="Maldivian">Maldivian</option>
+                                                <option value="Malian">Malian</option>
+                                                <option value="Maltese">Maltese</option>
+                                                <option value="Mauritanian">Mauritanian</option>
+                                                <option value="Mauritian">Mauritian</option>
+                                                <option value="Mexican">Mexican</option>
+                                                <option value="Moldovan">Moldovan</option>
+                                                <option value="Mongolian">Mongolian</option>
+                                                <option value="Montenegrin">Montenegrin</option>
+                                                <option value="Moroccan">Moroccan</option>
+                                                <option value="Mozambican">Mozambican</option>
+                                                <option value="Namibian">Namibian</option>
+                                                <option value="Nepalese">Nepalese</option>
+                                                <option value="New Zealander">New Zealander</option>
+                                                <option value="Nicaraguan">Nicaraguan</option>
+                                                <option value="Nigerian">Nigerian</option>
+                                                <option value="North Korean">North Korean</option>
+                                                <option value="Norwegian">Norwegian</option>
+                                                <option value="Omani">Omani</option>
+                                                <option value="Pakistani">Pakistani</option>
+                                                <option value="Panamanian">Panamanian</option>
+                                                <option value="Papua New Guinean">Papua New Guinean</option>
+                                                <option value="Paraguayan">Paraguayan</option>
+                                                <option value="Peruvian">Peruvian</option>
+                                                <option value="Polish">Polish</option>
+                                                <option value="Portuguese">Portuguese</option>
+                                                <option value="Qatari">Qatari</option>
+                                                <option value="Romanian">Romanian</option>
+                                                <option value="Russian">Russian</option>
+                                                <option value="Rwandan">Rwandan</option>
+                                                <option value="Saudi">Saudi</option>
+                                                <option value="Scottish">Scottish</option>
+                                                <option value="Senegalese">Senegalese</option>
+                                                <option value="Serbian">Serbian</option>
+                                                <option value="Seychellois">Seychellois</option>
+                                                <option value="Sierra Leonean">Sierra Leonean</option>
+                                                <option value="Singaporean">Singaporean</option>
+                                                <option value="Slovak">Slovak</option>
+                                                <option value="Slovenian">Slovenian</option>
+                                                <option value="Somali">Somali</option>
+                                                <option value="South African">South African</option>
+                                                <option value="South Korean">South Korean</option>
+                                                <option value="Spanish">Spanish</option>
+                                                <option value="Sri Lankan">Sri Lankan</option>
+                                                <option value="Sudanese">Sudanese</option>
+                                                <option value="Swedish">Swedish</option>
+                                                <option value="Swiss">Swiss</option>
+                                                <option value="Syrian">Syrian</option>
+                                                <option value="Taiwanese">Taiwanese</option>
+                                                <option value="Tajik">Tajik</option>
+                                                <option value="Tanzanian">Tanzanian</option>
+                                                <option value="Thai">Thai</option>
+                                                <option value="Tunisian">Tunisian</option>
+                                                <option value="Turkish">Turkish</option>
+                                                <option value="Ugandan">Ugandan</option>
+                                                <option value="Ukrainian">Ukrainian</option>
+                                                <option value="Uruguayan">Uruguayan</option>
+                                                <option value="Uzbek">Uzbek</option>
+                                                <option value="Venezuelan">Venezuelan</option>
+                                                <option value="Vietnamese">Vietnamese</option>
+                                                <option value="Welsh">Welsh</option>
+                                                <option value="Yemeni">Yemeni</option>
+                                                <option value="Zambian">Zambian</option>
+                                                <option value="Zimbabwean">Zimbabwean</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">State / Emirate / Region</label>
+                                            <select id="state" name="state">
+                                                <option value="">Select</option>
+                                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                                <option value="Kerala">Kerala</option>
+                                                <option value="Karnataka">Karnataka</option>
+                                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                                <option value="Telangana">Telangana</option>
+                                                <option value="Maharashtra">Maharashtra</option>
+                                                <option value="Delhi">Delhi</option>
+                                                <option value="Gujarat">Gujarat</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">City</label>
+                                            <select id="city" name="city">
+                                                <option value="">Select</option>
+                                                <option value="Chennai">Chennai</option>
+                                                <option value="Madurai">Madurai</option>
+                                                <option value="Coimbatore">Coimbatore</option>
+                                                <option value="Salem">Salem</option>
+                                                <option value="Tiruchirappalli">Tiruchirappalli</option>
+                                                <option value="Tirunelveli">Tirunelveli</option>
+                                                <option value="Erode">Erode</option>
+                                                <option value="Vellore">Vellore</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Email ID</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Address</label>
+                                            <textarea name="" id="" rows="2" class="form-control"></textarea>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-md-12 mt-2 mt-lg-0">
+                                    <div class="card text-center h-100">
+                                        <div class="card-body">
+                                            <img id="photoPreview" src="./assets/img/upload-image.jpg"
+                                                class="rounded img-fluid">
+
+                                        </div>
+                                        <div class="card-footer bg-transparent py-1">
+                                            <div class="row d-flex flex-nowrap justify-content-between">
+                                                <label class="btn btn-primary btn-sm w-auto">
+                                                    <i class="ti ti-photo me-2"></i>
+                                                    Upload Image
+                                                    <input type="file" id="photoInput" hidden accept="image/*"
+                                                        onchange="previewPhoto(event)">
+                                                </label>
+                                                <button type="button" id="deleteBtn"
+                                                    class="btn btn-danger btn-sm w-auto" onclick="removePhoto()"> <i
+                                                        class="ti ti-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-cyan d-flex justify-content-between align-items-center">
+
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-phone fs-2 me-2"></i>
+                                <h3 class="card-title mb-0f fw-semibold">Contact Numbers</h3>
+                            </div>
+
+                            <button class="btn btn-light btn-sm" onclick="addContactRow()">
+                                <i class="ti ti-plus"></i>
+                                Add Number
+                            </button>
+
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row gy-2" id="contactRow">
+
+                                <!-- Primary Number -->
+                                <div class="col-md-4">
+                                    <label class="form-label">Primary Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Emergency Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <!-- Secondary Numbers Header -->
+                                <div class="col-md-4">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label class="form-label">
+                                            Secondary Number
+                                        </label>
+                                    </div>
+
+                                    <input type="text" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-orange d-flex align-items-center">
+                            <i class="ti ti-id fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-semibold">
+                                Identity Details
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-2">
+                                <div class="col-md-4">
+                                    <label class="form-label">National ID Number</label>
+                                    <input class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">National ID Expiry Date</label>
+                                    <input class="form-control" id="passportExpiryDate">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Upload File</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Passport Number</label>
+                                    <input class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Passport Expiry Date</label>
+                                    <input class="form-control" id="nIDExpiryDate">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Upload File</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Visa Number</label>
+                                    <input class="form-control">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Visa Expiry Date</label>
+                                    <input class="form-control" id="nIDExpiryDate">
+                                </div>
+                                <div class="col-md-5">
+                                    <label class="form-label">Upload File</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-purple d-flex align-items-center">
+                            <i class="ti ti-info-hexagon fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-bold">
+                                Tenant Additional Information
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <div class="row gy-2">
+
+                                <!-- OCCUPATION -->
+                                <div class="hr-text my-3 text-purple fw-semibold">Occupation & Income</div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Occupation Type</label>
+                                    <select class="form-select">
+                                        <option>Select</option>
+                                        <option>Employed</option>
+                                        <option>Self Employed</option>
+                                        <option>Unemployed</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Currency</label>
+                                    <select class="form-select">
+                                        <option>Select</option>
+                                        <option>AED</option>
+                                        <option>INR</option>
+                                        <option>USD</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Monthly Income</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Marital Status</label>
+                                    <select class="form-select">
+                                        <option>Single</option>
+                                        <option>Married</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Sponsor</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label">Sponsor Address</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label class="form-label">Sponsor Contact Number</label>
+                                    <input type="text" class="form-control">
+                                </div>
+
+                                <!-- DEPENDENTS -->
+                                <div class="hr-text my-3 text-purple fw-semibold">Dependents Details</div>
+
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered align-middle table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th>Name</th>
+                                                    <th>Age</th>
+                                                    <th>Relationship</th>
+                                                    <th>Specify</th>
+                                                    <th>Nationality</th>
+                                                    <th>National ID</th>
+                                                    <th>Attachment</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="dependentsTable">
+                                                <tr>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <select name="" id="" class="form-select">
+                                                            <option value="">Select</option>
+                                                            <option value="">Spouse</option>
+                                                            <option value="">Parent</option>
+                                                            <option value="">Children</option>
+                                                            <option value="">Relative</option>
+                                                            <option value="">Others</option>
+                                                        </select>
+                                                    </td>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center"><label
+                                                            class="btn btn-primary btn-sm upload-btn">
+                                                            <i class="ti ti-upload"></i>
+                                                            <input type="file" hidden onchange="handleRowUpload(this)">
+                                                        </label>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-danger btn-sm upload-btn"
+                                                            onclick="this.closest('tr').remove()">
+                                                            <i class="ti ti-trash-x"></i>
+                                                            </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-sm mt-2 float-end" onclick="addDependent()">
+                                        + Add Dependent
+                                    </button>
+                                </div>
+
+                                <!-- PETS -->
+                                <div class="hr-text my-3 text-purple fw-semibold">Pets Details</div>
+
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label class="form-label">Has Pets</label>
+                                        <select id="hasPets" class="form-select">
+                                            <option value="no">No</option>
+                                            <option value="yes">Yes</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 mt-3 d-none" id="petsSection">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered align-middle table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">Pet Name</th>
+                                                    <th class="text-center">Pet Type</th>
+                                                    <th class="text-center">Age</th>
+                                                    <th class="text-center">Passport No</th>
+                                                    <th class="text-center">Picture</th>
+                                                    <th class="text-center"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="petsTable"></tbody>
+                                        </table>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary btn-sm mt-2 float-end"
+                                        onclick="addPetRow()">
+                                        <i class="ti ti-plus"></i> Add Pet
+                                    </button>
+                                </div>
+                                <!-- VEHICLES -->
+                                <div class="hr-text my-3 text-purple fw-semibold">Vehicle Details</div>
+                                <div class="col-12">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered align-middle table-main">
+                                            <thead>
+                                                <tr>
+                                                    <th>Brand</th>
+                                                    <th>Model</th>
+                                                    <th>Year</th>
+                                                    <th>Color</th>
+                                                    <th>Plate No</th>
+                                                    <th>License No</th>
+                                                    <th>Expiry Date</th>
+                                                    <th>Picture</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="vehicleTable">
+                                                <tr>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center"><input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <input type="text" class="form-control">
+                                                    </td>
+                                                    <td class="text-center"><label
+                                                            class="btn btn-primary btn-sm upload-btn">
+                                                            <i class="ti ti-upload"></i>
+                                                            <input type="file" hidden onchange="handleRowUpload(this)">
+                                                        </label>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <button type="button" class="btn btn-danger btn-sm upload-btn"
+                                                            onclick="this.closest('tr').remove()">
+                                                            <i class="ti ti-trash-x"></i>
+                                                            </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <button class="btn btn-primary btn-sm mt-2 float-end" onclick="addVehicle()">
+                                        + Add Vehicle
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-blue d-flex align-items-center">
+                            <i class="ti ti-building-bank fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-bold">
+                                Financial Details
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-2">
+                                <div class="col-md-6">
+                                    <label class="form-label">Bank Name</label>
+                                    <input type="text" class="form-control" placeholder="Enter Bank Name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Bank Account Number</label>
+                                    <input type="text" class="form-control" placeholder="Enter Account Number">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Bank IBAN</label>
+                                    <input type="text" class="form-control" placeholder="Enter IBAN">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">IBAN Document Upload</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Credit Report</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Bank Statement Report</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Salary Certificate</label>
+                                    <div class="file-box">
+                                        <span class="file-name">No file selected</span>
+
+                                        <div class="d-flex align-items-center">
+                                            <label class="upload-btn cursor-pointer lh-0">
+                                                <i class="ti ti-upload fs-3 text-primary me-1 action-icon"></i>
+                                                <input type="file" hidden onchange="handleFixedUpload(this)">
+                                            </label>
+                                            <div class="v-divider bg-gray-200"></div>
+                                            <i class="ti ti-trash-x fs-3 ms-1 text-danger cursor-pointer"
+                                                onclick="resetFixedUpload(this)">
+                                            </i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-outline-secondary me-3" href="./OwnerMaster.html"><i
+                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
+                        <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                    <div class="text-dark fw-medium text-center">
+                        © 2026 Leasing Management System
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+    <!-- Tom Select JS -->
+    <script src="./assets/scripts/tom-select.complete.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            /* =========================
+               SLIM SELECT INITIALIZATION
+            ========================== */
+            new SlimSelect({ select: '#nationality' });
+            new SlimSelect({ select: '#gender' });
+            new SlimSelect({ select: '#country' });
+            new SlimSelect({ select: '#state' });
+            new SlimSelect({ select: '#city' });
+            new SlimSelect({ select: '#OccupationType' });
+
+            /* =========================
+               GENERIC LITEPICKER INIT
+            ========================== */
+            function initDatePicker(selector, onSelectCallback) {
+                document.querySelectorAll(selector).forEach(el => {
+                    new Litepicker({
+                        element: el,
+                        format: "DD-MM-YYYY",
+                        singleMode: true,
+                        setup: (picker) => {
+                            picker.on("selected", (date) => {
+                                if (onSelectCallback) {
+                                    onSelectCallback(date, el);
+                                }
+                            });
+                        }
+                    });
+                });
+            }
+
+            /* =========================
+               DOB -> AGE CALCULATION
+            ========================== */
+            initDatePicker("#dob", function (date) {
+
+                const parts = date.format("DD-MM-YYYY").split("-");
+
+                const birth = new Date(parts[2], parts[1] - 1, parts[0]);
+                const today = new Date();
+
+                let age = today.getFullYear() - birth.getFullYear();
+                const monthDiff = today.getMonth() - birth.getMonth();
+
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                    age--;
+                }
+
+                const ageInput = document.getElementById("age");
+                if (ageInput) ageInput.value = age;
+            });
+
+            /* =========================
+               OTHER DATE PICKERS
+            ========================== */
+            initDatePicker("#dob");
+            initDatePicker("#nIDExpiryDate");
+            initDatePicker("#passportExpiryDate");
+            initDatePicker("#tlExpiryDate");
+
+
+            /* =========================
+               PHOTO PREVIEW
+            ========================== */
+
+            const defaultImage = "./assets/img/upload-image.jpg";
+
+            window.previewPhoto = function (event) {
+                const file = event.target.files[0];
+                const preview = document.getElementById("photoPreview");
+                const deleteBtn = document.getElementById("deleteBtn");
+
+                if (file && preview) {
+                    preview.src = URL.createObjectURL(file);
+                    if (deleteBtn) deleteBtn.disabled = false;
+                }
+            };
+
+            window.removePhoto = function () {
+                const preview = document.getElementById("photoPreview");
+                const input = document.getElementById("photoInput");
+                const deleteBtn = document.getElementById("deleteBtn");
+
+                if (preview) preview.src = defaultImage;
+                if (input) input.value = "";
+                if (deleteBtn) deleteBtn.disabled = true;
+            };
+
+            /* Disable delete button on load */
+            const deleteBtn = document.getElementById("deleteBtn");
+            if (deleteBtn) deleteBtn.disabled = true;
+
+            /* =========================
+               FILE HANDLING
+            ========================== */
+
+            window.handleFile = function (input) {
+
+                const file = input.files[0];
+                if (!file) return;
+
+                const container = input.closest('.file-box');
+                if (!container) return;
+
+                container.querySelector('.file-name').textContent = file.name;
+                container.dataset.fileUrl = URL.createObjectURL(file);
+
+                const viewBtn = container.querySelector('.btn-outline-secondary');
+                const deleteBtn = container.querySelector('.btn-outline-danger');
+
+                if (viewBtn) viewBtn.disabled = false;
+                if (deleteBtn) deleteBtn.disabled = false;
+            };
+
+            window.viewFile = function (btn) {
+
+                const container = btn.closest('.file-box');
+                if (!container) return;
+
+                const url = container.dataset.fileUrl;
+
+                if (url) {
+                    window.open(url, '_blank');
+                } else {
+                    alert('No file uploaded');
+                }
+            };
+
+            window.removeFile = function (btn) {
+
+                const container = btn.closest('.file-box');
+                if (!container) return;
+
+                container.querySelector('.file-name').textContent = 'No file selected';
+                container.dataset.fileUrl = '';
+
+                const fileInput = container.querySelector('input[type="file"]');
+                if (fileInput) fileInput.value = '';
+
+                const viewBtn = container.querySelector('.btn-outline-secondary');
+                const deleteBtn = container.querySelector('.btn-outline-danger');
+
+                if (viewBtn) viewBtn.disabled = true;
+                if (deleteBtn) deleteBtn.disabled = true;
+            };
+
+        });
+
+        /* ================= CONTACT ROW ================= */
+        function addContactRow() {
+
+            const container = document.getElementById("contactRow");
+
+            const col = document.createElement("div");
+            col.className = "col-md-4";
+
+            col.innerHTML = `
+        <label class="form-label">
+            Secondary Number
+        </label>
+
+        <div class="input-group mb-0">
+
+            <input type="text"
+                   class="form-control">
+
+            <button class="btn text-danger border-start-0"
+                    type="button"
+                    onclick="removeNumber(this)">
+                <i class="ti ti-trash-x fs-3"></i>
+            </button>
+
+        </div>
+    `;
+
+            container.appendChild(col);
+        }
+
+
+        function removeNumber(button) {
+            button.closest(".col-md-4").remove();
+        }
+        // ================= ADD ROW =================
+        function addAttachmentRow() {
+
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+        <td>
+            <select class="form-select form-select-sm">
+                <option>National ID</option>
+                <option>Passport</option>
+                <option>Bank IBAN Letter</option>
+                <option>Trade License</option>
+                <option>Other</option>
+            </select>
+        </td>
+
+        <td><input class="form-control form-control-sm"></td>
+
+        <td><input type="date" class="form-control form-control-sm"></td>
+
+        <td><input class="form-control form-control-sm"></td>
+
+        <td>
+            <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                Upload
+                <input type="file" hidden onchange="handleRowUpload(this)">
+            </label>
+        </td>
+        
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
+
+        <td class="text-center">
+            <button class="btn btn-outline-danger btn-sm"
+                onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
+        </td>
+    `;
+
+            document.getElementById("attachmentBody").appendChild(tr);
+        }
+
+
+        // ================= FIXED UPLOAD (MoA / PoU) =================
+
+        function handleFixedUpload(input) {
+
+            const fileBox =
+                input.closest(".file-box");
+
+            const fileName =
+                fileBox.querySelector(".file-name");
+
+            const icon =
+                fileBox.querySelector(".action-icon");
+
+            if (input.files.length > 0) {
+
+                const file =
+                    input.files[0];
+
+                fileName.textContent =
+                    file.name;
+
+                fileName.classList.remove("text-muted");
+
+                const fileURL =
+                    URL.createObjectURL(file);
+
+                input.dataset.fileUrl =
+                    fileURL;
+
+                // Change icon to eye
+                icon.classList.remove("ti-upload", "text-primary");
+
+                icon.classList.add(
+                    "ti-eye-check",
+                    "text-teal"
+                );
+
+                // View file on click
+                icon.onclick = function () {
+
+                    window.open(
+                        input.dataset.fileUrl,
+                        "_blank"
+                    );
+
+                };
+
+            }
+
+        }
+
+        // ================= RESET FIXED =================
+        function resetFixedUpload(icon) {
+
+            const fileBox =
+                icon.closest(".file-box");
+
+            const fileName =
+                fileBox.querySelector(".file-name");
+
+            const input =
+                fileBox.querySelector("input[type='file']");
+
+            const actionIcon =
+                fileBox.querySelector(".action-icon");
+
+            input.value = "";
+
+            fileName.textContent =
+                "No file selected";
+
+            fileName.classList.add("text-muted");
+
+            // Back to upload icon
+            actionIcon.classList.remove(
+                "ti-eye",
+                "text-teal"
+            );
+
+            actionIcon.classList.add(
+                "ti-upload",
+                "text-primary"
+            );
+
+            actionIcon.onclick = null;
+
+        }
+        // ================= TABLE ROW UPLOAD =================
+        function handleRowUpload(input) {
+
+            const label = input.closest("label.upload-btn");
+
+            if (input.files.length > 0) {
+
+                label.classList.remove("btn-outline-primary");
+                label.classList.add("btn-success");
+
+                label.innerHTML = `
+            ✓ Uploaded
+            <input type="file" hidden onchange="handleRowUpload(this)">
+        `;
+            }
+        }
+        function addDependent() {
+            const row = `
+    <tr>
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="number" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <select class="form-select relationship" onchange="toggleOtherField(this)">
+                <option value="">Select</option>
+                <option value="Spouse">Spouse</option>
+                <option value="Parent">Parent</option>
+                <option value="Children">Children</option>
+                <option value="Relative">Relative</option>
+                <option value="Others">Others</option>
+            </select>
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control other-field">
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <label class="btn btn-primary btn-sm upload-btn">
+                <i class="ti ti-upload"></i>
+                <input type="file" hidden onchange="handleRowUpload(this)">
+            </label>
+        </td>
+
+        <td class="text-center">
+            <button type="button" class="btn btn-danger btn-sm"
+                onclick="removeDependentRow(this)">
+                <i class="ti ti-trash-x"></i>
+            </button>
+        </td>
+    </tr>`;
+
+            document.getElementById('dependentsTable')
+                .insertAdjacentHTML('beforeend', row);
+        }
+
+        // ===== Toggle Pets =====
+        document.getElementById('hasPets').addEventListener('change', function () {
+            const section = document.getElementById('petsSection');
+            const table = document.getElementById('petsTable');
+
+            if (this.value === 'yes') {
+                section.classList.remove('d-none');
+
+                // Add default row
+                if (table.children.length === 0) {
+                    addPetRow();
+                }
+
+            } else {
+                section.classList.add('d-none');
+                table.innerHTML = '';
+            }
+        });
+
+        // ===== Add Pet Row =====
+        function addPetRow() {
+            const row = `
+    <tr>
+        <td class="text-center">
+            <input type="text" class="form-control" placeholder="Pet Name">
+        </td>
+
+        <td class="text-center">
+            <select class="form-select">
+                <option value="">Select</option>
+                <option>Dog</option>
+                <option>Cat</option>
+                <option>Bird</option>
+                <option>Other</option>
+            </select>
+        </td>
+
+        <td class="text-center">
+            <input type="number" class="form-control" placeholder="Age">
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control" placeholder="Passport No">
+        </td>
+
+        <td class="text-center">
+            <label class="btn btn-primary btn-sm upload-btn">
+                <i class="ti ti-upload"></i>
+                <input type="file" hidden onchange="handlePetUpload(this)">
+            </label>
+        </td>
+
+        <td class="text-center">
+            <button type="button" class="btn btn-danger btn-sm"
+                onclick="removePetRow(this)">
+                <i class="ti ti-trash-x"></i>
+            </button>
+        </td>
+    </tr>`;
+
+            document.getElementById('petsTable')
+                .insertAdjacentHTML('beforeend', row);
+        }
+
+        // ===== Remove Row =====
+        function removePetRow(btn) {
+            btn.closest('tr').remove();
+
+            const table = document.getElementById('petsTable');
+
+            // Auto reset if empty
+            if (table.children.length === 0) {
+                document.getElementById('hasPets').value = 'no';
+                document.getElementById('petsSection').classList.add('d-none');
+            }
+        }
+
+        // ===== File Upload (optional) =====
+        function handlePetUpload(input) {
+            const file = input.files[0];
+            if (file) {
+                console.log("Pet file:", file.name);
+            }
+        }
+        function addVehicle() {
+            const row = `
+    <tr>
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="number" class="form-control" >
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control" >
+        </td>
+
+        <td class="text-center">
+            <input type="text" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <input type="date" class="form-control">
+        </td>
+
+        <td class="text-center">
+            <label class="btn btn-primary btn-sm upload-btn">
+                <i class="ti ti-upload"></i>
+                <input type="file" hidden onchange="handleVehicleUpload(this)">
+            </label>
+        </td>
+
+        <td class="text-center">
+            <button type="button" class="btn btn-danger btn-sm"
+                onclick="removeVehicleRow(this)">
+                <i class="ti ti-trash-x"></i>
+            </button>
+        </td>
+    </tr>`;
+
+            document.getElementById('vehicleTable')
+                .insertAdjacentHTML('beforeend', row);
+        }
+    </script>
+</body>
+
+</html>
