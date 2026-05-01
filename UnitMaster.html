@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <title>Leasing</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-primary text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-primary fw-bold">
+                        LM
+                    </div>
+                    <span class="logo-text fw-semibold fs-3">
+                        Leasing Management
+                    </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-5 fw-semibold">
+                                Leasing
+                            </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link  text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold">
+                                    Sub Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OwnerMaster.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold">
+                                    Owner Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold">
+                                    Operator Master
+                                </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./TenantMaster.html">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./UnitMaster.html">
+                                <i class="ti ti-building-community fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class=" btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-primary text-white">
+                            A
+                        </div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">
+                                Admin User
+                            </div>
+                            <div class="text-muted small">
+                                Administrator
+                            </div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content p-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md">
+                                <div class="d-flex align-items-center">
+                                    <span class="avatar bg-primary text-white me-3">
+                                        <i class="ti ti-building-community fs-2"></i>
+                                    </span>
+                                    <div>
+                                        <h3 class="page-title mb-0 fw-bold">
+                                            Community / Building / Unit Registration
+                                        </h3>
+                                        <div class="text-muted fs-5">
+                                            Manage Community / Building / Unit registration and records
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="mb-0 mt-3 d-md-none" />
+                            <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item">
+                                            <a href="./index.html" class="text-decoration-none text-secondary">
+                                                <i class="ti ti-home"></i></a>
+                                        </li>
+                                        <li class="breadcrumb-item">
+                                            Leasing
+                                        </li>
+                                        <li class="breadcrumb-item active" aria-current="page">
+                                            Unit Master
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center g-3 align-items-stretch">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card bg-teal text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-green me-3">
+                                    <i class="ti ti-building-community fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">96</div>
+                                    <div>Communities</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-building-community bg-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card bg-primary text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-primary me-3">
+                                    <i class="ti ti-building fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">88</div>
+                                    <div>Buildings</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-building bg-icon"></i>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="card bg-pink text-white stat-card">
+                            <div class="card-body d-flex align-items-center">
+                                <span class="avatar bg-white text-pink me-3">
+                                    <i class="ti ti-home-2 fs-1"></i>
+                                </span>
+                                <div>
+                                    <div class="h1 mb-0">88</div>
+                                    <div>Units</div>
+                                </div>
+                            </div>
+                            <i class="ti ti-home-2 bg-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-0 mt-3">
+                    <div class="card-header bg-gradient bg-gradient-from-primary bg-gradient-to-cyan">
+                        <h2 class="card-title text-light fw-bold mb-0">
+                            Unit List
+                        </h2>
+                    </div>
+                    <div class="card-body border rounded border-top-0 rounded-top-0 border-1 border-cyan">
+                        <div class="smart-table">
+                            <div class="row align-items-center justify-content-end mb-3">
+                                <div class="col-md-6 col-lg-4 col-xl-5">
+                                    <div class="input-icon mt-1">
+                                        <input type="text" class="form-control table-search" placeholder="Search…">
+                                        <span class="input-icon-addon">
+                                            <i class="ti ti-search"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-auto ms-auto d-flex gap-1">
+                                    <button class="btn btn-action border bg-gray-50 px-2 text-dark mt-1"
+                                        data-bs-toggle="collapse" data-bs-target="#filter" aria-expanded="true">
+                                        <i class="ti ti-filter fs-2"></i>
+                                    </button>
+                                    <div class="dropdown">
+                                        <button class="btn btn-action border bg-gray-50 px-2 text-dark mt-1"
+                                            data-bs-toggle="dropdown">
+                                            <i class="ti ti-columns-3 fs-2"></i>
+                                        </button>
+                                        <div
+                                            class="dropdown-menu dropdown-menu-end shadow rounded-3 p-2 columnDropdown">
+
+                                            <div class="dropdown-header fw-bold text-muted px-2 mb-1">
+                                                Show / Hide Columns
+                                            </div>
+
+                                            <div class="dropdown-divider"></div>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="unitName" checked>
+                                                <span>Unit Name</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="unitNo" checked>
+                                                <span>Unit Number</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="unitType" checked>
+                                                <span>Unit Type</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="unitSubType" checked>
+                                                <span>Unit Sub Type</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="buildingName" checked>
+                                                <span>Community / Building Name</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="emirate" checked>
+                                                <span>Emirate</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="city" checked>
+                                                <span>City</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="occupancyStatus" checked>
+                                                <span>Occupancy Status</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="documentStatus" checked>
+                                                <span>Documents Status</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="ownerType" checked>
+                                                <span>Owner Type</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="ownerName" checked>
+                                                <span>Owner Name</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="ownerContact" checked>
+                                                <span>Contact Number</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="tenantName" checked>
+                                                <span>Tenant Name</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="leaseStart" checked>
+                                                <span>Lease Start Date</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="leaseEnd" checked>
+                                                <span>Lease End Date</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="leaseStatus" checked>
+                                                <span>Lease Status</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="addedDate" checked>
+                                                <span>Added / Edited Date</span>
+                                            </label>
+
+                                            <label class="form-check d-flex align-items-center py-1 ms-2">
+                                                <input type="checkbox" class="form-check-input me-2 col-toggle"
+                                                    data-col="addedBy" checked>
+                                                <span>Added / Edited By</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button class="btn btn-md btn-yellow px-2 py-1  mt-1 rounded-2">
+                                        <i class="ti ti-printer fs-2"></i>
+                                    </button>
+                                    <button class="btn btn-md btn-blue ms-auto px-2 py-1  mt-1" data-bs-toggle="modal"
+                                        data-bs-target="#modal-addNewTenant"><i
+                                            class="ti ti-plus me-1 fw-bold fs-3"></i>Add
+                                        New</button>
+                                </div>
+                            </div>
+                            <div class="collapse" id="filter">
+                                <div class="card bg-gray-50">
+                                    <div class="card-body">
+                                        <div class="row">
+
+                                            <!-- Unit Name -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Unit Name</label>
+                                                    <select id="unitName">
+                                                        <option value="-1">Select</option>
+                                                        <option>Unit A1</option>
+                                                        <option>Unit B1</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Unit Number -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Unit Number</label>
+                                                    <select id="unitNo">
+                                                        <option value="-1">Select</option>
+                                                        <option>A1-101</option>
+                                                        <option>B1-102</option>
+                                                        <option>C1-103</option>
+                                                        <option>D1-104</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Unit Type -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Unit Type</label>
+                                                    <select id="unitType">
+                                                        <option value="-1">Select</option>
+                                                        <option>Residential</option>
+                                                        <option>Commercial</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Unit Sub Type -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Unit Sub Type</label>
+                                                    <select id="unitSubType">
+                                                        <option value="-1">Select</option>
+                                                        <option>Apartment</option>
+                                                        <option>Villa</option>
+                                                        <option>Office</option>
+                                                        <option>Shop</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Building -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Community / Building</label>
+                                                    <select id="buildingName">
+                                                        <option value="-1">Select</option>
+                                                        <option>Al Noor Building</option>
+                                                        <option>Skyline Tower</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Emirate -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Emirate</label>
+                                                    <select id="emirate">
+                                                        <option value="-1">Select</option>
+                                                        <option>Dubai</option>
+                                                        <option>Abu Dhabi</option>
+                                                        <option>Sharjah</option>
+                                                        <option>Ajman</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- City -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">City</label>
+                                                    <select id="city">
+                                                        <option value="-1">Select</option>
+                                                        <option>Dubai City</option>
+                                                        <option>Abu Dhabi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Occupancy -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Occupancy Status</label>
+                                                    <select id="occupancyStatus">
+                                                        <option value="-1">Select</option>
+                                                        <option>Occupied</option>
+                                                        <option>Vacant</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Document Status -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Documents Status</label>
+                                                    <select id="documentStatus">
+                                                        <option value="-1">Select</option>
+                                                        <option>Valid</option>
+                                                        <option>Expired</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Owner Type -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Owner Type</label>
+                                                    <select id="ownerType">
+                                                        <option value="-1">Select</option>
+                                                        <option>Individual</option>
+                                                        <option>Company</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Owner Name -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Owner Name</label>
+                                                    <select id="ownerName">
+                                                        <option value="-1">Select</option>
+                                                        <option>Al Noor Trading LLC</option>
+                                                        <option>Ahmed Khan</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Contact Number (keep input) -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Contact Number</label>
+                                                    <input type="text" class="form-control" id="ownerContact">
+                                                </div>
+                                            </div>
+
+                                            <!-- Tenant Name -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Tenant Name</label>
+                                                    <select id="tenantName">
+                                                        <option value="-1">Select</option>
+                                                        <option>Rahul</option>
+                                                        <option>Mike</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <!-- Lease Start -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Lease Start Date</label>
+                                                    <input type="tel" class="form-control" id="leaseStart">
+                                                </div>
+                                            </div>
+
+                                            <!-- Lease End -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Lease End Date</label>
+                                                    <input type="text" class="form-control" id="leaseEnd">
+                                                </div>
+                                            </div>
+
+                                            <!-- Lease Status -->
+                                            <div class="col-md-6 col-lg-3">
+                                                <div class="mb-2">
+                                                    <label class="form-label">Lease Status</label>
+                                                    <select id="leaseStatus">
+                                                        <option value="-1">Select</option>
+                                                        <option>Valid</option>
+                                                        <option>Expired</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="btn-list justify-content-end">
+                                                <a class="btn btn-outline btn-secondary">
+                                                    Clear</a>
+                                                <a class="btn btn-blue">Search</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs nav-fill nav-tabs-filled">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#activeTable">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#draftTable">Draft</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content border">
+                                <div class="tab-pane fade show active p-3 pt-0" id="activeTable" role="tabpanel">
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-bordered table-main">
+
+                                            <thead>
+                                                <tr>
+                                                    <th class="sortable text-center col-slNo" data-col="slNo">
+                                                        S.No <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitName" data-col="unitName">
+                                                        Unit Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitNo" data-col="unitNo">
+                                                        Unit Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitType" data-col="unitType">
+                                                        Unit Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitSubType"
+                                                        data-col="unitSubType">
+                                                        Unit Sub Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-buildingName"
+                                                        data-col="buildingName">
+                                                        Community / Building Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-emirate" data-col="emirate">
+                                                        Emirate <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-city" data-col="city">
+                                                        City <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-occupancyStatus"
+                                                        data-col="occupancyStatus">
+                                                        Occupancy Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-documentStatus"
+                                                        data-col="documentStatus">
+                                                        Documents Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerType" data-col="ownerType">
+                                                        Owner Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerName" data-col="ownerName">
+                                                        Owner Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerContact"
+                                                        data-col="ownerContact">
+                                                        Contact Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-tenantName"
+                                                        data-col="tenantName">
+                                                        Tenant Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseStart"
+                                                        data-col="leaseStart">
+                                                        Lease Start Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseEnd" data-col="leaseEnd">
+                                                        Lease End Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseStatus"
+                                                        data-col="leaseStatus">
+                                                        Lease Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-addedDate" data-col="addedDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-addedBy" data-col="addedBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="text-center col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center col-slNo">1</td>
+                                                    <td class="text-center col-unitName">Unit A1</td>
+                                                    <td class="text-center col-unitNo">A1-101</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Al Noor Building</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai City</td>
+
+                                                    <td class="text-center col-occupancyStatus">
+                                                        <span class="badge bg-green text-green-fg">Occupied</span>
+                                                    </td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Al Noor Trading LLC</td>
+                                                    <td class="text-center col-ownerContact">9000000001</td>
+                                                    <td class="text-center col-tenantName">-</td>
+
+                                                    <td class="text-center col-leaseStart">01-01-2026</td>
+                                                    <td class="text-center col-leaseEnd">31-12-2026</td>
+
+                                                    <td class="text-center col-leaseStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+
+                                                    <td class="text-center col-addedDate">01-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">2</td>
+                                                    <td class="text-center col-unitName">Unit B1</td>
+                                                    <td class="text-center col-unitNo">B1-102</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Shop</td>
+                                                    <td class="text-center col-buildingName">Al Noor Building</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Ahmed Khan</td>
+                                                    <td class="text-center col-ownerContact">9000000002</td>
+                                                    <td class="text-center col-tenantName">Star Mart</td>
+                                                    <td class="text-center col-leaseStart">01-02-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-01-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">05-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">3</td>
+                                                    <td class="text-center col-unitName">Unit C1</td>
+                                                    <td class="text-center col-unitNo">C1-103</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Villa</td>
+                                                    <td class="text-center col-buildingName">Palm Residency</td>
+                                                    <td class="text-center col-emirate">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Abu Dhabi</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Emirates Holdings</td>
+                                                    <td class="text-center col-ownerContact">9000000003</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">10-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">4</td>
+                                                    <td class="text-center col-unitName">Unit D1</td>
+                                                    <td class="text-center col-unitNo">D1-104</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Skyline Tower</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai Marina</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">John Mathew</td>
+                                                    <td class="text-center col-ownerContact">9000000004</td>
+                                                    <td class="text-center col-tenantName">Rahul</td>
+                                                    <td class="text-center col-leaseStart">01-06-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-05-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">12-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">5</td>
+                                                    <td class="text-center col-unitName">Unit E1</td>
+                                                    <td class="text-center col-unitNo">E1-105</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Office</td>
+                                                    <td class="text-center col-buildingName">Business Bay Center</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Business Bay</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Global Corp</td>
+                                                    <td class="text-center col-ownerContact">9000000005</td>
+                                                    <td class="text-center col-tenantName">TechSoft</td>
+                                                    <td class="text-center col-leaseStart">01-01-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-12-2025</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">15-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Continue same pattern -->
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">6</td>
+                                                    <td class="text-center col-unitName">Unit F1</td>
+                                                    <td class="text-center col-unitNo">F1-106</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Green Park</td>
+                                                    <td class="text-center col-emirate">Sharjah</td>
+                                                    <td class="text-center col-city">Sharjah City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Ali</td>
+                                                    <td class="text-center col-ownerContact">9000000006</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">18-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">7</td>
+                                                    <td class="text-center col-unitName">Unit G1</td>
+                                                    <td class="text-center col-unitNo">G1-107</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Warehouse</td>
+                                                    <td class="text-center col-buildingName">Industrial Hub</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Jebel Ali</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Logistics LLC</td>
+                                                    <td class="text-center col-ownerContact">9000000007</td>
+                                                    <td class="text-center col-tenantName">FastMove</td>
+                                                    <td class="text-center col-leaseStart">01-07-2025</td>
+                                                    <td class="text-center col-leaseEnd">30-06-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">20-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">8</td>
+                                                    <td class="text-center col-unitName">Unit H1</td>
+                                                    <td class="text-center col-unitNo">H1-108</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Villa</td>
+                                                    <td class="text-center col-buildingName">Palm Villas</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Palm Jumeirah</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Sara</td>
+                                                    <td class="text-center col-ownerContact">9000000008</td>
+                                                    <td class="text-center col-tenantName">Mike</td>
+                                                    <td class="text-center col-leaseStart">01-08-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-07-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">22-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">9</td>
+                                                    <td class="text-center col-unitName">Unit I1</td>
+                                                    <td class="text-center col-unitNo">I1-109</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Office</td>
+                                                    <td class="text-center col-buildingName">Downtown Plaza</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Downtown</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">BizGroup</td>
+                                                    <td class="text-center col-ownerContact">9000000009</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">25-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">10</td>
+                                                    <td class="text-center col-unitName">Unit J1</td>
+                                                    <td class="text-center col-unitNo">J1-110</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">City Heights</td>
+                                                    <td class="text-center col-emirate">Ajman</td>
+                                                    <td class="text-center col-city">Ajman City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Kumar</td>
+                                                    <td class="text-center col-ownerContact">9000000010</td>
+                                                    <td class="text-center col-tenantName">Arun</td>
+                                                    <td class="text-center col-leaseStart">01-09-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-08-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">28-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade p-3 pt-0" id="draftTable" role="tabpanel">
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-bordered table-main">
+
+                                            <thead>
+                                                <tr>
+                                                    <th class="sortable text-center col-slNo" data-col="slNo">
+                                                        S.No <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitName" data-col="unitName">
+                                                        Unit Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitNo" data-col="unitNo">
+                                                        Unit Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitType" data-col="unitType">
+                                                        Unit Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-unitSubType"
+                                                        data-col="unitSubType">
+                                                        Unit Sub Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-buildingName"
+                                                        data-col="buildingName">
+                                                        Community / Building Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-emirate" data-col="emirate">
+                                                        Emirate <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-city" data-col="city">
+                                                        City <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-occupancyStatus"
+                                                        data-col="occupancyStatus">
+                                                        Occupancy Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-documentStatus"
+                                                        data-col="documentStatus">
+                                                        Documents Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerType" data-col="ownerType">
+                                                        Owner Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerName" data-col="ownerName">
+                                                        Owner Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-ownerContact"
+                                                        data-col="ownerContact">
+                                                        Contact Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-tenantName"
+                                                        data-col="tenantName">
+                                                        Tenant Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseStart"
+                                                        data-col="leaseStart">
+                                                        Lease Start Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseEnd" data-col="leaseEnd">
+                                                        Lease End Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-leaseStatus"
+                                                        data-col="leaseStatus">
+                                                        Lease Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-addedDate" data-col="addedDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable text-center col-addedBy" data-col="addedBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="text-center col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center col-slNo">1</td>
+                                                    <td class="text-center col-unitName">Unit A1</td>
+                                                    <td class="text-center col-unitNo">A1-101</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Al Noor Building</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai City</td>
+
+                                                    <td class="text-center col-occupancyStatus">
+                                                        <span class="badge bg-green text-green-fg">Occupied</span>
+                                                    </td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Al Noor Trading LLC</td>
+                                                    <td class="text-center col-ownerContact">9000000001</td>
+                                                    <td class="text-center col-tenantName">-</td>
+
+                                                    <td class="text-center col-leaseStart">01-01-2026</td>
+                                                    <td class="text-center col-leaseEnd">31-12-2026</td>
+
+                                                    <td class="text-center col-leaseStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+
+                                                    <td class="text-center col-addedDate">01-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">2</td>
+                                                    <td class="text-center col-unitName">Unit B1</td>
+                                                    <td class="text-center col-unitNo">B1-102</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Shop</td>
+                                                    <td class="text-center col-buildingName">Al Noor Building</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Ahmed Khan</td>
+                                                    <td class="text-center col-ownerContact">9000000002</td>
+                                                    <td class="text-center col-tenantName">Star Mart</td>
+                                                    <td class="text-center col-leaseStart">01-02-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-01-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">05-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">3</td>
+                                                    <td class="text-center col-unitName">Unit C1</td>
+                                                    <td class="text-center col-unitNo">C1-103</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Villa</td>
+                                                    <td class="text-center col-buildingName">Palm Residency</td>
+                                                    <td class="text-center col-emirate">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Abu Dhabi</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Emirates Holdings</td>
+                                                    <td class="text-center col-ownerContact">9000000003</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">10-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">4</td>
+                                                    <td class="text-center col-unitName">Unit D1</td>
+                                                    <td class="text-center col-unitNo">D1-104</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Skyline Tower</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Dubai Marina</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">John Mathew</td>
+                                                    <td class="text-center col-ownerContact">9000000004</td>
+                                                    <td class="text-center col-tenantName">Rahul</td>
+                                                    <td class="text-center col-leaseStart">01-06-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-05-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">12-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">5</td>
+                                                    <td class="text-center col-unitName">Unit E1</td>
+                                                    <td class="text-center col-unitNo">E1-105</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Office</td>
+                                                    <td class="text-center col-buildingName">Business Bay Center</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Business Bay</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Global Corp</td>
+                                                    <td class="text-center col-ownerContact">9000000005</td>
+                                                    <td class="text-center col-tenantName">TechSoft</td>
+                                                    <td class="text-center col-leaseStart">01-01-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-12-2025</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">15-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <!-- Continue same pattern -->
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">6</td>
+                                                    <td class="text-center col-unitName">Unit F1</td>
+                                                    <td class="text-center col-unitNo">F1-106</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">Green Park</td>
+                                                    <td class="text-center col-emirate">Sharjah</td>
+                                                    <td class="text-center col-city">Sharjah City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Ali</td>
+                                                    <td class="text-center col-ownerContact">9000000006</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">18-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">7</td>
+                                                    <td class="text-center col-unitName">Unit G1</td>
+                                                    <td class="text-center col-unitNo">G1-107</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Warehouse</td>
+                                                    <td class="text-center col-buildingName">Industrial Hub</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Jebel Ali</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">Logistics LLC</td>
+                                                    <td class="text-center col-ownerContact">9000000007</td>
+                                                    <td class="text-center col-tenantName">FastMove</td>
+                                                    <td class="text-center col-leaseStart">01-07-2025</td>
+                                                    <td class="text-center col-leaseEnd">30-06-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">20-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">8</td>
+                                                    <td class="text-center col-unitName">Unit H1</td>
+                                                    <td class="text-center col-unitNo">H1-108</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Villa</td>
+                                                    <td class="text-center col-buildingName">Palm Villas</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Palm Jumeirah</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Sara</td>
+                                                    <td class="text-center col-ownerContact">9000000008</td>
+                                                    <td class="text-center col-tenantName">Mike</td>
+                                                    <td class="text-center col-leaseStart">01-08-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-07-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">22-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">9</td>
+                                                    <td class="text-center col-unitName">Unit I1</td>
+                                                    <td class="text-center col-unitNo">I1-109</td>
+                                                    <td class="text-center col-unitType">Commercial</td>
+                                                    <td class="text-center col-unitSubType">Office</td>
+                                                    <td class="text-center col-buildingName">Downtown Plaza</td>
+                                                    <td class="text-center col-emirate">Dubai</td>
+                                                    <td class="text-center col-city">Downtown</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-red text-red-fg">Vacant</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Company</td>
+                                                    <td class="text-center col-ownerName">BizGroup</td>
+                                                    <td class="text-center col-ownerContact">9000000009</td>
+                                                    <td class="text-center col-tenantName">-</td>
+                                                    <td class="text-center col-leaseStart">-</td>
+                                                    <td class="text-center col-leaseEnd">-</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-red text-red-fg">Expired</span></td>
+                                                    <td class="text-center col-addedDate">25-03-2026</td>
+                                                    <td class="text-center col-addedBy">David</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center col-slNo">10</td>
+                                                    <td class="text-center col-unitName">Unit J1</td>
+                                                    <td class="text-center col-unitNo">J1-110</td>
+                                                    <td class="text-center col-unitType">Residential</td>
+                                                    <td class="text-center col-unitSubType">Apartment</td>
+                                                    <td class="text-center col-buildingName">City Heights</td>
+                                                    <td class="text-center col-emirate">Ajman</td>
+                                                    <td class="text-center col-city">Ajman City</td>
+                                                    <td class="text-center col-occupancyStatus"><span
+                                                            class="badge bg-green text-green-fg">Occupied</span></td>
+                                                    <td class="text-center col-documentStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-ownerType">Individual</td>
+                                                    <td class="text-center col-ownerName">Kumar</td>
+                                                    <td class="text-center col-ownerContact">9000000010</td>
+                                                    <td class="text-center col-tenantName">Arun</td>
+                                                    <td class="text-center col-leaseStart">01-09-2025</td>
+                                                    <td class="text-center col-leaseEnd">31-08-2026</td>
+                                                    <td class="text-center col-leaseStatus"><span
+                                                            class="badge bg-teal text-teal-fg">Valid</span></td>
+                                                    <td class="text-center col-addedDate">28-03-2026</td>
+                                                    <td class="text-center col-addedBy">Admin</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2"><a
+                                                                class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a><a
+                                                                class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a></div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" mt-2 d-flex flex-wrap justify-content-between align-items-center">
+                            <div>
+                                <p class="m-0 text-muted">
+                                    Showing
+                                    <span class="fw-bold">1 to 10</span>
+                                    of
+                                    <span class="fw-bold">10</span>
+                                    entries
+                                </p>
+                            </div>
+                            <ul class="pagination">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">
+                                        <i class="ti ti-chevron-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item ">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">4</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">5</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="ti ti-chevron-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+            <!-- Footer -->
+            <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                <div class="text-dark fw-medium text-center">
+                    © 2026 Leasing Management System
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            class SmartTable {
+
+                constructor(wrapper) {
+                    this.wrapper = wrapper;
+                    this.sortDirection = {};
+                    this.initSearch();
+                    this.initColumnToggle();
+                    this.initSorting();
+                }
+
+                // Get table inside this smart-table
+                getTable() {
+                    return this.wrapper.querySelector(".table-main");
+                }
+
+                /* ================= SEARCH ================= */
+
+                initSearch() {
+                    const searchInput = this.wrapper.querySelector(".table-search");
+
+                    if (!searchInput) return;
+
+                    searchInput.addEventListener("keyup", () => {
+
+                        const value = searchInput.value.toLowerCase();
+                        const table = this.getTable();
+
+                        if (!table) return;
+
+                        const rows = table.querySelectorAll("tbody tr");
+
+                        rows.forEach(row => {
+
+                            const text = row.innerText.toLowerCase();
+
+                            row.style.display =
+                                text.includes(value) ? "" : "none";
+
+                        });
+
+                    });
+                }
+
+                /* ================= COLUMN TOGGLE ================= */
+
+                initColumnToggle() {
+
+                    const checkboxes =
+                        this.wrapper.querySelectorAll(".col-toggle");
+
+                    checkboxes.forEach(cb => {
+
+                        cb.addEventListener("change", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = cb.dataset.col;
+
+                            table
+                                .querySelectorAll(".col-" + col)
+                                .forEach(cell => {
+
+                                    cell.style.display =
+                                        cb.checked ? "" : "none";
+
+                                });
+
+                        });
+
+                    });
+
+                }
+
+                /* ================= SORTING ================= */
+
+                initSorting() {
+
+                    const headers =
+                        this.wrapper.querySelectorAll(".sortable");
+
+                    headers.forEach(th => {
+
+                        th.addEventListener("click", () => {
+
+                            const table = this.getTable();
+
+                            if (!table) return;
+
+                            const col = th.dataset.col;
+
+                            this.sortDirection[col] =
+                                !this.sortDirection[col];
+
+                            const direction =
+                                this.sortDirection[col] ? 1 : -1;
+
+                            const tbody = table.tBodies[0];
+
+                            const rows =
+                                Array.from(tbody.rows);
+
+                            rows.sort((a, b) => {
+
+                                let A =
+                                    a.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                let B =
+                                    b.querySelector(".col-" + col)
+                                        ?.innerText.trim() || "";
+
+                                // Number sort
+                                if (!isNaN(A) && !isNaN(B)) {
+                                    return (A - B) * direction;
+                                }
+
+                                // Date sort (dd-mm-yyyy)
+                                if (A.match(/\\d{2}-\\d{2}-\\d{4}/)) {
+
+                                    const dateA =
+                                        new Date(
+                                            A.split("-").reverse().join("-")
+                                        );
+
+                                    const dateB =
+                                        new Date(
+                                            B.split("-").reverse().join("-")
+                                        );
+
+                                    return (dateA - dateB) * direction;
+
+                                }
+
+                                // Text sort
+                                return A.localeCompare(B) * direction;
+
+                            });
+
+                            tbody.append(...rows);
+
+                        });
+
+                    });
+
+                }
+
+            }
+
+            /* Initialize all smart tables */
+
+            document
+                .querySelectorAll(".smart-table")
+                .forEach(wrapper => {
+
+                    new SmartTable(wrapper);
+
+                });
+
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            new SlimSelect({ select: '#unitName' });
+            new SlimSelect({ select: '#unitNo' });
+            new SlimSelect({ select: '#unitType', });
+            new SlimSelect({ select: '#unitSubType', });
+            new SlimSelect({ select: '#buildingName', });
+            new SlimSelect({ select: '#emirate', });
+            new SlimSelect({ select: '#city', });
+            new SlimSelect({ select: '#occupancyStatus', });
+            new SlimSelect({ select: '#documentStatus', });
+            new SlimSelect({ select: '#ownerType', });
+            new SlimSelect({ select: '#ownerName', });
+            new SlimSelect({ select: '#tenantName', });
+            new SlimSelect({ select: '#leaseStatus', });
+
+            new Litepicker({
+                element: document.getElementById('leaseStart'),
+                singleMode: false,
+                format: 'YYYY-MM-DD'
+            });
+            new Litepicker({
+                element: document.getElementById('leaseEnd'),
+                singleMode: false,
+                format: 'YYYY-MM-DD'
+            });
+        });
+    </script>
+</body>
+
+</html>

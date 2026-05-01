@@ -70,6 +70,10 @@
                                 <i class="ti ti-user-key fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
                             </a>
+                            <a class="nav-link text-white my-3" href="./UnitMaster.html">
+                                <i class="ti ti-building-community fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -149,7 +153,7 @@
                                             Leasing
                                         </li>
                                         <li class="breadcrumb-item active" aria-current="page">
-                                            Operator Registration
+                                            Operator Master
                                         </li>
                                     </ol>
                                 </nav>
@@ -547,406 +551,849 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="table-responsive mt-3">
-                                <table class="table table-bordered table-main">
+                            <ul class="nav nav-tabs nav-fill nav-tabs-filled">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#activeTable">Active</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#draftTable">Draft</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content border">
+                                <div class="tab-pane fade show active p-3 pt-0" id="activeTable" role="tabpanel">
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-bordered table-main">
 
-                                    <thead>
-                                        <tr>
-                                            <th>S.No</th>
-                                            <th class="sortable col-operatorType" data-col="operatorType">
-                                                Operator Type <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-operatorName" data-col="operatorName">
-                                                Operator Name <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-companyName" data-col="companyName">
-                                                Company Name <span class="sort-indicator">⇅</span>
-                                            </th>
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th class="sortable col-operatorType" data-col="operatorType">
+                                                        Operator Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-operatorName" data-col="operatorName">
+                                                        Operator Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-companyName" data-col="companyName">
+                                                        Company Name <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-gender" data-col="gender">
-                                                Gender <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-gender" data-col="gender">
+                                                        Gender <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-nationality" data-col="nationality">
-                                                Nationality <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-nationality" data-col="nationality">
+                                                        Nationality <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-country" data-col="country">
-                                                Country <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-country" data-col="country">
+                                                        Country <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-state" data-col="state">
-                                                State / Emirates <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-state" data-col="state">
+                                                        State / Emirates <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-city" data-col="city">
-                                                City <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-email" data-col="email">
-                                                Email <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-city" data-col="city">
+                                                        City <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-email" data-col="email">
+                                                        Email <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-contactNumber" data-col="contactNumber">
-                                                Contact Number <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-contactNumber" data-col="contactNumber">
+                                                        Contact Number <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-tradeLicenseNumber" data-col="tradeLicenseNumber">
-                                                Trade License Number <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-tradeLicenseNumber"
+                                                        data-col="tradeLicenseNumber">
+                                                        Trade License Number <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="sortable col-tradeLicenseExpiryDate"
-                                                data-col="tradeLicenseExpiryDate">
-                                                Trade License Expiry Date <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-documentStatus" data-col="documentStatus">
-                                                Document Status <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-ceBy" data-col="ceBy">
-                                                Added / Edited By <span class="sort-indicator">⇅</span>
-                                            </th>
-                                            <th class="sortable col-ceDate" data-col="ceDate">
-                                                Added / Edited Date <span class="sort-indicator">⇅</span>
-                                            </th>
+                                                    <th class="sortable col-tradeLicenseExpiryDate"
+                                                        data-col="tradeLicenseExpiryDate">
+                                                        Trade License Expiry Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-documentStatus" data-col="documentStatus">
+                                                        Document Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-ceBy" data-col="ceBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-ceDate" data-col="ceDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
 
-                                            <th class="col-action" data-col="action">
-                                                Action
-                                            </th>
-                                        </tr>
-                                    </thead>
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
 
-                                    <tbody class="bg-white">
-                                        <tr>
-                                            <td class="text-center">1</td>
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center">1</td>
 
-                                            <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorType">Company</td>
 
-                                            <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-operatorName">-</td>
 
-                                            <td class="text-center col-companyName">
-                                                Al Noor Trading LLC
-                                            </td>
+                                                    <td class="text-center col-companyName">
+                                                        Al Noor Trading LLC
+                                                    </td>
 
-                                            <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-gender">Male</td>
 
-                                            <td class="text-center col-nationality">Indian</td>
+                                                    <td class="text-center col-nationality">Indian</td>
 
-                                            <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-country">UAE</td>
 
-                                            <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-state">Dubai</td>
 
-                                            <td class="text-center col-city">Dubai City</td>
+                                                    <td class="text-center col-city">Dubai City</td>
 
-                                            <td class="text-center col-email">
-                                                alnoor@gmail.com
-                                            </td>
+                                                    <td class="text-center col-email">
+                                                        alnoor@gmail.com
+                                                    </td>
 
-                                            <td class="text-center col-contactNumber">
-                                                9000000001
-                                            </td>
+                                                    <td class="text-center col-contactNumber">
+                                                        9000000001
+                                                    </td>
 
-                                            <td class="text-center col-tradeLicenseNumber">
-                                                TL-30001
-                                            </td>
+                                                    <td class="text-center col-tradeLicenseNumber">
+                                                        TL-30001
+                                                    </td>
 
-                                            <td class="text-center col-tradeLicenseExpiryDate">
-                                                12-09-2027
-                                            </td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">
+                                                        12-09-2027
+                                                    </td>
 
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">
-                                                    Valid
-                                                </span>
-                                            </td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">
+                                                            Valid
+                                                        </span>
+                                                    </td>
 
-                                            <td class="text-center col-ceBy">
-                                                David
-                                            </td>
+                                                    <td class="text-center col-ceBy">
+                                                        David
+                                                    </td>
 
-                                            <td class="text-center col-ceDate">
-                                                01-03-2026
-                                            </td>
+                                                    <td class="text-center col-ceDate">
+                                                        01-03-2026
+                                                    </td>
 
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
 
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
 
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
 
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Ahmed Khan</td>
-                                            <td class="text-center col-companyName">-</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Pakistani</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Dubai</td>
-                                            <td class="text-center col-city">Al Barsha</td>
-                                            <td class="text-center col-email">ahmedkhan@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000040</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30040</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">11-07-2026</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">Valid</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Admin</td>
-                                            <td class="text-center col-ceDate">02-04-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
-                                                    <a class="btn btn-teal btn-sm fs-2"><i class="ti ti-pencil"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Ahmed Khan</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Pakistani</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Al Barsha</td>
+                                                    <td class="text-center col-email">ahmedkhan@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000040</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30040</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">11-07-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">02-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
-                                            <td class="text-center col-companyName">Global Tech Solutions LLC</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Indian</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Abu Dhabi</td>
-                                            <td class="text-center col-city">Madinat Zayed</td>
-                                            <td class="text-center col-email">globaltech@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000041</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30041</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">03-02-2025</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-red text-red-fg">Expired</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Manager</td>
-                                            <td class="text-center col-ceDate">18-02-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
-                                                    <a class="btn btn-teal btn-sm fs-2"><i class="ti ti-pencil"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Global Tech Solutions LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Indian</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Madinat Zayed</td>
+                                                    <td class="text-center col-email">globaltech@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000041</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30041</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">03-02-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">18-02-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">4</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Fatima Ali</td>
-                                            <td class="text-center col-companyName">-</td>
-                                            <td class="text-center col-gender">Female</td>
-                                            <td class="text-center col-nationality">Emirati</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Sharjah</td>
-                                            <td class="text-center col-city">Al Khan</td>
-                                            <td class="text-center col-email">fatima@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000042</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30042</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">29-09-2027</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">Valid</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Supervisor</td>
-                                            <td class="text-center col-ceDate">09-04-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
-                                                    <a class="btn btn-teal btn-sm fs-2"><i class="ti ti-pencil"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Fatima Ali</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Female</td>
+                                                    <td class="text-center col-nationality">Emirati</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Sharjah</td>
+                                                    <td class="text-center col-city">Al Khan</td>
+                                                    <td class="text-center col-email">fatima@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000042</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30042</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">29-09-2027</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Supervisor</td>
+                                                    <td class="text-center col-ceDate">09-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">5</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
-                                            <td class="text-center col-companyName">Metro Cleaning Services LLC</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Bangladeshi</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Ajman</td>
-                                            <td class="text-center col-city">Ajman Industrial Area</td>
-                                            <td class="text-center col-email">metro@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000043</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30043</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">06-06-2026</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-red text-red-fg">Expired</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Admin</td>
-                                            <td class="text-center col-ceDate">15-03-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
-                                                    <a class="btn btn-teal btn-sm fs-2"><i class="ti ti-pencil"></i></a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">6</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Mohammed Hassan</td>
-                                            <td class="text-center col-companyName">-</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Sudanese</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Dubai</td>
-                                            <td class="text-center col-city">Al Qusais</td>
-                                            <td class="text-center col-email">mohammed@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000054</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30054</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">15-08-2027</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">Valid</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Admin</td>
-                                            <td class="text-center col-ceDate">21-04-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Metro Cleaning Services LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Bangladeshi</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Ajman</td>
+                                                    <td class="text-center col-city">Ajman Industrial Area</td>
+                                                    <td class="text-center col-email">metro@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000043</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30043</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">06-06-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">15-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Mohammed Hassan</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Sudanese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Al Qusais</td>
+                                                    <td class="text-center col-email">mohammed@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000054</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30054</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">15-08-2027</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">21-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">7</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
-                                            <td class="text-center col-companyName">Desert Star Contracting LLC</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Nepalese</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Abu Dhabi</td>
-                                            <td class="text-center col-city">Mussafah</td>
-                                            <td class="text-center col-email">desertstar@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000055</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30055</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">02-01-2025</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-red text-red-fg">Expired</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Manager</td>
-                                            <td class="text-center col-ceDate">10-03-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">7</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Desert Star Contracting LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Nepalese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Mussafah</td>
+                                                    <td class="text-center col-email">desertstar@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000055</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30055</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">02-01-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">10-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">8</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Joseph Mathew</td>
-                                            <td class="text-center col-companyName">-</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Indian</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Sharjah</td>
-                                            <td class="text-center col-city">Rolla</td>
-                                            <td class="text-center col-email">joseph@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000056</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30056</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">28-02-2028</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">Valid</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Supervisor</td>
-                                            <td class="text-center col-ceDate">24-04-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">8</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Joseph Mathew</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Indian</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Sharjah</td>
+                                                    <td class="text-center col-city">Rolla</td>
+                                                    <td class="text-center col-email">joseph@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000056</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30056</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">28-02-2028</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Supervisor</td>
+                                                    <td class="text-center col-ceDate">24-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">9</td>
-                                            <td class="text-center col-operatorType">Company</td>
-                                            <td class="text-center col-operatorName">-</td>
-                                            <td class="text-center col-companyName">Blue Wave Marine Services LLC</td>
-                                            <td class="text-center col-gender">Male</td>
-                                            <td class="text-center col-nationality">Filipino</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Dubai</td>
-                                            <td class="text-center col-city">Port Rashid</td>
-                                            <td class="text-center col-email">bluewave@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000057</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30057</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">11-11-2026</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-teal text-teal-fg">Valid</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Admin</td>
-                                            <td class="text-center col-ceDate">19-04-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">9</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Blue Wave Marine Services
+                                                        LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Filipino</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Port Rashid</td>
+                                                    <td class="text-center col-email">bluewave@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000057</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30057</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">11-11-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">19-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                        <tr>
-                                            <td class="text-center">10</td>
-                                            <td class="text-center col-operatorType">Individual</td>
-                                            <td class="text-center col-operatorName">Lina George</td>
-                                            <td class="text-center col-companyName">-</td>
-                                            <td class="text-center col-gender">Female</td>
-                                            <td class="text-center col-nationality">Lebanese</td>
-                                            <td class="text-center col-country">UAE</td>
-                                            <td class="text-center col-state">Dubai</td>
-                                            <td class="text-center col-city">Jumeirah</td>
-                                            <td class="text-center col-email">lina@gmail.com</td>
-                                            <td class="text-center col-contactNumber">9000000058</td>
-                                            <td class="text-center col-tradeLicenseNumber">TL-30058</td>
-                                            <td class="text-center col-tradeLicenseExpiryDate">05-05-2025</td>
-                                            <td class="text-center col-documentStatus">
-                                                <span class="badge bg-red text-red-fg">Expired</span>
-                                            </td>
-                                            <td class="text-center col-ceBy">Manager</td>
-                                            <td class="text-center col-ceDate">12-03-2026</td>
-                                            <td class="text-center col-action">
-                                                <div class="d-flex justify-content-center gap-2">
-                                                    <a class="btn btn-primary btn-sm fs-2">
-                                                        <i class="ti ti-eye"></i>
-                                                    </a>
-                                                    <a class="btn btn-teal btn-sm fs-2">
-                                                        <i class="ti ti-pencil"></i>
-                                                    </a>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                                <tr>
+                                                    <td class="text-center">10</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Lina George</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Female</td>
+                                                    <td class="text-center col-nationality">Lebanese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Jumeirah</td>
+                                                    <td class="text-center col-email">lina@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000058</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30058</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">05-05-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">12-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
 
-                                    </tbody>
+                                            </tbody>
 
-                                </table>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade p-3 pt-0" id="draftTable" role="tabpanel">
+                                    <div class="table-responsive mt-3">
+                                        <table class="table table-bordered table-main">
+
+                                            <thead>
+                                                <tr>
+                                                    <th>S.No</th>
+                                                    <th class="sortable col-operatorType" data-col="operatorType">
+                                                        Operator Type <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-operatorName" data-col="operatorName">
+                                                        Operator Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-companyName" data-col="companyName">
+                                                        Company Name <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-gender" data-col="gender">
+                                                        Gender <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-nationality" data-col="nationality">
+                                                        Nationality <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-country" data-col="country">
+                                                        Country <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-state" data-col="state">
+                                                        State / Emirates <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-city" data-col="city">
+                                                        City <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-email" data-col="email">
+                                                        Email <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-contactNumber" data-col="contactNumber">
+                                                        Contact Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-tradeLicenseNumber"
+                                                        data-col="tradeLicenseNumber">
+                                                        Trade License Number <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="sortable col-tradeLicenseExpiryDate"
+                                                        data-col="tradeLicenseExpiryDate">
+                                                        Trade License Expiry Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-documentStatus" data-col="documentStatus">
+                                                        Document Status <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-ceBy" data-col="ceBy">
+                                                        Added / Edited By <span class="sort-indicator">⇅</span>
+                                                    </th>
+                                                    <th class="sortable col-ceDate" data-col="ceDate">
+                                                        Added / Edited Date <span class="sort-indicator">⇅</span>
+                                                    </th>
+
+                                                    <th class="col-action" data-col="action">
+                                                        Action
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="text-center">1</td>
+
+                                                    <td class="text-center col-operatorType">Company</td>
+
+                                                    <td class="text-center col-operatorName">-</td>
+
+                                                    <td class="text-center col-companyName">
+                                                        Al Noor Trading LLC
+                                                    </td>
+
+                                                    <td class="text-center col-gender">Male</td>
+
+                                                    <td class="text-center col-nationality">Indian</td>
+
+                                                    <td class="text-center col-country">UAE</td>
+
+                                                    <td class="text-center col-state">Dubai</td>
+
+                                                    <td class="text-center col-city">Dubai City</td>
+
+                                                    <td class="text-center col-email">
+                                                        alnoor@gmail.com
+                                                    </td>
+
+                                                    <td class="text-center col-contactNumber">
+                                                        9000000001
+                                                    </td>
+
+                                                    <td class="text-center col-tradeLicenseNumber">
+                                                        TL-30001
+                                                    </td>
+
+                                                    <td class="text-center col-tradeLicenseExpiryDate">
+                                                        12-09-2027
+                                                    </td>
+
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">
+                                                            Valid
+                                                        </span>
+                                                    </td>
+
+                                                    <td class="text-center col-ceBy">
+                                                        David
+                                                    </td>
+
+                                                    <td class="text-center col-ceDate">
+                                                        01-03-2026
+                                                    </td>
+
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">2</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Ahmed Khan</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Pakistani</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Al Barsha</td>
+                                                    <td class="text-center col-email">ahmedkhan@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000040</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30040</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">11-07-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">02-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">3</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Global Tech Solutions LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Indian</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Madinat Zayed</td>
+                                                    <td class="text-center col-email">globaltech@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000041</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30041</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">03-02-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">18-02-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">4</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Fatima Ali</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Female</td>
+                                                    <td class="text-center col-nationality">Emirati</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Sharjah</td>
+                                                    <td class="text-center col-city">Al Khan</td>
+                                                    <td class="text-center col-email">fatima@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000042</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30042</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">29-09-2027</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Supervisor</td>
+                                                    <td class="text-center col-ceDate">09-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">5</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Metro Cleaning Services LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Bangladeshi</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Ajman</td>
+                                                    <td class="text-center col-city">Ajman Industrial Area</td>
+                                                    <td class="text-center col-email">metro@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000043</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30043</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">06-06-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">15-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2"><i
+                                                                    class="ti ti-eye"></i></a>
+                                                            <a class="btn btn-teal btn-sm fs-2"><i
+                                                                    class="ti ti-pencil"></i></a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center">6</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Mohammed Hassan</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Sudanese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Al Qusais</td>
+                                                    <td class="text-center col-email">mohammed@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000054</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30054</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">15-08-2027</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">21-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">7</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Desert Star Contracting LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Nepalese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Abu Dhabi</td>
+                                                    <td class="text-center col-city">Mussafah</td>
+                                                    <td class="text-center col-email">desertstar@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000055</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30055</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">02-01-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">10-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">8</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Joseph Mathew</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Indian</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Sharjah</td>
+                                                    <td class="text-center col-city">Rolla</td>
+                                                    <td class="text-center col-email">joseph@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000056</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30056</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">28-02-2028</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Supervisor</td>
+                                                    <td class="text-center col-ceDate">24-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">9</td>
+                                                    <td class="text-center col-operatorType">Company</td>
+                                                    <td class="text-center col-operatorName">-</td>
+                                                    <td class="text-center col-companyName">Blue Wave Marine Services
+                                                        LLC
+                                                    </td>
+                                                    <td class="text-center col-gender">Male</td>
+                                                    <td class="text-center col-nationality">Filipino</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Port Rashid</td>
+                                                    <td class="text-center col-email">bluewave@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000057</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30057</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">11-11-2026</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-teal text-teal-fg">Valid</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Admin</td>
+                                                    <td class="text-center col-ceDate">19-04-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td class="text-center">10</td>
+                                                    <td class="text-center col-operatorType">Individual</td>
+                                                    <td class="text-center col-operatorName">Lina George</td>
+                                                    <td class="text-center col-companyName">-</td>
+                                                    <td class="text-center col-gender">Female</td>
+                                                    <td class="text-center col-nationality">Lebanese</td>
+                                                    <td class="text-center col-country">UAE</td>
+                                                    <td class="text-center col-state">Dubai</td>
+                                                    <td class="text-center col-city">Jumeirah</td>
+                                                    <td class="text-center col-email">lina@gmail.com</td>
+                                                    <td class="text-center col-contactNumber">9000000058</td>
+                                                    <td class="text-center col-tradeLicenseNumber">TL-30058</td>
+                                                    <td class="text-center col-tradeLicenseExpiryDate">05-05-2025</td>
+                                                    <td class="text-center col-documentStatus">
+                                                        <span class="badge bg-red text-red-fg">Expired</span>
+                                                    </td>
+                                                    <td class="text-center col-ceBy">Manager</td>
+                                                    <td class="text-center col-ceDate">12-03-2026</td>
+                                                    <td class="text-center col-action">
+                                                        <div class="d-flex justify-content-center gap-2">
+                                                            <a class="btn btn-primary btn-sm fs-2">
+                                                                <i class="ti ti-eye"></i>
+                                                            </a>
+                                                            <a class="btn btn-teal btn-sm fs-2">
+                                                                <i class="ti ti-pencil"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
+
                         </div>
                         <div class=" mt-2 d-flex flex-wrap justify-content-between align-items-center">
                             <div>
