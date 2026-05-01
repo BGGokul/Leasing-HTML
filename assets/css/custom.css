@@ -400,3 +400,23 @@ div {
 .lh-0 {
     line-height: 0 !important;
 }
+
+.nav-tabs-filled .nav-link {
+    background: #e9ecef;
+    margin-right: 5px;
+    color: #495057;
+    text-align: center;
+    border-bottom-left-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    transition: all 0.25s ease;
+}
+
+.nav-tabs-filled .nav-link:hover:not(.active) {
+    background: #d6f0fb;
+    color: #0284c7;
+}
+
+.nav-tabs-filled .nav-link.active {
+    background: #0284c7;
+    color: #fff;
+}
