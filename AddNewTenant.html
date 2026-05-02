@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
-    <title>New Owner Registration</title>
+    <title>New Tenant Registration</title>
     <!-- Style CSS -->
     <link rel="stylesheet" href="./assets/css/style.min.css" />
     <!-- Custom CSS -->
@@ -621,7 +621,7 @@
                                         <table class="table table-bordered align-middle table-main">
                                             <thead>
                                                 <tr>
-                                                    <th>Name</th>
+                                                    <th>Dependent Name</th>
                                                     <th>Age</th>
                                                     <th>Relationship</th>
                                                     <th>Specify</th>
@@ -698,7 +698,7 @@
                                                     <th class="text-center">Pet Name</th>
                                                     <th class="text-center">Pet Type</th>
                                                     <th class="text-center">Age</th>
-                                                    <th class="text-center">Passport No</th>
+                                                    <th class="text-center">Passport Number</th>
                                                     <th class="text-center">Picture</th>
                                                     <th class="text-center"></th>
                                                 </tr>
@@ -867,9 +867,81 @@
 
                         </div>
                     </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-pink d-flex align-items-center">
+                            <i class="ti ti-file fs-2 me-2"></i>
+                            <h3 class="card-title fw-bold mb-0">
+                                Additional Attachments
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-end align-items-center mb-2">
+                                <button class="btn btn-primary btn-sm" onclick="addAttachmentRow()">
+                                    + Add Attachment
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped align-middle table-main">
+                                    <thead class="table-primary">
+                                        <tr class="bg-primary">
+                                            <th>Document Type</th>
+                                            <th>Document Name</th>
+                                            <th>Expiry Date</th>
+                                            <th>Remarks</th>
+                                            <th>Attachment</th>
+                                            <th>Document Validity</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="attachmentBody">
+                                        <tr>
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>National ID</option>
+                                                    <option>Passport</option>
+                                                    <option>Bank IBAN Letter</option>
+                                                    <option>Trade License</option>
+                                                    <option>Other</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                                                    Upload
+                                                    <input type="file" hidden onchange="handleRowUpload(this)">
+                                                </label>
+                                            </td>
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-danger btn-sm"
+                                                    onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <label for="" class="form-label">Remarks</label>
+                        <textarea name="" id="" rows="4" class="form-control"></textarea>
+                    </div>
                     <div class="d-flex justify-content-end">
                         <a class="btn btn-outline-secondary me-3" href="./OwnerMaster.html"><i
                                 class="ti ti-ban fs-3 me-1"></i>Cancel</a>
+                        <button class="btn btn-warning me-3"><i class="ti ti-notes fs-3 me-1"></i>Save</button>
                         <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
                     </div>
                 </div>
@@ -1320,7 +1392,7 @@
         </td>
 
         <td class="text-center">
-            <input type="text" class="form-control" placeholder="Passport No">
+            <input type="text" class="form-control">
         </td>
 
         <td class="text-center">
@@ -1411,6 +1483,52 @@
             document.getElementById('vehicleTable')
                 .insertAdjacentHTML('beforeend', row);
         }
+
+        // ================= ADD ROW =================
+        function addAttachmentRow() {
+
+            const tr = document.createElement("tr");
+
+            tr.innerHTML = `
+        <td>
+            <select class="form-select form-select-sm">
+                <option>National ID</option>
+                <option>Passport</option>
+                <option>Bank IBAN Letter</option>
+                <option>Trade License</option>
+                <option>Other</option>
+            </select>
+        </td>
+
+        <td><input class="form-control form-control-sm"></td>
+
+        <td><input type="date" class="form-control form-control-sm"></td>
+
+        <td><input class="form-control form-control-sm"></td>
+
+        <td>
+            <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                Upload
+                <input type="file" hidden onchange="handleRowUpload(this)">
+            </label>
+        </td>
+        
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
+
+        <td class="text-center">
+            <button class="btn btn-outline-danger btn-sm"
+                onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
+        </td>
+    `;
+
+            document.getElementById("attachmentBody").appendChild(tr);
+        }
+
     </script>
 </body>
 
