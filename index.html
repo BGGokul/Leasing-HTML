@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-
     <style>
         :root {
             --blue: #3b6cf5;
@@ -43,235 +42,34 @@
             --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
+        /* Custom Task Card Styles */
+        .task-card {
+            border-radius: 12px;
+            border: 1px solid #f1f3f4;
+            transition: transform 0.2s;
         }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background: #f4f5f9;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #206bc4 0%, #3b82f6 100%);
+            border: none;
         }
 
-        /* ─── Company Banner ─── */
-        .company-banner {
-            background: linear-gradient(135deg, #0c1a3a 0%, #1e3a7b 35%, #3b6cf5 70%, #5b9cf6 100%);
-            border-radius: 20px;
-            padding: 20px;
-            margin-bottom: 28px;
-            display: flex;
-            align-items: center;
-            gap: 22px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 8px 32px rgba(30, 58, 123, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
-            flex-wrap: wrap;
-        }
-
-        .banner-logo-wrap {
-            position: relative;
-            flex-shrink: 0;
-        }
-
-        .banner-logo-img {
-            max-width: 200px;
-            border-radius: 16px;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 10px;
+        /* Rounded square boxes for icons */
+        .task-icon-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .banner-logo-img img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .banner-copy h1 {
-            margin: 0;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #fff;
-            letter-spacing: -0.3px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-        }
-
-        .banner-copy p {
-            margin: 0;
-            font-size: 0.82rem;
-            font-weight: 300;
-            font-style: italic;
-            color: rgba(255, 255, 255, 0.904);
-        }
-
-        .banner-right {
-            position: relative;
-            z-index: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 10px;
-        }
-
-
-
-
-        /* ─── Section Label ─── */
-        .slabel {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted-lt);
-            margin: 26px 0 12px;
-            padding-left: 2px;
-        }
-
-        /* ═══════════════════════════════════
-           STAT TILE
-        ═══════════════════════════════════ */
-        .stat-tile {
-            background: #fff;
-            border-radius: var(--r);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: stretch;
-            overflow: hidden;
-            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
-            min-height: 100px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stat-tile:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-
-        .tile-strip {
-            width: 66px;
             flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: rgba(255, 255, 255, 0.92);
-            position: relative;
         }
 
-        .tile-strip::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        .ts-blue {
-            background: linear-gradient(160deg, #4f7cf7, #2a56d9);
-        }
-
-        .ts-teal {
-            background: linear-gradient(160deg, #14c4be, #0a8f8a);
-        }
-
-        .ts-green {
-            background: linear-gradient(160deg, #34d399, #059669);
-        }
-
-        .ts-amber {
-            background: linear-gradient(160deg, #fbbf24, #d97706);
-        }
-
-        .ts-violet {
-            background: linear-gradient(160deg, #a78bfa, #7c3aed);
-        }
-
-        .ts-orange {
-            background: linear-gradient(160deg, #fb923c, #ea580c);
-        }
-
-        .tile-body {
-            flex: 1;
-            padding: 14px 16px 12px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .tile-lbl {
-            font-size: 0.69rem;
+        .task-title-small {
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 0.07em;
+            letter-spacing: 0.05em;
             text-transform: uppercase;
-            color: var(--muted-lt);
-            line-height: 1.3;
-        }
-
-        .tile-val {
-            font-size: 2.05rem;
-            font-weight: 700;
-            color: var(--ink);
-            line-height: 1;
-            letter-spacing: -1.2px;
-            margin: 5px 0 2px;
-        }
-
-        .tile-val sub {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--muted-lt);
-            letter-spacing: 0;
-        }
-
-        .tile-foot {
-            font-size: 0.68rem;
-            color: var(--muted-lt);
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .chip {
-            display: inline-flex;
-            align-items: center;
-            font-size: 0.62rem;
-            font-weight: 700;
-            padding: 2px 7px;
-            border-radius: 99px;
-            letter-spacing: 0.01em;
-        }
-
-        .chip-g {
-            background: #ecfdf5;
-            color: #059669;
-        }
-
-        .chip-a {
-            background: #fffbeb;
-            color: #d97706;
-        }
-
-        .chip-r {
-            background: #fef2f2;
-            color: #ef4444;
-        }
-
-        /* ─── Expiry Card ─── */
-        .exp-card {
-            background: #fff;
-            border-radius: var(--r);
-            border: 1px solid var(--border);
-            padding: 20px 22px;
-            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
-            box-shadow: var(--shadow-sm);
         }
 
         .exp-card:hover {
@@ -402,226 +200,6 @@
             background: #f5f3ff;
             color: #6d28d9;
         }
-
-        /* ─── Chart / Gauge Cards ─── */
-        .chart-card {
-            background: #fff;
-            border-radius: var(--r);
-            border: 1px solid var(--border);
-            padding: 22px 24px;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow 0.22s;
-        }
-
-        .chart-card:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .cc-title {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--ink);
-            margin-bottom: 2px;
-            letter-spacing: -0.1px;
-        }
-
-        .cc-sub {
-            font-size: 0.72rem;
-            color: var(--muted-lt);
-            margin-bottom: 16px;
-        }
-
-        .gauge-card {
-            background: #fff;
-            border-radius: var(--r);
-            border: 1px solid var(--border);
-            padding: 22px 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow 0.22s;
-        }
-
-        .gauge-card:hover {
-            box-shadow: var(--shadow-md);
-        }
-
-        .gc-title {
-            font-size: 0.88rem;
-            font-weight: 700;
-            color: var(--ink);
-            text-align: center;
-            margin-bottom: 4px;
-            letter-spacing: -0.1px;
-        }
-
-        .gauge-wrap {
-            position: relative;
-            width: 170px;
-            height: 94px;
-            overflow: hidden;
-            margin: 8px auto 10px;
-        }
-
-        .gauge-num {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--ink);
-            letter-spacing: -0.5px;
-        }
-
-        .gauge-sub {
-            font-size: 0.7rem;
-            color: var(--muted-lt);
-            text-align: center;
-        }
-
-        .occ-bar {
-            width: 100%;
-            height: 7px;
-            border-radius: 99px;
-            background: var(--surface);
-            margin-top: 14px;
-            overflow: hidden;
-        }
-
-        .occ-fill {
-            height: 100%;
-            border-radius: 99px;
-            background: linear-gradient(90deg, var(--blue), var(--green));
-            transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
-        }
-
-        .occ-lbl {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 5px;
-            width: 100%;
-        }
-
-        .occ-lbl span {
-            font-size: 0.65rem;
-            color: var(--muted-lt);
-        }
-
-        /* ─── Footer ─── */
-        .footer {
-            border-top: 1px solid var(--border) !important;
-            background: #fff !important;
-        }
-
-        .footer div {
-            color: var(--muted-lt) !important;
-            font-size: 0.78rem;
-            letter-spacing: 0.01em;
-        }
-
-        /* ─── Subtle entrance animation ─── */
-        @keyframes fadeSlideUp {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .company-banner {
-            animation: fadeSlideUp 0.5s ease-out;
-        }
-
-        .stat-tile {
-            animation: fadeSlideUp 0.5s ease-out both;
-        }
-
-        .stat-tile:nth-child(1) {
-            animation-delay: 0.05s;
-        }
-
-        .stat-tile:nth-child(2) {
-            animation-delay: 0.1s;
-        }
-
-        .stat-tile:nth-child(3) {
-            animation-delay: 0.15s;
-        }
-
-        .stat-tile:nth-child(4) {
-            animation-delay: 0.2s;
-        }
-
-        .exp-card {
-            animation: fadeSlideUp 0.5s ease-out both;
-        }
-
-        .exp-card:nth-child(1) {
-            animation-delay: 0.08s;
-        }
-
-        .exp-card:nth-child(2) {
-            animation-delay: 0.14s;
-        }
-
-        .exp-card:nth-child(3) {
-            animation-delay: 0.2s;
-        }
-
-        .chart-card,
-        .gauge-card {
-            animation: fadeSlideUp 0.5s ease-out 0.12s both;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* ─── Sidebar refinement ─── */
-        .sidebar {
-            box-shadow: 2px 0 12px rgba(0, 0, 0, 0.08) !important;
-        }
-
-        .sidebar .logo-text {
-            font-size: 0.92rem !important;
-            letter-spacing: -0.2px;
-        }
-
-        .sidebar .avatar {
-            font-size: 0.8rem !important;
-            width: 36px !important;
-            height: 36px !important;
-            border-radius: 10px !important;
-        }
-
-        /* ─── Header refinement ─── */
-        header .avatar {
-            width: 34px !important;
-            height: 34px !important;
-            border-radius: 10px !important;
-            font-size: 0.75rem !important;
-        }
-
-        header .fw-medium {
-            font-size: 0.82rem;
-        }
-
-        header .small {
-            font-size: 0.7rem;
-        }
     </style>
 </head>
 
@@ -697,213 +275,193 @@
                     </div>
                 </div>
             </header>
-
             <main class="content p-4">
+                <h3 class="h2">Welcome back, Admin!</h3>
+                <!-- 1. BRANDING & UNIT PERFORMANCE HEADER -->
+                <div class="card border-0 shadow-sm mb-4"
+                    style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); border-radius: 16px; overflow: hidden;">
+                    <div class="card-body p-4 text-white">
+                        <div class="row align-items-center">
+                            <!-- Branding Section -->
+                            <div class="col-xl-5 col-lg-5 col-md-12 mb-3 mb-xl-0 border-end-xl border-white-10">
+                                <div class="d-flex align-items-center gap-3">
+                                    <!-- The container dictates the size -->
+                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
+                                        style="width: 100%; height: 80px;">
 
-                <!-- ── Company Banner ── -->
-                <div class="company-banner d-flex justify-content-center justify-content-md-between align-items-center">
-                    <div class="banner-logo-wrap">
-                        <div class="banner-logo-img">
-                            <img src="./assets/img/leasing-management-logo.png" alt="Leasing Management Logo">
-                        </div>
-                    </div>
-                    <div class="banner-right banner-copy">
-                        <h1>Leasing Management System</h1>
-                        <p>Smart property &amp; tenant management, all in one place</p>
-                    </div>
-                </div>
-
-                <!-- ── People Tiles ── -->
-                <div class="slabel">People Overview</div>
-                <div class="row g-3 mb-1">
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-blue"><i class="ti ti-user"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Active Owners</div>
-                                <div class="tile-val">142</div>
-                                <div class="tile-foot"><span class="chip chip-g">+4</span> this month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-teal"><i class="ti ti-user-cog"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Active Operators</div>
-                                <div class="tile-val">38</div>
-                                <div class="tile-foot"><span class="chip chip-g">+1</span> this month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-green"><i class="ti ti-user-key"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Tenants</div>
-                                <div class="tile-val">319</div>
-                                <div class="tile-foot"><span class="chip chip-g">+12</span> this month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-violet"><i class="ti ti-building-community"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Communities</div>
-                                <div class="tile-val">24</div>
-                                <div class="tile-foot">Across all regions</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ── Unit Tiles ── -->
-                <div class="slabel">Unit Summary</div>
-                <div class="row g-3 mb-1">
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-blue"><i class="ti ti-building"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Total Units</div>
-                                <div class="tile-val">480</div>
-                                <div class="tile-foot">All communities</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-amber"><i class="ti ti-door-off"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Units Vacant</div>
-                                <div class="tile-val">72</div>
-                                <div class="tile-foot"><span class="chip chip-a">15%</span> vacancy rate</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-green"><i class="ti ti-door-enter"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Units Occupied</div>
-                                <div class="tile-val">408</div>
-                                <div class="tile-foot"><span class="chip chip-g">+6</span> since last month</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="stat-tile">
-                            <div class="tile-strip ts-orange"><i class="ti ti-chart-pie"></i></div>
-                            <div class="tile-body">
-                                <div class="tile-lbl">Occupancy Rate</div>
-                                <div class="tile-val">85<sub>%</sub></div>
-                                <div class="tile-foot"><span class="chip chip-g">&#8593; 2%</span> vs last month</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- ── Document Expiry ── -->
-                <div class="slabel">Document Expiry Status</div>
-                <div class="row g-3 mb-1">
-                    <div class="col-12 col-md-4">
-                        <div class="exp-card">
-                            <div class="exp-head">
-                                <div class="exp-ico ei-r"><i class="ti ti-file-alert"></i></div>
-                                <div class="exp-title">Owner Documents Expired</div>
-                                <div class="exp-num en-r">12</div>
-                            </div>
-                            <div class="exp-bar-row">
-                                <div class="exp-bar">
-                                    <div class="ebf ebf-r" style="width:8%"></div>
+                                        <!-- The image simply fills what it is given -->
+                                        <img src="./assets/img/leasing-management-logo.png" alt="Logo"
+                                            style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    </div>
+                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
+                                        style="width: 100%; height: 80px;">
+                                        <img src="./assets/img/leasing-management-logo.png" alt="Logo"
+                                            style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                                    </div>
                                 </div>
-                                <div class="exp-pct">8 of 142</div>
                             </div>
-                            <div><span class="exp-warn ew-r"><i class="ti ti-alert-triangle"></i>&nbsp;5 expiring in 30
-                                    days</span></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="exp-card">
-                            <div class="exp-head">
-                                <div class="exp-ico ei-a"><i class="ti ti-file-alert"></i></div>
-                                <div class="exp-title">Operator Documents Expired</div>
-                                <div class="exp-num en-a">5</div>
-                            </div>
-                            <div class="exp-bar-row">
-                                <div class="exp-bar">
-                                    <div class="ebf ebf-a" style="width:13%"></div>
+
+                            <!-- Unit Pulse Section -->
+                            <div class="col-lg-7 col-md-12">
+                                <div class="row d-flex g-3 align-items-center justify-content-between">
+                                    <div class="col-sm-3 col-4 text-center">
+                                        <div class="text-uppercase small opacity-50 fw-bold">Total Units</div>
+                                        <div class="h2 fw-bold mb-0">1,240</div>
+                                    </div>
+                                    <div class="col-sm-3 col-4 text-center">
+                                        <div class="text-uppercase small fw-bold text-green">Occupied</div>
+                                        <div class="h2 fw-bold mb-0 text-green">1,100</div>
+                                    </div>
+                                    <div class="col-md-3 col-4 text-center">
+                                        <div class="text-uppercase small fw-bold text-orange">Vacant</div>
+                                        <div class="h2 fw-bold mb-0 text-orange">140</div>
+                                    </div>
+                                    <div class="col-md-3 col-12">
+                                        <div class="d-flex justify-content-between small mb-1 opacity-75">
+                                            <span>Occupancy</span>
+                                            <span>88.7%</span>
+                                        </div>
+                                        <div class="progress" style="height: 8px; background: rgba(255,255,255,0.1);">
+                                            <div class="progress-bar bg-green" style="width: 88.7%"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="exp-pct">5 of 38</div>
                             </div>
-                            <div><span class="exp-warn ew-a"><i class="ti ti-alert-triangle"></i>&nbsp;2 expiring in 30
-                                    days</span></div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-4">
-                        <div class="exp-card">
-                            <div class="exp-head">
-                                <div class="exp-ico ei-v"><i class="ti ti-file-alert"></i></div>
-                                <div class="exp-title">Tenant Documents Expired</div>
-                                <div class="exp-num en-v">27</div>
-                            </div>
-                            <div class="exp-bar-row">
-                                <div class="exp-bar">
-                                    <div class="ebf ebf-v" style="width:8%"></div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- LEFT: STAKEHOLDER TILES (Colorful & High Contrast) -->
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-4">
+                                <div class="card task-card bg-primary-gradient text-white shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="task-icon-box bg-white text-primary">
+                                            <i class="ti ti-user fs-2"></i>
+                                        </div>
+                                        <div>
+                                            <div class="task-title-small opacity-75">Owners</div>
+                                            <div class="h2 fw-bold mb-0">23</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="exp-pct">27 of 319</div>
                             </div>
-                            <div><span class="exp-warn ew-v"><i class="ti ti-alert-triangle"></i>&nbsp;11 expiring in 30
-                                    days</span></div>
+                            <div class="col-md-4">
+                                <div class="card task-card bg-white shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="task-icon-box" style="background-color: #fff1f0; color: #ff4d4f;">
+                                            <i class="ti ti-user-cog fs-2"></i>
+                                        </div>
+                                        <div>
+                                            <div class="task-title-small text-muted">Operators</div>
+                                            <div class="h2 fw-bold mb-0">16</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Task Completed (White) -->
+                            <div class="col-md-4">
+                                <div class="card task-card bg-white shadow-sm">
+                                    <div class="card-body d-flex align-items-center gap-3 p-3">
+                                        <div class="task-icon-box" style="background-color: #f6ffed; color: #52c41a;">
+                                            <i class="ti ti-user-key fs-2"></i>
+                                        </div>
+                                        <div>
+                                            <div class="task-title-small text-muted">Tenants</div>
+                                            <div class="h2 fw-bold mb-0">423</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stakeholder Distribution Chart -->
+                        <div class="row row-deck row-cards">
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="subheader">People &
+                                                Community Distribution</div>
+                                        </div>
+                                        <div id="peoples-chart" class="position-relative chart-sm"
+                                            style="min-height: 40px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center">
+                                            <div class="subheader">People &
+                                                Community Distribution</div>
+                                        </div>
+                                        <div id="monthly-chart" class="position-relative chart-sm"
+                                            style="min-height: 40px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: DOCUMENT EXPIRY & TASKS -->
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="card border-0 shadow-sm mb-4">
+                            <div class="card-header bg-blue-lt py-2 border-0">
+                                <h4 class="card-title fs-4 fw-bold text-blue small">Critical
+                                    Document Expiries
+                                </h4>
+                            </div>
+                            <div class="card-body p-3">
+                                <div class="mb-2">
+                                    <div class="exp-head">
+                                        <div class="exp-ico ei-r"><i class="ti ti-file-alert"></i></div>
+                                        <div class="exp-title">Owner Documents Expired<div class="exp-bar-row">
+                                                <div class="exp-bar">
+                                                    <div class="ebf ebf-r" style="width:8%"></div>
+                                                </div>
+                                                <div class="exp-pct">8 of 142</div>
+                                            </div>
+                                        </div>
+                                        <div class="exp-num en-r">12</div>
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                                <div class="mb-2">
+                                    <div class="exp-head">
+                                        <div class="exp-ico ei-a"><i class="ti ti-file-alert"></i></div>
+                                        <div class="exp-title">Operator Documents Expired<div class="exp-bar-row">
+                                                <div class="exp-bar">
+                                                    <div class="ebf ebf-a" style="width:13%"></div>
+                                                </div>
+                                                <div class="exp-pct">5 of 38</div>
+                                            </div>
+                                        </div>
+                                        <div class="exp-num en-a">5</div>
+                                    </div>
+                                </div>
+                                <hr class="my-4">
+                                <div class="mb-2">
+                                    <div class="exp-head">
+                                        <div class="exp-ico ei-v"><i class="ti ti-file-alert"></i></div>
+                                        <div class="exp-title">Tenant Documents Expired<div class="exp-bar-row">
+                                                <div class="exp-bar">
+                                                    <div class="ebf ebf-v" style="width:8%"></div>
+                                                </div>
+                                                <div class="exp-pct">27 of 319</div>
+                                            </div>
+                                        </div>
+                                        <div class="exp-num en-v">27</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- ── Charts ── -->
-                <div class="slabel">Analytics</div>
-                <div class="row g-3 mb-3">
-                    <div class="col-12 col-md-3">
-                        <div class="gauge-card h-100 justify-content-center">
-                            <div class="gc-title">Occupancy Rate</div>
-                            <div class="gauge-wrap">
-                                <canvas id="gaugeChart" width="170" height="94"></canvas>
-                                <div class="gauge-num">85%</div>
-                            </div>
-                            <div class="gauge-sub">408 of 480 units occupied</div>
-                            <div class="occ-bar w-100">
-                                <div class="occ-fill" style="width:85%"></div>
-                            </div>
-                            <div class="occ-lbl w-100"><span>0%</span><span>100%</span></div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-4">
-                        <div class="chart-card h-100">
-                            <div class="cc-title">Unit Status Breakdown</div>
-                            <div class="cc-sub">Occupied vs. vacant distribution</div>
-                            <canvas id="unitDonut" height="190"></canvas>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-5">
-                        <div class="chart-card h-100">
-                            <div class="cc-title">Monthly Occupancy Trend</div>
-                            <div class="cc-sub">Occupied units — last 6 months</div>
-                            <canvas id="trendChart" height="190"></canvas>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row g-3 mb-3">
-                    <div class="col-12">
-                        <div class="chart-card">
-                            <div class="cc-title">People &amp; Community Distribution</div>
-                            <div class="cc-sub">Active count across owners, operators, tenants &amp; communities</div>
-                            <canvas id="barChart" height="88"></canvas>
-                        </div>
-                    </div>
-                </div>
-
             </main>
-
             <footer class="footer d-flex align-items-center justify-content-center p-3">
                 <div class="text-center">&copy; 2026 Leasing Management System</div>
             </footer>
@@ -911,175 +469,193 @@
     </div>
 
     <script src="./assets/scripts/script.min.js"></script>
-    <script src="./assets/scripts/custom.js"></script>
+    <script src="./assets/scripts/custom.js"></script><!-- Load ApexCharts -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-
-        /* ── Chart defaults ── */
-        Chart.defaults.font.family = "'Lato', sans-serif";
-
-        const BLUE = '#3b6cf5';
-        const GREEN = '#10b981';
-        const AMBER = '#f59e0b';
-        const TEAL = '#0ea5a0';
-        const VIOLET = '#8b5cf6';
-        const GRAY = '#f0f0f3';
-
-        /* ── Gauge ── */
-        new Chart(document.getElementById('gaugeChart').getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                datasets: [{
-                    data: [85, 15, 100],
-                    backgroundColor: [BLUE, GRAY, 'transparent'],
-                    borderWidth: 0,
-                    circumference: 180,
-                    rotation: -90
-                }]
-            },
-            options: {
-                cutout: '67%',
-                plugins: { legend: { display: false }, tooltip: { enabled: false } },
-                animation: { duration: 1400, easing: 'easeOutQuart' }
-            }
-        });
-
-        /* ── Donut ── */
-        new Chart(document.getElementById('unitDonut').getContext('2d'), {
-            type: 'doughnut',
-            data: {
-                labels: ['Occupied', 'Vacant'],
-                datasets: [{
-                    data: [408, 72],
-                    backgroundColor: [GREEN, AMBER],
-                    borderColor: '#fff',
-                    borderWidth: 4,
-                    hoverOffset: 8
-                }]
-            },
-            options: {
-                cutout: '70%',
-                plugins: {
-                    legend: {
-                        position: 'bottom',
+        document.addEventListener("DOMContentLoaded", function () {
+            window.ApexCharts &&
+                new ApexCharts(document.getElementById("peoples-chart"), {
+                    chart: {
+                        type: "bar",
+                        fontFamily: "inherit",
+                        height: 170, colors: ["#3b82f6"],
+                        sparkline: {
+                            enabled: true,
+                        },
+                        animations: {
+                            enabled: false,
+                        },
+                    },
+                    plotOptions: {
+                        bar: {
+                            columnWidth: "50%",
+                        },
+                    },
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    series: [
+                        {
+                            name: "Profits",
+                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51,
+                                35, 41, 67],
+                        },
+                    ],
+                    tooltip: {
+                        theme: "dark",
+                    },
+                    grid: {
+                        strokeDashArray: 4,
+                    },
+                    xaxis: {
                         labels: {
-                            boxWidth: 12,
-                            boxHeight: 12,
-                            borderRadius: 3,
-                            useBorderRadius: true,
-                            font: { size: 12, weight: '600' },
-                            padding: 14,
-                            color: '#6b7280'
-                        }
+                            padding: 0,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                        axisBorder: {
+                            show: false,
+                        },
+                        type: "datetime",
                     },
-                    tooltip: {
-                        backgroundColor: '#111827',
-                        cornerRadius: 8,
-                        padding: 10,
-                        titleFont: { weight: '700' },
-                        callbacks: {
-                            label: c => ` ${c.label}: ${c.raw} (${Math.round(c.raw / 480 * 100)}%)`
-                        }
-                    }
-                },
-                animation: { duration: 1200, easing: 'easeOutQuart' }
-            }
+                    yaxis: {
+                        labels: {
+                            padding: 4,
+                        },
+                    },
+                    labels: [
+                        "2020-06-21",
+                        "2020-06-22",
+                        "2020-06-23",
+                        "2020-06-24",
+                        "2020-06-25",
+                        "2020-06-26",
+                        "2020-06-27",
+                        "2020-06-28",
+                        "2020-06-29",
+                        "2020-06-30",
+                        "2020-07-01",
+                        "2020-07-02",
+                        "2020-07-03",
+                        "2020-07-04",
+                        "2020-07-05",
+                        "2020-07-06",
+                        "2020-07-07",
+                        "2020-07-08",
+                        "2020-07-09",
+                        "2020-07-10",
+                        "2020-07-11",
+                        "2020-07-12",
+                        "2020-07-13",
+                        "2020-07-14",
+                        "2020-07-15",
+                        "2020-07-16",
+                        "2020-07-17",
+                        "2020-07-18",
+                        "2020-07-19",
+                        "2020-07-20",
+                    ],
+                    colors: ["#3b82f6"],
+                    legend: {
+                        show: false,
+                    },
+                }).render();
         });
-
-        /* ── Trend line ── */
-        const tCtx = document.getElementById('trendChart').getContext('2d');
-        const tG = tCtx.createLinearGradient(0, 0, 0, 160);
-        tG.addColorStop(0, 'rgba(59,108,245,0.15)');
-        tG.addColorStop(1, 'rgba(59,108,245,0)');
-
-        new Chart(tCtx, {
-            type: 'line',
-            data: {
-                labels: ['Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
-                datasets: [{
-                    label: 'Occupied Units',
-                    data: [365, 378, 389, 395, 402, 408],
-                    borderColor: BLUE,
-                    backgroundColor: tG,
-                    borderWidth: 2.5,
-                    pointBackgroundColor: '#fff',
-                    pointBorderColor: BLUE,
-                    pointBorderWidth: 2.5,
-                    pointRadius: 4.5,
-                    pointHoverRadius: 7,
-                    tension: 0.42,
-                    fill: true
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        min: 330,
-                        grid: { color: '#f4f5f9', drawBorder: false },
-                        border: { display: false },
-                        ticks: { font: { size: 11 }, color: '#9ca3af', padding: 8 }
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            window.ApexCharts &&
+                new ApexCharts(document.getElementById("monthly-chart"), {
+                    chart: {
+                        type: "area",
+                        fontFamily: "inherit",
+                        height: 170,
+                        sparkline: {
+                            enabled: true,
+                        },
+                        animations: {
+                            enabled: false,
+                        },
                     },
-                    x: {
-                        grid: { display: false },
-                        border: { display: false },
-                        ticks: { font: { size: 11, weight: '600' }, color: '#6b7280', padding: 6 }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        mode: 'index',
-                        intersect: false,
-                        backgroundColor: '#111827',
-                        cornerRadius: 8,
-                        padding: 10,
-                        titleFont: { weight: '700' }
-                    }
-                },
-                animation: { duration: 1200, easing: 'easeOutQuart' }
-            }
-        });
-
-        /* ── Bar chart ── */
-        new Chart(document.getElementById('barChart').getContext('2d'), {
-            type: 'bar',
-            data: {
-                labels: ['Owners', 'Operators', 'Tenants', 'Communities'],
-                datasets: [{
-                    label: 'Active Count',
-                    data: [142, 38, 319, 24],
-                    backgroundColor: [BLUE, TEAL, GREEN, VIOLET],
-                    borderRadius: 10,
-                    borderSkipped: false,
-                    barThickness: 52,
-                    hoverBackgroundColor: ['#2a56d9', '#0a8f8a', '#059669', '#7c3aed']
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true,
-                        grid: { color: '#f4f5f9', drawBorder: false },
-                        border: { display: false },
-                        ticks: { font: { size: 11 }, color: '#9ca3af', padding: 8 }
+                    dataLabels: {
+                        enabled: false,
                     },
-                    x: {
-                        grid: { display: false },
-                        border: { display: false },
-                        ticks: { font: { size: 12, weight: '700' }, color: '#374151', padding: 6 }
-                    }
-                },
-                plugins: {
-                    legend: { display: false },
+                    fill: {
+                        colors: ["#3b82f6"],
+                        type: "solid",
+                    },
+                    stroke: {
+                        width: 2,
+                        lineCap: "round",
+                        curve: "smooth",
+                    },
+                    series: [
+                        {
+                            name: "Profits",
+                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67],
+                        },
+                    ],
                     tooltip: {
-                        backgroundColor: '#111827',
-                        cornerRadius: 8,
-                        padding: 10,
-                        titleFont: { weight: '700' },
-                        callbacks: { label: c => ` Count: ${c.raw}` }
-                    }
-                },
-                animation: { duration: 1000, easing: 'easeOutQuart' }
-            }
+                        theme: "dark",
+                    },
+                    grid: {
+                        strokeDashArray: 4,
+                    },
+                    xaxis: {
+                        labels: {
+                            padding: 0,
+                        },
+                        tooltip: {
+                            enabled: false,
+                        },
+                        axisBorder: {
+                            show: false,
+                        },
+                        type: "datetime",
+                    },
+                    yaxis: {
+                        labels: {
+                            padding: 4,
+                        },
+                    },
+                    labels: [
+                        "2020-06-21",
+                        "2020-06-22",
+                        "2020-06-23",
+                        "2020-06-24",
+                        "2020-06-25",
+                        "2020-06-26",
+                        "2020-06-27",
+                        "2020-06-28",
+                        "2020-06-29",
+                        "2020-06-30",
+                        "2020-07-01",
+                        "2020-07-02",
+                        "2020-07-03",
+                        "2020-07-04",
+                        "2020-07-05",
+                        "2020-07-06",
+                        "2020-07-07",
+                        "2020-07-08",
+                        "2020-07-09",
+                        "2020-07-10",
+                        "2020-07-11",
+                        "2020-07-12",
+                        "2020-07-13",
+                        "2020-07-14",
+                        "2020-07-15",
+                        "2020-07-16",
+                        "2020-07-17",
+                        "2020-07-18",
+                        "2020-07-19",
+                        "2020-07-20",
+                    ],
+                    colors: ["color-mix(in srgb, transparent, var(--tblr-primary) 100%)"],
+                    legend: {
+                        show: false,
+                    },
+                }).render();
         });
     </script>
 </body>
