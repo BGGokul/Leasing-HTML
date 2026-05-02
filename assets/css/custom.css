@@ -43,6 +43,18 @@ th.sortable {
     text-transform: capitalize;
 }
 
+.table-sub thead th {
+    color: #194168;
+    background-color: #cadae3;
+    font-weight: 600;
+    border-bottom: 1px solid #334155;
+    padding: 10px;
+    text-align: center;
+    border-color: #f1f5f9;
+    font-size: clamp(0.75rem, 1.1vw, 0.8rem);
+    text-transform: capitalize;
+}
+
 .table-main tbody td {
     vertical-align: middle;
     font-size: clamp(0.75rem, 1.1vw, 0.8rem);
@@ -51,6 +63,10 @@ th.sortable {
 
 div {
     font-size: clamp(0.75rem, 1.1vw, 0.8rem);
+}
+
+td .form-control {
+    min-width: 200px
 }
 
 /* Layout */
