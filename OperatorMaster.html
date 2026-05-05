@@ -1937,6 +1937,75 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
 
+            function addOperatorTableRows() {
+                const records = [
+                    ["Company", "-", "Prime Facility Management LLC", "Male", "Indian", "UAE", "Dubai", "Business Bay", "primefacility@gmail.com", "9000000061", "TL-30061", "10-10-2027", "Valid", "Admin", "03-04-2026"],
+                    ["Individual", "Sara Nair", "-", "Female", "Indian", "UAE", "Sharjah", "Al Majaz", "saranair@gmail.com", "9000000062", "TL-30062", "14-06-2026", "Valid", "Supervisor", "04-04-2026"],
+                    ["Company", "-", "Gulf Horizon Services LLC", "Male", "Emirati", "UAE", "Abu Dhabi", "Khalifa City", "gulfhorizon@gmail.com", "9000000063", "TL-30063", "21-01-2025", "Expired", "Manager", "05-04-2026"],
+                    ["Individual", "Omar Farooq", "-", "Male", "Pakistani", "UAE", "Dubai", "Deira", "omarfarooq@gmail.com", "9000000064", "TL-30064", "08-12-2027", "Valid", "Admin", "06-04-2026"],
+                    ["Company", "-", "Urban Shield Security LLC", "Male", "Filipino", "UAE", "Ajman", "Al Nuaimiya", "urbanshield@gmail.com", "9000000065", "TL-30065", "19-03-2026", "Valid", "Supervisor", "07-04-2026"],
+                    ["Individual", "Nadia Rahman", "-", "Female", "Bangladeshi", "UAE", "Dubai", "Mirdif", "nadiarahman@gmail.com", "9000000066", "TL-30066", "30-04-2025", "Expired", "Manager", "08-04-2026"],
+                    ["Company", "-", "Silverline Maintenance LLC", "Male", "Sri Lankan", "UAE", "Sharjah", "Industrial Area", "silverline@gmail.com", "9000000067", "TL-30067", "17-09-2028", "Valid", "Admin", "09-04-2026"],
+                    ["Individual", "Ravi Menon", "-", "Male", "Indian", "UAE", "Dubai", "Karama", "ravimenon@gmail.com", "9000000068", "TL-30068", "02-07-2027", "Valid", "Supervisor", "10-04-2026"],
+                    ["Company", "-", "Royal Star Logistics LLC", "Male", "Nepalese", "UAE", "Abu Dhabi", "Mussafah", "royalstar@gmail.com", "9000000069", "TL-30069", "25-11-2026", "Valid", "Manager", "11-04-2026"],
+                    ["Individual", "Mariam Yusuf", "-", "Female", "Emirati", "UAE", "Dubai", "Al Nahda", "mariamyusuf@gmail.com", "9000000070", "TL-30070", "06-01-2025", "Expired", "Admin", "12-04-2026"],
+                    ["Company", "-", "Eastern Gate Contracting LLC", "Male", "Pakistani", "UAE", "Sharjah", "Rolla", "easterngate@gmail.com", "9000000071", "TL-30071", "13-08-2027", "Valid", "Supervisor", "13-04-2026"],
+                    ["Individual", "Grace Thomas", "-", "Female", "Indian", "UAE", "Dubai", "JLT", "gracethomas@gmail.com", "9000000072", "TL-30072", "29-05-2026", "Valid", "Manager", "14-04-2026"],
+                    ["Company", "-", "Capital Care Services LLC", "Male", "Sudanese", "UAE", "Abu Dhabi", "Al Reem Island", "capitalcare@gmail.com", "9000000073", "TL-30073", "22-02-2028", "Valid", "Admin", "15-04-2026"],
+                    ["Individual", "Hassan Saleh", "-", "Male", "Egyptian", "UAE", "Dubai", "Bur Dubai", "hassansaleh@gmail.com", "9000000074", "TL-30074", "16-10-2025", "Expired", "Supervisor", "16-04-2026"],
+                    ["Company", "-", "North Point Cleaning LLC", "Male", "Bangladeshi", "UAE", "Ajman", "Al Rashidiya", "northpoint@gmail.com", "9000000075", "TL-30075", "31-12-2027", "Valid", "Manager", "17-04-2026"]
+                ];
+
+                const columns = [
+                    "operatorType",
+                    "operatorName",
+                    "companyName",
+                    "gender",
+                    "nationality",
+                    "country",
+                    "state",
+                    "city",
+                    "email",
+                    "contactNumber",
+                    "tradeLicenseNumber",
+                    "tradeLicenseExpiryDate",
+                    "documentStatus",
+                    "ceBy",
+                    "ceDate"
+                ];
+
+                document.querySelectorAll(".table-main tbody").forEach((tbody, tableIndex) => {
+                    const existingRows = tbody.querySelectorAll("tr").length;
+
+                    for (let rowIndex = existingRows; rowIndex < 25; rowIndex++) {
+                        const record = records[(rowIndex - existingRows + tableIndex * 5) % records.length];
+                        const row = document.createElement("tr");
+
+                        row.innerHTML = `
+                            <td class="text-center">${rowIndex + 1}</td>
+                            ${record.map((value, index) => {
+                                const col = columns[index];
+
+                                if (col === "documentStatus") {
+                                    const badgeClass = value === "Valid" ? "bg-teal text-teal-fg" : "bg-red text-red-fg";
+                                    return `<td class="text-center col-${col}"><span class="badge ${badgeClass}">${value}</span></td>`;
+                                }
+
+                                return `<td class="text-center col-${col}">${value}</td>`;
+                            }).join("")}
+                            <td class="text-center col-action">
+                                <div class="d-flex justify-content-center gap-2">
+                                    <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
+                                    <a class="btn btn-teal btn-sm fs-2"><i class="ti ti-pencil"></i></a>
+                                </div>
+                            </td>
+                        `;
+
+                        tbody.appendChild(row);
+                    }
+                });
+            }
+
             class SmartTable {
 
                 constructor(wrapper) {
@@ -2088,6 +2157,8 @@
             }
 
             /* Initialize all smart tables */
+
+            addOperatorTableRows();
 
             document
                 .querySelectorAll(".smart-table")

@@ -10,109 +10,14 @@
     <link rel="stylesheet" href="./assets/css/style.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/custom.css">
+    <link rel="stylesheet" href="./assets/css/subMaster.css">
     <!-- Slim Select CSS -->
     <link rel="stylesheet" href="./assets/css/slimselect.min.css">
     <!-- Icon CSS -->
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Wrapper */
-        .tab-scroll-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            overflow: hidden;
-            background: #ffffff;
-            border-radius: 12px;
-        }
 
-        /* Scroll container */
-        .nav-scroll {
-            flex: 1 1 auto;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-            background: #f1f5f9;
-            padding: 8px;
-            border-radius: 999px;
-        }
-
-        /* Hide scrollbar */
-        .nav-scroll::-webkit-scrollbar {
-            display: none;
-        }
-
-        .nav-scroll {
-            scrollbar-width: none;
-        }
-
-        /* Pill button model */
-        .nav-tabs {
-            border-bottom: none;
-            gap: 8px;
-        }
-
-        .nav-tabs .nav-link {
-            border: none;
-            border-radius: 999px;
-            padding: 8px 18px;
-            font-weight: 500;
-            color: #5b6472;
-            background: transparent;
-            transition: all 0.2s ease;
-            white-space: nowrap;
-            font-weight: 600;
-        }
-
-        .nav-tabs .nav-link:hover {
-            background: #e6edf5;
-            color: #1d273b;
-            border-radius: 999px;
-        }
-
-        .nav-tabs .nav-link.active {
-            background: #206bc4;
-            color: #ffffff;
-            box-shadow: 0 2px 6px rgba(32, 107, 196, 0.35);
-        }
-
-        /* Buttons */
-        .scroll-btn {
-            position: static;
-            flex: 0 0 auto;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid #e6e8eb;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        }
-
-
-        .scroll-left {
-            order: 0;
-        }
-
-        .scroll-right {
-            order: 2;
-        }
-
-        .tab-scroll-wrapper::before {
-            left: 0;
-            background: linear-gradient(to right, #ffffff, transparent);
-        }
-
-        .tab-scroll-wrapper::after {
-            right: 0;
-            background: linear-gradient(to left, #ffffff, transparent);
-        }
-
-        .tab-content {
-            background: rgb(32 107 196 / 15%) !important;
-        }
-    </style>
 </head>
 
 <body>
@@ -217,9 +122,9 @@
                 </div>
             </header>
             <!-- Content -->
-            <main class="content">
-                <div class="p-3">
-                    <div class="card mb-3">
+            <main class="content submaster-page">
+                <div class="p-4 submaster-shell">
+                    <div class="card">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-12 col-md">
@@ -254,6 +159,52 @@
                                         </ol>
                                     </nav>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="submaster-stat">
+                                <div>
+                                    <div class="text-muted fw-semibold">Master Groups</div>
+                                    <div class="fs-2 fw-bold text-dark">7</div>
+                                </div>
+                                <span class="submaster-stat-icon bg-primary-lt text-primary">
+                                    <i class="ti ti-category-2 fs-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="submaster-stat">
+                                <div>
+                                    <div class="text-muted fw-semibold">Active Records</div>
+                                    <div class="fs-2 fw-bold text-dark">24</div>
+                                </div>
+                                <span class="submaster-stat-icon bg-green-lt text-green">
+                                    <i class="ti ti-circle-check fs-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="submaster-stat">
+                                <div>
+                                    <div class="text-muted fw-semibold">Inactive Records</div>
+                                    <div class="fs-2 fw-bold text-dark">6</div>
+                                </div>
+                                <span class="submaster-stat-icon bg-red-lt text-red">
+                                    <i class="ti ti-circle-off fs-1"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <div class="submaster-stat">
+                                <div>
+                                    <div class="text-muted fw-semibold">Last Updated</div>
+                                    <div class="fs-4 fw-bold text-dark">Today</div>
+                                </div>
+                                <span class="submaster-stat-icon bg-cyan-lt text-cyan">
+                                    <i class="ti ti-clock-edit fs-1"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -507,7 +458,7 @@
                         </div>
                     </div> -->
                     <div>
-                        <div class="card smart-table">
+                        <div class="card smart-table submaster-workspace">
                             <div class="card-header py-2 px-2">
                                 <div class="tab-scroll-wrapper">
 
@@ -522,23 +473,29 @@
                                         <ul class="nav nav-tabs flex-nowrap">
                                             <li class="nav-item">
                                                 <a class="nav-link active" data-bs-toggle="tab"
-                                                    href="#basicInformation">Basic Information
+                                                    href="#basicInformation"><i class="ti ti-settings fs-3"></i> Basic
+                                                    Information
                                                 </a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#ownerType">Owner Type</a>
+                                                    href="#ownerType"><i class="ti ti-user-square fs-3"></i> Owner
+                                                    Type</a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#ownerShipType">Ownership Type</a></li>
+                                                    href="#ownerShipType"><i class="ti ti-home-link fs-3"></i> Ownership
+                                                    Type</a></li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#propertyType">Property Type</a></li>
+                                                    href="#propertyType"><i class="ti ti-building-estate fs-3"></i>
+                                                    Property Type</a></li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#propertyUsageType">Property Usage Type</a>
+                                                    href="#propertyUsageType"><i class="ti ti-building-store fs-3"></i>
+                                                    Property Usage Type</a>
                                             </li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#commonAmenities">Common Amenities</a></li>
+                                                    href="#commonAmenities"><i class="ti ti-swimming fs-3"></i> Common
+                                                    Amenities</a></li>
                                             <li class="nav-item"><a class="nav-link" data-bs-toggle="tab"
-                                                    href="#unitAmenities">Unit
+                                                    href="#unitAmenities"><i class="ti ti-armchair fs-3"></i> Unit
                                                     Amenities</a></li>
                                         </ul>
                                     </div>
@@ -556,7 +513,8 @@
 
                             <div class="card-body p-0">
                                 <div class="tab-content">
-                                    <div class="tab-pane fade show active p-3" id="basicInformation" role="tabpanel">
+                                    <div class="tab-pane fade show active p-3 master-tab-pane" id="basicInformation"
+                                        role="tabpanel">
                                         <div class="row">
                                             <div class="col-md-6 col-lg-3">
                                                 <div class="mb-3">
@@ -798,7 +756,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade p-3" id="ownerType" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="ownerType" role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -890,12 +848,12 @@
                                                         <td class="col-aeBy text-center">Emma</td>
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -910,12 +868,12 @@
                                                         <td class="col-aeBy text-center">Harry</td>
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -926,7 +884,7 @@
                                         </div>
 
                                     </div>
-                                    <div class="tab-pane fade p-3" id="ownerShipType" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="ownerShipType" role="tabpanel">
 
                                         <!-- TOP BAR -->
                                         <div class="row align-items-center justify-content-end mb-3">
@@ -1040,12 +998,12 @@
                                                         <td class="col-aeBy text-center">Emma</td>
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1060,12 +1018,12 @@
                                                         <td class="col-aeBy text-center">Harry</td>
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1079,12 +1037,12 @@
                                                         <td class="col-aeBy text-center">Jasmine</td>
                                                         <td class="col-aeDate text-center">16-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1095,7 +1053,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade  p-3" id="propertyType" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="propertyType" role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -1200,12 +1158,12 @@
                                                         <td class="col-aeBy text-center">Arun Kumar</td>
                                                         <td class="col-aeDate text-center">12-03-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1220,12 +1178,12 @@
                                                         <td class="col-aeBy text-center">Priya S</td>
                                                         <td class="col-aeDate text-center">28-02-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1240,12 +1198,12 @@
                                                         <td class="col-aeBy text-center">John Doe</td>
                                                         <td class="col-aeDate text-center">05-01-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1256,7 +1214,8 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade p-3" id="propertyUsageType" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="propertyUsageType"
+                                        role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -1364,12 +1323,12 @@
                                                         <td class="col-aeBy text-center">Arun Kumar</td>
                                                         <td class="col-aeDate text-center">10-03-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1385,12 +1344,12 @@
                                                         <td class="col-aeBy text-center">Priya S</td>
                                                         <td class="col-aeDate text-center">22-02-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1406,12 +1365,12 @@
                                                         <td class="col-aeBy text-center">John Doe</td>
                                                         <td class="col-aeDate text-center">05-01-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1422,7 +1381,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade p-3" id="commonAmenities" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="commonAmenities" role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -1525,12 +1484,12 @@
                                                         <td class="col-aeBy text-center">Arun Kumar</td>
                                                         <td class="col-aeDate text-center">14-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1545,12 +1504,12 @@
                                                         <td class="col-aeBy text-center">Priya S</td>
                                                         <td class="col-aeDate text-center">02-03-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1565,12 +1524,12 @@
                                                         <td class="col-aeBy text-center">John Doe</td>
                                                         <td class="col-aeDate text-center">18-01-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1581,7 +1540,7 @@
                                             </table>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade p-3" id="unitAmenities" role="tabpanel">
+                                    <div class="tab-pane fade p-3 master-tab-pane" id="unitAmenities" role="tabpanel">
                                         <div class="row align-items-center justify-content-end mb-3">
                                             <div class="col-md-6 col-lg-4 col-xl-3">
                                                 <div class="input-icon mt-1">
@@ -1831,12 +1790,12 @@
                                                         <td class="col-aeDate text-center">16-04-2026</td>
 
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center flex-nowrap">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -1865,12 +1824,12 @@
                                                         <td class="col-aeBy text-center">Priya S</td>
                                                         <td class="col-aeDate text-center">12-04-2026</td>
                                                         <td class="text-center col-action">
-                                                            <div class="justify-content-center">
-                                                                <a class="text-primary text-decoration-none">
-                                                                    <i class="ti ti-pencil fs-2"></i>
+                                                            <div class="btn-list justify-content-center flex-nowrap">
+                                                                <a class="btn btn-icon btn-primary">
+                                                                    <i class="ti ti-pencil fs-4"></i>
                                                                 </a>
-                                                                <a class="text-red text-decoration-none">
-                                                                    <i class="ti ti-trash fs-2"></i>
+                                                                <a class="btn btn-icon btn-danger">
+                                                                    <i class="ti ti-trash fs-4"></i>
                                                                 </a>
                                                             </div>
                                                         </td>
@@ -2264,8 +2223,8 @@
                     return;
                 }
 
-                leftBtn.style.display = "block";
-                rightBtn.style.display = "block";
+                leftBtn.style.display = "flex";
+                rightBtn.style.display = "flex";
 
                 leftBtn.disabled = container.scrollLeft <= 0;
                 rightBtn.disabled = container.scrollLeft >= maxScrollLeft - 1;

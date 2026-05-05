@@ -7,777 +7,11 @@
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <title>Leasing Management</title>
     <link rel="stylesheet" href="./assets/css/style.min.css">
+    <link rel="stylesheet" href="./assets/css/homePage.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap"
         rel="stylesheet">
-    <style>
-        :root {
-            --blue: #3b6cf5;
-            --blue-d: #2a56d9;
-            --blue-lt: #d4ddfc;
-            --blue-glow: rgba(59, 108, 245, 0.12);
-            --teal: #0ea5a0;
-            --teal-lt: #ecfdf5;
-            --green: #10b981;
-            --green-lt: #ecfdf5;
-            --amber: #f59e0b;
-            --amber-lt: #fffbeb;
-            --red: #ef4444;
-            --red-lt: #fef2f2;
-            --violet: #8b5cf6;
-            --violet-lt: #f5f3ff;
-            --orange: #f97316;
-            --orange-lt: #fff7ed;
-            --ink: #111827;
-            --muted: #6b7280;
-            --muted-lt: #9ca3af;
-            --border: #f0f0f3;
-            --surface: #f9fafb;
-            --r: 14px;
-            --r-sm: 10px;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
-            --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
-            --border: #e5e7eb;
-            --surface: #f1f5f9;
-            --ink: #111827;
-            --blue: #0284c7;
-            --blue-lt: #e0f2fe;
-            --blue-glow: #bae6fd;
-            --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
-            --r-sm: 8px;
-        }
-
-        /* Custom Task Card Styles */
-        .task-card {
-            border-radius: 12px;
-            border: 1px solid #f1f3f4;
-            transition: transform 0.2s;
-        }
-
-        .bg-primary-gradient {
-            background: linear-gradient(135deg, #206bc4 0%, #3b82f6 100%);
-            border: none;
-        }
-
-        /* Rounded square boxes for icons */
-        .task-icon-box {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .task-title-small {
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .exp-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-
-        .exp-head {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            margin-bottom: 14px;
-        }
-
-        .exp-ico {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--r-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .ei-r {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            color: #ef4444;
-        }
-
-        .ei-a {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            color: #d97706;
-        }
-
-        .ei-v {
-            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-            color: #8b5cf6;
-        }
-
-        .exp-title {
-            font-size: 0.82rem;
-            font-weight: 700;
-            color: var(--ink);
-            flex: 1;
-            line-height: 1.35;
-        }
-
-        .exp-num {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .en-r {
-            color: var(--red);
-        }
-
-        .en-a {
-            color: var(--amber);
-        }
-
-        .en-v {
-            color: var(--violet);
-        }
-
-        .exp-bar-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .exp-bar {
-            flex: 1;
-            height: 6px;
-            border-radius: 99px;
-            background: var(--surface);
-            overflow: hidden;
-        }
-
-        .ebf {
-            height: 100%;
-            border-radius: 99px;
-            transition: width 1s cubic-bezier(.4, 0, .2, 1);
-        }
-
-        .ebf-r {
-            background: linear-gradient(90deg, #fca5a5, #ef4444);
-        }
-
-        .ebf-a {
-            background: linear-gradient(90deg, #fcd34d, #d97706);
-        }
-
-        .ebf-v {
-            background: linear-gradient(90deg, #c4b5fd, #8b5cf6);
-        }
-
-        .exp-pct {
-            font-size: 0.7rem;
-            color: var(--muted-lt);
-            white-space: nowrap;
-        }
-
-        .exp-warn {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.66rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 99px;
-            margin-top: 11px;
-        }
-
-        .ew-r {
-            background: #fef2f2;
-            color: #dc2626;
-        }
-
-        .ew-a {
-            background: #fffbeb;
-            color: #b45309;
-        }
-
-        .ew-v {
-            background: #f5f3ff;
-            color: #6d28d9;
-        }
-
-        .banner-sep {
-            width: 1px;
-            height: 44px;
-            background: rgba(99, 102, 241, 0.2);
-            flex-shrink: 0;
-        }
-
-        .banner-stat-label {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            color: #6b7280;
-            margin-bottom: 2px;
-        }
-
-        .banner-occ-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 10px;
-            font-weight: 700;
-            color: #3b6cf5;
-            margin-bottom: 5px;
-        }
-
-        .bsv-blue {
-            color: #3b6cf5;
-        }
-
-        .banner-stat-value {
-            font-size: 1.6rem;
-            font-weight: 800;
-            line-height: 1;
-        }
-
-        .bsv-green {
-            color: #10b981;
-        }
-
-        .bsv-orange {
-            color: #f97316;
-        }
-
-        .dash-banner::after {
-            content: '';
-            position: absolute;
-            right: -40px;
-            top: -50px;
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background: rgba(99, 101, 252, 0.07);
-            pointer-events: none;
-        }
-
-        /* ── STAT PILLS ── */
-        .stat-pill {
-            border-radius: 14px;
-            padding: 14px 16px;
-            display: flex;
-            align-items: center;
-            gap: 13px;
-            position: relative;
-            overflow: hidden;
-            color: #fff;
-            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.11);
-            transition: transform 0.18s, box-shadow 0.18s;
-            height: 100%;
-        }
-
-        .stat-pill:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
-        }
-
-        .sp-blue {
-            background: linear-gradient(135deg, #3b6cf5 0%, #2563eb 100%);
-        }
-
-        .sp-red {
-            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
-        }
-
-        .sp-green {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-
-        /* decorative blobs */
-        .sp-blob {
-            position: absolute;
-            right: -18px;
-            top: -18px;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.13);
-            pointer-events: none;
-        }
-
-        .sp-blob2 {
-            position: absolute;
-            right: 26px;
-            top: -28px;
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.08);
-            pointer-events: none;
-        }
-
-        .sp-icon-box {
-            width: 42px;
-            height: 42px;
-            border-radius: 11px;
-            background: rgba(255, 255, 255, 0.22);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .sp-text {
-            position: relative;
-            z-index: 1;
-        }
-
-        .sp-label {
-            font-size: 9.5px;
-            font-weight: 700;
-            letter-spacing: 0.07em;
-            text-transform: uppercase;
-            opacity: 0.82;
-            margin-bottom: 1px;
-        }
-
-        .sp-value {
-            font-size: 1.65rem;
-            font-weight: 800;
-            line-height: 1.15;
-        }
-
-        /* CARD */
-        .expiry-card {
-            background: #fff;
-            border: 1px solid var(--border);
-            border-radius: 14px;
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .expiry-card-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px;
-            border-bottom: 1px solid var(--border);
-            background: var(--blue-lt);
-        }
-
-        .title {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--blue);
-            flex: 1;
-        }
-
-        .badge-count {
-            font-size: 0.7rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 99px;
-            background: var(--blue-glow);
-            color: var(--blue);
-        }
-
-        .expiry-card-body {
-            padding: 10px 14px;
-        }
-
-        /* ROW */
-        .exp-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px;
-            margin-top: 5px;
-            background: #f9fafb;
-            border-radius: 8px;
-            transition: all 0.6s ease;
-            border: none;
-            border: 1px solid #f9fafb
-        }
-
-        .exp-row:hover {
-            border: 1px solid var(--muted)
-        }
-
-        .exp-row:hover .exp-ico {
-            transform: scale(1.2);
-        }
-
-        .exp-ico {
-            width: 25px;
-            height: 25px;
-            border-radius: var(--r-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .exp-body {
-            flex: 1;
-        }
-
-        .exp-name {
-            font-size: 0.7rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .exp-bar {
-            height: 5px;
-            background: var(--surface);
-            border-radius: 99px;
-            overflow: hidden;
-        }
-
-        .ebf {
-            height: 100%;
-            border-radius: 99px;
-        }
-
-        .exp-num {
-            font-weight: 800;
-            font-size: 1rem;
-        }
-
-        /* COLORS */
-        .ei-r {
-            background: #fee2e2;
-            color: #dc2626;
-        }
-
-        .ei-a {
-            background: #e0f2fe;
-            color: #0284c7;
-        }
-
-        .ei-v {
-            background: #ede9fe;
-            color: #7c3aed;
-        }
-
-        .ei-g {
-            background: #dcfce7;
-            color: #16a34a;
-        }
-
-        .ei-o {
-            background: #ffedd5;
-            color: #ea580c;
-        }
-
-        .ei-p {
-            background: #fce7f3;
-            color: #db2777;
-        }
-
-        .ebf-r {
-            background: #dc2626;
-        }
-
-        .ebf-a {
-            background: #0284c7;
-        }
-
-        .ebf-v {
-            background: #7c3aed;
-        }
-
-        .ebf-g {
-            background: #16a34a;
-        }
-
-        .ebf-o {
-            background: #ea580c;
-        }
-
-        .ebf-p {
-            background: #db2777;
-        }
-
-        .en-r {
-            color: #dc2626;
-        }
-
-        .en-a {
-            color: #0284c7;
-        }
-
-        .en-v {
-            color: #7c3aed;
-        }
-
-        .en-g {
-            color: #16a34a;
-        }
-
-        .en-o {
-            color: #ea580c;
-        }
-
-        .en-p {
-            color: #db2777;
-        }
-
-        .expiry-table {
-            font-size: 0.8rem;
-        }
-
-        .table-row {
-            display: grid;
-            grid-template-columns: 1fr 2fr 40px;
-            align-items: center;
-            padding: 6px 0;
-        }
-
-        .bar {
-            height: 5px;
-            background: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .bar i {
-            display: block;
-            height: 100%;
-            background: #6366f1;
-        }
-
-        .slabel {
-            font-size: 0.68rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--muted-lt);
-        }
-
-        /* ─── Expiry Card ─── */
-        .exp-card {
-            background: #fff;
-            border-radius: var(--r);
-            border: 1px solid var(--border);
-            padding: 15px 20px;
-            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .exp-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            border-color: transparent;
-        }
-
-        .exp-head {
-            display: flex;
-            align-items: center;
-            gap: 11px;
-            margin-bottom: 14px;
-        }
-
-        .exp-ico {
-            width: 30px;
-            height: 30px;
-            border-radius: var(--r-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        .ei-r {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            color: #ef4444;
-        }
-
-        .ei-a {
-            background: linear-gradient(135deg, #fffbeb, #fef3c7);
-            color: #d97706;
-        }
-
-        .ei-v {
-            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
-            color: #8b5cf6;
-        }
-
-        .exp-title {
-            font-size: 0.675rem;
-            font-weight: 700;
-            color: var(--ink);
-            flex: 1;
-            line-height: 1.35;
-        }
-
-        .exp-num {
-            font-size: 1rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-        }
-
-        .en-r {
-            color: var(--red);
-        }
-
-        .en-a {
-            color: var(--amber);
-        }
-
-        .en-v {
-            color: var(--violet);
-        }
-
-        .exp-bar-row {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .exp-bar {
-            flex: 1;
-            height: 6px;
-            border-radius: 99px;
-            background: var(--surface);
-            overflow: hidden;
-        }
-
-        .ebf {
-            height: 100%;
-            border-radius: 99px;
-            transition: width 1s cubic-bezier(.4, 0, .2, 1);
-        }
-
-        .ebf-r {
-            background: linear-gradient(90deg, #fca5a5, #ef4444);
-        }
-
-        .ebf-a {
-            background: linear-gradient(90deg, #fcd34d, #d97706);
-        }
-
-        .ebf-v {
-            background: linear-gradient(90deg, #c4b5fd, #8b5cf6);
-        }
-
-        .exp-pct {
-            font-size: 0.65rem;
-            color: var(--muted-lt);
-            white-space: nowrap;
-        }
-
-        .exp-warn {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-size: 0.66rem;
-            font-weight: 700;
-            padding: 3px 10px;
-            border-radius: 99px;
-            margin-top: 11px;
-        }
-
-        .ew-r {
-            background: #fef2f2;
-            color: #dc2626;
-        }
-
-        .ew-a {
-            background: #fffbeb;
-            color: #b45309;
-        }
-
-        .ew-v {
-            background: #f5f3ff;
-            color: #6d28d9;
-        }
-
-        .expiry-hub {
-            display: grid;
-            /* Forces 7 equal columns on desktop */
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 16px;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-        }
-
-        .hub-item {
-            background: #ffffff;
-            padding: 12px 8px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #f1f5f9;
-            transition: all 0.2s ease;
-            margin: 0;
-        }
-
-        /* Mobile Responsiveness: Switches from 7 columns to a balanced grid */
-        @media (max-width: 1200px) {
-            .expiry-hub {
-                grid-template-columns: repeat(4, 1fr);
-                /* 4 items per row */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .expiry-hub {
-                grid-template-columns: repeat(2, 1fr);
-                /* 2 items per row on mobile */
-            }
-        }
-
-        .hub-item:hover {
-            border-color: #3b6cf5;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-
-        .hub-label {
-            display: block;
-            font-size: 9px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--muted-lt);
-            margin-bottom: 4px;
-            font-weight: 600;
-        }
-
-        .hub-value {
-            font-size: 1.2rem;
-            font-weight: 900;
-            line-height: 1;
-            display: block;
-        }
-
-        .hub-total {
-            font-size: 0.65rem;
-            font-weight: 600;
-            color: #94a3b8;
-        }
-
-        /* Status Indicator Ring */
-        .status-ring {
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            margin: 6px auto 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -862,7 +96,7 @@
                             <div class="col-xl-5 col-lg-5 col-md-12 mb-3 mb-xl-0 border-end-xl border-white-10">
                                 <div class="d-flex align-items-center gap-3">
                                     <!-- The container dictates the size -->
-                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
+                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center z-1"
                                         style="width: 100%; height: 70px;">
 
                                         <!-- The image simply fills what it is given -->
@@ -870,7 +104,7 @@
                                             style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                     </div>
                                     <div class="banner-sep"></div>
-                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
+                                    <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center z-1"
                                         style="width: 100%; height: 70px;">
                                         <img src="./assets/img/leasing-management-logo.png" alt="Logo"
                                             style="max-width: 100%; max-height: 100%; object-fit: contain;">
@@ -1030,7 +264,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-r"><i class="ti ti-user"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Owner Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Owner Documents</div>
+                                            <div class="exp-percent">25% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-r" style="width:25%"></div>
                                         </div>
@@ -1041,7 +278,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-a"><i class="ti ti-user-cog"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Operator Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Operator Documents</div>
+                                            <div class="exp-percent">15% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-a" style="width:15%"></div>
                                         </div>
@@ -1052,7 +292,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-v"><i class="ti ti-user-key"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Tenant Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Tenant Documents</div>
+                                            <div class="exp-percent">60% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-v" style="width:60%"></div>
                                         </div>
@@ -1062,7 +305,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-g"><i class="ti ti-building-skyscraper"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Community Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Community Documents</div>
+                                            <div class="exp-percent">40% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-g" style="width:40%"></div>
                                         </div>
@@ -1072,7 +318,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-o"><i class="ti ti-building-store"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Buliding Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Building Documents</div>
+                                            <div class="exp-percent">60% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-o" style="width:60%"></div>
                                         </div>
@@ -1082,7 +331,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-v"><i class="ti ti-door"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Unit Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Unit Documents</div>
+                                            <div class="exp-percent">55% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-v" style="width:55%"></div>
                                         </div>
@@ -1093,7 +345,10 @@
                                 <div class="exp-row">
                                     <div class="exp-ico ei-p"><i class="ti ti-file"></i></div>
                                     <div class="exp-body">
-                                        <div class="exp-name">Lease Documents</div>
+                                        <div class="exp-topline">
+                                            <div class="exp-name">Lease Documents</div>
+                                            <div class="exp-percent">45% of total</div>
+                                        </div>
                                         <div class="exp-bar">
                                             <div class="ebf ebf-p" style="width:45%"></div>
                                         </div>
