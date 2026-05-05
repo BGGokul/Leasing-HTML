@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <title>New Building Registration</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <!-- Tom Select CSS -->
+    <link href="./assets/css/tom-select.css" rel="stylesheet" />
+    <!-- Litepicker CSS -->
+    <link rel="stylesheet" href="./assets/css/litepicker.css" />
+    <!-- Slim Select CSS -->
+    <link rel="stylesheet" href="./assets/css/slimselect.min.css">
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-primary text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-primary fw-bold">LM</div>
+                    <span class="logo-text fw-semibold fs-3"> Leasing Management </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-5 fw-semibold"> Leasing </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Sub Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OwnerMaster.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Owner Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Operator Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./TenantMaster.html">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./UnitMaster.html">
+                                <i class="ti ti-building-community fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-primary text-white">A</div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">Admin User</div>
+                            <div class="text-muted small">Administrator</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content">
+                <div class="p-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md">
+                                    <div class="d-flex align-items-center">
+                                        <span class="avatar bg-primary text-white me-3">
+                                            <i class="ti ti-building fs-2"></i>
+                                        </span>
+                                        <div>
+                                            <h3 class="page-title mb-0 fw-bold">
+                                                New Building Registration
+                                            </h3>
+                                            <div class="text-muted fs-5">
+                                                Add new building registration data
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-0 mt-3 d-md-none" />
+                                <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="./index.html" class="text-decoration-none text-secondary">
+                                                    <i class="ti ti-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item">Leasing</li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                New Building Registration
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-primary d-flex align-items-center">
+                            <i class="ti ti-building fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Building Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row d-flex flex-wrap align-items-stretch">
+                                <div class="col-lg-9 col-md-12">
+                                    <div class="row gy-2">
+                                        <div class="col-md-4">
+                                            <label class="form-label">Building ID</label>
+                                            <input type="text" class="form-control" value="BLDG-2026-00001" disabled>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <label class="form-label">Building Name <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Property Type</label>
+                                            <select id="b_propertyType">
+                                                <option value="">Select</option>
+                                                <option>Residential</option>
+                                                <option>Commercial</option>
+                                                <option>Mixed Use</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Property Usage Type</label>
+                                            <select id="b_usageType">
+                                                <option value="">Select</option>
+                                                <option>Freehold</option>
+                                                <option>Leasehold</option>
+                                                <option>Musataha</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Community</label>
+                                            <select id="b_community">
+                                                <option value="">Select</option>
+                                                <option>Ambiga Annanagar Community</option>
+                                                <option>Palm Jumeirah</option>
+                                                <option>Downtown Dubai</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Owner Type</label>
+                                            <select id="b_ownerType">
+                                                <option value="">Select</option>
+                                                <option>Individual</option>
+                                                <option>Company</option>
+                                                <option>Government</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Owner Name</label>
+                                            <select id="b_ownerName">
+                                                <option value="">Select</option>
+                                                <option>Ahmed Al Mansoori</option>
+                                                <option>Mohammed Al Rashid</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Phone</label>
+                                            <input type="text" class="form-control" placeholder="Phone number">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Email</label>
+                                            <input type="email" class="form-control" placeholder="Email address">
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Country</label>
+                                            <select id="b_country">
+                                                <option value="">Select</option>
+                                                <option>United Arab Emirates</option>
+                                                <option>India</option>
+                                                <option>Saudi Arabia</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Emirate / State / Region</label>
+                                            <select id="b_emirate">
+                                                <option value="">Select</option>
+                                                <option>Abu Dhabi</option>
+                                                <option>Dubai</option>
+                                                <option>Sharjah</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">City</label>
+                                            <select id="b_city">
+                                                <option value="">Select</option>
+                                                <option>Dubai</option>
+                                                <option>Abu Dhabi</option>
+                                                <option>Sharjah</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <label class="form-label">Makani Number</label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="form-label">Address</label>
+                                            <textarea rows="2" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Building Logo -->
+                                <div class="col-lg-3 col-md-12 mt-2 mt-lg-0">
+                                    <div class="card text-center h-100">
+                                        <div class="card-body">
+                                            <img id="b_logoPreview" src="./assets/img/upload-image.jpg"
+                                                class="rounded img-fluid">
+                                        </div>
+                                        <div class="card-footer bg-transparent py-1">
+                                            <div class="row d-flex flex-nowrap justify-content-between">
+                                                <label class="btn btn-primary btn-sm w-auto">
+                                                    <i class="ti ti-photo me-1"></i> Building Logo
+                                                    <input type="file" id="b_logoInput" hidden accept="image/*"
+                                                        onchange="previewLogo('b_logoInput','b_logoPreview','b_logoDeleteBtn')">
+                                                </label>
+                                                <button type="button" id="b_logoDeleteBtn"
+                                                    class="btn btn-danger btn-sm w-auto" disabled
+                                                    onclick="removeLogo('b_logoInput','b_logoPreview','b_logoDeleteBtn')">
+                                                    <i class="ti ti-trash"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4.4 Floors -->
+                    <div class="card mb-3">
+                        <div class="card-header card-cyan d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-layers-intersect fs-2 me-2"></i>
+                                <h3 class="card-title mb-0 fw-semibold">Floors</h3>
+                            </div>
+                            <button class="btn btn-light btn-sm" onclick="addFloorRow()">
+                                <i class="ti ti-plus"></i> Add Floor
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped align-middle">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th style="width:220px">Floor Label</th>
+                                            <th>Floor Area</th>
+                                            <th>Unit</th>
+                                            <th>Floor Plan</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="floorBody">
+                                        <tr>
+                                            <td>
+                                                <select class="form-select form-select-sm">
+                                                    <option value="">Select Floor</option>
+                                                    <option>Basement 2</option>
+                                                    <option>Basement 1</option>
+                                                    <option>Mezzanine</option>
+                                                    <option>Ground</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>Roof</option>
+                                                    <option>Penthouse</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control form-control-sm"
+                                                    placeholder="Area"></td>
+                                            <td>
+                                                <select class="form-select form-select-sm">
+                                                    <option>Sq Feet</option>
+                                                    <option>Sq Meter</option>
+                                                    <option>Sq Yard</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                                                    Upload Plan<input type="file" hidden
+                                                        onchange="handleRowUpload(this)">
+                                                </label>
+                                            </td>
+                                            <td class="text-center"><button class="btn btn-outline-danger btn-sm"
+                                                    onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Building Approvals / Licenses for Building -->
+                    <div class="card mb-3">
+                        <div class="card-header card-purple d-flex justify-content-between align-items-center">
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-license fs-2 me-2"></i>
+                                <h3 class="card-title mb-0 fw-semibold">Building Approvals / Licenses</h3>
+                            </div>
+                            <button class="btn btn-light btn-sm" onclick="addApprovalRow('b_approvalBody')">
+                                <i class="ti ti-plus"></i> Add Row
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped align-middle">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Approval Type</th>
+                                            <th>Title</th>
+                                            <th>Issue Date</th>
+                                            <th>Expiry Date</th>
+                                            <th>Remarks</th>
+                                            <th>Upload</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="b_approvalBody">
+                                        <tr>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option value="">Select</option>
+                                                    <option>Building Permit</option>
+                                                    <option>Occupancy Certificate</option>
+                                                    <option>Fire Safety Certificate</option>
+                                                    <option>Other</option>
+                                                </select></td>
+                                            <td><input class="form-control form-control-sm" placeholder="Title">
+                                            </td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><input class="form-control form-control-sm" placeholder="Remarks">
+                                            </td>
+                                            <td><label
+                                                    class="btn btn-outline-primary btn-sm w-100 upload-btn">Upload<input
+                                                        type="file" hidden onchange="handleRowUpload(this)"></label>
+                                            </td>
+                                            <td class="text-center"><button class="btn btn-outline-danger btn-sm"
+                                                    onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div><!-- Remarks -->
+                    <div class="col-12 mb-3">
+                        <label class="form-label">Remarks</label>
+                        <textarea rows="3" class="form-control"></textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-outline-secondary me-3" href="./UnitMaster.html"><i
+                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
+                        <button class="btn btn-warning me-3"><i class="ti ti-notes fs-3 me-1"></i>Save</button>
+                        <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
+                    </div>
+                </div>
+                <!-- Footer -->
+                <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
+                    <div class="text-dark fw-medium text-center">
+                        © 2026 Leasing Management System
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+    <!-- Tom Select JS -->
+    <script src="./assets/scripts/tom-select.complete.min.js"></script>
+    <!-- Litepicker JS -->
+    <script src="./assets/scripts/litepicker.js"></script>
+    <!-- Slim Select JS -->
+    <script src="./assets/scripts/slimselect.min.js"></script>
+    <script>
+        /* ===================== FIXED FILE UPLOAD ===================== */
+        function handleFixedUpload(input) {
+            const fileBox = input.closest(".file-box");
+            const fileName = fileBox.querySelector(".file-name");
+            const icon = fileBox.querySelector(".action-icon");
+            if (input.files.length > 0) {
+                const file = input.files[0];
+                fileName.textContent = input.multiple && input.files.length > 1
+                    ? input.files.length + ' files selected'
+                    : file.name;
+                fileName.classList.remove("text-muted");
+                const fileURL = URL.createObjectURL(file);
+                input.dataset.fileUrl = fileURL;
+                icon.classList.remove("ti-upload", "text-primary");
+                icon.classList.add("ti-eye-check", "text-teal");
+                icon.onclick = function () { window.open(input.dataset.fileUrl, "_blank"); };
+            }
+        }
+        function resetFixedUpload(icon) {
+            const fileBox = icon.closest(".file-box");
+            const fileName = fileBox.querySelector(".file-name");
+            const input = fileBox.querySelector("input[type='file']");
+            const actionIcon = fileBox.querySelector(".action-icon");
+            input.value = "";
+            fileName.textContent = "No file selected";
+            fileName.classList.add("text-muted");
+            actionIcon.classList.remove("ti-eye-check", "text-teal");
+            actionIcon.classList.add("ti-upload", "text-primary");
+            actionIcon.onclick = null;
+        }
+
+        /* ===================== TABLE ROW UPLOAD ===================== */
+        function handleRowUpload(input) {
+            const label = input.closest("label.upload-btn");
+            if (input.files.length > 0) {
+                label.childNodes[0].textContent = input.files[0].name.substring(0, 20);
+            }
+        }
+
+        /* ===================== ADD APPROVAL ROW ===================== */
+        function addApprovalRow(tbodyId) {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+    <td><select class="form-select form-select-sm">
+            <option value="">Select</option>
+            <option>Building Permit</option>
+            <option>Occupancy Certificate</option>
+            <option>Fire Safety Certificate</option>
+            <option>Environmental Clearance</option>
+            <option>Other</option>
+        </select></td>
+    <td><input class="form-control form-control-sm" placeholder="Title"></td>
+    <td><input type="date" class="form-control form-control-sm"></td>
+    <td><input type="date" class="form-control form-control-sm"></td>
+    <td><input class="form-control form-control-sm" placeholder="Remarks"></td>
+    <td><label class="btn btn-outline-primary btn-sm w-100 upload-btn">Upload<input type="file" hidden
+                onchange="handleRowUpload(this)"></label></td>
+    <td class="text-center"><button class="btn btn-outline-danger btn-sm" onclick="this.closest('tr').remove()"><i
+                class="ti ti-trash"></i></button></td>
+    `;
+            document.getElementById(tbodyId).appendChild(tr);
+        }
+
+        /* ===================== ADD LEGAL ATTACHMENT ROW ===================== */
+        function addLegalRow(tbodyId) {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+    <td><select class="form-select form-select-sm">
+            <option>Title Deed</option>
+            <option>Building Plan</option>
+            <option>Affection Plan</option>
+            <option>POA</option>
+            <option>Insurance</option>
+            <option>Other</option>
+        </select></td>
+    <td><input class="form-control form-control-sm"></td>
+    <td><input type="date" class="form-control form-control-sm"></td>
+    <td><input class="form-control form-control-sm"></td>
+    <td><label class="btn btn-outline-primary btn-sm w-100 upload-btn">Upload<input type="file" hidden
+                onchange="handleRowUpload(this)"></label></td>
+    <td><select class="form-select form-select-sm">
+            <option>Valid</option>
+            <option>Expired</option>
+        </select></td>
+    <td class="text-center"><button class="btn btn-outline-danger btn-sm" onclick="this.closest('tr').remove()"><i
+                class="ti ti-trash"></i></button></td>
+    `;
+            document.getElementById(tbodyId).appendChild(tr);
+        }
+
+        /* ===================== ADD FLOOR ROW ===================== */
+        function addFloorRow() {
+            const tr = document.createElement("tr");
+            tr.innerHTML = `
+    <td>
+        <select class="form-select form-select-sm">
+            <option value="">Select Floor</option>
+            <option>Basement 2</option>
+            <option>Basement 1</option>
+            <option>Mezzanine</option>
+            <option>Ground</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>Roof</option>
+            <option>Penthouse</option>
+        </select>
+    </td>
+    <td><input type="text" class="form-control form-control-sm" placeholder="Area"></td>
+    <td><select class="form-select form-select-sm">
+            <option>Sq Feet</option>
+            <option>Sq Meter</option>
+            <option>Sq Yard</option>
+        </select></td>
+    <td><label class="btn btn-outline-primary btn-sm w-100 upload-btn">Upload Plan<input type="file" hidden
+                onchange="handleRowUpload(this)"></label></td>
+    <td class="text-center"><button class="btn btn-outline-danger btn-sm" onclick="this.closest('tr').remove()"><i
+                class="ti ti-trash"></i></button></td>
+    `;
+            document.getElementById("floorBody").appendChild(tr);
+        }
+
+        /* ===================== LOGO PREVIEW ===================== */
+        function previewLogo(inputId, previewId, btnId) {
+            const file = document.getElementById(inputId).files[0];
+            const preview = document.getElementById(previewId);
+            const btn = document.getElementById(btnId);
+            if (file && preview) {
+                preview.src = URL.createObjectURL(file);
+                if (btn) btn.disabled = false;
+            }
+        }
+        function removeLogo(inputId, previewId, btnId) {
+            const input = document.getElementById(inputId);
+            const preview = document.getElementById(previewId);
+            const btn = document.getElementById(btnId);
+            if (preview) preview.src = "./assets/img/upload-image.jpg";
+            if (input) input.value = "";
+            if (btn) btn.disabled = true;
+        }
+
+        /* ===================== INIT (SlimSelect + Litepicker) ===================== */
+        document.addEventListener("DOMContentLoaded", function () {
+            const ssIds = ['b_communityType',
+                'b_propertyType', 'b_usageType', 'b_community', 'b_ownerType', 'b_ownerName',
+                'b_country', 'b_emirate', 'b_city'
+            ];
+            ssIds.forEach(function (id) {
+                const el = document.getElementById(id);
+                if (el && typeof SlimSelect !== 'undefined') new SlimSelect({ select: '#' + id });
+            });
+
+            const amenitiesEl = document.getElementById('c_amenities');
+            if (amenitiesEl && typeof SlimSelect !== 'undefined') {
+                new SlimSelect({ select: '#c_amenities', settings: { allowDeselect: true, closeOnSelect: false } });
+            }
+
+            const dateIds = [
+                '#c_passportExpiry', '#c_emiratesExpiry', '#c_bldgCompExpiry', '#c_civilExpiry',
+                '#c_insuranceExpiry', '#u_occupancyDate'
+            ];
+            dateIds.forEach(function (id) {
+                const el = document.querySelector(id);
+                if (el && typeof Litepicker !== 'undefined') {
+                    new Litepicker({ element: el, format: "DD-MM-YYYY", singleMode: true });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
