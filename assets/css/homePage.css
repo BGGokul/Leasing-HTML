@@ -286,11 +286,6 @@
     margin-bottom: 0;
 }
 
-.exp-percent {
-    font-size: 0.68rem;
-    color: #64748b;
-    font-weight: 600;
-}
 
 .exp-bar {
     height: 6px;
@@ -401,9 +396,9 @@
 .expiry-hub {
     display: grid;
     /* Forces 7 equal columns on desktop */
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    background: #cedeed;
+    background: hsl(216deg 94.59% 92.75% / 43%);
     padding: 15px;
     border-radius: 16px;
     border: 1px solid rgba(226, 232, 240, 0.8);
