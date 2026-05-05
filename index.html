@@ -16,7 +16,7 @@
         :root {
             --blue: #3b6cf5;
             --blue-d: #2a56d9;
-            --blue-lt: #eef2ff;
+            --blue-lt: #d4ddfc;
             --blue-glow: rgba(59, 108, 245, 0.12);
             --teal: #0ea5a0;
             --teal-lt: #ecfdf5;
@@ -40,6 +40,15 @@
             --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
             --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
             --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+            --border: #e5e7eb;
+            --surface: #f1f5f9;
+            --ink: #111827;
+            --muted-lt: #6b7280;
+            --blue: #0284c7;
+            --blue-lt: #e0f2fe;
+            --blue-glow: #bae6fd;
+            --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+            --r-sm: 8px;
         }
 
         /* Custom Task Card Styles */
@@ -200,6 +209,576 @@
             background: #f5f3ff;
             color: #6d28d9;
         }
+
+        .banner-sep {
+            width: 1px;
+            height: 44px;
+            background: rgba(99, 102, 241, 0.2);
+            flex-shrink: 0;
+        }
+
+        .banner-stat-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            color: #6b7280;
+            margin-bottom: 2px;
+        }
+
+        .banner-occ-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            font-weight: 700;
+            color: #3b6cf5;
+            margin-bottom: 5px;
+        }
+
+        .bsv-blue {
+            color: #3b6cf5;
+        }
+
+        .banner-stat-value {
+            font-size: 1.6rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .bsv-green {
+            color: #10b981;
+        }
+
+        .bsv-orange {
+            color: #f97316;
+        }
+
+        .dash-banner::after {
+            content: '';
+            position: absolute;
+            right: -40px;
+            top: -40px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.07);
+            pointer-events: none;
+        }
+
+        /* ── STAT PILLS ── */
+        .stat-pill {
+            border-radius: 14px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.11);
+            transition: transform 0.18s, box-shadow 0.18s;
+            height: 100%;
+        }
+
+        .stat-pill:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+        }
+
+        .sp-blue {
+            background: linear-gradient(135deg, #3b6cf5 0%, #2563eb 100%);
+        }
+
+        .sp-red {
+            background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+        }
+
+        .sp-green {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+
+        /* decorative blobs */
+        .sp-blob {
+            position: absolute;
+            right: -18px;
+            top: -18px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.13);
+            pointer-events: none;
+        }
+
+        .sp-blob2 {
+            position: absolute;
+            right: 26px;
+            top: -28px;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            pointer-events: none;
+        }
+
+        .sp-icon-box {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            background: rgba(255, 255, 255, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .sp-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .sp-label {
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.07em;
+            text-transform: uppercase;
+            opacity: 0.82;
+            margin-bottom: 1px;
+        }
+
+        .sp-value {
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.15;
+        }
+
+        /* CARD */
+        .expiry-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .expiry-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border-bottom: 1px solid var(--border);
+            background: var(--blue-lt);
+        }
+
+        .title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--blue);
+            flex: 1;
+        }
+
+        .badge-count {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 99px;
+            background: var(--blue-glow);
+            color: var(--blue);
+        }
+
+        .expiry-card-body {
+            padding: 10px 14px;
+        }
+
+        /* ROW */
+        .exp-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            margin-top: 5px;
+            background: #f9fafb;
+            border-radius: 8px;
+            transition: all 0.6s ease;
+            border: none;
+            border: 1px solid #f9fafb
+        }
+
+        .exp-row:hover {
+            border: 1px solid var(--muted)
+        }
+
+        .exp-row:hover .exp-ico {
+            transform: scale(1.2);
+        }
+
+        .exp-ico {
+            width: 25px;
+            height: 25px;
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .exp-body {
+            flex: 1;
+        }
+
+        .exp-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .exp-bar {
+            height: 5px;
+            background: var(--surface);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .ebf {
+            height: 100%;
+            border-radius: 99px;
+        }
+
+        .exp-num {
+            font-weight: 800;
+            font-size: 1rem;
+        }
+
+        /* COLORS */
+        .ei-r {
+            background: #fee2e2;
+            color: #dc2626;
+        }
+
+        .ei-a {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .ei-v {
+            background: #ede9fe;
+            color: #7c3aed;
+        }
+
+        .ei-g {
+            background: #dcfce7;
+            color: #16a34a;
+        }
+
+        .ei-o {
+            background: #ffedd5;
+            color: #ea580c;
+        }
+
+        .ei-p {
+            background: #fce7f3;
+            color: #db2777;
+        }
+
+        .ebf-r {
+            background: #dc2626;
+        }
+
+        .ebf-a {
+            background: #0284c7;
+        }
+
+        .ebf-v {
+            background: #7c3aed;
+        }
+
+        .ebf-g {
+            background: #16a34a;
+        }
+
+        .ebf-o {
+            background: #ea580c;
+        }
+
+        .ebf-p {
+            background: #db2777;
+        }
+
+        .en-r {
+            color: #dc2626;
+        }
+
+        .en-a {
+            color: #0284c7;
+        }
+
+        .en-v {
+            color: #7c3aed;
+        }
+
+        .en-g {
+            color: #16a34a;
+        }
+
+        .en-o {
+            color: #ea580c;
+        }
+
+        .en-p {
+            color: #db2777;
+        }
+
+        .expiry-table {
+            font-size: 0.8rem;
+        }
+
+        .table-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 40px;
+            align-items: center;
+            padding: 6px 0;
+        }
+
+        .bar {
+            height: 5px;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .bar i {
+            display: block;
+            height: 100%;
+            background: #6366f1;
+        }
+
+        .slabel {
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--muted-lt);
+        }
+
+        /* ─── Expiry Card ─── */
+        .exp-card {
+            background: #fff;
+            border-radius: var(--r);
+            border: 1px solid var(--border);
+            padding: 15px 20px;
+            transition: transform 0.22s cubic-bezier(.4, 0, .2, 1), box-shadow 0.22s cubic-bezier(.4, 0, .2, 1);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .exp-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+
+        .exp-head {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            margin-bottom: 14px;
+        }
+
+        .exp-ico {
+            width: 30px;
+            height: 30px;
+            border-radius: var(--r-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .ei-r {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            color: #ef4444;
+        }
+
+        .ei-a {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            color: #d97706;
+        }
+
+        .ei-v {
+            background: linear-gradient(135deg, #f5f3ff, #ede9fe);
+            color: #8b5cf6;
+        }
+
+        .exp-title {
+            font-size: 0.675rem;
+            font-weight: 700;
+            color: var(--ink);
+            flex: 1;
+            line-height: 1.35;
+        }
+
+        .exp-num {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .en-r {
+            color: var(--red);
+        }
+
+        .en-a {
+            color: var(--amber);
+        }
+
+        .en-v {
+            color: var(--violet);
+        }
+
+        .exp-bar-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .exp-bar {
+            flex: 1;
+            height: 6px;
+            border-radius: 99px;
+            background: var(--surface);
+            overflow: hidden;
+        }
+
+        .ebf {
+            height: 100%;
+            border-radius: 99px;
+            transition: width 1s cubic-bezier(.4, 0, .2, 1);
+        }
+
+        .ebf-r {
+            background: linear-gradient(90deg, #fca5a5, #ef4444);
+        }
+
+        .ebf-a {
+            background: linear-gradient(90deg, #fcd34d, #d97706);
+        }
+
+        .ebf-v {
+            background: linear-gradient(90deg, #c4b5fd, #8b5cf6);
+        }
+
+        .exp-pct {
+            font-size: 0.65rem;
+            color: var(--muted-lt);
+            white-space: nowrap;
+        }
+
+        .exp-warn {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.66rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 99px;
+            margin-top: 11px;
+        }
+
+        .ew-r {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .ew-a {
+            background: #fffbeb;
+            color: #b45309;
+        }
+
+        .ew-v {
+            background: #f5f3ff;
+            color: #6d28d9;
+        }
+
+        .expiry-hub {
+            display: grid;
+            /* Forces 7 equal columns on desktop */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 16px;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .hub-item {
+            background: #ffffff;
+            padding: 12px 8px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #f1f5f9;
+            transition: all 0.2s ease;
+            margin: 0;
+        }
+
+        /* Mobile Responsiveness: Switches from 7 columns to a balanced grid */
+        @media (max-width: 1200px) {
+            .expiry-hub {
+                grid-template-columns: repeat(4, 1fr);
+                /* 4 items per row */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .expiry-hub {
+                grid-template-columns: repeat(2, 1fr);
+                /* 2 items per row on mobile */
+            }
+        }
+
+        .hub-item:hover {
+            border-color: #3b6cf5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .hub-label {
+            display: block;
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--muted-lt);
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        .hub-value {
+            font-size: 1.2rem;
+            font-weight: 900;
+            line-height: 1;
+            display: block;
+        }
+
+        .hub-total {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #94a3b8;
+        }
+
+        /* Status Indicator Ring */
+        .status-ring {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin: 6px auto 0;
+        }
     </style>
 </head>
 
@@ -275,26 +854,26 @@
                     </div>
                 </div>
             </header>
-            <main class="content p-4">
-                <h3 class="h2">Welcome back, Admin!</h3>
-                <!-- 1. BRANDING & UNIT PERFORMANCE HEADER -->
-                <div class="card border-0 shadow-sm mb-4"
-                    style="background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); border-radius: 16px; overflow: hidden;">
-                    <div class="card-body p-4 text-white">
+            <main class="content px-4 py-2">
+                <h3 class="h3">Welcome back, Admin!</h3>
+                <div class="card border-0 shadow-sm mb-3 dash-banner"
+                    style="background: linear-gradient(120deg, #dbeafe 0%, #e0e7ff 55%, #ede9fe 100%); border-radius: 16px; overflow: hidden;">
+                    <div class="card-body p-3 text-white">
                         <div class="row align-items-center">
                             <!-- Branding Section -->
                             <div class="col-xl-5 col-lg-5 col-md-12 mb-3 mb-xl-0 border-end-xl border-white-10">
                                 <div class="d-flex align-items-center gap-3">
                                     <!-- The container dictates the size -->
                                     <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
-                                        style="width: 100%; height: 80px;">
+                                        style="width: 100%; height: 70px;">
 
                                         <!-- The image simply fills what it is given -->
                                         <img src="./assets/img/client-logo.png" alt="Logo"
                                             style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                     </div>
+                                    <div class="banner-sep"></div>
                                     <div class="bg-white p-2 rounded-3 shadow-sm d-flex align-items-center justify-content-center"
-                                        style="width: 100%; height: 80px;">
+                                        style="width: 100%; height: 70px;">
                                         <img src="./assets/img/leasing-management-logo.png" alt="Logo"
                                             style="max-width: 100%; max-height: 100%; object-fit: contain;">
                                     </div>
@@ -304,25 +883,28 @@
                             <!-- Unit Pulse Section -->
                             <div class="col-lg-7 col-md-12">
                                 <div class="row d-flex g-3 align-items-center justify-content-between">
-                                    <div class="col-sm-3 col-4 text-center">
-                                        <div class="text-uppercase small text-dark fw-bold">Total Units</div>
-                                        <div class="h2 fw-bold mb-0 text-dark">1,240</div>
+                                    <div class="col-sm-3 col-4 text-center border-end border-1">
+                                        <div class="banner-stat-label">Total Units</div>
+                                        <div class="banner-stat-value bsv-blue">1,240</div>
                                     </div>
-                                    <div class="col-sm-3 col-4 text-center">
-                                        <div class="text-uppercase small fw-bold text-green">Occupied</div>
-                                        <div class="h2 fw-bold mb-0 text-green">1,100</div>
+                                    <div class="col-sm-3 col-4 text-center border-end border-1">
+                                        <div class="banner-stat-label">Occupied</div>
+                                        <div class="banner-stat-value bsv-green">1,100</div>
                                     </div>
-                                    <div class="col-md-3 col-4 text-center">
-                                        <div class="text-uppercase small fw-bold text-orange">Vacant</div>
-                                        <div class="h2 fw-bold mb-0 text-orange">140</div>
+                                    <div class="col-md-3 col-4 text-center border-end border-1">
+                                        <div class="banner-stat-label">Vacant</div>
+                                        <div class="banner-stat-value bsv-orange">140</div>
                                     </div>
                                     <div class="col-md-3 col-12">
                                         <div class="d-flex justify-content-between small mb-1 opacity-75">
                                             <span class="text-dark">Occupancy</span>
-                                            <span class="text-dark">88.7%</span>
+                                            <span class="text-dark">68.7%</span>
                                         </div>
-                                        <div class="progress" style="height: 8px; background: rgba(255,255,255,0.1);">
-                                            <div class="progress-bar bg-green" style="width: 88.7%"></div>
+                                        <div class="progress" style="height: 8px; background: rgb(164 188 248 / 50%);">
+                                            <div class="progress-bar bg-green" style="width: 68.7%;height: 100%;
+    border-radius: 99px;
+    width: 68.7%;
+    background: linear-gradient(90deg, #3b6cf5, #10b981);"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -334,74 +916,103 @@
                 <div class="row g-4">
                     <!-- LEFT: STAKEHOLDER TILES (Colorful & High Contrast) -->
                     <div class="col-xl-8 col-lg-7">
+                        <div class="slabel mb-2">People overview</div>
                         <div class="row g-3 mb-3">
                             <div class="col-md-4">
-                                <div class="card task-card bg-primary-gradient text-white shadow-sm">
-                                    <div class="card-body d-flex align-items-center gap-3 p-3">
-                                        <div class="task-icon-box bg-white text-primary">
-                                            <i class="ti ti-user fs-2"></i>
-                                        </div>
-                                        <div>
-                                            <div class="task-title-small opacity-75">Owners</div>
-                                            <div class="h2 fw-bold mb-0">23</div>
-                                        </div>
+                                <div class="stat-pill sp-blue">
+                                    <div class="sp-blob"></div>
+                                    <div class="sp-blob2"></div>
+                                    <div class="sp-icon-box"><i class="ti ti-user text-white"></i></div>
+                                    <div class="sp-text">
+                                        <div class="sp-label">OWNERS</div>
+                                        <div class="sp-value">456</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <div class="card task-card bg-white shadow-sm">
-                                    <div class="card-body d-flex align-items-center gap-3 p-3">
-                                        <div class="task-icon-box" style="background-color: #fff1f0; color: #ff4d4f;">
-                                            <i class="ti ti-user-cog fs-2"></i>
-                                        </div>
-                                        <div>
-                                            <div class="task-title-small text-muted">Operators</div>
-                                            <div class="h2 fw-bold mb-0">16</div>
-                                        </div>
+                                <div class="stat-pill sp-red">
+                                    <div class="sp-blob"></div>
+                                    <div class="sp-blob2"></div>
+                                    <div class="sp-icon-box"><i class="ti ti-user-cog text-white"></i></div>
+                                    <div class="sp-text">
+                                        <div class="sp-label">OPERATORS</div>
+                                        <div class="sp-value">789</div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Task Completed (White) -->
                             <div class="col-md-4">
-                                <div class="card task-card bg-white shadow-sm">
-                                    <div class="card-body d-flex align-items-center gap-3 p-3">
-                                        <div class="task-icon-box" style="background-color: #f6ffed; color: #52c41a;">
-                                            <i class="ti ti-user-key fs-2"></i>
-                                        </div>
-                                        <div>
-                                            <div class="task-title-small text-muted">Tenants</div>
-                                            <div class="h2 fw-bold mb-0">423</div>
-                                        </div>
+                                <div class="stat-pill sp-green">
+                                    <div class="sp-blob"></div>
+                                    <div class="sp-blob2"></div>
+                                    <div class="sp-icon-box"><i class="ti ti-user-key text-white"></i></div>
+                                    <div class="sp-text">
+                                        <div class="sp-label">TENANTS</div>
+                                        <div class="sp-value">1256</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="slabel mb-1">Documents Expiring in 60 days</div>
+                                <div class="expiry-hub">
 
-                        <!-- Stakeholder Distribution Chart -->
-                        <div class="row row-deck row-cards">
-                            <div class="col-sm-12 col-lg-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="subheader">People &
-                                                Community Distribution</div>
-                                        </div>
-                                        <div id="peoples-chart" class="position-relative chart-sm"
-                                            style="min-height: 40px;"></div>
+                                    <!-- Owner -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Owner Documents</span>
+                                        <span class="hub-value en-r">122</span>
+                                        <span class="hub-total">of 142</span>
+                                        <div class="status-ring ebf-r"></div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12 col-lg-6">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex align-items-center">
-                                            <div class="subheader">People &
-                                                Community Distribution</div>
-                                        </div>
-                                        <div id="monthly-chart" class="position-relative chart-sm"
-                                            style="min-height: 40px;"></div>
+
+                                    <!-- Operator -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Operator Documents</span>
+                                        <span class="hub-value en-a">23</span>
+                                        <span class="hub-total">of 38</span>
+                                        <div class="status-ring ebf-a"></div>
                                     </div>
+
+                                    <!-- Tenant -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Tenant Documents</span>
+                                        <span class="hub-value en-v">123</span>
+                                        <span class="hub-total">of 319</span>
+                                        <div class="status-ring ebf-v"></div>
+                                    </div>
+
+                                    <!-- Community -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Community Documents</span>
+                                        <span class="hub-value en-g">123</span>
+                                        <span class="hub-total">of 319</span>
+                                        <div class="status-ring ebf-g"></div>
+                                    </div>
+
+                                    <!-- Building -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Building Documents</span>
+                                        <span class="hub-value en-o">12</span>
+                                        <span class="hub-total">of 319</span>
+                                        <div class="status-ring ebf-o"></div>
+                                    </div>
+
+                                    <!-- Unit -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Unit Documents</span>
+                                        <span class="hub-value en-v">45</span>
+                                        <span class="hub-total">of 319</span>
+                                        <div class="status-ring ebf-v"></div>
+                                    </div>
+
+                                    <!-- Lease -->
+                                    <div class="hub-item">
+                                        <span class="hub-label">Lease Documents</span>
+                                        <span class="hub-value en-p">67</span>
+                                        <span class="hub-total">of 74</span>
+                                        <div class="status-ring ebf-p"></div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -409,54 +1020,89 @@
 
                     <!-- RIGHT: DOCUMENT EXPIRY & TASKS -->
                     <div class="col-xl-4 col-lg-5">
-                        <div class="card border-0 shadow-sm mb-4">
-                            <div class="card-header bg-blue-lt py-2 border-0">
-                                <h4 class="card-title fs-4 fw-bold text-blue small">Critical
-                                    Document Expiries
-                                </h4>
+                        <div class="expiry-card">
+                            <div class="expiry-card-header">
+                                <i class="ti ti-file-alert fs-3" style="color:var(--blue)"></i>
+                                <span class="title">Document Expired</span>
+                                <span class="badge-count">44 Total</span>
                             </div>
-                            <div class="card-body p-3">
-                                <div class="mb-2">
-                                    <div class="exp-head">
-                                        <div class="exp-ico ei-r"><i class="ti ti-file-alert"></i></div>
-                                        <div class="exp-title">Owner Documents Expired<div class="exp-bar-row">
-                                                <div class="exp-bar">
-                                                    <div class="ebf ebf-r" style="width:8%"></div>
-                                                </div>
-                                                <div class="exp-pct">8 of 142</div>
-                                            </div>
+
+                            <div class="expiry-card-body pt-0">
+
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-r"><i class="ti ti-user"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Owner Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-r" style="width:25%"></div>
                                         </div>
-                                        <div class="exp-num en-r">12</div>
                                     </div>
+                                    <div class="exp-num en-r">12</div>
                                 </div>
-                                <hr class="my-4">
-                                <div class="mb-2">
-                                    <div class="exp-head">
-                                        <div class="exp-ico ei-a"><i class="ti ti-file-alert"></i></div>
-                                        <div class="exp-title">Operator Documents Expired<div class="exp-bar-row">
-                                                <div class="exp-bar">
-                                                    <div class="ebf ebf-a" style="width:13%"></div>
-                                                </div>
-                                                <div class="exp-pct">5 of 38</div>
-                                            </div>
+
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-a"><i class="ti ti-user-cog"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Operator Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-a" style="width:15%"></div>
                                         </div>
-                                        <div class="exp-num en-a">5</div>
                                     </div>
+                                    <div class="exp-num en-a">5</div>
                                 </div>
-                                <hr class="my-4">
-                                <div class="mb-2">
-                                    <div class="exp-head">
-                                        <div class="exp-ico ei-v"><i class="ti ti-file-alert"></i></div>
-                                        <div class="exp-title">Tenant Documents Expired<div class="exp-bar-row">
-                                                <div class="exp-bar">
-                                                    <div class="ebf ebf-v" style="width:8%"></div>
-                                                </div>
-                                                <div class="exp-pct">27 of 319</div>
-                                            </div>
+
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-v"><i class="ti ti-user-key"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Tenant Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-v" style="width:60%"></div>
                                         </div>
-                                        <div class="exp-num en-v">27</div>
                                     </div>
+                                    <div class="exp-num en-v">27</div>
                                 </div>
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-g"><i class="ti ti-building-skyscraper"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Community Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-g" style="width:40%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="exp-num en-g">13</div>
+                                </div>
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-o"><i class="ti ti-building-store"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Buliding Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-o" style="width:60%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="exp-num en-o">19</div>
+                                </div>
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-v"><i class="ti ti-door"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Unit Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-v" style="width:55%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="exp-num en-v">12</div>
+                                </div>
+
+                                <div class="exp-row">
+                                    <div class="exp-ico ei-p"><i class="ti ti-file"></i></div>
+                                    <div class="exp-body">
+                                        <div class="exp-name">Lease Documents</div>
+                                        <div class="exp-bar">
+                                            <div class="ebf ebf-p" style="width:45%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="exp-num en-p">9</div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -565,97 +1211,132 @@
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            window.ApexCharts &&
-                new ApexCharts(document.getElementById("monthly-chart"), {
-                    chart: {
-                        type: "area",
-                        fontFamily: "inherit",
-                        height: 170,
-                        sparkline: {
-                            enabled: true,
-                        },
-                        animations: {
-                            enabled: false,
-                        },
-                    },
-                    dataLabels: {
-                        enabled: false,
-                    },
-                    fill: {
-                        colors: ["#3b82f6"],
-                        type: "solid",
-                    },
-                    stroke: {
-                        width: 2,
-                        lineCap: "round",
-                        curve: "smooth",
-                    },
-                    series: [
-                        {
-                            name: "Profits",
-                            data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67],
-                        },
+            var options = {
+                series: [{
+                    data: [21, 22, 10, 28]
+                }],
+                chart: {
+                    height: 170,
+                    type: 'bar',
+                },
+                plotOptions: {
+                    bar: {
+                        columnWidth: '25%',
+                        distributed: true,
+                    }
+                },
+                dataLabels: {
+                    enabled: true
+                },
+                legend: {
+                    show: false
+                },
+                xaxis: {
+                    categories: [
+                        ['Owners', 'Operators'],
+                        ['Tenants', 'Communities']
                     ],
-                    tooltip: {
-                        theme: "dark",
-                    },
-                    grid: {
-                        strokeDashArray: 4,
-                    },
-                    xaxis: {
-                        labels: {
-                            padding: 0,
-                        },
-                        tooltip: {
-                            enabled: false,
-                        },
-                        axisBorder: {
-                            show: false,
-                        },
-                        type: "datetime",
-                    },
-                    yaxis: {
-                        labels: {
-                            padding: 4,
-                        },
-                    },
-                    labels: [
-                        "2020-06-21",
-                        "2020-06-22",
-                        "2020-06-23",
-                        "2020-06-24",
-                        "2020-06-25",
-                        "2020-06-26",
-                        "2020-06-27",
-                        "2020-06-28",
-                        "2020-06-29",
-                        "2020-06-30",
-                        "2020-07-01",
-                        "2020-07-02",
-                        "2020-07-03",
-                        "2020-07-04",
-                        "2020-07-05",
-                        "2020-07-06",
-                        "2020-07-07",
-                        "2020-07-08",
-                        "2020-07-09",
-                        "2020-07-10",
-                        "2020-07-11",
-                        "2020-07-12",
-                        "2020-07-13",
-                        "2020-07-14",
-                        "2020-07-15",
-                        "2020-07-16",
-                        "2020-07-17",
-                        "2020-07-18",
-                        "2020-07-19",
-                        "2020-07-20",
-                    ],
-                    colors: ["color-mix(in srgb, transparent, var(--tblr-primary) 100%)"],
-                    legend: {
-                        show: false,
-                    },
-                }).render();
+                    labels: {
+                        style: {
+                            fontSize: '12px'
+                        }
+                    }
+                }
+            };
+
+            var chart = new ApexCharts(document.querySelector("#monthly-chart"), options);
+            chart.render();
+            // window.ApexCharts &&
+            //     new ApexCharts(document.getElementById("monthly-chart"), {
+            //         chart: {
+            //             type: "area",
+            //             fontFamily: "inherit",
+            //             height: 170,
+            //             sparkline: {
+            //                 enabled: true,
+            //             },
+            //             animations: {
+            //                 enabled: false,
+            //             },
+            //         },
+            //         dataLabels: {
+            //             enabled: false,
+            //         },
+            //         fill: {
+            //             colors: ["#3b82f6"],
+            //             type: "solid",
+            //         },
+            //         stroke: {
+            //             width: 2,
+            //             lineCap: "round",
+            //             curve: "smooth",
+            //         },
+            //         series: [
+            //             {
+            //                 name: "Profits",
+            //                 data: [37, 35, 44, 28, 36, 24, 65, 31, 37, 39, 62, 51, 35, 41, 35, 27, 93, 53, 61, 27, 54, 43, 19, 46, 39, 62, 51, 35, 41, 67],
+            //             },
+            //         ],
+            //         tooltip: {
+            //             theme: "dark",
+            //         },
+            //         grid: {
+            //             strokeDashArray: 4,
+            //         },
+            //         xaxis: {
+            //             labels: {
+            //                 padding: 0,
+            //             },
+            //             tooltip: {
+            //                 enabled: false,
+            //             },
+            //             axisBorder: {
+            //                 show: false,
+            //             },
+            //             type: "datetime",
+            //         },
+            //         yaxis: {
+            //             labels: {
+            //                 padding: 4,
+            //             },
+            //         },
+            //         labels: [
+            //             "2020-06-21",
+            //             "2020-06-22",
+            //             "2020-06-23",
+            //             "2020-06-24",
+            //             "2020-06-25",
+            //             "2020-06-26",
+            //             "2020-06-27",
+            //             "2020-06-28",
+            //             "2020-06-29",
+            //             "2020-06-30",
+            //             "2020-07-01",
+            //             "2020-07-02",
+            //             "2020-07-03",
+            //             "2020-07-04",
+            //             "2020-07-05",
+            //             "2020-07-06",
+            //             "2020-07-07",
+            //             "2020-07-08",
+            //             "2020-07-09",
+            //             "2020-07-10",
+            //             "2020-07-11",
+            //             "2020-07-12",
+            //             "2020-07-13",
+            //             "2020-07-14",
+            //             "2020-07-15",
+            //             "2020-07-16",
+            //             "2020-07-17",
+            //             "2020-07-18",
+            //             "2020-07-19",
+            //             "2020-07-20",
+            //         ],
+            //         colors: ["color-mix(in srgb, transparent, var(--tblr-primary) 100%)"],
+            //         legend: {
+            //             show: false,
+            //         },
+            //     }).render();
         });
     </script>
 </body>
