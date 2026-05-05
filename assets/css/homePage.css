@@ -1,0 +1,475 @@
+:root {
+    --border: #e5e7eb;
+    --blue: #0284c7;
+    --muted-lt: #9ca3af;
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.05);
+    --r-sm: 8px;
+}
+
+.banner-sep {
+    width: 1px;
+    height: 44px;
+    background: rgba(99, 102, 241, 0.2);
+    flex-shrink: 0;
+}
+
+.banner-stat-label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 2px;
+}
+
+.bsv-blue {
+    color: #3b6cf5;
+}
+
+.banner-stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.bsv-green {
+    color: #10b981;
+}
+
+.bsv-orange {
+    color: #f97316;
+}
+
+.dash-banner::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    top: -50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: rgba(99, 101, 252, 0.07);
+    pointer-events: none;
+}
+
+/* ── STAT PILLS ── */
+.stat-pill {
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.11);
+    transition: transform 0.18s, box-shadow 0.18s;
+    height: 100%;
+}
+
+.stat-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+}
+
+.sp-blue {
+    background: linear-gradient(135deg, #3b6cf5 0%, #2563eb 100%);
+}
+
+.sp-red {
+    background: linear-gradient(135deg, #f43f5e 0%, #e11d48 100%);
+}
+
+.sp-green {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+.sp-purple {
+    background: linear-gradient(135deg, #d76ef5 0%, #8f7afe 100%);
+}
+
+/* decorative blobs */
+.sp-blob {
+    position: absolute;
+    right: -18px;
+    top: -18px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.13);
+    pointer-events: none;
+}
+
+.sp-blob2 {
+    position: absolute;
+    right: 26px;
+    top: -28px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.sp-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, 0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.sp-text {
+    position: relative;
+    z-index: 1;
+}
+
+.sp-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0.82;
+    margin-bottom: 1px;
+}
+
+.sp-value {
+    font-size: 1.65rem;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+/* CARD */
+.expiry-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.expiry-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--border);
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfeff 100%);
+}
+
+.title {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: #075985;
+    flex: 1;
+}
+
+.badge-count {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 99px;
+    background: #bae6fd;
+    color: #0c4a6e;
+}
+
+.exp-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.exp-pill {
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid transparent;
+    text-align: center;
+}
+
+.exp-pill-label {
+    display: block;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.exp-pill-value {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.exp-pill-critical {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+.exp-pill-warning {
+    background: #fffbeb;
+    border-color: #fde68a;
+    color: #b45309;
+}
+
+.exp-pill-stable {
+    background: #ecfeff;
+    border-color: #a5f3fc;
+    color: #0e7490;
+}
+
+.expiry-card-body {
+    padding: 10px 14px;
+}
+
+/* ROW */
+.exp-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    background: #f8fafc;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.exp-row:hover {
+    border-color: #cbd5e1;
+    background: #ffffff;
+    transform: translateY(-1px);
+}
+
+.exp-row:hover .exp-ico {
+    transform: scale(1.1);
+}
+
+.exp-ico {
+    width: 30px;
+    height: 30px;
+    border-radius: var(--r-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 0.9rem;
+}
+
+.exp-body {
+    flex: 1;
+}
+
+.exp-topline {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.exp-name {
+    font-size: 0.73rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0;
+}
+
+.exp-percent {
+    font-size: 0.68rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.exp-bar {
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.ebf {
+    height: 100%;
+    border-radius: 99px;
+}
+
+.exp-num {
+    font-weight: 800;
+    font-size: 1.05rem;
+    min-width: 26px;
+    text-align: right;
+}
+
+/* COLORS */
+.ei-r {
+    background: linear-gradient(135deg, #ffe4e6, #fecdd3);
+    color: #e11d48;
+}
+
+.ei-a {
+    background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+    color: #0284c7;
+}
+
+.ei-v {
+    background: linear-gradient(135deg, #f5f3ff, #ddd6fe);
+    color: #7c3aed;
+}
+
+.ei-g {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+    color: #16a34a;
+}
+
+.ei-o {
+    background: linear-gradient(135deg, #ffedd5, #fed7aa);
+    color: #ea580c;
+}
+
+.ei-p {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+    color: #db2777;
+}
+
+.ebf-r {
+    background: linear-gradient(90deg, #fb7185, #e11d48);
+}
+
+.ebf-a {
+    background: linear-gradient(90deg, #38bdf8, #0284c7);
+}
+
+.ebf-v {
+    background: linear-gradient(90deg, #a78bfa, #7c3aed);
+}
+
+.ebf-g {
+    background: linear-gradient(90deg, #4ade80, #16a34a);
+}
+
+.ebf-o {
+    background: linear-gradient(90deg, #fb923c, #ea580c);
+}
+
+.ebf-p {
+    background: linear-gradient(90deg, #f472b6, #db2777);
+}
+
+.en-r {
+    color: #e11d48;
+}
+
+.en-a {
+    color: #0284c7;
+}
+
+.en-v {
+    color: #7c3aed;
+}
+
+.en-g {
+    color: #16a34a;
+}
+
+.en-o {
+    color: #ea580c;
+}
+
+.en-p {
+    color: #db2777;
+}
+
+.slabel {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted-lt);
+}
+
+.expiry-hub {
+    display: grid;
+    /* Forces 7 equal columns on desktop */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    background: #cedeed;
+    padding: 15px;
+    border-radius: 16px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.hub-item {
+    background: #ffffff;
+    padding: 12px 8px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #f1f5f9;
+    transition: all 0.2s ease;
+    margin: 0;
+}
+
+/* Mobile Responsiveness: Switches from 7 columns to a balanced grid */
+@media (max-width: 1200px) {
+    .expiry-hub {
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 items per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .expiry-hub {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 items per row on mobile */
+    }
+}
+
+.hub-item:hover {
+    border-color: #3b6cf5;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hub-label {
+    display: block;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-lt);
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.hub-value {
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+}
+
+.hub-total {
+    font-size: 0.65rem;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* Status Indicator Ring */
+.status-ring {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin: 6px auto 0;
+}
