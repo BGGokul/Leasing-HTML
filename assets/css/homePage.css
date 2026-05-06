@@ -162,13 +162,13 @@
     gap: 10px;
     padding: 12px 14px;
     border-bottom: 1px solid var(--border);
-    background: linear-gradient(135deg, #f0f9ff 0%, #ecfeff 100%);
+    background: linear-gradient(135deg, #3b6cf5 0%, #2563eb 100%);
+    color: #ffffff;
 }
 
 .title {
     font-size: 0.86rem;
     font-weight: 700;
-    color: #075985;
     flex: 1;
 }
 
@@ -177,7 +177,7 @@
     font-weight: 700;
     padding: 5px 10px;
     border-radius: 99px;
-    background: #bae6fd;
+    background: #ffffff;
     color: #0c4a6e;
 }
 
@@ -390,7 +390,7 @@
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--muted-lt);
+    color: #374151;
 }
 
 .expiry-hub {
@@ -443,7 +443,7 @@
     font-size: 9px;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--muted-lt);
+    color: #374151;
     margin-bottom: 4px;
     font-weight: 600;
 }
