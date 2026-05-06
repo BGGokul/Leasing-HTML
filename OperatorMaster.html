@@ -74,6 +74,10 @@
                                 <i class="ti ti-building-community fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
                             </a>
+                            <a class="nav-link text-white my-3" href="./LeaseMaster.html">
+                                <i class="ti ti-home-dollar fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Lease Master </span>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -170,10 +174,10 @@
                                 </span>
                                 <div>
                                     <div class="h1 mb-0">117</div>
-                                    <div>Total community</div>
+                                    <div>Community</div>
                                 </div>
                             </div>
-                            <i class="ti ti-users bg-icon"></i>
+                            <i class="ti ti-building-community bg-icon"></i>
                         </div>
                     </div>
                     <!-- Total Units -->
@@ -185,7 +189,7 @@
                                 </span>
                                 <div>
                                     <div class="h1 mb-0">250</div>
-                                    <div>Total Units</div>
+                                    <div>Units</div>
                                 </div>
                             </div>
                             <i class="ti ti-building bg-icon"></i>
@@ -1984,15 +1988,15 @@
                         row.innerHTML = `
                             <td class="text-center">${rowIndex + 1}</td>
                             ${record.map((value, index) => {
-                                const col = columns[index];
+                            const col = columns[index];
 
-                                if (col === "documentStatus") {
-                                    const badgeClass = value === "Valid" ? "bg-teal text-teal-fg" : "bg-red text-red-fg";
-                                    return `<td class="text-center col-${col}"><span class="badge ${badgeClass}">${value}</span></td>`;
-                                }
+                            if (col === "documentStatus") {
+                                const badgeClass = value === "Valid" ? "bg-teal text-teal-fg" : "bg-red text-red-fg";
+                                return `<td class="text-center col-${col}"><span class="badge ${badgeClass}">${value}</span></td>`;
+                            }
 
-                                return `<td class="text-center col-${col}">${value}</td>`;
-                            }).join("")}
+                            return `<td class="text-center col-${col}">${value}</td>`;
+                        }).join("")}
                             <td class="text-center col-action">
                                 <div class="d-flex justify-content-center gap-2">
                                     <a class="btn btn-primary btn-sm fs-2"><i class="ti ti-eye"></i></a>
