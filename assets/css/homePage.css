@@ -396,7 +396,7 @@
 .expiry-hub {
     display: grid;
     /* Forces 7 equal columns on desktop */
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     background: hsl(216deg 94.59% 92.75% / 43%);
     padding: 15px;
@@ -412,7 +412,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 1px solid #f1f5f9;
     transition: all 0.2s ease;
     margin: 0;
 }
@@ -420,7 +419,7 @@
 /* Mobile Responsiveness: Switches from 7 columns to a balanced grid */
 @media (max-width: 1200px) {
     .expiry-hub {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         /* 4 items per row */
     }
 }
@@ -467,4 +466,189 @@
     height: 6px;
     border-radius: 50%;
     margin: 6px auto 0;
+}
+
+/* ── OPTION C: DARK TINTED HUB ITEMS ── */
+.hub-item-r,
+.hub-item-a,
+.hub-item-v,
+.hub-item-g,
+.hub-item-o,
+.hub-item-s,
+.hub-item-p {
+    position: relative;
+    overflow: hidden;
+    border-color: transparent !important;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 12px 10px;
+}
+
+/* Crimson */
+.hub-item-r {
+    background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+    color: #fff;
+}
+
+/* Ocean Blue */
+.hub-item-a {
+    background: linear-gradient(135deg, #4dabf7 0%, #1864ab 100%);
+    color: #fff;
+}
+
+/* Neon Purple */
+.hub-item-v {
+    background: linear-gradient(135deg, #c77dff 0%, #7b2cbf 100%);
+    color: #fff;
+}
+
+/* Fresh Green */
+.hub-item-g {
+    background: linear-gradient(135deg, #51cf66 0%, #2b8a3e 100%);
+    color: #fff;
+}
+
+/* Amber */
+.hub-item-o {
+    background: linear-gradient(135deg, #fcc419 0%, #e67700 100%);
+    color: #fff;
+}
+
+/* Sky */
+.hub-item-s {
+    background: linear-gradient(135deg, #74c0fc 0%, #1971c2 100%);
+    color: #fff;
+}
+
+/* Berry */
+.hub-item-p {
+    background: linear-gradient(135deg, #faa2c1 0%, #a61e4d 100%);
+    color: #fff;
+}
+
+.hub-item-dark {
+    background: linear-gradient(135deg, #374151 0%, #111827 100%);
+    color: #fff;
+}
+
+.hub-item-gold {
+    background: linear-gradient(135deg, #facc15 0%, #ca8a04 100%);
+    color: #fff;
+}
+
+.hub-item-indigo {
+    background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+    color: #fff;
+}
+
+.hub-item-teal {
+    background: linear-gradient(135deg, #14b8a6 0%, #0f766e 100%);
+    color: #fff;
+}
+
+.hub-item-sunset {
+    background: linear-gradient(135deg, #fb7185 0%, #f97316 100%);
+    color: #fff;
+}
+
+.hub-item-ocean {
+    background: linear-gradient(135deg, #0ea5e9 0%, #1d4ed8 100%);
+    color: #fff;
+}
+
+/* Ghost icon on the right */
+.hub-item-r::after,
+.hub-item-a::after,
+.hub-item-v::after,
+.hub-item-g::after,
+.hub-item-s::after,
+.hub-item-o::after,
+.hub-item-u::after,
+.hub-item-p::after {
+    font-family: 'tabler-icons';
+    font-size: 2rem;
+    position: absolute;
+    right: 15px;
+    bottom: 5px;
+    opacity: 0.8;
+    color: #ffffff;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.hub-item-r::after {
+    content: "\eb4d";
+}
+
+/* ti-user */
+.hub-item-a::after {
+    content: "\f9d4";
+}
+
+/* ti-user-cog */
+.hub-item-v::after {
+    content: "\101ea";
+}
+
+/* ti-user-key */
+.hub-item-g::after {
+    content: "\ec39";
+}
+
+/* ti-building-skyscraper */
+.hub-item-o::after {
+    content: "\ea4f";
+}
+
+
+.hub-item-u::after {
+    content: "\ea77";
+}
+
+/* ti-building-store */
+.hub-item-s::after {
+    content: "\ef4e";
+}
+
+/* ti-building-store */
+.hub-item-p::after {
+    content: "\eaa4";
+}
+
+/* ti-file */
+
+.hub-item-r .hub-label,
+.hub-item-a .hub-label,
+.hub-item-v .hub-label,
+.hub-item-g .hub-label,
+.hub-item-o .hub-label,
+.hub-item-s .hub-label,
+.hub-item-p .hub-label {
+    color: rgb(255, 255, 255);
+    font-size: 8.5px;
+    letter-spacing: 0.07em;
+}
+
+.hub-item-r .hub-value,
+.hub-item-a .hub-value,
+.hub-item-v .hub-value,
+.hub-item-g .hub-value,
+.hub-item-o .hub-value,
+.hub-item-s .hub-value,
+.hub-item-p .hub-value {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.hub-item-r:hover,
+.hub-item-a:hover,
+.hub-item-v:hover,
+.hub-item-g:hover,
+.hub-item-o:hover,
+.hub-item-s:hover,
+.hub-item-p:hover {
+    border-color: transparent !important;
+    filter: brightness(1);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
 }
