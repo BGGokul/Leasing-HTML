@@ -20,7 +20,59 @@
     <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     <!-- Font Family -->
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        .draggable-item {
+            background: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            cursor: grab;
+            margin-bottom: 8px;
+            transition: 0.2s;
+        }
 
+        .draggable-item:hover {
+            border-color: #6a1b9a;
+            background: #f3e5f5;
+        }
+
+        .form-builder-canvas {
+            min-height: 250px;
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            background: #fff;
+            position: relative;
+        }
+
+        .canvas-field-row {
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 10px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .canvas-placeholder {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #999;
+            text-align: center;
+        }
+
+        .signature-box {
+            border: 1px dashed #ced4da;
+            height: 100px;
+            border-radius: 6px;
+            background: #fbfbfb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #adb5bd;
+        }
+    </style>
 </head>
 
 <body>
@@ -114,257 +166,295 @@
             <main class="content">
                 <div class="p-3">
                     <div class="card mb-3">
-                        <div class="card-body">
-                            <div class="row align-items-center">
-                                <div class="col-12 col-md">
-                                    <div class="d-flex align-items-center">
-                                        <span class="avatar bg-primary text-white me-3">
-                                            <i class="ti ti-home-dollar fs-2"></i>
-                                        </span>
-                                        <div>
-                                            <h3 class="page-title mb-0 fw-bold">
-                                                New Lease Registration
-                                            </h3>
-                                            <div class="text-muted fs-5">
-                                                Add new lease registration data
-                                            </div>
+                        <div class="card-header card-purple d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i class="ti ti-template fs-2 me-2"></i>
+                                <h3 class="card-title mb-0 fw-semibold">Template Type</h3>
+                            </div>
+                            <div style="width: 250px;">
+                                <select id="templateType">
+                                    <option value="">Select Template</option>
+                                    <option>Residential Standard</option>
+                                    <option>Commercial Full</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="card-body bg-light-subtle">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="card shadow-none border">
+                                        <div class="card-header py-2 bg-light"><span
+                                                class="fw-bold small text-uppercase">Field
+                                                Palette</span></div>
+                                        <div class="card-body p-2" id="fieldsPalette">
+                                            <div class="draggable-item" draggable="true" data-type="text"><i
+                                                    class="ti ti-forms me-2"></i>Short Text</div>
+                                            <div class="draggable-item" draggable="true" data-type="number"><i
+                                                    class="ti ti-hash me-2"></i>Numeric</div>
+                                            <div class="draggable-item" draggable="true" data-type="date"><i
+                                                    class="ti ti-calendar me-2"></i>Date Picker</div>
+                                            <div class="draggable-item" draggable="true" data-type="select"><i
+                                                    class="ti ti-list-details me-2"></i>Dropdown</div>
                                         </div>
                                     </div>
                                 </div>
-                                <hr class="mb-0 mt-3 d-md-none" />
-                                <div class="col-12 col-md-auto mt-3 mt-md-0">
-                                    <nav aria-label="breadcrumb">
-                                        <ol class="breadcrumb mb-0">
-                                            <li class="breadcrumb-item">
-                                                <a href="./index.html" class="text-decoration-none text-secondary">
-                                                    <i class="ti ti-home"></i></a>
-                                            </li>
-                                            <li class="breadcrumb-item">Leasing</li>
-                                            <li class="breadcrumb-item active" aria-current="page">
-                                                New Lease Registration
-                                            </li>
-                                        </ol>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- ================= TEMPLATE ================= -->
-                    <div class="card mb-3">
-                        <div class="card-header card-purple d-flex align-items-center">
-                            <i class="ti ti-template fs-2 me-2"></i>
-                            <h3 class="card-title mb-0 fw-semibold">Template Selection</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="row gy-2">
-                                <div class="col-md-4">
-                                    <label class="form-label">Template Type</label>
-                                    <select class="form-select">
-                                        <option>Select</option>
-                                        <option>Standard</option>
-                                        <option>Custom</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-8">
-                                    <label class="form-label">Template Builder</label>
-                                    <div class="border p-3 rounded text-muted text-center">
-                                        Drag & Drop Fields Here
+                                <div class="col-md-9">
+                                    <div id="formCanvas" class="form-builder-canvas">
+                                        <div class="canvas-placeholder">Drag fields here to define customizable fields
+                                            in
+                                            the template</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ================= UNIT & TENANT ================= -->
                     <div class="card mb-3">
                         <div class="card-header card-cyan d-flex align-items-center">
                             <i class="ti ti-building fs-2 me-2"></i>
                             <h3 class="card-title mb-0 fw-semibold">Unit & Tenant</h3>
                         </div>
                         <div class="card-body">
-
-                            <!-- UNIT -->
-                            <div class="row gy-2 mb-3">
+                            <div class="row gy-3">
                                 <div class="col-md-6">
-                                    <label class="form-label">Select Unit</label>
-                                    <select id="unitSelect" multiple>
-                                        <option>Unit 101 - Chennai</option>
-                                        <option>Unit 102 - Coimbatore</option>
+                                    <label class="form-label">Units</label>
+                                    <select id="selectUnits" multiple>
+                                        <option value="1">Unit 101 - Palm Community - Dubai</option>
+                                        <option value="2">Unit 205 - Downtown - Dubai</option>
                                     </select>
                                 </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Tenant/label>
+                                        <select id="selectTenant">
+                                            <option value="">Select</option>
+                                            <option>John Doe</option>
+                                        </select>
+                                </div>
                             </div>
-
-                            <div class="table-responsive mb-3">
-                                <table class="table table-bordered table-main">
-                                    <thead>
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light">
                                         <tr>
-                                            <th>Unit Name</th>
+                                            <th>Units</th>
                                             <th>Community</th>
+                                            <th>Builiding</th>
                                             <th>City</th>
+                                            <th>User name</th>
+                                            <th>Contact Details</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="unitTable">
+                                    <tbody id="detailsSummaryBody">
                                         <tr>
-                                            <td>Unit 101</td>
-                                            <td>ABC Community</td>
-                                            <td>Chennai</td>
+                                            <td colspan="7" class="text-center text-muted">Select Unit and Tenant to
+                                                display details</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
-
-                            <!-- TENANT -->
-                            <div class="row gy-2">
-                                <div class="col-md-6">
-                                    <label class="form-label">Select Tenant</label>
-                                    <select class="form-select">
-                                        <option>Select</option>
-                                        <option>John Doe</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="table-responsive mt-2">
-                                <table class="table table-bordered table-main">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Mobile</th>
-                                            <th>Email</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>John Doe</td>
-                                            <td>9876543210</td>
-                                            <td>john@email.com</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
                         </div>
                     </div>
 
-                    <!-- ================= LEASE DATES ================= -->
                     <div class="card mb-3">
                         <div class="card-header card-blue d-flex align-items-center">
-                            <i class="ti ti-calendar fs-2 me-2"></i>
-                            <h3 class="card-title mb-0 fw-semibold">Lease Dates</h3>
+                            <i class="ti ti-calendar-stats fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Lease Timing</h3>
                         </div>
                         <div class="card-body">
-                            <div class="row gy-2">
+                            <div class="row gy-3">
                                 <div class="col-md-4">
                                     <label class="form-label">Lease Start Date</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control datepicker" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Lease End Date</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control datepicker" placeholder="DD-MM-YYYY">
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label">Move In Date</label>
-                                    <input type="text" class="form-control">
+                                    <input type="text" class="form-control datepicker" placeholder="DD-MM-YYYY">
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- ================= FINANCIAL ================= -->
                     <div class="card mb-3">
-                        <div class="card-header card-green d-flex align-items-center">
+                        <div class="card-header card-orange d-flex align-items-center">
                             <i class="ti ti-cash fs-2 me-2"></i>
                             <h3 class="card-title mb-0 fw-semibold">Financial Details</h3>
                         </div>
                         <div class="card-body">
-
-                            <div class="row gy-2">
+                            <div class="row gy-3 mb-4">
                                 <div class="col-md-3">
                                     <label class="form-label">Rental Type</label>
-                                    <input class="form-control" value="Monthly">
+                                    <input type="text" class="form-control bg-light" value="Annual" readonly>
                                 </div>
                                 <div class="col-md-3">
-                                    <label class="form-label">No of Payments</label>
-                                    <select class="form-select">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <label class="form-label">Number of Payments</label>
+                                    <select id="noOfPayments">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
                                     </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Payment Frequency</label>
+                                    <select id="payFreq">
+                                        <option>Monthly</option>
+                                        <option>Quarterly</option>
+                                        <option>One-Time</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Security Deposit</label>
+                                    <input type="number" class="form-control" placeholder="0.00">
                                 </div>
                             </div>
 
-                            <!-- PAYMENT TABLE -->
-                            <div class="table-responsive mt-3">
+                            <h5 class="fw-bold mb-2">Payment Details</h5>
+                            <div class="table-responsive mb-4">
                                 <table class="table table-bordered table-main">
-                                    <thead>
+                                    <thead class="table-light text-nowrap">
                                         <tr>
                                             <th>Mode</th>
                                             <th>Amount</th>
                                             <th>Date</th>
-                                            <th>Ref No</th>
+                                            <th>Reference No</th>
                                             <th>Remarks</th>
+                                            <th>Attach</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="paymentTable">
-                                        <tr>
-                                            <td><select class="form-select">
-                                                    <option>Cheque</option>
-                                                </select></td>
-                                            <td><input class="form-control"></td>
-                                            <td><input type="date" class="form-control"></td>
-                                            <td><input class="form-control"></td>
-                                            <td><input class="form-control"></td>
-                                        </tr>
-                                    </tbody>
+                                    <tbody id="paymentScheduleBody"></tbody>
                                 </table>
                             </div>
 
-                            <div class="row mt-3">
-                                <div class="col-md-4">
-                                    <label class="form-label">Security Deposit</label>
-                                    <input class="form-control">
-                                </div>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Other Charges (Recurring/Move-In)</h5>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addNewCharge()">+ Add From
+                                    Sub
+                                    Master</button>
                             </div>
-
-                        </div>
-                    </div>
-
-                    <!-- ================= CHARGES ================= -->
-                    <div class="card mb-3">
-                        <div class="card-header card-orange d-flex justify-content-between align-items-center">
-                            <h3 class="card-title mb-0 fw-semibold">Charges</h3>
-                            <button class="btn btn-light btn-sm">+ Add Charge</button>
-                        </div>
-                        <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-main">
-                                    <thead>
+                                    <thead class="table-light text-nowrap">
                                         <tr>
                                             <th>Charge Type</th>
                                             <th>Amount</th>
+                                            <th>VAT</th>
                                             <th>Frequency</th>
-                                            <th>Start</th>
-                                            <th>End</th>
-                                            <th>Attachment</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Remarks</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="chargesTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card  mb-3">
+                        <div class="card-header card-cyan card-red d-flex align-items-center">
+                            <i class="ti ti-settings fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Termination Process</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div>
+                                    <div class="row gy-2">
+                                        <div class="col-md-3">
+                                            <label class="small fw-bold">Termination Reason</label>
+                                            <select id="termReason">
+                                                <option>End of Lease</option>
+                                                <option>Eviction</option>
+                                                <option>Mutual Agreement</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small fw-bold">Termination Date</label>
+                                            <input type="text" class="form-control form-control-sm datepicker">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small fw-bold">Move Out Date</label>
+                                            <input type="text" class="form-control form-control-sm datepicker">
+                                        </div>
+                                        <div class="col-md-3">
+                                            <label class="small fw-bold">Move Out Charge</label>
+                                            <input type="number" class="form-control form-control-sm">
+                                        </div>
+                                        <div class="col-12">
+                                            <label class="small fw-bold">Remarks & Refunds</label>
+                                            <textarea class="form-control form-control-sm" rows="7"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header card-blue d-flex align-items-center">
+                            <i class="ti ti-file fs-2 me-2"></i>
+                            <h3 class="card-title fw-bold mb-0">
+                                Legal & Additional Attachments
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="mb-0 fw-bold">Additional Attachments</h5>
+                                <button class="btn btn-primary btn-sm" onclick="addAttachmentRow()">
+                                    + Add Attachment
+                                </button>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped align-middle table-main">
+                                    <thead class="table-primary">
+                                        <tr class="bg-primary">
+                                            <th>Document Type</th>
+                                            <th>Document Name</th>
+                                            <th>Expiry Date</th>
+                                            <th>Remarks</th>
+                                            <th>Attachment</th>
+                                            <th>Document Validity</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="attachmentBody">
                                         <tr>
-                                            <td><input class="form-control"></td>
-                                            <td><input class="form-control"></td>
-                                            <td><input class="form-control"></td>
-                                            <td><input type="date" class="form-control"></td>
-                                            <td><input type="date" class="form-control"></td>
-                                            <td>
-                                                <label class="btn btn-outline-primary btn-sm">
-                                                    Upload<input type="file" hidden>
-                                                </label>
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>National ID</option>
+                                                    <option>Passport</option>
+                                                    <option>Bank IBAN Letter</option>
+                                                    <option>Trade License</option>
+                                                    <option>Other</option>
+                                                </select>
                                             </td>
                                             <td>
-                                                <button class="btn btn-danger btn-sm">Delete</button>
+                                                <input class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input type="date" class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <input class="form-control form-control-sm">
+                                            </td>
+                                            <td>
+                                                <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                                                    Upload
+                                                    <input type="file" hidden onchange="handleRowUpload(this)">
+                                                </label>
+                                            </td>
+                                            <td> <select class="form-select form-select-sm">
+                                                    <option>Valid</option>
+                                                    <option>Expired</option>
+                                                </select>
+                                            </td>
+                                            <td class="text-center">
+                                                <button class="btn btn-outline-danger btn-sm"
+                                                    onclick="this.closest('tr').remove()"><i
+                                                        class="ti ti-trash"></i></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -373,82 +463,44 @@
                         </div>
                     </div>
 
-                    <!-- ================= ATTACHMENTS ================= -->
                     <div class="card mb-3">
-                        <div class="card-header card-pink d-flex align-items-center">
-                            <i class="ti ti-paperclip fs-2 me-2"></i>
-                            <h3 class="card-title mb-0 fw-semibold">Attachments</h3>
+                        <div class="card-header card-orange d-flex align-items-center">
+                            <i class="ti ti-signature fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Legal & Signatures</h3>
                         </div>
                         <div class="card-body">
-                            <div class="file-box">
-                                <span class="file-name">No file selected</span>
-                                <div class="d-flex align-items-center">
-                                    <label class="upload-btn cursor-pointer">
-                                        <i class="ti ti-upload"></i>
-                                        <input type="file" hidden>
-                                    </label>
+                            <div class="row gy-3 mb-4">
+                                <div class="col-12">
+                                    <label class="form-label">Remarks</label>
+                                    <textarea type="text" class="form-control" rows="6"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Terms and Conditions</label>
+                                    <textarea class="form-control" rows="6"></textarea>
+                                </div>
+                            </div>
+                            <div class="row gy-4 text-center">
+                                <div class="col-md-4 border-end">
+                                    <label class="form-label fw-bold">Tenant Signature</label>
+                                    <div class="signature-box mb-2">Manual Sign Pad</div>
+                                    <button class="btn btn-sm btn-outline-secondary">Clear</button>
+                                </div>
+                                <div class="col-md-4 border-end">
+                                    <label class="form-label fw-bold">Auto Signature (Staff)</label>
+                                    <div class="signature-box mb-2"><img src="./assets/img/staff-sign.png"
+                                            style="max-height:60px;"></div>
+                                    <span class="badge bg-success-lt text-uppercase">Auto Verified</span>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label fw-bold">Electronic Signature</label>
+                                    <div class="signature-box mb-2"><i class="ti ti-fingerprint fs-1 text-primary"></i>
+                                    </div>
+                                    <button class="btn btn-sm btn-primary">Send E-Sign Link</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- ================= TERMS ================= -->
-                    <div class="card mb-3">
-                        <div class="card-header card-purple">
-                            <h3 class="card-title mb-0 fw-semibold">Terms & Conditions</h3>
-                        </div>
-                        <div class="card-body">
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- ================= SIGNATURE ================= -->
-                    <div class="card mb-3">
-                        <div class="card-header card-pink">
-                            <h3 class="card-title mb-0 fw-semibold">Signature</h3>
-                        </div>
-                        <div class="card-body text-center">
-                            <div class="border p-4 rounded text-muted">Signature Pad</div>
-                        </div>
-                    </div>
-
-                    <!-- ================= ACTIONS ================= -->
-                    <div class="card mb-3">
-                        <div class="card-header card-red">
-                            <h3 class="card-title mb-0 fw-semibold">Lease Actions</h3>
-                        </div>
-                        <div class="card-body">
-
-                            <!-- TERMINATE -->
-                            <div class="row gy-2">
-                                <div class="col-md-4">
-                                    <label class="form-label">Termination Reason</label>
-                                    <select class="form-select">
-                                        <option>Select</option>
-                                        <option>Tenant Request</option>
-                                        <option>Violation</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Termination Date</label>
-                                    <input type="date" class="form-control">
-                                </div>
-                                <div class="col-md-4">
-                                    <label class="form-label">Move Out Date</label>
-                                    <input type="date" class="form-control">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-outline-secondary me-3" href="./OwnerMaster.html"><i
-                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
-                        <button class="btn btn-warning me-3"><i class="ti ti-notes fs-3 me-1"></i>Save</button>
-                        <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
-                    </div>
-                </div>
-                <!-- Footer -->
+                </div><!-- Footer -->
                 <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
                     <div class="text-dark fw-medium text-center">
                         © 2026 Leasing Management System
@@ -457,205 +509,107 @@
             </main>
         </div>
     </div>
-    <!-- Script  -->
     <script src="./assets/scripts/script.min.js"></script>
-    <!-- Custom JS -->
     <script src="./assets/scripts/custom.js"></script>
-    <!-- Tom Select JS -->
     <script src="./assets/scripts/tom-select.complete.min.js"></script>
-    <!-- Litepicker JS -->
     <script src="./assets/scripts/litepicker.js"></script>
-    <!-- Slim Select JS -->
     <script src="./assets/scripts/slimselect.min.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            // 1. Initialize All SlimSelects (Removed form-select class)
+            const ssIds = ['#templateType', '#noOfPayments', '#payFreq', '#selectTenant', '#termReason'];
+            ssIds.forEach(id => { if (document.querySelector(id)) new SlimSelect({ select: id }); });
 
-            /* =========================
-               SLIM SELECT INITIALIZATION
-            ========================== */
-            new SlimSelect({ select: '#nationality' });
-            new SlimSelect({ select: '#gender' });
-            new SlimSelect({ select: '#country' });
-            new SlimSelect({ select: '#state' });
-            new SlimSelect({ select: '#city' });
-            new SlimSelect({ select: '#OccupationType' });
-
-            /* =========================
-               GENERIC LITEPICKER INIT
-            ========================== */
-            function initDatePicker(selector, onSelectCallback) {
-                document.querySelectorAll(selector).forEach(el => {
-                    new Litepicker({
-                        element: el,
-                        format: "DD-MM-YYYY",
-                        singleMode: true,
-                        setup: (picker) => {
-                            picker.on("selected", (date) => {
-                                if (onSelectCallback) {
-                                    onSelectCallback(date, el);
-                                }
-                            });
-                        }
-                    });
-                });
+            // 2. Multi-Unit Select
+            if (document.querySelector('#selectUnits')) {
+                new SlimSelect({ select: '#selectUnits', settings: { closeOnSelect: false, placeholderText: 'Search Units' } });
             }
 
-            /* =========================
-               DOB -> AGE CALCULATION
-            ========================== */
-            initDatePicker("#dob", function (date) {
-
-                const parts = date.format("DD-MM-YYYY").split("-");
-
-                const birth = new Date(parts[2], parts[1] - 1, parts[0]);
-                const today = new Date();
-
-                let age = today.getFullYear() - birth.getFullYear();
-                const monthDiff = today.getMonth() - birth.getMonth();
-
-                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
-                    age--;
-                }
-
-                const ageInput = document.getElementById("age");
-                if (ageInput) ageInput.value = age;
+            // 3. Litepicker for static fields
+            document.querySelectorAll('.datepicker').forEach(el => {
+                new Litepicker({ element: el, format: 'DD-MM-YYYY', singleMode: true });
             });
 
-            /* =========================
-               OTHER DATE PICKERS
-            ========================== */
-            initDatePicker("#dob");
-            initDatePicker("#nIDExpiryDate");
-            initDatePicker("#passportExpiryDate");
-            initDatePicker("#tlExpiryDate");
+            // 4. Form Builder Logic
+            const canvas = document.getElementById('formCanvas');
+            document.querySelectorAll('.draggable-item').forEach(item => {
+                item.addEventListener('dragstart', (e) => {
+                    e.dataTransfer.setData('type', item.dataset.type);
+                    e.dataTransfer.setData('label', item.innerText);
+                });
+            });
 
+            canvas.addEventListener('dragover', (e) => { e.preventDefault(); canvas.classList.add('drag-over'); });
+            canvas.addEventListener('dragleave', () => canvas.classList.remove('drag-over'));
+            canvas.addEventListener('drop', (e) => {
+                e.preventDefault();
+                canvas.classList.remove('drag-over');
+                canvas.querySelector('.canvas-placeholder')?.remove();
 
-            /* =========================
-               PHOTO PREVIEW
-            ========================== */
+                const div = document.createElement('div');
+                div.className = 'canvas-field-row';
+                const type = e.dataTransfer.getData('type');
+                const label = e.dataTransfer.getData('label');
 
-            const defaultImage = "./assets/img/upload-image.jpg";
+                div.innerHTML = `
+            <div class="d-flex justify-content-between mb-1"><label class="small fw-bold">${label}</label><i class="ti ti-trash text-danger" onclick="this.closest('.canvas-field-row').remove()"></i></div>
+            ${type === 'select' ? '<select><option>Option 1</option></select>' : `<input type="${type === 'date' ? 'text' : type}" class="form-control ${type === 'date' ? 'row-date' : ''}">`}
+        `;
+                canvas.appendChild(div);
+                if (type === 'date') new Litepicker({ element: div.querySelector('.row-date'), format: 'DD-MM-YYYY' });
+                if (type === 'select') new SlimSelect({ select: div.querySelector('select') });
+            });
 
-            window.previewPhoto = function (event) {
-                const file = event.target.files[0];
-                const preview = document.getElementById("photoPreview");
-                const deleteBtn = document.getElementById("deleteBtn");
+            // 5. 4.7.2 Dynamic Payments Table
+            const paySelect = document.getElementById('noOfPayments');
+            const payBody = document.getElementById('paymentScheduleBody');
 
-                if (file && preview) {
-                    preview.src = URL.createObjectURL(file);
-                    if (deleteBtn) deleteBtn.disabled = false;
+            function syncPayments() {
+                payBody.innerHTML = '';
+                const count = parseInt(paySelect.value);
+                for (let i = 0; i < count; i++) {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `
+                <td><select class="row-ss"><option>Cheque</option><option>Cash</option><option>Transfer</option></select></td>
+                <td><input type="number" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm row-date"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td><input type="text" class="form-control form-control-sm"></td>
+                <td> <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                                                    Upload
+                                                    <input type="file" hidden onchange="handleRowUpload(this)">
+                                                </label></td>
+            `;
+                    payBody.appendChild(tr);
+                    new SlimSelect({ select: tr.querySelector('.row-ss') });
+                    new Litepicker({ element: tr.querySelector('.row-date'), format: 'DD-MM-YYYY' });
                 }
-            };
-
-            window.removePhoto = function () {
-                const preview = document.getElementById("photoPreview");
-                const input = document.getElementById("photoInput");
-                const deleteBtn = document.getElementById("deleteBtn");
-
-                if (preview) preview.src = defaultImage;
-                if (input) input.value = "";
-                if (deleteBtn) deleteBtn.disabled = true;
-            };
-
-            /* Disable delete button on load */
-            const deleteBtn = document.getElementById("deleteBtn");
-            if (deleteBtn) deleteBtn.disabled = true;
-
-            /* =========================
-               FILE HANDLING
-            ========================== */
-
-            window.handleFile = function (input) {
-
-                const file = input.files[0];
-                if (!file) return;
-
-                const container = input.closest('.file-box');
-                if (!container) return;
-
-                container.querySelector('.file-name').textContent = file.name;
-                container.dataset.fileUrl = URL.createObjectURL(file);
-
-                const viewBtn = container.querySelector('.btn-outline-secondary');
-                const deleteBtn = container.querySelector('.btn-outline-danger');
-
-                if (viewBtn) viewBtn.disabled = false;
-                if (deleteBtn) deleteBtn.disabled = false;
-            };
-
-            window.viewFile = function (btn) {
-
-                const container = btn.closest('.file-box');
-                if (!container) return;
-
-                const url = container.dataset.fileUrl;
-
-                if (url) {
-                    window.open(url, '_blank');
-                } else {
-                    alert('No file uploaded');
-                }
-            };
-
-            window.removeFile = function (btn) {
-
-                const container = btn.closest('.file-box');
-                if (!container) return;
-
-                container.querySelector('.file-name').textContent = 'No file selected';
-                container.dataset.fileUrl = '';
-
-                const fileInput = container.querySelector('input[type="file"]');
-                if (fileInput) fileInput.value = '';
-
-                const viewBtn = container.querySelector('.btn-outline-secondary');
-                const deleteBtn = container.querySelector('.btn-outline-danger');
-
-                if (viewBtn) viewBtn.disabled = true;
-                if (deleteBtn) deleteBtn.disabled = true;
-            };
-
+            }
+            paySelect.addEventListener('change', syncPayments);
+            syncPayments();
         });
 
-        /* ================= CONTACT ROW ================= */
-        function addContactRow() {
-
-            const container = document.getElementById("contactRow");
-
-            const col = document.createElement("div");
-            col.className = "col-md-4";
-
-            col.innerHTML = `
-        <label class="form-label">
-            Secondary Number
-        </label>
-
-        <div class="input-group mb-0">
-
-            <input type="text"
-                   class="form-control">
-
-            <button class="btn text-danger border-start-0"
-                    type="button"
-                    onclick="removeNumber(this)">
-                <i class="ti ti-trash-x fs-3"></i>
-            </button>
-
-        </div>
+        // 6. 4.7.5 Add More Charges
+        window.addNewCharge = function () {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+        <td><select class="row-ss"><option>Maintenance</option><option>VAT</option><option>Parking</option></select></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="number" class="form-control form-control-sm" value="5"></td>
+        <td><select class="row-ss"><option>Monthly</option><option>One-Time</option></select></td>
+        <td><input type="text" class="form-control form-control-sm row-date"></td>
+        <td><input type="text" class="form-control form-control-sm row-date"></td>
+        <td><input type="text" class="form-control form-control-sm"></td>
+        <td><button class="btn btn-outline-danger btn-sm" onclick="this.closest('tr').remove()"><i class="ti ti-trash"></i></button></td>
     `;
-
-            container.appendChild(col);
-        }
-
-
-        function removeNumber(button) {
-            button.closest(".col-md-4").remove();
-        }
-        // ================= ADD ROW =================
+            document.getElementById('chargesTableBody').appendChild(tr);
+            tr.querySelectorAll('.row-ss').forEach(el => new SlimSelect({ select: el }));
+            tr.querySelectorAll('.row-date').forEach(el => new Litepicker({ element: el, format: 'DD-MM-YYYY' }));
+        };
+        /* ================= ADD ROW (same structure) ================= */
         function addAttachmentRow() {
-
             const tr = document.createElement("tr");
-
             tr.innerHTML = `
         <td>
             <select class="form-select form-select-sm">
@@ -666,371 +620,40 @@
                 <option>Other</option>
             </select>
         </td>
-
         <td><input class="form-control form-control-sm"></td>
-
         <td><input type="date" class="form-control form-control-sm"></td>
-
         <td><input class="form-control form-control-sm"></td>
-
         <td>
             <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
                 Upload
                 <input type="file" hidden onchange="handleRowUpload(this)">
             </label>
         </td>
-        
                                             <td> <select class="form-select form-select-sm">
                                                     <option>Valid</option>
                                                     <option>Expired</option>
                                                 </select>
                                             </td>
-
         <td class="text-center">
             <button class="btn btn-outline-danger btn-sm"
                 onclick="this.closest('tr').remove()"><i
                                                         class="ti ti-trash"></i></button>
         </td>
     `;
-
             document.getElementById("attachmentBody").appendChild(tr);
         }
-
-
-        // ================= FIXED UPLOAD (MoA / PoU) =================
-
-        function handleFixedUpload(input) {
-
-            const fileBox =
-                input.closest(".file-box");
-
-            const fileName =
-                fileBox.querySelector(".file-name");
-
-            const icon =
-                fileBox.querySelector(".action-icon");
-
-            if (input.files.length > 0) {
-
-                const file =
-                    input.files[0];
-
-                fileName.textContent =
-                    file.name;
-
-                fileName.classList.remove("text-muted");
-
-                const fileURL =
-                    URL.createObjectURL(file);
-
-                input.dataset.fileUrl =
-                    fileURL;
-
-                // Change icon to eye
-                icon.classList.remove("ti-upload", "text-primary");
-
-                icon.classList.add(
-                    "ti-eye-check",
-                    "text-teal"
-                );
-
-                // View file on click
-                icon.onclick = function () {
-
-                    window.open(
-                        input.dataset.fileUrl,
-                        "_blank"
-                    );
-
-                };
-
-            }
-
-        }
-
-        // ================= RESET FIXED =================
-        function resetFixedUpload(icon) {
-
-            const fileBox =
-                icon.closest(".file-box");
-
-            const fileName =
-                fileBox.querySelector(".file-name");
-
-            const input =
-                fileBox.querySelector("input[type='file']");
-
-            const actionIcon =
-                fileBox.querySelector(".action-icon");
-
-            input.value = "";
-
-            fileName.textContent =
-                "No file selected";
-
-            fileName.classList.add("text-muted");
-
-            // Back to upload icon
-            actionIcon.classList.remove(
-                "ti-eye",
-                "text-teal"
-            );
-
-            actionIcon.classList.add(
-                "ti-upload",
-                "text-primary"
-            );
-
-            actionIcon.onclick = null;
-
-        }
-        // ================= TABLE ROW UPLOAD =================
-        function handleRowUpload(input) {
-
-            const label = input.closest("label.upload-btn");
-
-            if (input.files.length > 0) {
-
+        /* ================= ONLY ADD COLOR CHANGE ================= */
+        function handleUpload(input) {
+            const label = input.closest("label");
+            if (input.files && input.files.length > 0) {
                 label.classList.remove("btn-outline-primary");
                 label.classList.add("btn-success");
-
                 label.innerHTML = `
             ✓ Uploaded
-            <input type="file" hidden onchange="handleRowUpload(this)">
+            <input type="file" hidden onchange="handleUpload(this)">
         `;
             }
-        }
-        function addDependent() {
-            const row = `
-    <tr>
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="number" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <select class="form-select relationship" onchange="toggleOtherField(this)">
-                <option value="">Select</option>
-                <option value="Spouse">Spouse</option>
-                <option value="Parent">Parent</option>
-                <option value="Children">Children</option>
-                <option value="Relative">Relative</option>
-                <option value="Others">Others</option>
-            </select>
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control other-field">
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <label class="btn btn-primary btn-sm upload-btn">
-                <i class="ti ti-upload"></i>
-                <input type="file" hidden onchange="handleRowUpload(this)">
-            </label>
-        </td>
-
-        <td class="text-center">
-            <button type="button" class="btn btn-danger btn-sm"
-                onclick="removeDependentRow(this)">
-                <i class="ti ti-trash-x"></i>
-            </button>
-        </td>
-    </tr>`;
-
-            document.getElementById('dependentsTable')
-                .insertAdjacentHTML('beforeend', row);
-        }
-
-        // ===== Toggle Pets =====
-        document.getElementById('hasPets').addEventListener('change', function () {
-            const section = document.getElementById('petsSection');
-            const table = document.getElementById('petsTable');
-
-            if (this.value === 'yes') {
-                section.classList.remove('d-none');
-
-                // Add default row
-                if (table.children.length === 0) {
-                    addPetRow();
-                }
-
-            } else {
-                section.classList.add('d-none');
-                table.innerHTML = '';
-            }
-        });
-
-        // ===== Add Pet Row =====
-        function addPetRow() {
-            const row = `
-    <tr>
-        <td class="text-center">
-            <input type="text" class="form-control" placeholder="Pet Name">
-        </td>
-
-        <td class="text-center">
-            <select class="form-select">
-                <option value="">Select</option>
-                <option>Dog</option>
-                <option>Cat</option>
-                <option>Bird</option>
-                <option>Other</option>
-            </select>
-        </td>
-
-        <td class="text-center">
-            <input type="number" class="form-control" placeholder="Age">
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <label class="btn btn-primary btn-sm upload-btn">
-                <i class="ti ti-upload"></i>
-                <input type="file" hidden onchange="handlePetUpload(this)">
-            </label>
-        </td>
-
-        <td class="text-center">
-            <button type="button" class="btn btn-danger btn-sm"
-                onclick="removePetRow(this)">
-                <i class="ti ti-trash-x"></i>
-            </button>
-        </td>
-    </tr>`;
-
-            document.getElementById('petsTable')
-                .insertAdjacentHTML('beforeend', row);
-        }
-
-        // ===== Remove Row =====
-        function removePetRow(btn) {
-            btn.closest('tr').remove();
-
-            const table = document.getElementById('petsTable');
-
-            // Auto reset if empty
-            if (table.children.length === 0) {
-                document.getElementById('hasPets').value = 'no';
-                document.getElementById('petsSection').classList.add('d-none');
-            }
-        }
-
-        // ===== File Upload (optional) =====
-        function handlePetUpload(input) {
-            const file = input.files[0];
-            if (file) {
-                console.log("Pet file:", file.name);
-            }
-        }
-        function addVehicle() {
-            const row = `
-    <tr>
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="number" class="form-control" >
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control" >
-        </td>
-
-        <td class="text-center">
-            <input type="text" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <input type="date" class="form-control">
-        </td>
-
-        <td class="text-center">
-            <label class="btn btn-primary btn-sm upload-btn">
-                <i class="ti ti-upload"></i>
-                <input type="file" hidden onchange="handleVehicleUpload(this)">
-            </label>
-        </td>
-
-        <td class="text-center">
-            <button type="button" class="btn btn-danger btn-sm"
-                onclick="removeVehicleRow(this)">
-                <i class="ti ti-trash-x"></i>
-            </button>
-        </td>
-    </tr>`;
-
-            document.getElementById('vehicleTable')
-                .insertAdjacentHTML('beforeend', row);
-        }
-
-        // ================= ADD ROW =================
-        function addAttachmentRow() {
-
-            const tr = document.createElement("tr");
-
-            tr.innerHTML = `
-        <td>
-            <select class="form-select form-select-sm">
-                <option>National ID</option>
-                <option>Passport</option>
-                <option>Bank IBAN Letter</option>
-                <option>Trade License</option>
-                <option>Other</option>
-            </select>
-        </td>
-
-        <td><input class="form-control form-control-sm"></td>
-
-        <td><input type="date" class="form-control form-control-sm"></td>
-
-        <td><input class="form-control form-control-sm"></td>
-
-        <td>
-            <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
-                Upload
-                <input type="file" hidden onchange="handleRowUpload(this)">
-            </label>
-        </td>
-        
-                                            <td> <select class="form-select form-select-sm">
-                                                    <option>Valid</option>
-                                                    <option>Expired</option>
-                                                </select>
-                                            </td>
-
-        <td class="text-center">
-            <button class="btn btn-outline-danger btn-sm"
-                onclick="this.closest('tr').remove()"><i
-                                                        class="ti ti-trash"></i></button>
-        </td>
-    `;
-
-            document.getElementById("attachmentBody").appendChild(tr);
-        }
+        }/* ================= CONTACT ROW ================= */
 
     </script>
 </body>
