@@ -69,6 +69,10 @@ td .form-control {
     min-width: 200px
 }
 
+td .ss-main.row-ss {
+    min-width: 200px
+}
+
 /* Layout */
 
 .layout {
