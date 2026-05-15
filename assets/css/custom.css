@@ -412,6 +412,11 @@ td .ss-main.row-ss {
 
 }
 
+.card-darkblue {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: white;
+}
+
 .v-divider {
     width: 1.5px;
     height: 14px;
