@@ -72,6 +72,22 @@
             justify-content: center;
             color: #adb5bd;
         }
+
+        .date-col {
+            width: 130px;
+        }
+
+        .remarks-col {
+            min-width: 260px;
+        }
+
+        .table-main textarea.form-control {
+            min-height: 58px;
+        }
+
+        .is-hidden {
+            display: none;
+        }
     </style>
 </head>
 
@@ -121,6 +137,10 @@
                                 <i class="ti ti-home-dollar fs-2 me-2"></i>
                                 <span class="menu-text fs-5 fw-semibold"> Lease Master </span>
                             </a>
+                            <a class="nav-link text-white my-3" href="./FinanceCollection.html">
+                                <i class="ti ti-cash fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold">Finance Collection</span>
+                            </a>
                         </div>
                     </li>
                 </ul>
@@ -165,6 +185,42 @@
             <!-- Content -->
             <main class="content">
                 <div class="p-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md">
+                                    <div class="d-flex align-items-center">
+                                        <span class="avatar bg-primary text-white me-3">
+                                            <i class="ti ti-home-dollar fs-2"></i>
+                                        </span>
+                                        <div>
+                                            <h3 class="page-title mb-0 fw-bold">
+                                                New Lease Registration
+                                            </h3>
+                                            <div class="text-muted fs-5">
+                                                Add new lease registration data
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-0 mt-3 d-md-none">
+                                <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="./index.html" class="text-decoration-none text-secondary">
+                                                    <i class="ti ti-home"></i></a>
+                                            </li>
+                                            <li class="breadcrumb-item">Leasing</li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                New Lease Registration
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card mb-3">
                         <div class="card-header card-purple d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
@@ -216,36 +272,100 @@
                         </div>
                         <div class="card-body">
                             <div class="row gy-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Units</label>
-                                    <select id="selectUnits" multiple>
-                                        <option value="1">Unit 101 - Palm Community - Dubai</option>
-                                        <option value="2">Unit 205 - Downtown - Dubai</option>
+                                <div class="col-md-4">
+                                    <label class="form-label">Community</label>
+                                    <select id="selectCommunity">
+                                        <option value="">Select Community</option>
+                                        <option value="palm">Palm Jumeirah</option>
+                                        <option value="downtown">Downtown Dubai</option>
                                     </select>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
+                                    <label class="form-label">Building</label>
+                                    <select id="selectBuilding">
+                                        <option value="">Select Building</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="form-label">Units</label>
+                                    <select id="selectUnits" multiple></select>
+                                </div>
+                                <div class="col-md-4">
                                     <label class="form-label">Tenant</label>
-                                        <select id="selectTenant">
-                                            <option value="">Select</option>
-                                            <option>John Doe</option>
-                                        </select>
+                                    <select id="selectTenant">
+                                        <option value="">Select</option>
+                                        <option value="john">John Doe</option>
+                                        <option value="amira">Amira Khan</option>
+                                    </select>
                                 </div>
                             </div>
+
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-main align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th colspan="7">Community Details</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Community</th>
+                                            <th>Property Type</th>
+                                            <th>Usage Type</th>
+                                            <th>Owner</th>
+                                            <th>City</th>
+                                            <th>Contact Number</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="communityDetailsBody">
+                                        <tr>
+                                            <td colspan="6" class="text-center text-muted">Select community to display
+                                                details</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="table-responsive mt-3">
+                                <table class="table table-bordered table-main align-middle mb-0">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th colspan="7">Building Details</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Building</th>
+                                            <th>Building ID</th>
+                                            <th>Community</th>
+                                            <th>Property Type</th>
+                                            <th>City</th>
+                                            <th>Contact Number</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="buildingDetailsBody">
+                                        <tr>
+                                            <td colspan="7" class="text-center text-muted">Select building to display
+                                                details</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
                             <div class="table-responsive mt-3">
                                 <table class="table table-bordered table-main align-middle">
                                     <thead class="table-light">
                                         <tr>
                                             <th>Units</th>
                                             <th>Community</th>
-                                            <th>Builiding</th>
+                                            <th>Building</th>
                                             <th>City</th>
-                                            <th>User name</th>
-                                            <th>Contact Details</th>
+                                            <th>Tenant Name</th>
+                                            <th>Contact Number</th>
+                                            <th>Email</th>
                                         </tr>
                                     </thead>
                                     <tbody id="detailsSummaryBody">
                                         <tr>
-                                            <td colspan="7" class="text-center text-muted">Select Unit and Tenant to
+                                            <td colspan="6" class="text-center text-muted">Select Unit and Tenant to
                                                 display details</td>
                                         </tr>
                                     </tbody>
@@ -307,21 +427,31 @@
                                     </select>
                                 </div>
                                 <div class="col-md-3">
-                                    <label class="form-label">Security Deposit</label>
+                                    <label class="form-label" id="rentPeriodLabel">Rent (Monthly)</label>
+                                    <input type="text" class="form-control" placeholder="0.00">
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="form-label">Annual Rent</label>
                                     <input type="number" class="form-control" placeholder="0.00">
                                 </div>
                             </div>
 
-                            <h5 class="fw-bold mb-2">Payment Details</h5>
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Payment Details</h5>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addPaymentRow()">+
+                                    Add</button>
+                            </div>
                             <div class="table-responsive mb-4">
-                                <table class="table table-bordered table-main">
+                                <table class="table table-bordered table-main align-middle">
                                     <thead class="table-light text-nowrap">
                                         <tr>
-                                            <th>Mode</th>
+                                            <th>Payment Mode</th>
                                             <th>Amount</th>
-                                            <th>Date</th>
-                                            <th>Reference No</th>
-                                            <th>Remarks</th>
+                                            <th>VAT</th>
+                                            <th>Total</th>
+                                            <th class="date-col">Date</th>
+                                            <th>Reference Number</th>
+                                            <th class="remarks-col">Remarks</th>
                                             <th>Attach</th>
                                         </tr>
                                     </thead>
@@ -330,17 +460,37 @@
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Deposit Details</h5>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addDepositRow()">+
+                                    Add</button>
+                            </div>
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light text-nowrap">
+                                        <tr>
+                                            <th>Payment Mode</th>
+                                            <th>Amount</th>
+                                            <th class="date-col">Date</th>
+                                            <th>Reference Number</th>
+                                            <th class="remarks-col">Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="depositDetailsBody"></tbody>
+                                </table>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="fw-bold mb-0">Other Charges (Recurring/Move-In)</h5>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addNewCharge()">+ Add From
-                                    Sub
-                                    Master</button>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addNewCharge()">Add
+                                    Charges</button>
                             </div>
                             <div class="table-responsive">
-                                <table class="table table-bordered table-main">
+                                <table class="table table-bordered table-main align-middle">
                                     <thead class="table-light text-nowrap">
                                         <tr>
                                             <th>Charge Type</th>
                                             <th>Amount</th>
+                                            <th>Total</th>
                                             <th>VAT</th>
                                             <th>Frequency</th>
                                             <th>Start Date</th>
@@ -355,47 +505,8 @@
                         </div>
                     </div>
 
-                    <div class="card  mb-3">
-                        <div class="card-header card-cyan card-red d-flex align-items-center">
-                            <i class="ti ti-settings fs-2 me-2"></i>
-                            <h3 class="card-title mb-0 fw-semibold">Termination Process</h3>
-                        </div>
-                        <div class="card-body">
-                            <div class="row">
-                                <div>
-                                    <div class="row gy-2">
-                                        <div class="col-md-3">
-                                            <label class="small fw-bold">Termination Reason</label>
-                                            <select id="termReason">
-                                                <option>End of Lease</option>
-                                                <option>Eviction</option>
-                                                <option>Mutual Agreement</option>
-                                            </select>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="small fw-bold">Termination Date</label>
-                                            <input type="text" class="form-control form-control-sm datepicker">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="small fw-bold">Move Out Date</label>
-                                            <input type="text" class="form-control form-control-sm datepicker">
-                                        </div>
-                                        <div class="col-md-3">
-                                            <label class="small fw-bold">Move Out Charge</label>
-                                            <input type="number" class="form-control form-control-sm">
-                                        </div>
-                                        <div class="col-12">
-                                            <label class="small fw-bold">Remarks & Refunds</label>
-                                            <textarea class="form-control form-control-sm" rows="7"></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="card mb-3">
-                        <div class="card-header card-blue d-flex align-items-center">
+                        <div class="card-header card-darkblue d-flex align-items-center">
                             <i class="ti ti-file fs-2 me-2"></i>
                             <h3 class="card-title fw-bold mb-0">
                                 Legal & Additional Attachments
@@ -464,21 +575,11 @@
                     </div>
 
                     <div class="card mb-3">
-                        <div class="card-header card-orange d-flex align-items-center">
+                        <div class="card-header card-purple d-flex align-items-center">
                             <i class="ti ti-signature fs-2 me-2"></i>
                             <h3 class="card-title mb-0 fw-semibold">Legal & Signatures</h3>
                         </div>
                         <div class="card-body">
-                            <div class="row gy-3 mb-4">
-                                <div class="col-12">
-                                    <label class="form-label">Remarks</label>
-                                    <textarea type="text" class="form-control" rows="6"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Terms and Conditions</label>
-                                    <textarea class="form-control" rows="6"></textarea>
-                                </div>
-                            </div>
                             <div class="row gy-4 text-center">
                                 <div class="col-md-4 border-end">
                                     <label class="form-label fw-bold">Tenant Signature</label>
@@ -500,11 +601,113 @@
                             </div>
                         </div>
                     </div>
-                    <div class="d-flex justify-content-end">
-                        <a class="btn btn-outline-secondary me-3" href="./OwnerMaster.html"><i
-                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
-                        <button class="btn btn-warning me-3"><i class="ti ti-notes fs-3 me-1"></i>Save</button>
+                    <div class="card mb-3 is-hidden" id="terminationDetailsSection">
+                        <div class="card-header card-cyan card-red d-flex align-items-center">
+                            <i class="ti ti-settings fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Termination Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-3 mb-4">
+                                <div class="col-md-4">
+                                    <label class="small fw-bold">Termination Reason</label>
+                                    <select id="termReason">
+                                        <option>End of Lease</option>
+                                        <option>Eviction</option>
+                                        <option>Mutual Agreement</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold">Termination Date</label>
+                                    <input type="text" class="form-control form-control-sm datepicker">
+                                </div>
+                                <div class="col-md-4">
+                                    <label class="small fw-bold">Move Out Date</label>
+                                    <input type="text" class="form-control form-control-sm datepicker">
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Move Out Charges</h5>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addMoveOutCharge()">Add
+                                    Charges</button>
+                            </div>
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light text-nowrap">
+                                        <tr>
+                                            <th>Charge Type</th>
+                                            <th>Amount</th>
+                                            <th>VAT</th>
+                                            <th class="remarks-col">Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="moveOutChargesBody">
+                                        <tr class="fw-bold">
+                                            <td>Total</td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Refund Details</h5>
+                                <button type="button" class="btn btn-primary btn-sm" onclick="addRefundRow()">+
+                                    Add</button>
+                            </div>
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light text-nowrap">
+                                        <tr>
+                                            <th>Mode of Payment</th>
+                                            <th>Amount</th>
+                                            <th>VAT</th>
+                                            <th>Total</th>
+                                            <th>Reference Number</th>
+                                            <th class="remarks-col">Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="refundDetailsBody"></tbody>
+                                </table>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+                                    <label class="small fw-bold">Remarks</label>
+                                    <textarea class="form-control form-control-sm" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-pink d-flex align-items-center">
+                            <i class="ti ti-file-description fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Terms & Conditions</h3>
+                        </div>
+                        <div class="card-body">
+                            <textarea class="form-control" rows="6"></textarea>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-primary d-flex align-items-center">
+                            <i class="ti ti-message-2 fs-2 me-2"></i>
+                            <h3 class="card-title mb-0 fw-semibold">Remarks</h3>
+                        </div>
+                        <div class="card-body">
+                            <label class="form-label">Remarks</label>
+                            <textarea class="form-control" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center justify-content-md-end flex-wrap gap-2">
                         <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
+                        <button class="btn btn-warning"><i class="ti ti-device-floppy fs-3 me-1"></i>Save</button>
+                        <button class="btn btn-success"><i class="ti ti-refresh fs-3 me-1"></i>Renew</button>
+                        <button type="button" class="btn btn-danger" onclick="showTerminationDetails()"><i
+                                class="ti ti-circle-x fs-3 me-1"></i>Terminate</button>
+                        <a class="btn btn-outline-secondary" href="./OwnerMaster.html"><i
+                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
                     </div>
                 </div><!-- Footer -->
                 <footer class="footer bg-gray-200 border-top d-flex align-items-center justify-content-center p-3">
@@ -524,12 +727,209 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // 1. Initialize All SlimSelects (Removed form-select class)
-            const ssIds = ['#templateType', '#noOfPayments', '#payFreq', '#selectTenant', '#termReason'];
+            const ssIds = ['#templateType', '#noOfPayments', '#selectTenant', '#termReason'];
             ssIds.forEach(id => { if (document.querySelector(id)) new SlimSelect({ select: id }); });
 
-            // 2. Multi-Unit Select
-            if (document.querySelector('#selectUnits')) {
-                new SlimSelect({ select: '#selectUnits', settings: { closeOnSelect: false, placeholderText: 'Search Units' } });
+            // 2. Community -> Building -> Unit selection flow
+            const communityData = {
+                palm: {
+                    name: 'Palm Jumeirah',
+                    propertyType: 'Residential',
+                    usageType: 'Freehold',
+                    owner: 'Emaar Properties',
+                    city: 'Dubai',
+                    contact: '+971 4 555 0101 / palm@example.com',
+                    buildings: {
+                        palmHeights: {
+                            name: 'Palm Heights Tower',
+                            id: 'BLDG-2026-00001',
+                            propertyType: 'Residential',
+                            city: 'Dubai',
+                            contact: '+971 4 555 0140',
+                            mail: 'heights@example.com',
+                            units: [
+                                { value: 'unit101', text: 'Unit 101', city: 'Dubai', type: '1 BHK', floor: '1' },
+                                { value: 'unit205', text: 'Unit 205', city: 'Dubai', type: '2 BHK', floor: '2' }
+                            ]
+                        },
+                        palmResidences: {
+                            name: 'Palm Residences',
+                            id: 'BLDG-2026-00002',
+                            propertyType: 'Residential',
+                            city: 'Dubai',
+                            contact: '+971 4 555 0141',
+                            mail: 'residences@example.com',
+                            units: [
+                                { value: 'unitA301', text: 'Unit A-301', city: 'Dubai', type: 'Studio', floor: '3' },
+                                { value: 'unitB402', text: 'Unit B-402', city: 'Dubai', type: '3 BHK', floor: '4' }
+                            ]
+                        }
+                    }
+                },
+                downtown: {
+                    name: 'Downtown Dubai',
+                    propertyType: 'Mixed Use',
+                    usageType: 'Leasehold',
+                    owner: 'Ahmed Al Mansoori',
+                    city: 'Dubai',
+                    contact: '+971 4 555 0201 / downtown@example.com',
+                    buildings: {
+                        boulevardPlaza: {
+                            name: 'Boulevard Plaza',
+                            id: 'BLDG-2026-00003',
+                            propertyType: 'Commercial',
+                            city: 'Dubai',
+                            contact: '+971 4 555 0240',
+                            mail: 'plaza@example.com',
+                            units: [
+                                { value: 'office1201', text: 'Office 1201', city: 'Dubai', type: 'Office', floor: '12' },
+                                { value: 'retailG04', text: 'Retail G-04', city: 'Dubai', type: 'Retail', floor: 'Ground' }
+                            ]
+                        }
+                    }
+                }
+            };
+            const tenantData = {
+                john: { name: 'John Doe', contact: '+971 50 111 2222', mail: 'john@example.com' },
+                amira: { name: 'Amira Khan', contact: '+971 55 333 4444', mail: 'amira@example.com' }
+            };
+            const communityBody = document.getElementById('communityDetailsBody');
+            const buildingBody = document.getElementById('buildingDetailsBody');
+            const summaryBody = document.getElementById('detailsSummaryBody');
+            const selectCommunity = document.getElementById('selectCommunity');
+            const selectBuilding = document.getElementById('selectBuilding');
+            const selectUnits = document.getElementById('selectUnits');
+            const selectTenant = document.getElementById('selectTenant');
+            let communitySelect;
+            let buildingSelect;
+            let unitSelect;
+
+            function emptyRow(message) {
+                return `<tr><td colspan="7" class="text-center text-muted">${message}</td></tr>`;
+            }
+
+            function getSelectedCommunity() {
+                return communityData[selectCommunity.value] || null;
+            }
+
+            function getSelectedBuilding() {
+                const community = getSelectedCommunity();
+                return community && community.buildings[selectBuilding.value] ? community.buildings[selectBuilding.value] : null;
+            }
+
+            function getSelectedUnitRows() {
+                const building = getSelectedBuilding();
+                if (!building) return [];
+                const selectedValues = Array.from(selectUnits.selectedOptions).map(option => option.value);
+                return building.units.filter(unit => selectedValues.includes(unit.value));
+            }
+
+            function updateCommunityDetails() {
+                const community = getSelectedCommunity();
+                communityBody.innerHTML = community ? `
+                    <tr>
+                        <td>${community.name}</td>
+                        <td>${community.propertyType}</td>
+                        <td>${community.usageType}</td>
+                        <td>${community.owner}</td>
+                        <td>${community.city}</td>
+                        <td>${community.contact}</td>
+                        <td>${community.mail}</td>
+                    </tr>
+                ` : emptyRow('Select community to display details');
+            }
+
+            function updateBuildingDetails() {
+                const community = getSelectedCommunity();
+                const building = getSelectedBuilding();
+                buildingBody.innerHTML = community && building ? `
+                    <tr>
+                        <td>${building.name}</td>
+                        <td>${building.id}</td>
+                        <td>${community.name}</td>
+                        <td>${building.propertyType}</td>
+                        <td>${building.city}</td>
+                        <td>${building.contact}</td>
+                        <td>${building.mail}</td>
+                    </tr>
+                ` : emptyRow('Select building to display details');
+            }
+
+            function renderBuildingOptions() {
+                const community = getSelectedCommunity();
+                const buildings = community ? Object.entries(community.buildings).map(([value, building]) => ({
+                    text: building.name,
+                    value
+                })) : [];
+                buildingSelect.setData([{ text: 'Select Building', value: '', placeholder: true }, ...buildings]);
+                buildingSelect.setSelected('');
+            }
+
+            function renderUnitOptions() {
+                const building = getSelectedBuilding();
+                const units = building ? building.units.map(unit => ({
+                    text: `${unit.text} - ${unit.type} - Floor ${unit.floor}`,
+                    value: unit.value
+                })) : [];
+                unitSelect.setData(units);
+                unitSelect.setSelected([]);
+            }
+
+            function updateDetailsSummary() {
+                const community = getSelectedCommunity();
+                const building = getSelectedBuilding();
+                const tenant = tenantData[selectTenant.value] || null;
+                const units = getSelectedUnitRows();
+                if (!community || !building || !tenant || units.length === 0) {
+                    summaryBody.innerHTML = emptyRow('Select community, building, unit and tenant to display details');
+                    return;
+                }
+                summaryBody.innerHTML = units.map(unit => `
+                    <tr>
+                        <td>${unit.text}</td>
+                        <td>${community.name}</td>
+                        <td>${building.name}</td>
+                        <td>${unit.city}</td>
+                        <td>${tenant.name}</td>
+                        <td>${tenant.contact}</td>
+                        <td>${tenant.mail}</td>
+                    </tr>
+                `).join('');
+            }
+
+            if (selectCommunity && selectBuilding && selectUnits) {
+                communitySelect = new SlimSelect({
+                    select: '#selectCommunity',
+                    events: {
+                        afterChange: () => {
+                            updateCommunityDetails();
+                            renderBuildingOptions();
+                            updateBuildingDetails();
+                            renderUnitOptions();
+                            updateDetailsSummary();
+                        }
+                    }
+                });
+                buildingSelect = new SlimSelect({
+                    select: '#selectBuilding',
+                    events: {
+                        afterChange: () => {
+                            updateBuildingDetails();
+                            renderUnitOptions();
+                            updateDetailsSummary();
+                        }
+                    }
+                });
+                unitSelect = new SlimSelect({
+                    select: '#selectUnits',
+                    settings: { closeOnSelect: false, placeholderText: 'Search Units' },
+                    events: { afterChange: updateDetailsSummary }
+                });
+                selectTenant?.addEventListener('change', updateDetailsSummary);
+                updateCommunityDetails();
+                updateBuildingDetails();
+                renderUnitOptions();
+                updateDetailsSummary();
             }
 
             // 3. Litepicker for static fields
@@ -570,30 +970,75 @@
             // 5. 4.7.2 Dynamic Payments Table
             const paySelect = document.getElementById('noOfPayments');
             const payBody = document.getElementById('paymentScheduleBody');
+            const depositBody = document.getElementById('depositDetailsBody');
+            const payFreq = document.getElementById('payFreq');
+            const rentPeriodLabel = document.getElementById('rentPeriodLabel');
+
+            function initRowControls(row) {
+                row.querySelectorAll('.row-ss').forEach(el => new SlimSelect({ select: el }));
+                row.querySelectorAll('.row-date').forEach(el => new Litepicker({ element: el, format: 'DD-MM-YYYY' }));
+            }
+
+            function syncRentPeriodLabel() {
+                if (!payFreq || !rentPeriodLabel) return;
+                const frequency = payFreq.value;
+                const period = frequency === 'Quarterly' ? 'Quarterly' : 'Monthly';
+                rentPeriodLabel.textContent = `Rent (${period})`;
+            }
+
+            if (payFreq) {
+                new SlimSelect({
+                    select: '#payFreq',
+                    events: { afterChange: syncRentPeriodLabel }
+                });
+            }
+
+            window.addPaymentRow = function () {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><select class="row-ss"><option>Cheque</option><option>Cash</option><option>Transfer</option></select></td>
+                    <td><input type="number" class="form-control form-control-sm"></td>
+                    <td><input type="number" class="form-control form-control-sm"></td>
+                    <td><input type="number" class="form-control form-control-sm"></td>
+                    <td><input type="text" class="form-control form-control-sm row-date"></td>
+                    <td><input type="text" class="form-control form-control-sm"></td>
+                    <td><textarea class="form-control form-control-sm"></textarea></td>
+                    <td>
+                        <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
+                            Upload
+                            <input type="file" hidden onchange="handleRowUpload(this)">
+                        </label>
+                    </td>
+                `;
+                payBody.appendChild(tr);
+                initRowControls(tr);
+            };
+
+            window.addDepositRow = function () {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td><select class="row-ss"><option>Cheque</option><option>Cash</option><option>Transfer</option></select></td>
+                    <td><input type="number" class="form-control form-control-sm"></td>
+                    <td><input type="text" class="form-control form-control-sm row-date"></td>
+                    <td><input type="text" class="form-control form-control-sm"></td>
+                    <td><textarea class="form-control form-control-sm"></textarea></td>
+                `;
+                depositBody.appendChild(tr);
+                initRowControls(tr);
+            };
 
             function syncPayments() {
                 payBody.innerHTML = '';
                 const count = parseInt(paySelect.value);
                 for (let i = 0; i < count; i++) {
-                    const tr = document.createElement('tr');
-                    tr.innerHTML = `
-                <td><select class="row-ss"><option>Cheque</option><option>Cash</option><option>Transfer</option></select></td>
-                <td><input type="number" class="form-control form-control-sm"></td>
-                <td><input type="text" class="form-control form-control-sm row-date"></td>
-                <td><input type="text" class="form-control form-control-sm"></td>
-                <td><input type="text" class="form-control form-control-sm"></td>
-                <td> <label class="btn btn-outline-primary btn-sm w-100 upload-btn">
-                                                    Upload
-                                                    <input type="file" hidden onchange="handleRowUpload(this)">
-                                                </label></td>
-            `;
-                    payBody.appendChild(tr);
-                    new SlimSelect({ select: tr.querySelector('.row-ss') });
-                    new Litepicker({ element: tr.querySelector('.row-date'), format: 'DD-MM-YYYY' });
+                    window.addPaymentRow();
                 }
             }
             paySelect.addEventListener('change', syncPayments);
+            payFreq?.addEventListener('change', syncRentPeriodLabel);
+            syncRentPeriodLabel();
             syncPayments();
+            window.addDepositRow();
         });
 
         // 6. 4.7.5 Add More Charges
@@ -602,16 +1047,52 @@
             tr.innerHTML = `
         <td><select class="row-ss"><option>Maintenance</option><option>VAT</option><option>Parking</option></select></td>
         <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
         <td><input type="number" class="form-control form-control-sm" value="5"></td>
         <td><select class="row-ss"><option>Monthly</option><option>One-Time</option></select></td>
         <td><input type="text" class="form-control form-control-sm row-date"></td>
         <td><input type="text" class="form-control form-control-sm row-date"></td>
-        <td><input type="text" class="form-control form-control-sm"></td>
+        <td><textarea class="form-control form-control-sm"></textarea></td>
         <td><button class="btn btn-outline-danger btn-sm" onclick="this.closest('tr').remove()"><i class="ti ti-trash"></i></button></td>
     `;
             document.getElementById('chargesTableBody').appendChild(tr);
             tr.querySelectorAll('.row-ss').forEach(el => new SlimSelect({ select: el }));
             tr.querySelectorAll('.row-date').forEach(el => new Litepicker({ element: el, format: 'DD-MM-YYYY' }));
+        };
+        window.addMoveOutCharge = function () {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+        <td><select class="row-ss"><option>Cleaning</option><option>Repair</option><option>Painting</option><option>Other</option></select></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><textarea class="form-control form-control-sm"></textarea></td>
+    `;
+            const body = document.getElementById('moveOutChargesBody');
+            body.insertBefore(tr, body.lastElementChild);
+            tr.querySelectorAll('.row-ss').forEach(el => new SlimSelect({ select: el }));
+        };
+        window.addRefundRow = function () {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+        <td><select class="row-ss"><option>Cheque</option><option>Cash</option><option>Transfer</option></select></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="number" class="form-control form-control-sm"></td>
+        <td><input type="text" class="form-control form-control-sm"></td>
+        <td><textarea class="form-control form-control-sm"></textarea></td>
+    `;
+            document.getElementById('refundDetailsBody').appendChild(tr);
+            tr.querySelectorAll('.row-ss').forEach(el => new SlimSelect({ select: el }));
+        };
+        window.showTerminationDetails = function () {
+            const section = document.getElementById('terminationDetailsSection');
+            if (!section) return;
+            const isFirstOpen = section.classList.contains('is-hidden');
+            section.classList.remove('is-hidden');
+            if (isFirstOpen) {
+                window.addMoveOutCharge();
+                window.addRefundRow();
+            }
         };
         /* ================= ADD ROW (same structure) ================= */
         function addAttachmentRow() {
