@@ -1,0 +1,772 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon" />
+    <title>Finance Collection</title>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="./assets/css/style.min.css" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/custom.css" />
+    <!-- Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.delivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <!-- Font Family -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="layout" id="layout">
+        <!-- Overlay -->
+        <div class="overlay" onclick="closeMobileSidebar()"></div>
+        <!-- Sidebar -->
+        <aside class="sidebar bg-primary text-white">
+            <div class="p-2 px-3 border-bottom border-white">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="avatar bg-white text-primary fw-bold">LM</div>
+                    <span class="logo-text fw-semibold fs-3"> Leasing Management </span>
+                </div>
+            </div>
+            <nav class="py-3">
+                <ul class="nav flex-column rounded-1">
+                    <li class="nav-item rounded mx-2">
+                        <a class="nav-link text-white d-flex align-items-center gap-3 rounded rounded-bottom-0 main-menu"
+                            onclick="toggleSubmenu()">
+                            <i class="ti ti-home fs-1"></i>
+                            <span class="menu-text fs-5 fw-semibold"> Leasing </span>
+                            <i class="ti ti-chevron-down ms-auto fs-3"></i>
+                        </a>
+                        <div id="submenu" class="m-2 d-none">
+                            <a class="nav-link text-white my-3" href="./SubMaster.html">
+                                <i class="ti ti-category fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Sub Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OwnerMaster.html">
+                                <i class="ti ti-user fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Owner Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./OperatorMaster.html">
+                                <i class="ti ti-user-cog fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Operator Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./TenantMaster.html">
+                                <i class="ti ti-user-key fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Tenant Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./UnitMaster.html">
+                                <i class="ti ti-building-community fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Unit Master </span>
+                            </a>
+                            <a class="nav-link text-white my-3" href="./LeaseMaster.html">
+                                <i class="ti ti-home-dollar fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold"> Lease Master </span>
+                            </a>
+                            <a class="nav-link active my-3" href="./FinanceCollection.html">
+                                <i class="ti ti-cash fs-2 me-2"></i>
+                                <span class="menu-text fs-5 fw-semibold">Finance Collection</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main -->
+        <div class="main">
+            <!-- Header -->
+            <header
+                class="bg-white border-bottom d-flex align-items-center px-3 p-2 shadow-sm position-sticky top-0 z-3">
+                <button class="btn btn-icon border-0 p-0 shadow-none" onclick="handleSidebarToggle()">
+                    <i class="ti ti-menu-4 fs-1"></i>
+                </button>
+                <div class="ms-auto dropdown d-flex gap-2">
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none" onclick="toggleFullScreen()">
+                        <i class="ti ti-maximize fs-1 position-relative"></i>
+                    </a>
+                    <a href="#" class="btn btn-icon border-0 py-0 shadow-none">
+                        <i class="ti ti-bell fs-1 position-relative"><span
+                                class="badge bg-red position-absolute top-0 end-0"></span></i>
+                    </a>
+                    <a class="d-flex align-items-center gap-2 text-decoration-none cursor-pointer"
+                        data-bs-toggle="dropdown">
+                        <div class="avatar bg-primary text-white">A</div>
+                        <div class="d-none d-md-block">
+                            <div class="fw-medium">Admin User</div>
+                            <div class="text-muted small">Administrator</div>
+                        </div>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item cursor-pointer">
+                            <i class="ti ti-key me-2"></i>
+                            Change Password
+                        </a>
+                        <a class="dropdown-item text-danger cursor-pointer">
+                            <i class="ti ti-logout me-2"></i>
+                            Logout
+                        </a>
+                    </div>
+                </div>
+            </header>
+            <!-- Content -->
+            <main class="content">
+                <div class="p-3">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-12 col-md">
+                                    <div class="d-flex align-items-center">
+                                        <span class="avatar bg-primary text-white me-3">
+                                            <i class="ti ti-cash fs-2"></i>
+                                        </span>
+                                        <div>
+                                            <h3 class="page-title mb-0 fw-bold">
+                                                Finance Collection
+                                            </h3>
+                                            <div class="text-muted fs-5">
+                                                Edit finance details
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr class="mb-0 mt-3 d-md-none" />
+                                <div class="col-12 col-md-auto mt-3 mt-md-0">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb mb-0">
+                                            <li class="breadcrumb-item">
+                                                <a href="./index.html" class="text-decoration-none text-secondary">
+                                                    <i class="ti ti-home"></i>
+                                                </a>
+                                            </li>
+                                            <li class="breadcrumb-item">Leasing</li>
+                                            <li class="breadcrumb-item active" aria-current="page">
+                                                Edit finance details
+                                            </li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-3">
+                        <div class="card-header card-primary d-flex align-items-center">
+                            <i class="ti ti-building fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-bold">Unit Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-2">
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Unit Name</div>
+                                    <div>Unit A1</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Unit Number</div>
+                                    <div>A1-101</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Unit Type</div>
+                                    <div>Residential</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Property Sub Type</div>
+                                    <div>Apartment</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Property Type</div>
+                                    <div>Leasehold</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Building Name</div>
+                                    <div>Skyline Tower</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Community Name</div>
+                                    <div>Skyline Community</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Floor</div>
+                                    <div>1</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Area</div>
+                                    <div>1,250 Sq Ft</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">No. of Bedrooms</div>
+                                    <div>2</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Parking (No.)</div>
+                                    <div>1</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Parking No.</div>
+                                    <div>P1-18</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Unit Status</div>
+                                    <div>Ready</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Active Status</div>
+                                    <div><span class="badge bg-teal text-teal-fg">Active</span></div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Occupancy Status</div>
+                                    <div><span class="badge bg-orange text-white">Occupied</span></div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Lease Status</div>
+                                    <div><span class="badge bg-teal text-teal-fg">Valid</span></div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Documents Status</div>
+                                    <div><span class="badge bg-teal text-teal-fg">Valid</span></div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Owner Type</div>
+                                    <div>Company</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Owner Name</div>
+                                    <div>Skyline Properties LLC</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Electricity Meter No.</div>
+                                    <div>DEWA-101</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Water Meter No.</div>
+                                    <div>WTR-101</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">LPG Meter No.</div>
+                                    <div>LPG-101</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Chiller Meter No.</div>
+                                    <div>CH-101</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header card-cyan d-flex align-items-center">
+                            <i class="ti ti-user fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-bold">Client Details</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-2">
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Tenant Type</div>
+                                    <div>Company</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Tenant Name</div>
+                                    <div>-</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Company Name</div>
+                                    <div>Al Noor Trading LLC</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Contact Person</div>
+                                    <div>Rashid Ali</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Contact Number</div>
+                                    <div>+971 50 111 2222</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Email</div>
+                                    <div>alnoor@gmail.com</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Gender</div>
+                                    <div>Male</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Nationality</div>
+                                    <div>Indian</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Country</div>
+                                    <div>UAE</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">State / Emirate</div>
+                                    <div>Dubai</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">City</div>
+                                    <div>Dubai City</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">National ID Number</div>
+                                    <div>784-1988-XXXXXXX</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">National ID Expiry Date</div>
+                                    <div>10-10-2028</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Passport Number</div>
+                                    <div>P1234567</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Passport Expiry Date</div>
+                                    <div>15-08-2028</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Trade License Number</div>
+                                    <div>TL-30001</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Trade License Expiry Date</div>
+                                    <div>12-09-2027</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Document Status</div>
+                                    <div><span class="badge bg-teal text-teal-fg">Valid</span></div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Sponsor Name</div>
+                                    <div>Al Noor Group</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Sponsor Contact Number</div>
+                                    <div>+971 4 555 1100</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Bank Name</div>
+                                    <div>Emirates NBD</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Bank Account Number</div>
+                                    <div>XXXXXX1234</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Bank IBAN</div>
+                                    <div>AE070331234567890123456</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="fw-semibold">Address</div>
+                                    <div>Office 1204, Business Bay, Dubai, UAE</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3">
+                        <div class="card-header card-pink d-flex align-items-center">
+                            <i class="ti ti-building-bank fs-2 me-2"></i>
+                            <h3 class="card-title fs-3 fw-bold">Financial Information</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="row gy-2 mb-4">
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Rental Type</div>
+                                    <div>Annual</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Number of Payments</div>
+                                    <div>4</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Payment Frequency</div>
+                                    <div>Quarterly</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Annual Rent</div>
+                                    <div>AED 48,000</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Lease Start Date</div>
+                                    <div>01-01-2026</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Lease End Date</div>
+                                    <div>31-12-2026</div>
+                                </div>
+                                <div class="col-md-3 col-6">
+                                    <div class="fw-semibold">Move In Date</div>
+                                    <div>01-01-2026</div>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Payment Details</h5>
+                            </div>
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light text-nowrap">
+                                        <tr>
+                                            <th>Payment Mode</th>
+                                            <th>Amount</th>
+                                            <th>VAT</th>
+                                            <th>Total</th>
+                                            <th>Date</th>
+                                            <th>Reference Number</th>
+                                            <th>Attachment</th>
+                                            <th>Payment Status</th>
+                                            <th>Amount Collected</th>
+                                            <th>Collection Date</th>
+                                            <th>Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Cheque</td>
+                                            <td>AED 12,000</td>
+                                            <td>AED 600</td>
+                                            <td>AED 12,600</td>
+                                            <td>01-01-2026</td>
+                                            <td>CHQ-1001</td>
+                                            <td><span class="badge bg-teal text-teal-fg">Attached</span></td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option>Pending</option>
+                                                    <option selected>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm" value="12600">
+                                            </td>
+                                            <td><input type="date" class="form-control form-control-sm"
+                                                    value="2026-01-01"></td>
+                                            <td><textarea class="form-control form-control-sm">Collected</textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cheque</td>
+                                            <td>AED 12,000</td>
+                                            <td>AED 600</td>
+                                            <td>AED 12,600</td>
+                                            <td>01-04-2026</td>
+                                            <td>CHQ-1002</td>
+                                            <td><span class="badge bg-teal text-teal-fg">Attached</span></td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cheque</td>
+                                            <td>AED 12,000</td>
+                                            <td>AED 600</td>
+                                            <td>AED 12,600</td>
+                                            <td>01-07-2026</td>
+                                            <td>CHQ-1003</td>
+                                            <td><span class="badge bg-teal text-teal-fg">Attached</span></td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cheque</td>
+                                            <td>AED 12,000</td>
+                                            <td>AED 600</td>
+                                            <td>AED 12,600</td>
+                                            <td>01-10-2026</td>
+                                            <td>CHQ-1004</td>
+                                            <td><span class="badge bg-teal text-teal-fg">Attached</span></td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h5 class="fw-bold mb-0">Other Charges</h5>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-main align-middle">
+                                    <thead class="table-light text-nowrap">
+                                        <tr>
+                                            <th>Charge Type</th>
+                                            <th>Due Month</th>
+                                            <th>Frequency</th>
+                                            <th>Amount</th>
+                                            <th>Total</th>
+                                            <th>VAT</th>
+                                            <th>Start Date</th>
+                                            <th>End Date</th>
+                                            <th>Payment Status</th>
+                                            <th>Amount Collected</th>
+                                            <th>Collection Date</th>
+                                            <th>Remarks</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Jan 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-01-2026</td>
+                                            <td>31-01-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Feb 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-02-2026</td>
+                                            <td>28-02-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Mar 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-03-2026</td>
+                                            <td>31-03-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Apr 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-04-2026</td>
+                                            <td>30-04-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>May 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-05-2026</td>
+                                            <td>31-05-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Jun 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-06-2026</td>
+                                            <td>30-06-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Jul 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-07-2026</td>
+                                            <td>31-07-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Aug 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-08-2026</td>
+                                            <td>31-08-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Sep 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-09-2026</td>
+                                            <td>30-09-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Oct 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-10-2026</td>
+                                            <td>31-10-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Nov 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-11-2026</td>
+                                            <td>30-11-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Maintenance</td>
+                                            <td>Dec 2026</td>
+                                            <td>Monthly</td>
+                                            <td>AED 500</td>
+                                            <td>AED 525</td>
+                                            <td>AED 25</td>
+                                            <td>01-12-2026</td>
+                                            <td>31-12-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Car Park</td>
+                                            <td>Contract Year 2026</td>
+                                            <td>One-Time</td>
+                                            <td>AED 2,000</td>
+                                            <td>AED 2,100</td>
+                                            <td>AED 100</td>
+                                            <td>01-01-2026</td>
+                                            <td>31-12-2026</td>
+                                            <td><select class="form-select form-select-sm">
+                                                    <option selected>Pending</option>
+                                                    <option>Collected</option>
+                                                    <option>Partially Collected</option>
+                                                </select></td>
+                                            <td><input type="number" class="form-control form-control-sm"></td>
+                                            <td><input type="date" class="form-control form-control-sm"></td>
+                                            <td><textarea class="form-control form-control-sm"></textarea></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ================= ACTIONS ================= -->
+                    <div class="d-flex justify-content-end gap-2">
+                        <button class="btn btn-primary"><i class="ti ti-send fs-3 me-1"></i>Submit</button>
+                        <button class="btn btn-warning"><i class="ti ti-pencil fs-3 me-1"></i>Edit</button>
+                        <a class="btn btn-outline-secondary" href="./FinanceCollection.html"><i
+                                class="ti ti-ban fs-3 me-1"></i>Cancel</a>
+                    </div>
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Script  -->
+    <script src="./assets/scripts/script.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/scripts/custom.js"></script>
+
+</body>
+
+</html>
