@@ -185,6 +185,8 @@
             <!-- Content -->
             <main class="content">
                 <div class="p-3">
+                    <a class="btn btn-primary mb-3" href="./LeaseMaster.html"><i
+                            class="ti ti-chevrons-left fs-3"></i>Previous</a>
                     <div class="card mb-3">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -307,7 +309,8 @@
                                     </div>
                                     <div class="card-body">
                                         <div id="communityDetailsBody" class="row gy-2">
-                                            <div class="col-12 text-center text-muted">Select community to display details</div>
+                                            <div class="col-12 text-center text-muted">Select community to display
+                                                details</div>
                                         </div>
                                     </div>
                                 </div>
@@ -317,7 +320,8 @@
                                     </div>
                                     <div class="card-body">
                                         <div id="buildingDetailsBody" class="row gy-2">
-                                            <div class="col-12 text-center text-muted">Select building to display details</div>
+                                            <div class="col-12 text-center text-muted">Select building to display
+                                                details</div>
                                         </div>
                                     </div>
                                 </div>
@@ -327,7 +331,8 @@
                                     </div>
                                     <div class="card-body">
                                         <div id="unitDetailsBody" class="row gy-2">
-                                            <div class="col-12 text-center text-muted">Select unit to display details</div>
+                                            <div class="col-12 text-center text-muted">Select unit to display details
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -337,7 +342,8 @@
                                     </div>
                                     <div class="card-body">
                                         <div id="tenantDetailsBody" class="row gy-2">
-                                            <div class="col-12 text-center text-muted">Select tenant to display details</div>
+                                            <div class="col-12 text-center text-muted">Select tenant to display details
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -461,8 +467,8 @@
                                         <tr>
                                             <th>Charge Type</th>
                                             <th>Amount</th>
-                                            <th>Total</th>
                                             <th>VAT</th>
+                                            <th>Total</th>
                                             <th>Frequency</th>
                                             <th>Start Date</th>
                                             <th>End Date</th>
@@ -643,12 +649,14 @@
                                 </div>
                                 <div class="col-md-4 border-end">
                                     <label class="form-label fw-bold">Auto Signature (Staff)</label>
-                                    <div class="signature-box mb-2"><img src="./assets/img/staff-sign.png" style="max-height:60px;"></div>
+                                    <div class="signature-box mb-2"><img src="./assets/img/staff-sign.png"
+                                            style="max-height:60px;"></div>
                                     <span class="badge bg-success-lt text-uppercase">Auto Verified</span>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label fw-bold">Electronic Signature</label>
-                                    <div class="signature-box mb-2"><i class="ti ti-fingerprint fs-1 text-primary"></i></div>
+                                    <div class="signature-box mb-2"><i class="ti ti-fingerprint fs-1 text-primary"></i>
+                                    </div>
                                     <button class="btn btn-sm btn-primary">Send E-Sign Link</button>
                                 </div>
                             </div>
@@ -659,7 +667,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label class="small fw-bold">Submitted Date</label>
-                                    <input type="text" class="form-control form-control-sm datepicker" placeholder="DD-MM-YYYY">
+                                    <input type="text" class="form-control form-control-sm datepicker"
+                                        placeholder="DD-MM-YYYY">
+                                </div>
+                            </div>
+                            <div class="row gy-3 my-2">
+                                <div class="col-12">
+                                    <label class="small fw-bold">Remarks</label>
+                                    <textarea class="form-control form-control-sm" rows="5"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -688,12 +703,14 @@
                                 </div>
                                 <div class="col-md-4 border-end">
                                     <label class="form-label fw-bold">Auto Signature (Staff)</label>
-                                    <div class="signature-box mb-2"><img src="./assets/img/staff-sign.png" style="max-height:60px;"></div>
+                                    <div class="signature-box mb-2"><img src="./assets/img/staff-sign.png"
+                                            style="max-height:60px;"></div>
                                     <span class="badge bg-success-lt text-uppercase">Auto Verified</span>
                                 </div>
                                 <div class="col-md-4">
                                     <label class="form-label fw-bold">Electronic Signature</label>
-                                    <div class="signature-box mb-2"><i class="ti ti-fingerprint fs-1 text-primary"></i></div>
+                                    <div class="signature-box mb-2"><i class="ti ti-fingerprint fs-1 text-primary"></i>
+                                    </div>
                                     <button class="btn btn-sm btn-primary">Send E-Sign Link</button>
                                 </div>
                             </div>
@@ -867,7 +884,7 @@
                 ].join('') : emptyState('Select building to display details');
             }
 
-function renderBuildingOptions() {
+            function renderBuildingOptions() {
                 const community = getSelectedCommunity();
                 const buildings = community ? Object.entries(community.buildings).map(([value, building]) => ({
                     text: building.name,
@@ -923,7 +940,7 @@ function renderBuildingOptions() {
                 ].join('') : emptyState('Select tenant to display details');
             }
 
-if (selectCommunity && selectBuilding && selectUnits) {
+            if (selectCommunity && selectBuilding && selectUnits) {
                 communitySelect = new SlimSelect({
                     select: '#selectCommunity',
                     events: {
